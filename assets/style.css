@@ -241,8 +241,8 @@ h1, h2 {
   cursor: pointer;
   transition: border-color 0.2s, color 0.2s, background 0.2s;
   font-family: inherit;
-  backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
   line-height: 1.5;
 }
 
@@ -296,7 +296,9 @@ html[dir=rtl] .app__logo-wrapper {
 }
 .app__logo {
   border-radius: 22.5%;
+  -webkit-mask-image: url("ios-mask.svg");
   mask-image: url("ios-mask.svg");
+  -webkit-mask-size: cover;
   mask-size: cover;
   width: 100%;
   height: auto;
@@ -603,6 +605,49 @@ hr {
   color: var(--color-text-muted);
   margin-top: 8px;
   text-align: center;
+}
+
+/* ── Home CTA banner ───────────────────────────────────── */
+.home-cta {
+  background: #5A51FE;
+  padding: 60px 20px;
+  border-radius: 12px;
+  text-align: center;
+  color: white;
+  margin-bottom: 40px;
+}
+.home-cta h2 {
+  color: white;
+  font-size: 2em;
+  margin-bottom: 15px;
+}
+.home-cta p {
+  font-size: 1.1em;
+  margin-bottom: 30px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.home-cta__btn {
+  display: inline-block;
+  background: white;
+  color: #5A51FE;
+  padding: 15px 40px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1em;
+  transition: all 0.3s;
+  box-shadow: 0 8px 24px rgba(32, 43, 54, 0.12);
+}
+.home-cta__btn:hover {
+  box-shadow: 0 8px 24px rgba(32, 43, 54, 0.28);
+  color: #5A51FE;
+}
+
+/* ── Page back link spacing ────────────────────────────── */
+.page__back {
+  margin-top: 48px;
 }
 
 /* ── Legacy darkmode classes (kept for compatibility) ──── */

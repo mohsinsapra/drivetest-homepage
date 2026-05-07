@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html dir="auto" lang="en">
 <head>
-	<!-- Prevent dark mode flash -->
-	<script>try{var t=localStorage.getItem('dt_theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
 	<meta charset="UTF-8" />
+	<!-- Prevent dark mode flash -->
+	<script>try{var t=localStorage.getItem('dt_theme');if(!t)t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
 	<title>How to Get a Taxi License in Sweden - Drive Test</title>
 
 	<meta name="description" content="Complete guide to obtaining your taxi driver's license (taxiförarlegitimation) in Sweden. Learn about requirements, exams, costs, and the application process." />
@@ -21,8 +21,8 @@
 </head>
 <body>
 	<div class="topbar">
-		<button id="lang-toggle" class="topbar__btn">SV</button>
-		<button id="theme-toggle" class="topbar__btn topbar__theme" aria-label="Toggle dark mode"><span class="theme-icon">🌙</span></button>
+		<button type="button" id="lang-toggle" class="topbar__btn">SV</button>
+		<button type="button" id="theme-toggle" class="topbar__btn topbar__theme" aria-label="Toggle dark mode"><span class="theme-icon">🌙</span></button>
 	</div>
 
 	<main>
@@ -49,7 +49,7 @@
 					<li class="footer__link"><a href="index.html" data-i18n="footer_home">Home</a></li>
 					<li class="footer__link"><a href="privacy-policy.html" data-i18n="footer_privacy">Privacy</a></li>
 					<li class="footer__link"><a href="delete-account.html" data-i18n="footer_delete">Delete Account</a></li>
-					<li class="footer__link"><a href="https://mohsinsapra.github.io/" target="_blank" data-i18n="footer_github">GitHub</a></li>
+					<li class="footer__link"><a href="https://mohsinsapra.github.io/" target="_blank" rel="noopener noreferrer" data-i18n="footer_github">GitHub</a></li>
 				</ul>
 			</div>
 		</div>

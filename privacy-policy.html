@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html dir="auto" lang="en">
 <head>
+	<meta charset="UTF-8" />
 	<!-- Prevent dark mode flash -->
-	<script>try{var t=localStorage.getItem('dt_theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+	<script>try{var t=localStorage.getItem('dt_theme');if(!t)t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
 	<!-- Google Tag Manager -->
 	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -10,7 +11,6 @@
 	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 	})(window,document,'script','dataLayer','GTM-5ZX936XX');</script>
 	<!-- End Google Tag Manager -->
-	<meta charset="UTF-8" />
 	<title>Privacy Policy - Drive Test</title>
 
 	<meta name="description" content="Privacy Policy for Drive Test app." />
@@ -32,8 +32,8 @@
 	<!-- End Google Tag Manager (noscript) -->
 
 	<div class="topbar">
-		<button id="lang-toggle" class="topbar__btn">SV</button>
-		<button id="theme-toggle" class="topbar__btn topbar__theme" aria-label="Toggle dark mode"><span class="theme-icon">🌙</span></button>
+		<button type="button" id="lang-toggle" class="topbar__btn">SV</button>
+		<button type="button" id="theme-toggle" class="topbar__btn topbar__theme" aria-label="Toggle dark mode"><span class="theme-icon">🌙</span></button>
 	</div>
 
 	<main>
@@ -46,7 +46,7 @@
 			<div class="page__content" data-i18n-html="privacy_content_html">
 				<!-- Content injected by i18n.js -->
 			</div>
-			<p style="margin-top: 48px;"><a href="index.html" class="button" data-i18n="privacy_back">Back to Home</a></p>
+			<p class="page__back"><a href="index.html" class="button" data-i18n="privacy_back">Back to Home</a></p>
 		</article>
 	</main>
 

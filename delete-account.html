@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html dir="auto" lang="en">
 <head>
-	<!-- Prevent dark mode flash -->
-	<script>try{var t=localStorage.getItem('dt_theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
 	<meta charset="UTF-8" />
+	<!-- Prevent dark mode flash -->
+	<script>try{var t=localStorage.getItem('dt_theme');if(!t)t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
 	<title>Delete Account - Drive Test</title>
 
 	<meta name="description" content="Request account and data deletion for Drive Test app." />
@@ -20,8 +20,8 @@
 </head>
 <body>
 	<div class="topbar">
-		<button id="lang-toggle" class="topbar__btn">SV</button>
-		<button id="theme-toggle" class="topbar__btn topbar__theme" aria-label="Toggle dark mode"><span class="theme-icon">🌙</span></button>
+		<button type="button" id="lang-toggle" class="topbar__btn">SV</button>
+		<button type="button" id="theme-toggle" class="topbar__btn topbar__theme" aria-label="Toggle dark mode"><span class="theme-icon">🌙</span></button>
 	</div>
 
 	<main>
@@ -32,7 +32,7 @@
 			<div class="page__content" data-i18n-html="delete_content_html">
 				<!-- Content injected by i18n.js -->
 			</div>
-			<p style="margin-top: 40px;"><a href="index.html" class="button" data-i18n="delete_back">Back to Home</a></p>
+			<p class="page__back"><a href="index.html" class="button" data-i18n="delete_back">Back to Home</a></p>
 		</article>
 	</main>
 

@@ -1,9 +1,17 @@
 (function () {
   var LANG_KEY = 'dt_lang';
   var THEME_KEY = 'dt_theme';
-  var DEFAULT_LANG = 'en';
   var translations = {};
-  var currentLang = DEFAULT_LANG;
+  var currentLang = 'en';
+
+  function getBrowserLang() {
+    var lang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+    return lang.startsWith('sv') ? 'sv' : 'en';
+  }
+
+  function getBrowserTheme() {
+    return (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+  }
 
   // Replaces element content with trusted developer-authored HTML from translations.json.
   // Content is static, repo-controlled, never user-supplied.
@@ -62,7 +70,7 @@
   function init() {
     var savedTheme;
     try { savedTheme = localStorage.getItem(THEME_KEY); } catch (e) {}
-    applyTheme(savedTheme || 'light');
+    applyTheme(savedTheme || getBrowserTheme());
 
     var langBtn = document.getElementById('lang-toggle');
     if (langBtn) langBtn.addEventListener('click', toggleLang);
@@ -85,7 +93,9 @@
       savedLang = localStorage.getItem(LANG_KEY);
     } catch (e) {}
 
-    var lang = (urlLang && translations[urlLang]) ? urlLang : (savedLang || DEFAULT_LANG);
+    var lang = (urlLang && translations[urlLang]) ? urlLang
+             : savedLang ? savedLang
+             : getBrowserLang();
     applyTranslations(lang);
 
     var yearEl = document.getElementById('footer-year');
