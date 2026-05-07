@@ -1,239 +1,281 @@
+:root {
+  --guide-intro-bg: #f8f9fa;
+  --guide-intro-border: #5A51FE;
+  --guide-intro-heading: #5A51FE;
+  --guide-requirements-bg: #ffffff;
+  --guide-requirements-border: #eeeeee;
+  --guide-requirements-heading: #5A51FE;
+  --guide-step-heading: #5A51FE;
+  --guide-cost-bg: #fff3cd;
+  --guide-cost-border: #ffc107;
+  --guide-cost-text: #856404;
+  --guide-tip-bg: #d1ecf1;
+  --guide-tip-border: #0c5460;
+  --guide-tip-text: #0c5460;
+  --guide-exam-bg: #ffffff;
+  --guide-exam-heading: #5A51FE;
+  --guide-cta-bg: #f8f9fa;
+  --guide-cta-heading: #5A51FE;
+  --guide-card-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+  --guide-intro-bg: #1a1a26;
+  --guide-intro-border: #7b72ff;
+  --guide-intro-heading: #7b72ff;
+  --guide-requirements-bg: #1a1a26;
+  --guide-requirements-border: #2c2c40;
+  --guide-requirements-heading: #7b72ff;
+  --guide-step-heading: #7b72ff;
+  --guide-cost-bg: #2a2206;
+  --guide-cost-border: #8a6800;
+  --guide-cost-text: #d4aa30;
+  --guide-tip-bg: #091e24;
+  --guide-tip-border: #0a6470;
+  --guide-tip-text: #4fc3d4;
+  --guide-exam-bg: #1a1a26;
+  --guide-exam-heading: #7b72ff;
+  --guide-cta-bg: #1a1a26;
+  --guide-cta-heading: #7b72ff;
+  --guide-card-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
 .guide-header {
-	background: #5A51FE;
-	color: white;
-	padding: 60px 20px;
-	text-align: center;
+  background: #5A51FE;
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
 }
 
 .guide-header h1 {
-	font-size: 2.5em;
-	margin-bottom: 10px;
-	font-weight: 700;
-	color: white;
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  font-weight: 700;
+  color: white;
 }
 
 .guide-header p {
-	font-size: 1.2em;
-	opacity: 0.95;
+  font-size: 1.2em;
+  opacity: 0.95;
 }
 
 .guide-content {
-	max-width: 900px;
-	margin: 0 auto;
-	padding: 40px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
 }
 
 .guide-intro {
-	background: #f8f9fa;
-	border-left: 4px solid #5A51FE;
-	padding: 20px 30px;
-	margin-bottom: 40px;
-	border-radius: 4px;
+  background: var(--guide-intro-bg);
+  border-left: 4px solid var(--guide-intro-border);
+  padding: 20px 30px;
+  margin-bottom: 40px;
+  border-radius: 4px;
 }
 
 .guide-intro h2 {
-	margin-top: 0;
-	color: #5A51FE;
+  margin-top: 0;
+  color: var(--guide-intro-heading);
 }
 
 .requirements-list {
-	background: white;
-	border-radius: 8px;
-	padding: 30px;
-	box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-	margin-bottom: 40px;
+  background: var(--guide-requirements-bg);
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: var(--guide-card-shadow);
+  margin-bottom: 40px;
 }
 
 .requirements-list h3 {
-	color: #5A51FE;
-	margin-top: 0;
+  color: var(--guide-requirements-heading);
+  margin-top: 0;
 }
 
 .requirements-list ul {
-	list-style: none;
-	padding: 0;
+  list-style: none;
+  padding: 0;
 }
 
 .requirements-list li {
-	padding: 12px 0;
-	border-bottom: 1px solid #eee;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--guide-requirements-border);
 }
 
 .requirements-list li:last-child {
-	border-bottom: none;
+  border-bottom: none;
 }
 
 .requirements-list li:before {
-	content: "✓ ";
-	color: #5A51FE;
-	font-weight: bold;
-	margin-right: 10px;
+  content: "✓ ";
+  color: var(--guide-requirements-heading);
+  font-weight: bold;
+  margin-right: 10px;
 }
 
 .step-section {
-	margin-bottom: 50px;
+  margin-bottom: 50px;
 }
 
 .step-number {
-	display: inline-block;
-	background: #5A51FE;
-	color: white;
-	width: 40px;
-	height: 40px;
-	border-radius: 50%;
-	text-align: center;
-	line-height: 40px;
-	font-weight: bold;
-	margin-right: 15px;
-	font-size: 1.2em;
+  display: inline-block;
+  background: #5A51FE;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  font-weight: bold;
+  margin-right: 15px;
+  font-size: 1.2em;
 }
 
 .step-section h2 {
-	display: flex;
-	align-items: center;
-	color: #5A51FE;
-	margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  color: var(--guide-step-heading);
+  margin-bottom: 20px;
 }
 
 .step-section p,
 .step-section ul {
-	margin-left: 55px;
+  margin-left: 55px;
 }
 
 .step-section ul {
-	list-style: disc;
-	padding-left: 20px;
+  list-style: disc;
+  padding-left: 20px;
 }
 
 .cost-box {
-	background: #fff3cd;
-	border: 2px solid #ffc107;
-	padding: 20px;
-	border-radius: 8px;
-	margin: 20px 0;
-	margin-left: 55px;
+  background: var(--guide-cost-bg);
+  border: 2px solid var(--guide-cost-border);
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px 0;
+  margin-left: 55px;
 }
 
 .cost-box strong {
-	color: #856404;
+  color: var(--guide-cost-text);
 }
 
 .tip-box {
-	background: #d1ecf1;
-	border-left: 4px solid #0c5460;
-	padding: 15px 20px;
-	margin: 20px 0;
-	margin-left: 55px;
-	border-radius: 4px;
+  background: var(--guide-tip-bg);
+  border-left: 4px solid var(--guide-tip-border);
+  padding: 15px 20px;
+  margin: 20px 0;
+  margin-left: 55px;
+  border-radius: 4px;
 }
 
 .tip-box strong {
-	color: #0c5460;
+  color: var(--guide-tip-text);
 }
 
 .cta-button {
-	display: inline-block;
-	background: #5A51FE;
-	color: white;
-	padding: 15px 30px;
-	border-radius: 30px;
-	text-decoration: none;
-	font-weight: bold;
-	margin: 10px 10px 10px 55px;
-	transition: all 0.15s ease;
-	box-shadow: 0 8px 24px rgba(32, 43, 54, 0.12);
+  display: inline-block;
+  background: #5A51FE;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 10px 10px 10px 55px;
+  transition: all 0.15s ease;
+  box-shadow: 0 8px 24px rgba(32, 43, 54, 0.12);
 }
 
 .cta-button:hover {
-	background: #8751FE;
-	color: white;
-	box-shadow: 0 8px 24px rgba(32, 43, 54, 0.25);
+  background: #8751FE;
+  color: white;
+  box-shadow: 0 8px 24px rgba(32, 43, 54, 0.25);
 }
 
 .cta-button.secondary {
-	background: #65638f;
+  background: #65638f;
 }
 
 .cta-button.secondary:hover {
-	background: #5A51FE;
+  background: #5A51FE;
 }
 
 .back-link {
-	display: inline-block;
-	margin-bottom: 20px;
-	color: #5A51FE;
-	text-decoration: none;
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #5A51FE;
+  text-decoration: none;
 }
 
 .back-link:hover {
-	color: #8751FE;
-	text-decoration: underline;
+  color: #8751FE;
+  text-decoration: underline;
 }
 
 .exam-types-box {
-	background: white;
-	border-radius: 8px;
-	padding: 25px;
-	margin: 25px 0 25px 55px;
-	box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  background: var(--guide-exam-bg);
+  border-radius: 8px;
+  padding: 25px;
+  margin: 25px 0 25px 55px;
+  box-shadow: var(--guide-card-shadow);
 }
 
 .exam-types-box h3 {
-	margin-top: 0;
-	color: #5A51FE;
+  margin-top: 0;
+  color: var(--guide-exam-heading);
 }
 
 .exam-types-box ul {
-	margin-left: 0;
+  margin-left: 0;
 }
 
 .guide-cta-section {
-	background: #f8f9fa;
-	padding: 40px;
-	border-radius: 8px;
-	margin-top: 60px;
-	text-align: center;
+  background: var(--guide-cta-bg);
+  padding: 40px;
+  border-radius: 8px;
+  margin-top: 60px;
+  text-align: center;
 }
 
 .guide-cta-section h2 {
-	margin-top: 0;
-	color: #5A51FE;
+  margin-top: 0;
+  color: var(--guide-cta-heading);
 }
 
 .guide-cta-section .cta-button {
-	margin: 10px;
-	margin-left: 10px;
+  margin: 10px;
+  margin-left: 10px;
 }
 
 .guide-cta-section div {
-	margin-top: 30px;
+  margin-top: 30px;
 }
 
 .guide-main-title {
-	text-align: center;
-	margin: 60px 0 40px;
+  text-align: center;
+  margin: 60px 0 40px;
 }
 
 .practical-exam-title {
-	margin-top: 20px;
+  margin-top: 20px;
 }
 
 @media (max-width: 768px) {
-	.guide-header h1 {
-		font-size: 2em;
-	}
+  .guide-header h1 {
+    font-size: 2em;
+  }
 
-	.step-section p,
-	.step-section ul,
-	.cost-box,
-	.tip-box,
-	.exam-types-box,
-	.cta-button {
-		margin-left: 0;
-	}
+  .step-section p,
+  .step-section ul,
+  .cost-box,
+  .tip-box,
+  .exam-types-box,
+  .cta-button {
+    margin-left: 0;
+  }
 
-	.step-number {
-		display: block;
-		margin-bottom: 10px;
-	}
+  .step-number {
+    display: block;
+    margin-bottom: 10px;
+  }
 }

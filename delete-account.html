@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html dir="auto" lang="en">
 <head>
+	<!-- Prevent dark mode flash -->
+	<script>try{var t=localStorage.getItem('dt_theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
 	<meta charset="UTF-8" />
 	<title>Delete Account - Drive Test</title>
 
@@ -14,127 +16,48 @@
 
 	<link rel="stylesheet" href="assets/tobi.css" />
 	<link rel="stylesheet" href="assets/style.css" />
-	<style>
-		.step-images {
-			display: flex;
-			flex-wrap: wrap;
-			gap: 20px;
-			margin-top: 20px;
-			margin-bottom: 20px;
-		}
-		.step-image-wrapper {
-			flex: 1;
-			min-width: 200px;
-			max-width: 250px;
-		}
-		.step-image-wrapper img {
-			width: 100%;
-			border-radius: 12px;
-			box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-			cursor: pointer;
-			transition: transform 0.2s;
-		}
-		.step-image-wrapper img:hover {
-			transform: scale(1.02);
-		}
-		.step-label {
-			display: block;
-			font-size: 14px;
-			color: #65638f;
-			margin-top: 8px;
-			text-align: center;
-		}
-	</style>
+	<script>window.__pageKey = 'delete';</script>
 </head>
-	<body>
-		<main>
-<article class="page">
-	<header class="page__header">
-		<h1 class="page__title">Delete Account & Data</h1>
-	</header>
-	<div class="page__content">
-		<p>At <strong>Drive Test</strong> (developed by <strong>Mohsin Sapra</strong>), we value your privacy and provide you with full control over your personal data. If you no longer wish to use our services, you can request the deletion of your account and all associated data.</p>
-		
-		<h2>How to Request Account Deletion</h2>
-		<p>You can request to have your account and associated data deleted by following these steps:</p>
-		
-		<h3>1. In-App Deletion (Recommended)</h3>
-		<p>You can initiate account deletion directly within the Drive Test app. This is the fastest way to process your request:</p>
-		
-		<div class="step-images">
-			<div class="step-image-wrapper">
-				<a href="assets/delete-account/profile-tab.png" class="lightbox">
-					<img src="assets/delete-account/profile-tab.png" alt="Step 1: Go to Profile">
-				</a>
-				<span class="step-label">Step 1: Navigate to the Profile tab</span>
+<body>
+	<div class="topbar">
+		<button id="lang-toggle" class="topbar__btn">SV</button>
+		<button id="theme-toggle" class="topbar__btn topbar__theme" aria-label="Toggle dark mode"><span class="theme-icon">🌙</span></button>
+	</div>
+
+	<main>
+		<article class="page">
+			<header class="page__header">
+				<h1 class="page__title" data-i18n="delete_title">Delete Account &amp; Data</h1>
+			</header>
+			<div class="page__content" data-i18n-html="delete_content_html">
+				<!-- Content injected by i18n.js -->
 			</div>
-			<div class="step-image-wrapper">
-				<a href="assets/delete-account/edit-page.png" class="lightbox">
-					<img src="assets/delete-account/edit-page.png" alt="Step 2: Edit Profile">
-				</a>
-				<span class="step-label">Step 2: Tap on Edit Profile</span>
-			</div>
-			<div class="step-image-wrapper">
-				<a href="assets/delete-account/delet-account.png" class="lightbox">
-					<img src="assets/delete-account/delet-account.png" alt="Step 3: Delete Account">
-				</a>
-				<span class="step-label">Step 3: Select "Delete Account"</span>
+			<p style="margin-top: 40px;"><a href="index.html" class="button" data-i18n="delete_back">Back to Home</a></p>
+		</article>
+	</main>
+
+	<footer class="footer">
+		<div class="container">
+			<div class="footer__container">
+				<p class="footer__love">
+					<span id="footer-year"></span> <span data-i18n="footer_rights">All rights reserved</span>
+				</p>
+				<ul class="footer__links">
+					<li class="footer__link"><a href="index.html" data-i18n="footer_home">Home</a></li>
+					<li class="footer__link"><a href="taxi-licence-guide.html" data-i18n="footer_guide">License Guide</a></li>
+					<li class="footer__link"><a href="privacy-policy.html" data-i18n="footer_privacy">Privacy</a></li>
+					<li class="footer__link"><a href="delete-account.html" data-i18n="footer_delete">Delete Account</a></li>
+				</ul>
 			</div>
 		</div>
+	</footer>
 
-		<h3>2. Via Email</h3>
-		<p>Alternatively, you can send an email to <a href="mailto:support@drivetest.se">support@drivetest.se</a> with the subject line "Account Deletion Request". Please include the email address associated with your account. We will process your request within 30 days.</p>
-		
-		<h2>Types of Data Deleted</h2>
-		<p>When you request account deletion, the following types of data will be permanently removed from our systems:</p>
-		<ul>
-			<li><strong>Account Information:</strong> Your name, email address, and authentication credentials.</li>
-			<li><strong>Study Progress:</strong> All your completed tests, bookmarks, and learning history.</li>
-			<li><strong>Performance Analytics:</strong> Your personal charts, graphs, and activity logs.</li>
-		</ul>
-		
-		<h2>Data Retention</h2>
-		<p>Once an account deletion request is received and verified, we will process it within <strong>30 days</strong>. Please note:</p>
-		<ul>
-			<li>Certain data may be retained if required for legal, regulatory, or financial compliance (e.g., transaction records for premium subscriptions).</li>
-			<li>Non-identifiable, aggregated, and anonymized data may be kept for analytical purposes to improve our services.</li>
-		</ul>
-		
-		<p>If you have any questions regarding this process, please contact us at <a href="mailto:support@drivetest.se">support@drivetest.se</a>.</p>
-
-		<p style="margin-top: 40px;"><a href="index.html" class="button">Back to Home</a></p>
-	</div>
-</article>
-		</main>
-		<footer class="footer">
-			<div class="container">
-				<div class="footer__container">
-					<p class="footer__love">
-						<script>document.write('&copy;' + (new Date()).getFullYear());</script><noscript>&copy;2025</noscript> All rights reserved
-					</p>
-					<ul class="footer__links">
-							<li class="footer__link">
-								<a href="index.html">Home</a>
-							</li>
-							<li class="footer__link">
-								<a href="taxi-licence-guide.html">License Guide</a>
-							</li>
-							<li class="footer__link">
-								<a href="privacy-policy.html">Privacy</a>
-							</li>
-							<li class="footer__link">
-								<a href="delete-account.html">Delete Account</a>
-							</li>
-					</ul>
-				</div>
-			</div>
-		</footer>
-
-		<script type="text/javascript" src="assets/tobi.min.js"></script>
-		<script>
-			window.onload = function () {
-				var tobi = new Tobi();
-			};
-		</script>
-  </body>
+	<script type="text/javascript" src="assets/tobi.min.js"></script>
+	<script>
+		window.onload = function () {
+			var tobi = new Tobi();
+		};
+	</script>
+	<script src="assets/i18n.js"></script>
+</body>
 </html>

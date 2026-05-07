@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html dir="auto" lang="en">
 <head>
+	<!-- Prevent dark mode flash -->
+	<script>try{var t=localStorage.getItem('dt_theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
 	<!-- Google Tag Manager -->
 	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -21,159 +23,109 @@
 
 	<link rel="stylesheet" href="assets/tobi.css" />
 	<link rel="stylesheet" href="assets/style.css" />
-
+	<script>window.__pageKey = 'home';</script>
 </head>
-	<body>
-		<!-- Google Tag Manager (noscript) -->
-		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5ZX936XX"
-		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-		<!-- End Google Tag Manager (noscript) -->
-		<main>
-<header class="app__header container">
-	<div class="app__logo-wrapper"> <img class="app__logo" src="content/image/ci15qd8a7h5gf2zy8upo.jpg" alt="Drive Test"></div>
-	<div class="app__infos">
-		<h1 class="app__name">Drive Test</h1>
-		<p class="app__description">Pass Taxi, Company &amp; Transport Exams</p>
-		<div class="app__buttons app__buttons--desktop">
-			<a href="https://play.google.com/store/apps/details?id&#x3D;com.mohsinsapra.drivetest" class="app__button-play" target="_blank" title="Get on Google Play">
+<body>
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5ZX936XX"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+
+	<div class="topbar">
+		<button id="lang-toggle" class="topbar__btn">SV</button>
+		<button id="theme-toggle" class="topbar__btn topbar__theme" aria-label="Toggle dark mode"><span class="theme-icon">🌙</span></button>
+	</div>
+
+	<main>
+		<header class="app__header container">
+			<div class="app__logo-wrapper">
+				<img class="app__logo" src="content/image/ci15qd8a7h5gf2zy8upo.jpg" alt="Drive Test">
+			</div>
+			<div class="app__infos">
+				<h1 class="app__name" data-i18n="home_name">Drive Test</h1>
+				<p class="app__description" data-i18n="home_description">Pass Taxi, Company &amp; Transport Exams</p>
+				<div class="app__buttons app__buttons--desktop">
+					<a href="https://play.google.com/store/apps/details?id=com.mohsinsapra.drivetest" class="app__button-play" target="_blank" title="Get on Google Play">
+						<img src="assets/google-play-badge.png" alt="Get on Google Play">
+					</a>
+					<a href="https://mohsin.se/drivetest/" class="app__button-web" target="_blank" title="Go to website">
+						<img src="assets/pwa-badge.png" alt="Go to website">
+					</a>
+				</div>
+			</div>
+		</header>
+
+		<div class="app__buttons app__buttons--mobile container">
+			<a href="https://play.google.com/store/apps/details?id=com.mohsinsapra.drivetest" class="app__button-play" target="_blank" title="Get on Google Play">
 				<img src="assets/google-play-badge.png" alt="Get on Google Play">
 			</a>
-			<!-- iOS button hidden until App Store release -->
-			<!-- <a href="https://play.google.com/store/apps/details?id&#x3D;com.mohsinsapra.drivetest" class="app__button-ios" target="_blank" title="Get on Appstore">
-				<img src="assets/ios-badge.svg" alt="Get on Appstore">
-			</a> -->
 			<a href="https://mohsin.se/drivetest/" class="app__button-web" target="_blank" title="Go to website">
 				<img src="assets/pwa-badge.png" alt="Go to website">
 			</a>
 		</div>
-	</div>
-</header>
-<div class="app__buttons app__buttons--mobile container">
-	<a href="https://play.google.com/store/apps/details?id&#x3D;com.mohsinsapra.drivetest" class="app__button-play" target="_blank" title="Get on Google Play">
-		<img src="assets/google-play-badge.png" alt="Get on Google Play">
-	</a>
-	<!-- iOS button hidden until App Store release -->
-	<!-- <a href="https://play.google.com/store/apps/details?id&#x3D;com.mohsinsapra.drivetest" class="app__button-ios" target="_blank" title="Get on Appstore">
-		<img src="assets/ios-badge.svg" alt="Get on Appstore">
-	</a> -->
-	<a href="https://mohsin.se/drivetest/" class="app__button-web" target="_blank" title="Go to website">
-		<img src="assets/pwa-badge.png" alt="Go to website">
-	</a>
-</div>
-<section class="app__screenshots app__section">
-	<div class="container">
-		<h2 class="app__section-title">Screenshots</h2>
-	</div>
-	<div class="app__screenshots-wrapper container-desktop">
-		<div class="app__screenshots-list">
-			<a href="content/image/6a6me7mkszbvoiqnn1on.jpg" class="lightbox">
-				<img src="content/image/6a6me7mkszbvoiqnn1on.jpg" class="app__screenshot" alt="" />
-			</a>
-			<a href="content/image/q6tzx1wdwmk86qex4gdv.jpg" class="lightbox">
-				<img src="content/image/q6tzx1wdwmk86qex4gdv.jpg" class="app__screenshot" alt="" />
-			</a>
-			<a href="content/image/ym4gezkegld1f88zv1yf.jpg" class="lightbox">
-				<img src="content/image/ym4gezkegld1f88zv1yf.jpg" class="app__screenshot" alt="" />
-			</a>
-			<a href="content/image/1guchg1f5o1j2hacglba.jpg" class="lightbox">
-				<img src="content/image/1guchg1f5o1j2hacglba.jpg" class="app__screenshot" alt="" />
-			</a>
-			<a href="content/image/o7rinojm7v51173xgq02.jpg" class="lightbox">
-				<img src="content/image/o7rinojm7v51173xgq02.jpg" class="app__screenshot" alt="" />
-			</a>
-		</div>
-	</div>
-</section>
-<section class="app__fulldescription app__section container">
-	<h2 class="app__section-title">Description</h2>
-	<div class="app__fulldescription-content">
-		<p>  DriveTest: Master Your Swedish Taxi License &amp; Driving Exams</p>
-<p>  Secure your future on the road. DriveTest is the ultimate study companion for anyone looking to pass their taxi licence in Sweden or upgrade to a professional taxi company licence in Sweden.</p>
-<p>  Whether you are studying for your standard B-license, aiming for your professional Taxiförarlegitimation, or preparing for the rigorous certification required to run a taxi business, DriveTest provides the tools you need to succeed on the first try.</p>
-<hr>
-<p>  Why Choose DriveTest?</p>
-<p>  Passing the Swedish Transport Administration (Trafikverket) exams requires focused preparation. Our app replaces outdated textbooks with intelligent, interactive learning. We combine comprehensive question banks with smart analytics to ensure you are fully prepared for both the Taxi Driver License and the Taxi Company License exams.</p>
-<p>  Stop guessing and start passing. With thousands of official-style questions, deep performance insights, and multi-language support, you&#39;ll know exactly where you stand before you enter the exam room.</p>
-<hr>
-<p>  🚀 Powerful Study Features</p>
-<p>  Tailor your learning experience to fit your schedule and learning style.</p>
-<ul>
-<li>Versatile Test Modes: Choose from Practice, Custom, or Review modes to suit your daily study goals</li>
-<li>Multi-Language Support: Don&#39;t let language barriers stop you. Includes full text-to-speech support to help with comprehension</li>
-<li>Deep Dive Explanations: We don&#39;t just give you the answer; we explain why it is correct, crucial for the complex theory behind the taxi company licence in Sweden</li>
-<li>Smart Bookmarking: Instantly save and revisit difficult questions to turn your weaknesses into strengths</li>
-</ul>
-<hr>
-<p>  📈 Visual Progress Tracking</p>
-<p>  Track your growth from novice to pro with our advanced analytics dashboard.</p>
-<ul>
-<li>Performance Analytics: Visual charts and graphs break down your readiness in real-time</li>
-<li>Category Breakdowns: See exactly which areas of the taxi licence Sweden theory you have mastered and where you need more focus</li>
-<li>Comprehensive History: Access your complete test history with detailed reviews</li>
-<li>Activity Logs: Keep yourself accountable with daily and weekly activity tracking</li>
-</ul>
-<hr>
-<p>  💎 Premium Access &amp; Content</p>
-<p>  Unlock the full potential of DriveTest with our flexible premium plans.</p>
-<ul>
-<li>Affordable Subscriptions: Category-based access for just 100 SEK/month</li>
-<li>Expert Video Content: Educational videos designed to clarify complex traffic rules and regulations</li>
-<li>Secure Payments: Seamless transactions via Card, Apple Pay, and Google Pay</li>
-<li>Free Trial Areas: Explore free categories before you commit</li>
-</ul>
-<hr>
-<p>  Key Features at a Glance</p>
-<p>  ✓ Specialized prep for Taxi Licence Sweden (Taxiförarlegitimation)
-  ✓ Study material for Taxi Company Licence in Sweden (Yrkeskunnande)
-  ✓ Practice, Custom, and Review modes
-  ✓ Multi-language text-to-speech support
-  ✓ Detailed answer explanations for deep learning
-  ✓ Customizable test settings (length, timer, marking criteria)
-  ✓ Offline access to your test history
-  ✓ Screenshot protection for exam integrity
-  ✓ Secure payment processing (Stripe, Apple Pay, Google Pay)</p>
-<hr>
-<p>  Download DriveTest today and start your journey to becoming a licensed taxi professional in Sweden.</p>
 
-	</div>
-</section>
-<section class="app__section container" style="background: #5A51FE; padding: 60px 20px; border-radius: 12px; text-align: center; color: white; margin-bottom: 40px;">
-	<h2 style="color: white; font-size: 2em; margin-bottom: 15px;">Need a Taxi License?</h2>
-	<p style="font-size: 1.1em; margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto;">Learn everything you need to know about getting your taxi driver's license in Sweden. Our comprehensive guide covers requirements, exams, costs, and the complete application process.</p>
-	<a href="taxi-licence-guide.html" style="display: inline-block; background: white; color: #5A51FE; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 1.1em; transition: all 0.3s; box-shadow: 0 8px 24px rgba(32, 43, 54, 0.12);">View License Guide →</a>
-</section>
-		</main>
-		<footer class="footer">
+		<section class="app__screenshots app__section">
 			<div class="container">
-				<div class="footer__container">
-					<p class="footer__love">
-						<script>document.write('&copy;' + (new Date()).getFullYear());</script><noscript>&copy;2025</noscript> All rights reserved
-							
-					</p>
-					<ul class="footer__links">
-							<li class="footer__link">
-								<a href="taxi-licence-guide.html">License Guide</a>
-							</li>
-							<li class="footer__link">
-								<a href="privacy-policy.html">Privacy</a>
-							</li>
-							<li class="footer__link">
-								<a href="delete-account.html">Delete Account</a>
-							</li>
-							<li class="footer__link">
-								<a href="https://mohsinsapra.github.io/" target="_blank">GitHub</a>
-							</li>
-					</ul>
+				<h2 class="app__section-title" data-i18n="home_screenshots_title">Screenshots</h2>
+			</div>
+			<div class="app__screenshots-wrapper container-desktop">
+				<div class="app__screenshots-list">
+					<a href="content/image/6a6me7mkszbvoiqnn1on.jpg" class="lightbox">
+						<img src="content/image/6a6me7mkszbvoiqnn1on.jpg" class="app__screenshot" alt="" />
+					</a>
+					<a href="content/image/q6tzx1wdwmk86qex4gdv.jpg" class="lightbox">
+						<img src="content/image/q6tzx1wdwmk86qex4gdv.jpg" class="app__screenshot" alt="" />
+					</a>
+					<a href="content/image/ym4gezkegld1f88zv1yf.jpg" class="lightbox">
+						<img src="content/image/ym4gezkegld1f88zv1yf.jpg" class="app__screenshot" alt="" />
+					</a>
+					<a href="content/image/1guchg1f5o1j2hacglba.jpg" class="lightbox">
+						<img src="content/image/1guchg1f5o1j2hacglba.jpg" class="app__screenshot" alt="" />
+					</a>
+					<a href="content/image/o7rinojm7v51173xgq02.jpg" class="lightbox">
+						<img src="content/image/o7rinojm7v51173xgq02.jpg" class="app__screenshot" alt="" />
+					</a>
 				</div>
 			</div>
-		</footer>
+		</section>
 
-		<script type="text/javascript" src="assets/tobi.min.js" /></script>
-		<script>
-			window.onload = function () {
-				var tobi = new Tobi();
-			};
-		</script>
+		<section class="app__fulldescription app__section container">
+			<h2 class="app__section-title" data-i18n="home_description_title">Description</h2>
+			<div class="app__fulldescription-content" data-i18n-html="home_description_html">
+				<p>DriveTest: Master Your Swedish Taxi License &amp; Driving Exams</p>
+				<p>Secure your future on the road. DriveTest is the ultimate study companion for anyone looking to pass their taxi licence in Sweden or upgrade to a professional taxi company licence in Sweden.</p>
+			</div>
+		</section>
 
-  </body>
+		<section class="app__section container" style="background: #5A51FE; padding: 60px 20px; border-radius: 12px; text-align: center; color: white; margin-bottom: 40px;">
+			<h2 style="color: white; font-size: 2em; margin-bottom: 15px;" data-i18n="home_cta_title">Need a Taxi License?</h2>
+			<p style="font-size: 1.1em; margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto;" data-i18n="home_cta_body">Learn everything you need to know about getting your taxi driver's license in Sweden.</p>
+			<a href="taxi-licence-guide.html" style="display: inline-block; background: white; color: #5A51FE; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 1.1em; transition: all 0.3s; box-shadow: 0 8px 24px rgba(32, 43, 54, 0.12);" data-i18n="home_cta_btn">View License Guide →</a>
+		</section>
+	</main>
+
+	<footer class="footer">
+		<div class="container">
+			<div class="footer__container">
+				<p class="footer__love">
+					<span id="footer-year"></span> <span data-i18n="footer_rights">All rights reserved</span>
+				</p>
+				<ul class="footer__links">
+					<li class="footer__link"><a href="taxi-licence-guide.html" data-i18n="footer_guide">License Guide</a></li>
+					<li class="footer__link"><a href="privacy-policy.html" data-i18n="footer_privacy">Privacy</a></li>
+					<li class="footer__link"><a href="delete-account.html" data-i18n="footer_delete">Delete Account</a></li>
+					<li class="footer__link"><a href="https://mohsinsapra.github.io/" target="_blank" data-i18n="footer_github">GitHub</a></li>
+				</ul>
+			</div>
+		</div>
+	</footer>
+
+	<script type="text/javascript" src="assets/tobi.min.js"></script>
+	<script>
+		window.onload = function () {
+			var tobi = new Tobi();
+		};
+	</script>
+	<script src="assets/i18n.js"></script>
+</body>
 </html>
