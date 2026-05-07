@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html dir="auto" lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<!-- Prevent dark mode flash -->
+	<script>try{var t=localStorage.getItem('dt_theme');if(!t)t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-5ZX936XX');</script>
+	<!-- End Google Tag Manager -->
+	<title>Support - Drive Test</title>
+
+	<meta name="description" content="Get help with Drive Test — your Swedish taxi and driving exam preparation app." />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="icon" href="assets/favicon.png" />
+
+	<meta property="og:title" content="Support - Drive Test" />
+	<meta property="og:description" content="Get help with Drive Test — your Swedish taxi and driving exam preparation app." />
+	<meta property="og:image" content="assets/og-image.png" />
+
+	<link rel="stylesheet" href="assets/tobi.css" />
+	<link rel="stylesheet" href="assets/style.css" />
+	<script>window.__pageKey = 'support';</script>
+
+	<style>
+		/* ── Support page specifics ─────────────────────────── */
+		.support-hero {
+			margin-top: 80px;
+			margin-bottom: 56px;
+			text-align: center;
+		}
+		.support-hero__badge {
+			display: inline-block;
+			background: var(--color-highlight-bg);
+			color: var(--color-accent);
+			font-size: 13px;
+			font-weight: 700;
+			letter-spacing: 0.06em;
+			text-transform: uppercase;
+			padding: 6px 16px;
+			border-radius: 20px;
+			margin-bottom: 20px;
+		}
+		.support-hero h1 {
+			font-size: clamp(28px, 5vw, 48px);
+			margin: 0 0 16px;
+			color: var(--color-text);
+		}
+		.support-hero p {
+			font-size: 18px;
+			color: var(--color-text-muted);
+			margin: 0 auto;
+			max-width: 520px;
+			line-height: 1.6;
+		}
+
+		/* ── Topic cards ────────────────────────────────────── */
+		.topics {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			gap: 16px;
+			margin-bottom: 72px;
+		}
+		@media (max-width: 768px) {
+			.topics {
+				grid-template-columns: repeat(2, 1fr);
+				margin-bottom: 48px;
+			}
+		}
+		.topic-card {
+			background: var(--color-bg-alt);
+			border: 1.5px solid var(--color-border);
+			border-radius: 14px;
+			padding: 28px 20px;
+			text-align: center;
+			cursor: pointer;
+			transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+			text-decoration: none;
+		}
+		.topic-card:hover {
+			border-color: var(--color-accent);
+			box-shadow: 0 8px 32px rgba(90, 81, 254, 0.12);
+			transform: translateY(-2px);
+			color: var(--color-text);
+		}
+		.topic-card__icon {
+			font-size: 32px;
+			margin-bottom: 12px;
+			display: block;
+		}
+		.topic-card__title {
+			font-size: 14px;
+			font-weight: 700;
+			color: var(--color-text);
+			margin: 0 0 6px;
+		}
+		.topic-card__desc {
+			font-size: 13px;
+			color: var(--color-text-muted);
+			margin: 0;
+			line-height: 1.5;
+		}
+
+		/* ── Section heading ────────────────────────────────── */
+		.section-heading {
+			font-size: 22px;
+			color: var(--color-text);
+			margin: 0 0 24px;
+			padding-bottom: 12px;
+			border-bottom: 1.5px solid var(--color-border);
+		}
+
+		/* ── FAQ accordion ──────────────────────────────────── */
+		.faq-list {
+			margin-bottom: 72px;
+		}
+		.faq-item {
+			border: 1.5px solid var(--color-border);
+			border-radius: 12px;
+			margin-bottom: 10px;
+			overflow: hidden;
+			transition: border-color 0.2s;
+		}
+		.faq-item.open {
+			border-color: var(--color-accent);
+		}
+		.faq-question {
+			width: 100%;
+			background: none;
+			border: none;
+			padding: 20px 24px;
+			text-align: left;
+			font-size: 16px;
+			font-weight: 600;
+			color: var(--color-text);
+			cursor: pointer;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			gap: 16px;
+			font-family: inherit;
+			transition: color 0.2s;
+		}
+		.faq-question:hover {
+			color: var(--color-accent);
+		}
+		.faq-chevron {
+			flex-shrink: 0;
+			width: 20px;
+			height: 20px;
+			border-radius: 50%;
+			background: var(--color-highlight-bg);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 12px;
+			transition: transform 0.25s ease, background 0.2s;
+			color: var(--color-accent);
+		}
+		.faq-item.open .faq-chevron {
+			transform: rotate(180deg);
+			background: var(--color-accent);
+			color: #fff;
+		}
+		.faq-answer {
+			max-height: 0;
+			overflow: hidden;
+			transition: max-height 0.3s ease, padding 0.3s ease;
+			padding: 0 24px;
+			color: var(--color-text-body);
+			font-size: 15px;
+			line-height: 1.7;
+		}
+		.faq-item.open .faq-answer {
+			max-height: 400px;
+			padding: 0 24px 20px;
+		}
+		.faq-answer a {
+			color: var(--color-accent);
+			text-decoration: underline;
+		}
+
+		/* ── Contact card ───────────────────────────────────── */
+		.contact-card {
+			background: linear-gradient(135deg, #5A51FE 0%, #8751FE 100%);
+			border-radius: 20px;
+			padding: 56px 40px;
+			text-align: center;
+			margin-bottom: 72px;
+			color: white;
+		}
+		@media (max-width: 768px) {
+			.contact-card {
+				padding: 40px 24px;
+				margin-bottom: 48px;
+			}
+		}
+		.contact-card__icon {
+			font-size: 48px;
+			margin-bottom: 20px;
+		}
+		.contact-card h2 {
+			font-size: 28px;
+			color: white;
+			margin: 0 0 12px;
+		}
+		.contact-card p {
+			font-size: 16px;
+			color: rgba(255,255,255,0.82);
+			max-width: 480px;
+			margin: 0 auto 32px;
+			line-height: 1.6;
+		}
+		.contact-card__actions {
+			display: flex;
+			gap: 16px;
+			justify-content: center;
+			flex-wrap: wrap;
+		}
+		.btn-white {
+			display: inline-flex;
+			align-items: center;
+			gap: 8px;
+			background: white;
+			color: #5A51FE;
+			padding: 14px 32px;
+			border-radius: 50px;
+			font-weight: 700;
+			font-size: 15px;
+			text-decoration: none;
+			box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+			transition: box-shadow 0.2s, transform 0.2s;
+		}
+		.btn-white:hover {
+			box-shadow: 0 12px 32px rgba(0,0,0,0.25);
+			transform: translateY(-1px);
+			color: #5A51FE;
+		}
+		.btn-outline-white {
+			display: inline-flex;
+			align-items: center;
+			gap: 8px;
+			background: transparent;
+			color: white;
+			border: 2px solid rgba(255,255,255,0.6);
+			padding: 14px 32px;
+			border-radius: 50px;
+			font-weight: 700;
+			font-size: 15px;
+			text-decoration: none;
+			transition: border-color 0.2s, background 0.2s;
+		}
+		.btn-outline-white:hover {
+			border-color: white;
+			background: rgba(255,255,255,0.1);
+			color: white;
+		}
+
+		/* ── Response time badges ───────────────────────────── */
+		.response-info {
+			display: flex;
+			gap: 12px;
+			justify-content: center;
+			margin-top: 20px;
+			flex-wrap: wrap;
+		}
+		.response-badge {
+			display: inline-flex;
+			align-items: center;
+			gap: 6px;
+			background: rgba(255,255,255,0.15);
+			border-radius: 20px;
+			padding: 6px 14px;
+			font-size: 13px;
+			color: rgba(255,255,255,0.9);
+		}
+
+		/* ── Steps list ─────────────────────────────────────── */
+		.steps {
+			counter-reset: step;
+			padding: 0;
+			list-style: none;
+			margin-bottom: 72px;
+		}
+		.step {
+			display: flex;
+			gap: 20px;
+			align-items: flex-start;
+			margin-bottom: 24px;
+		}
+		.step__number {
+			counter-increment: step;
+			flex-shrink: 0;
+			width: 36px;
+			height: 36px;
+			border-radius: 50%;
+			background: var(--color-accent);
+			color: white;
+			font-weight: 700;
+			font-size: 14px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		.step__number::before {
+			content: counter(step);
+		}
+		.step__body h3 {
+			margin: 0 0 4px;
+			font-size: 16px;
+			color: var(--color-text);
+		}
+		.step__body p {
+			margin: 0;
+			color: var(--color-text-muted);
+			font-size: 14px;
+			line-height: 1.6;
+		}
+
+		@media (max-width: 768px) {
+			.support-hero {
+				margin-top: 56px;
+				text-align: left;
+			}
+			.support-hero p {
+				text-align: left;
+			}
+		}
+	</style>
+</head>
+<body>
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5ZX936XX"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+
+	<div class="topbar">
+		<button type="button" id="lang-toggle" class="topbar__btn">SV</button>
+		<button type="button" id="theme-toggle" class="topbar__btn topbar__theme" aria-label="Toggle dark mode"><span class="theme-icon">🌙</span></button>
+	</div>
+
+	<main>
+		<!-- Hero -->
+		<div class="support-hero container">
+			<span class="support-hero__badge" data-i18n="support_badge">Help Center</span>
+			<h1 data-i18n="support_hero_title">How can we help you?</h1>
+			<p data-i18n="support_hero_subtitle">Find answers to common questions or get in touch with our support team.</p>
+		</div>
+
+		<!-- Topic cards -->
+		<div class="container">
+			<div class="topics">
+				<a class="topic-card" href="#faq-account">
+					<span class="topic-card__icon">👤</span>
+					<p class="topic-card__title" data-i18n="support_topic_account_title">Account &amp; Login</p>
+					<p class="topic-card__desc" data-i18n="support_topic_account_desc">Sign-in, password, profile settings</p>
+				</a>
+				<a class="topic-card" href="#faq-billing">
+					<span class="topic-card__icon">💳</span>
+					<p class="topic-card__title" data-i18n="support_topic_billing_title">Billing &amp; Subscription</p>
+					<p class="topic-card__desc" data-i18n="support_topic_billing_desc">Plans, payments, refunds, cancellation</p>
+				</a>
+				<a class="topic-card" href="#faq-content">
+					<span class="topic-card__icon">📚</span>
+					<p class="topic-card__title" data-i18n="support_topic_content_title">Exam Content</p>
+					<p class="topic-card__desc" data-i18n="support_topic_content_desc">Questions, categories, progress</p>
+				</a>
+				<a class="topic-card" href="#faq-technical">
+					<span class="topic-card__icon">🔧</span>
+					<p class="topic-card__title" data-i18n="support_topic_technical_title">Technical Issues</p>
+					<p class="topic-card__desc" data-i18n="support_topic_technical_desc">App crashes, sync, notifications</p>
+				</a>
+			</div>
+		</div>
+
+		<!-- FAQ -->
+		<div class="container">
+			<h2 class="section-heading" data-i18n="support_faq_title">Frequently Asked Questions</h2>
+			<div class="faq-list">
+
+				<!-- Account -->
+				<div class="faq-item" id="faq-account">
+					<button class="faq-question" onclick="toggleFaq(this)">
+						<span data-i18n="support_q1">Can I use my account on multiple devices?</span>
+						<span class="faq-chevron">▾</span>
+					</button>
+					<div class="faq-answer" data-i18n="support_a1">
+						Yes. Sign in with the same Google or Apple account on any device and your progress, subscriptions, and settings will sync automatically.
+					</div>
+				</div>
+
+				<div class="faq-item">
+					<button class="faq-question" onclick="toggleFaq(this)">
+						<span data-i18n="support_q2">I can't log in — what should I do?</span>
+						<span class="faq-chevron">▾</span>
+					</button>
+					<div class="faq-answer" data-i18n-html="support_a2">
+						Make sure you're using the same sign-in method (Google or Apple) you used when you first registered. If the problem persists, try signing out of your Google/Apple account on the device and signing back in, then retry. If you're still stuck, <a href="mailto:support@drivetest.se">email us</a> with your registered email address.
+					</div>
+				</div>
+
+				<div class="faq-item">
+					<button class="faq-question" onclick="toggleFaq(this)">
+						<span data-i18n="support_q3">How do I delete my account and data?</span>
+						<span class="faq-chevron">▾</span>
+					</button>
+					<div class="faq-answer" data-i18n-html="support_a3">
+						You can request full account and data deletion from the app under <strong>Settings → Delete Account</strong>, or visit our <a href="delete-account.html">Delete Account page</a> for step-by-step instructions.
+					</div>
+				</div>
+
+				<!-- Billing -->
+				<div class="faq-item" id="faq-billing">
+					<button class="faq-question" onclick="toggleFaq(this)">
+						<span data-i18n="support_q4">How do I cancel my subscription?</span>
+						<span class="faq-chevron">▾</span>
+					</button>
+					<div class="faq-answer" data-i18n-html="support_q4_a">
+						Subscriptions are managed through the App Store (iOS) or Google Play (Android). On iPhone: go to <strong>Settings → [your name] → Subscriptions</strong>, select Drive Test, and tap <em>Cancel Subscription</em>. On Android: open Google Play → tap your profile → <em>Payments &amp; subscriptions → Subscriptions</em>.
+					</div>
+				</div>
+
+				<div class="faq-item">
+					<button class="faq-question" onclick="toggleFaq(this)">
+						<span data-i18n="support_q5">I was charged but can't access premium content.</span>
+						<span class="faq-chevron">▾</span>
+					</button>
+					<div class="faq-answer" data-i18n-html="support_a5">
+						Go to <strong>Settings → Restore Purchases</strong> inside the app. This re-validates your active subscription with the App Store or Google Play. If the issue continues after restoring, <a href="mailto:support@drivetest.se">contact us</a> and include your order number or a screenshot of your receipt.
+					</div>
+				</div>
+
+				<div class="faq-item">
+					<button class="faq-question" onclick="toggleFaq(this)">
+						<span data-i18n="support_q6">Can I get a refund?</span>
+						<span class="faq-chevron">▾</span>
+					</button>
+					<div class="faq-answer" data-i18n-html="support_a6">
+						Refunds are handled by Apple or Google depending on where you purchased. For App Store purchases, visit <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a>. For Google Play, open the Play Store → order history → tap the order → <em>Request a refund</em>. We're happy to assist if you have trouble.
+					</div>
+				</div>
+
+				<!-- Content -->
+				<div class="faq-item" id="faq-content">
+					<button class="faq-question" onclick="toggleFaq(this)">
+						<span data-i18n="support_q7">I found an incorrect question or answer.</span>
+						<span class="faq-chevron">▾</span>
+					</button>
+					<div class="faq-answer" data-i18n-html="support_a7">
+						We take accuracy seriously. Please email us at <a href="mailto:support@drivetest.se">support@drivetest.se</a> with the question text and the category you found it in. We review all reports and update content regularly.
+					</div>
+				</div>
+
+				<div class="faq-item">
+					<button class="faq-question" onclick="toggleFaq(this)">
+						<span data-i18n="support_q8">My progress was reset — can I recover it?</span>
+						<span class="faq-chevron">▾</span>
+					</button>
+					<div class="faq-answer" data-i18n="support_a8">
+						Progress is tied to your account and syncs to our servers when you're online. If you recently reinstalled the app, open it and sign in again — your progress should restore automatically within a few seconds. If data is still missing, contact us with your account email and the approximate date of the reset.
+					</div>
+				</div>
+
+				<!-- Technical -->
+				<div class="faq-item" id="faq-technical">
+					<button class="faq-question" onclick="toggleFaq(this)">
+						<span data-i18n="support_q9">The app crashes or won't open.</span>
+						<span class="faq-chevron">▾</span>
+					</button>
+					<div class="faq-answer" data-i18n-html="support_a9">
+						Try these steps in order: (1) Force-close the app and reopen it. (2) Restart your device. (3) Make sure you're running the latest version of Drive Test from the App Store or Google Play. (4) If none of those work, reinstall the app — your data is saved to your account and will be restored on sign-in. Still stuck? <a href="mailto:support@drivetest.se">Let us know</a>.
+					</div>
+				</div>
+
+				<div class="faq-item">
+					<button class="faq-question" onclick="toggleFaq(this)">
+						<span data-i18n="support_q10">I'm not receiving notifications.</span>
+						<span class="faq-chevron">▾</span>
+					</button>
+					<div class="faq-answer" data-i18n-html="support_a10">
+						Check that notifications are enabled: on iPhone go to <strong>Settings → Drive Test → Notifications</strong> and ensure they're turned on. Inside the app, check <strong>Settings → Notifications</strong> to make sure your study reminders are active. If you've recently reinstalled the app, you may need to grant notification permission again.
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<!-- How to contact -->
+		<div class="container">
+			<h2 class="section-heading" data-i18n="support_contact_title">How to reach us</h2>
+			<ul class="steps">
+				<li class="step">
+					<div class="step__number"></div>
+					<div class="step__body">
+						<h3 data-i18n="support_step1_title">Check the FAQ above</h3>
+						<p data-i18n="support_step1_desc">Most questions are answered there — it's the fastest way to get help.</p>
+					</div>
+				</li>
+				<li class="step">
+					<div class="step__number"></div>
+					<div class="step__body">
+						<h3 data-i18n="support_step2_title">Email us</h3>
+						<p data-i18n-html="support_step2_desc">Send a message to <strong>support@drivetest.se</strong> describing your issue. Include your device model, iOS/Android version, and app version if possible.</p>
+					</div>
+				</li>
+				<li class="step">
+					<div class="step__number"></div>
+					<div class="step__body">
+						<h3 data-i18n="support_step3_title">We'll get back to you</h3>
+						<p data-i18n="support_step3_desc">We respond to all emails within 1–2 business days. Complex issues may take a little longer but we always follow up.</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+
+		<!-- Contact CTA -->
+		<div class="container">
+			<div class="contact-card">
+				<div class="contact-card__icon">✉️</div>
+				<h2 data-i18n="support_cta_title">Still need help?</h2>
+				<p data-i18n="support_cta_desc">Our support team is ready to help you with any question about Drive Test.</p>
+				<div class="contact-card__actions">
+					<a href="mailto:support@drivetest.se" class="btn-white" data-i18n="support_cta_email_btn">
+						✉ Email Support
+					</a>
+					<a href="delete-account.html" class="btn-outline-white" data-i18n="support_cta_delete_btn">
+						Delete Account
+					</a>
+				</div>
+				<div class="response-info">
+					<span class="response-badge" data-i18n="support_badge_reply">⏱ Reply within 1–2 business days</span>
+					<span class="response-badge" data-i18n="support_badge_lang">🌍 English &amp; Swedish</span>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<footer class="footer">
+		<div class="container">
+			<div class="footer__container">
+				<p class="footer__love">
+					<span id="footer-year"></span> <span data-i18n="footer_rights">All rights reserved</span>
+				</p>
+				<ul class="footer__links">
+					<li class="footer__link"><a href="index.html" data-i18n="footer_home">Home</a></li>
+					<li class="footer__link"><a href="taxi-licence-guide.html" data-i18n="footer_guide">License Guide</a></li>
+					<li class="footer__link"><a href="privacy-policy.html" data-i18n="footer_privacy">Privacy</a></li>
+					<li class="footer__link"><a href="delete-account.html" data-i18n="footer_delete">Delete Account</a></li>
+					<li class="footer__link"><a href="support.html" data-i18n="footer_support">Support</a></li>
+				</ul>
+			</div>
+		</div>
+	</footer>
+
+	<script type="text/javascript" src="assets/tobi.min.js"></script>
+	<script>
+		window.onload = function () {
+			var tobi = new Tobi();
+		};
+	</script>
+
+	<script>
+		function toggleFaq(btn) {
+			var item = btn.closest('.faq-item');
+			var isOpen = item.classList.contains('open');
+			document.querySelectorAll('.faq-item.open').forEach(function (el) {
+				el.classList.remove('open');
+			});
+			if (!isOpen) item.classList.add('open');
+		}
+
+		document.querySelectorAll('.topic-card').forEach(function (card) {
+			card.addEventListener('click', function (e) {
+				var href = card.getAttribute('href');
+				if (href && href.startsWith('#')) {
+					e.preventDefault();
+					var target = document.querySelector(href);
+					if (target) {
+						target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+						var q = target.querySelector('.faq-question');
+						if (q) q.click();
+					}
+				}
+			});
+		});
+	</script>
+
+	<script src="assets/i18n.js"></script>
+</body>
+</html>
