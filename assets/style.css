@@ -650,6 +650,121 @@ hr {
   margin-top: 48px;
 }
 
+/* ── Scroll Reveal ─────────────────────────────────────── */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+.scroll-reveal--scale {
+  transform: scale(0.88) translateY(16px);
+}
+.scroll-reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Screenshots stagger */
+.app__screenshots-list .scroll-reveal:nth-child(1) { --reveal-delay: 0ms; }
+.app__screenshots-list .scroll-reveal:nth-child(2) { --reveal-delay: 75ms; }
+.app__screenshots-list .scroll-reveal:nth-child(3) { --reveal-delay: 150ms; }
+.app__screenshots-list .scroll-reveal:nth-child(4) { --reveal-delay: 225ms; }
+.app__screenshots-list .scroll-reveal:nth-child(5) { --reveal-delay: 300ms; }
+
+/* ── Micro Animations ──────────────────────────────────── */
+
+/* Topbar slide-in on load */
+@keyframes dt-topbar-in {
+  from { opacity: 0; transform: translateY(-14px); }
+  to   { opacity: 1; transform: none; }
+}
+.topbar {
+  animation: dt-topbar-in 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
+}
+
+/* Logo float */
+@keyframes dt-float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+.app__logo {
+  animation: dt-float 5s ease-in-out infinite;
+}
+
+/* Store badge hover lift */
+.app__button-play,
+.app__button-ios,
+.app__button-web {
+  transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.app__button-play:hover,
+.app__button-ios:hover,
+.app__button-web:hover {
+  transform: translateY(-4px);
+}
+.app__button-play:active,
+.app__button-ios:active,
+.app__button-web:active {
+  transform: translateY(1px) scale(0.97);
+  transition-duration: 0.08s;
+}
+
+/* Section title accent underline reveal */
+.app__section-title {
+  position: relative;
+  display: inline-block;
+}
+.app__section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: var(--color-accent);
+  border-radius: 2px;
+  transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.35s;
+}
+.app__section-title.is-visible::after {
+  width: 2.5em;
+}
+
+/* CTA button pulse ring */
+@keyframes dt-pulse {
+  0%, 100% { box-shadow: 0 8px 24px rgba(32,43,54,0.12), 0 0 0 0 rgba(255,255,255,0.55); }
+  65%       { box-shadow: 0 8px 24px rgba(32,43,54,0.12), 0 0 0 14px rgba(255,255,255,0); }
+}
+.home-cta__btn {
+  animation: dt-pulse 2.8s ease-in-out infinite;
+  transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.22s ease;
+}
+.home-cta__btn:hover {
+  animation: none;
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.2);
+  color: #5A51FE;
+}
+.home-cta__btn:active {
+  transform: translateY(0) scale(0.97);
+  transition-duration: 0.08s;
+}
+
+/* ── Reduced motion ────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .app__logo { animation: none; }
+  .topbar    { animation: none; }
+  .home-cta__btn { animation: none; }
+  .app__section-title::after { transition: none; width: 2.5em; }
+}
+
 /* ── Legacy darkmode classes (kept for compatibility) ──── */
 .darkmode-toggle {
   z-index: 500;

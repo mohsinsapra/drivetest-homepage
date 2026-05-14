@@ -120,10 +120,10 @@
 
 	<main>
 		<header class="app__header container">
-			<div class="app__logo-wrapper">
+			<div class="app__logo-wrapper scroll-reveal scroll-reveal--scale">
 				<img class="app__logo" src="content/image/ci15qd8a7h5gf2zy8upo.jpg" alt="Drive Test">
 			</div>
-			<div class="app__infos">
+			<div class="app__infos scroll-reveal" style="--reveal-delay: 150ms">
 				<h1 class="app__name" data-i18n="home_name">Drive Test</h1>
 				<p class="app__description" data-i18n="home_description">Pass Taxi, Company &amp; Transport Exams</p>
 				<div class="app__buttons app__buttons--desktop">
@@ -140,7 +140,7 @@
 			</div>
 		</header>
 
-		<div class="app__buttons app__buttons--mobile container">
+		<div class="app__buttons app__buttons--mobile container scroll-reveal" style="--reveal-delay: 250ms">
 			<a href="https://play.google.com/store/apps/details?id=com.mohsinsapra.drivetest" class="app__button-play" target="_blank" rel="noopener noreferrer" title="Get on Google Play">
 				<img src="assets/google-play-badge.png" alt="Get on Google Play">
 			</a>
@@ -154,23 +154,23 @@
 
 		<section class="app__screenshots app__section">
 			<div class="container">
-				<h2 class="app__section-title" data-i18n="home_screenshots_title">Screenshots</h2>
+				<h2 class="app__section-title scroll-reveal" data-i18n="home_screenshots_title">Screenshots</h2>
 			</div>
 			<div class="app__screenshots-wrapper container-desktop">
 				<div class="app__screenshots-list">
-					<a href="content/image/6a6me7mkszbvoiqnn1on.jpg" class="lightbox" aria-label="Screenshot 1">
+					<a href="content/image/6a6me7mkszbvoiqnn1on.jpg" class="lightbox scroll-reveal" aria-label="Screenshot 1">
 						<img src="content/image/6a6me7mkszbvoiqnn1on.jpg" class="app__screenshot" alt="App screenshot 1" />
 					</a>
-					<a href="content/image/q6tzx1wdwmk86qex4gdv.jpg" class="lightbox" aria-label="Screenshot 2">
+					<a href="content/image/q6tzx1wdwmk86qex4gdv.jpg" class="lightbox scroll-reveal" aria-label="Screenshot 2">
 						<img src="content/image/q6tzx1wdwmk86qex4gdv.jpg" class="app__screenshot" alt="App screenshot 2" />
 					</a>
-					<a href="content/image/ym4gezkegld1f88zv1yf.jpg" class="lightbox" aria-label="Screenshot 3">
+					<a href="content/image/ym4gezkegld1f88zv1yf.jpg" class="lightbox scroll-reveal" aria-label="Screenshot 3">
 						<img src="content/image/ym4gezkegld1f88zv1yf.jpg" class="app__screenshot" alt="App screenshot 3" />
 					</a>
-					<a href="content/image/1guchg1f5o1j2hacglba.jpg" class="lightbox" aria-label="Screenshot 4">
+					<a href="content/image/1guchg1f5o1j2hacglba.jpg" class="lightbox scroll-reveal" aria-label="Screenshot 4">
 						<img src="content/image/1guchg1f5o1j2hacglba.jpg" class="app__screenshot" alt="App screenshot 4" />
 					</a>
-					<a href="content/image/o7rinojm7v51173xgq02.jpg" class="lightbox" aria-label="Screenshot 5">
+					<a href="content/image/o7rinojm7v51173xgq02.jpg" class="lightbox scroll-reveal" aria-label="Screenshot 5">
 						<img src="content/image/o7rinojm7v51173xgq02.jpg" class="app__screenshot" alt="App screenshot 5" />
 					</a>
 				</div>
@@ -178,13 +178,13 @@
 		</section>
 
 		<section class="app__fulldescription app__section container">
-			<h2 class="app__section-title" data-i18n="home_description_title">Description</h2>
-			<div class="app__fulldescription-content" data-i18n-html="home_description_html">
+			<h2 class="app__section-title scroll-reveal" data-i18n="home_description_title">Description</h2>
+			<div class="app__fulldescription-content scroll-reveal" style="--reveal-delay: 100ms" data-i18n-html="home_description_html">
 				<p>DriveTest: Master Your Swedish Taxi License &amp; Driving Exams</p>
 			</div>
 		</section>
 
-		<section class="app__section container home-cta">
+		<section class="app__section container home-cta scroll-reveal">
 			<h2 data-i18n="home_cta_title">Need a Taxi License?</h2>
 			<p data-i18n="home_cta_body">Learn everything you need to know about getting your taxi driver's license in Sweden.</p>
 			<a href="taxi-licence-guide.html" class="home-cta__btn" data-i18n="home_cta_btn">View License Guide →</a>
@@ -214,5 +214,6 @@
 		};
 	</script>
 	<script src="assets/i18n.js"></script>
+	<script src="assets/animations.js"></script>
 </body>
 </html>
