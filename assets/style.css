@@ -704,7 +704,7 @@ hr {
   50%       { transform: translateY(-10px); }
 }
 .app__logo {
-  animation: dt-float 5s ease-in-out infinite;
+  animation: none;
 }
 
 /* Store badge hover lift */
