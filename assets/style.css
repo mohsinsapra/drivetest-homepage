@@ -319,31 +319,41 @@ html[dir=rtl] .app__logo-wrapper {
   }
 }
 .app__screenshots-list {
-  display: grid;
-  grid-template-columns: 200px 200px 200px 200px 200px 200px;
-  grid-column-gap: 20px;
-  padding: 30px 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 20px;
+  padding: 30px 24px;
 }
 @media (max-width: 768px) {
   .app__screenshots-list {
-    padding: 32px;
-    width: 800px;
+    padding: 24px 32px;
   }
+}
+.app__screenshots-list a {
+  flex: 0 0 auto;
+  width: 200px;
 }
 .app__screenshot {
   width: 100%;
   border-radius: 16px;
   box-shadow: var(--shadow-screenshot);
-  transition: all 0.3s ease-in-out;
-  transform: scale(1);
+  display: block;
   cursor: pointer;
+  will-change: transform;
+  transition: box-shadow 0.25s ease, transform 0.1s ease;
 }
 .app__screenshot:hover {
   box-shadow: var(--shadow-screenshot-hover);
-  transform: scale(1.05);
 }
 .app__screenshots-wrapper {
-  overflow-y: auto;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.app__screenshots-wrapper::-webkit-scrollbar {
+  display: none;
 }
 .app__buttons {
   display: flex;
@@ -668,10 +678,14 @@ hr {
 
 /* Screenshots stagger */
 .app__screenshots-list .scroll-reveal:nth-child(1) { --reveal-delay: 0ms; }
-.app__screenshots-list .scroll-reveal:nth-child(2) { --reveal-delay: 75ms; }
-.app__screenshots-list .scroll-reveal:nth-child(3) { --reveal-delay: 150ms; }
-.app__screenshots-list .scroll-reveal:nth-child(4) { --reveal-delay: 225ms; }
-.app__screenshots-list .scroll-reveal:nth-child(5) { --reveal-delay: 300ms; }
+.app__screenshots-list .scroll-reveal:nth-child(2) { --reveal-delay: 60ms; }
+.app__screenshots-list .scroll-reveal:nth-child(3) { --reveal-delay: 120ms; }
+.app__screenshots-list .scroll-reveal:nth-child(4) { --reveal-delay: 180ms; }
+.app__screenshots-list .scroll-reveal:nth-child(5) { --reveal-delay: 240ms; }
+.app__screenshots-list .scroll-reveal:nth-child(6) { --reveal-delay: 300ms; }
+.app__screenshots-list .scroll-reveal:nth-child(7) { --reveal-delay: 360ms; }
+.app__screenshots-list .scroll-reveal:nth-child(8) { --reveal-delay: 420ms; }
+.app__screenshots-list .scroll-reveal:nth-child(9) { --reveal-delay: 480ms; }
 
 /* ── Micro Animations ──────────────────────────────────── */
 
