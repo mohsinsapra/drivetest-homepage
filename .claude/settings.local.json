@@ -4,7 +4,12 @@
       "Bash(ls:*)",
       "Bash(git mv *)",
       "Bash(python3 -c \"import json; json.load\\(open\\('locales/translations.json'\\)\\); print\\('OK'\\)\")",
-      "Bash(python3 -c \"import json; d=json.load\\(open\\('locales/translations.json'\\)\\); print\\('EN keys:', len\\(d['en']\\)\\); print\\('SV keys:', len\\(d['sv']\\)\\); print\\('EN==SV:', set\\(d['en']\\)==set\\(d['sv']\\)\\)\")"
+      "Bash(python3 -c \"import json; d=json.load\\(open\\('locales/translations.json'\\)\\); print\\('EN keys:', len\\(d['en']\\)\\); print\\('SV keys:', len\\(d['sv']\\)\\); print\\('EN==SV:', set\\(d['en']\\)==set\\(d['sv']\\)\\)\")",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push *)",
+      "Skill(design-html)",
+      "Bash(curl -s \"https://drivetest.se/assets/animations.js\")"
     ]
   }
 }
