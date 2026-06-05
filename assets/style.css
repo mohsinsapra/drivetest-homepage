@@ -779,6 +779,45 @@ hr {
   .app__section-title::after { transition: none; width: 2.5em; }
 }
 
+/* ── Screenshots sticky scaffold ───────────────────────── */
+.screenshots-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ── Screenshots card ──────────────────────────────────── */
+.screenshots-card {
+  background: var(--color-bg-alt);
+  border-radius: 32px;
+  padding: 36px 0 28px;
+  /* no overflow:hidden — let the box-shadow show; wrapper clips the list */
+  box-shadow: 0 2px 48px rgba(90, 81, 254, 0.08), 0 1px 0 var(--color-border);
+}
+@media (max-width: 768px) {
+  .screenshots-card {
+    border-radius: 20px;
+    padding: 24px 0 16px;
+  }
+}
+
+/* ── Description section card ──────────────────────────── */
+.app__fulldescription {
+  background: var(--color-bg-alt);
+  border-radius: 24px;
+  padding: 36px 40px;
+  box-shadow: 0 2px 32px rgba(90, 81, 254, 0.05);
+}
+@media (max-width: 768px) {
+  .app__fulldescription {
+    border-radius: 16px;
+    padding: 24px 20px;
+  }
+}
+
 /* ── Legacy darkmode classes (kept for compatibility) ──── */
 .darkmode-toggle {
   z-index: 500;
