@@ -103,8 +103,12 @@
 	}
 	</script>
 
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
 	<link rel="stylesheet" href="assets/tobi.css" />
-	<link rel="stylesheet" href="assets/style.css" />
+	<link rel="stylesheet" href="assets/home.css" />
 	<script>window.__pageKey = 'home';</script>
 </head>
 <body>
@@ -119,89 +123,265 @@
 	</div>
 
 	<main>
-		<header class="app__header container">
-			<div class="app__logo-wrapper scroll-reveal scroll-reveal--scale">
-				<img class="app__logo" src="content/image/ci15qd8a7h5gf2zy8upo.jpg" alt="Drive Test">
-			</div>
-			<div class="app__infos scroll-reveal" style="--reveal-delay: 150ms">
-				<h1 class="app__name" data-i18n="home_name">Drive Test</h1>
-				<p class="app__description" data-i18n="home_description">Pass Taxi, Company &amp; Transport Exams</p>
-				<div class="app__buttons app__buttons--desktop">
-					<a href="https://play.google.com/store/apps/details?id=com.mohsinsapra.drivetest" class="app__button-play" target="_blank" rel="noopener noreferrer" title="Get on Google Play">
-						<img src="assets/google-play-badge.png" alt="Get on Google Play">
-					</a>
-					<a href="https://apps.apple.com/app/drive-test-pro/id6765940954" class="app__button-ios" target="_blank" rel="noopener noreferrer" title="Download on the App Store">
-						<img src="assets/ios-badge.svg" alt="Download on the App Store">
-					</a>
-					<a href="https://mohsin.se/drivetest/" class="app__button-web" target="_blank" rel="noopener noreferrer" title="Go to website">
-						<img src="assets/pwa-badge.png" alt="Go to website">
-					</a>
+		<!-- ── Hero ──────────────────────────────────────── -->
+		<header class="hero">
+			<canvas id="hero-canvas" aria-hidden="true"></canvas>
+			<div class="hero__horizon" aria-hidden="true"></div>
+			<div class="hero__spot" aria-hidden="true"></div>
+
+			<div class="hero__inner container">
+				<div class="hero__copy">
+					<span class="hero__eyebrow">
+						<img src="content/image/ci15qd8a7h5gf2zy8upo.jpg" alt="" />
+						<span class="dot" aria-hidden="true"></span>
+						<span data-i18n="home_hero_eyebrow">Sweden's taxi &amp; transport exam prep</span>
+					</span>
+
+					<h1 class="hero__title" aria-label="Drive Test">
+						<span class="h-line" aria-hidden="true"><span class="h-char">D</span><span class="h-char">r</span><span class="h-char">i</span><span class="h-char">v</span><span class="h-char">e</span></span>
+						<span class="h-line h-line--accent" aria-hidden="true"><span class="h-char">T</span><span class="h-char">e</span><span class="h-char">s</span><span class="h-char">t</span></span>
+					</h1>
+
+					<p class="hero__tagline" data-i18n="home_description">Pass Taxi, Company &amp; Transport Exams</p>
+
+					<div class="hero__badges">
+						<a href="https://play.google.com/store/apps/details?id=com.mohsinsapra.drivetest" class="badge" target="_blank" rel="noopener noreferrer" title="Get on Google Play">
+							<img src="assets/google-play-badge-cropped.png" alt="Get on Google Play" />
+						</a>
+						<a href="https://apps.apple.com/app/drive-test-pro/id6765940954" class="badge" target="_blank" rel="noopener noreferrer" title="Download on the App Store">
+							<img src="assets/ios-badge.svg" alt="Download on the App Store" />
+						</a>
+						<a href="https://mohsin.se/drivetest/" class="badge" target="_blank" rel="noopener noreferrer" title="Go to website">
+							<img src="assets/pwa-badge.png" alt="Go to website" />
+						</a>
+					</div>
+
+					<div class="hero__stats">
+						<div class="stat">
+							<span class="stat__num" data-count="1000"><span class="num">1000</span><span class="plus">+</span></span>
+							<span class="stat__label" data-i18n="home_stat_questions_label">Official-style questions</span>
+						</div>
+						<div class="stat">
+							<span class="stat__num" data-count="3"><span class="num">3</span></span>
+							<span class="stat__label" data-i18n="home_stat_modes_label">Study modes</span>
+						</div>
+						<div class="stat">
+							<span class="stat__num" data-count="3"><span class="num">3</span></span>
+							<span class="stat__label" data-i18n="home_stat_platforms_label">Platforms</span>
+						</div>
+					</div>
 				</div>
+
+				<div class="hero__visual">
+					<div class="phone">
+						<span class="phone__glow" aria-hidden="true"></span>
+						<span class="phone__screen"><img src="content/image/screenshot_1.png" alt="Drive Test app — practice test screen" /></span>
+						<button type="button" class="phone__hit" id="phone-demo-open" aria-haspopup="dialog">
+							<span class="phone__try">
+								<span class="play-ico" aria-hidden="true"><svg viewBox="0 0 10 10"><path d="M1 0l8 5-8 5z"/></svg></span>
+								<span data-i18n="home_phone_try">Try it live</span>
+							</span>
+						</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="hero__scroll" aria-hidden="true">
+				<span data-i18n="home_hero_hint">Scroll</span>
+				<svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
 			</div>
 		</header>
 
-		<div class="app__buttons app__buttons--mobile container scroll-reveal" style="--reveal-delay: 250ms">
-			<a href="https://play.google.com/store/apps/details?id=com.mohsinsapra.drivetest" class="app__button-play" target="_blank" rel="noopener noreferrer" title="Get on Google Play">
-				<img src="assets/google-play-badge.png" alt="Get on Google Play">
-			</a>
-			<a href="https://apps.apple.com/app/drive-test-pro/id6765940954" class="app__button-ios" target="_blank" rel="noopener noreferrer" title="Download on the App Store">
-				<img src="assets/ios-badge.svg" alt="Download on the App Store">
-			</a>
-			<a href="https://mohsin.se/drivetest/" class="app__button-web" target="_blank" rel="noopener noreferrer" title="Go to website">
-				<img src="assets/pwa-badge.png" alt="Go to website">
-			</a>
+		<!-- ── Marquee ───────────────────────────────────── -->
+		<div class="marquee" aria-hidden="true">
+			<div class="marquee__track">
+				<div class="marquee__group">
+					<span>Taxiförarlegitimation</span><span class="star">✦</span>
+					<span>AI Tutor</span><span class="star">✦</span>
+					<span>Yrkeskunnande</span><span class="star">✦</span>
+					<span>B-körkort</span><span class="star">✦</span>
+					<span>Map Reading</span><span class="star">✦</span>
+					<span>Traffic &amp; Safety</span><span class="star">✦</span>
+					<span>Professional Knowledge</span><span class="star">✦</span>
+				</div>
+				<div class="marquee__group">
+					<span>Taxiförarlegitimation</span><span class="star">✦</span>
+					<span>AI Tutor</span><span class="star">✦</span>
+					<span>Yrkeskunnande</span><span class="star">✦</span>
+					<span>B-körkort</span><span class="star">✦</span>
+					<span>Map Reading</span><span class="star">✦</span>
+					<span>Traffic &amp; Safety</span><span class="star">✦</span>
+					<span>Professional Knowledge</span><span class="star">✦</span>
+				</div>
+			</div>
 		</div>
 
-		<section class="app__screenshots app__section">
-			<div class="screenshots-card">
+		<!-- ── Screenshots ───────────────────────────────── -->
+		<section class="app__screenshots section">
 			<div class="container">
-				<h2 class="app__section-title scroll-reveal" data-i18n="home_screenshots_title">Screenshots</h2>
+				<div class="section__head">
+					<span class="section__kicker" data-i18n="home_screenshots_title">Screenshots</span>
+					<h2 class="section__title" data-i18n="home_screens_sub">A look inside the app</h2>
+				</div>
 			</div>
-			<div class="app__screenshots-wrapper container-desktop">
-				<div class="app__screenshots-list">
-					<a href="content/image/screenshot_1.png" class="lightbox scroll-reveal" aria-label="Screenshot 1">
-						<img src="content/image/screenshot_1.png" class="app__screenshot" alt="App screenshot 1" />
+			<div class="screenshots-card">
+				<div class="app__screenshots-wrapper">
+					<div class="app__screenshots-list">
+						<a href="content/image/screenshot_1.png" class="lightbox" aria-label="Screenshot 1">
+							<img src="content/image/screenshot_1.png" class="app__screenshot" alt="App screenshot 1" />
+						</a>
+						<a href="content/image/screenshot_2.png" class="lightbox" aria-label="Screenshot 2">
+							<img src="content/image/screenshot_2.png" class="app__screenshot" alt="App screenshot 2" loading="lazy" />
+						</a>
+						<a href="content/image/screenshot_3.png" class="lightbox" aria-label="Screenshot 3">
+							<img src="content/image/screenshot_3.png" class="app__screenshot" alt="App screenshot 3" loading="lazy" />
+						</a>
+						<a href="content/image/screenshot_4.png" class="lightbox" aria-label="Screenshot 4">
+							<img src="content/image/screenshot_4.png" class="app__screenshot" alt="App screenshot 4" loading="lazy" />
+						</a>
+						<a href="content/image/screenshot_5.png" class="lightbox" aria-label="Screenshot 5">
+							<img src="content/image/screenshot_5.png" class="app__screenshot" alt="App screenshot 5" loading="lazy" />
+						</a>
+						<a href="content/image/screenshot_6.png" class="lightbox" aria-label="Screenshot 6">
+							<img src="content/image/screenshot_6.png" class="app__screenshot" alt="App screenshot 6" loading="lazy" />
+						</a>
+						<a href="content/image/screenshot_7.png" class="lightbox" aria-label="Screenshot 7">
+							<img src="content/image/screenshot_7.png" class="app__screenshot" alt="App screenshot 7" loading="lazy" />
+						</a>
+						<a href="content/image/screenshot_8.png" class="lightbox" aria-label="Screenshot 8">
+							<img src="content/image/screenshot_8.png" class="app__screenshot" alt="App screenshot 8" loading="lazy" />
+						</a>
+						<a href="content/image/screenshot_9.png" class="lightbox" aria-label="Screenshot 9">
+							<img src="content/image/screenshot_9.png" class="app__screenshot" alt="App screenshot 9" loading="lazy" />
+						</a>
+					</div>
+				</div>
+				<div class="carousel-progress" aria-hidden="true"><span></span></div>
+			</div>
+		</section>
+
+		<!-- ── Features ──────────────────────────────────── -->
+		<section class="features section container">
+			<div class="section__head">
+				<span class="section__kicker" data-i18n="home_features_kicker">Features</span>
+				<h2 class="section__title" data-i18n="home_features_title">Built to get you passed</h2>
+				<p class="section__sub" data-i18n="home_features_sub">Everything you need to walk into the exam room confident.</p>
+			</div>
+			<div class="features__grid">
+				<div class="feature-card feature-card--wide">
+					<span class="feature-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9L12 3z"/><path d="M19 15l.9 2.1L22 18l-2.1.9L19 21l-.9-2.1L16 18l2.1-.9L19 15z"/></svg></span>
+					<div>
+						<h3><span data-i18n="home_feature_ai_title">Your Personal AI Tutor</span> <span class="ai-chip">AI</span></h3>
+						<p data-i18n="home_feature_ai_desc">Stuck on a question? Your built-in AI tutor steps in with clear, personal explanations until it clicks.</p>
+					</div>
+				</div>
+				<div class="feature-card">
+					<span class="feature-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 10h8M8 14h5"/></svg></span>
+					<h3 data-i18n="home_feature1_title">Versatile Test Modes</h3>
+					<p data-i18n="home_feature1_desc">Practice, Custom and Review modes to suit your daily study goals.</p>
+				</div>
+				<div class="feature-card">
+					<span class="feature-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 100 18 9 9 0 000-18z"/><path d="M3 12h18M12 3c2.5 2.6 3.9 5.7 3.9 9S14.5 18.4 12 21c-2.5-2.6-3.9-5.7-3.9-9S9.5 5.6 12 3z"/></svg></span>
+					<h3 data-i18n="home_feature2_title">Multi-Language &amp; Text-to-Speech</h3>
+					<p data-i18n="home_feature2_desc">Don't let language barriers stop you — full text-to-speech support helps comprehension.</p>
+				</div>
+				<div class="feature-card">
+					<span class="feature-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 00-4 10.5c.6.6 1 1.5 1 2.5h6c0-1 .4-1.9 1-2.5A6 6 0 0012 3z"/></svg></span>
+					<h3 data-i18n="home_feature3_title">Deep Dive Explanations</h3>
+					<p data-i18n="home_feature3_desc">We don't just give you the answer — we explain why it's correct.</p>
+				</div>
+				<div class="feature-card">
+					<span class="feature-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12a1 1 0 011 1v17l-7-4-7 4V4a1 1 0 011-1z"/></svg></span>
+					<h3 data-i18n="home_feature4_title">Smart Bookmarking</h3>
+					<p data-i18n="home_feature4_desc">Instantly save and revisit difficult questions to turn weaknesses into strengths.</p>
+				</div>
+				<div class="feature-card">
+					<span class="feature-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M21 20H3"/></svg></span>
+					<h3 data-i18n="home_feature5_title">Performance Analytics</h3>
+					<p data-i18n="home_feature5_desc">Visual charts and graphs break down your readiness in real-time.</p>
+				</div>
+				<div class="feature-card">
+					<span class="feature-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg></span>
+					<h3 data-i18n="home_feature6_title">Exam-Ready Content</h3>
+					<p data-i18n="home_feature6_desc">Specialized prep for Taxiförarlegitimation and Yrkeskunnande.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- ── Full description ──────────────────────────── -->
+		<section class="app__fulldescription section container">
+			<div class="section__head">
+				<span class="section__kicker" data-i18n="home_description_title">Description</span>
+				<h2 class="section__title" data-i18n="home_desc_heading">Everything about Drive Test</h2>
+			</div>
+			<div class="desc-card">
+				<div class="desc-body" data-i18n-html="home_description_html">
+					<p>DriveTest: Master Your Swedish Taxi License &amp; Driving Exams</p>
+				</div>
+				<button type="button" class="desc-toggle" aria-expanded="false">
+					<span class="more" data-i18n="home_desc_more">Read full description</span>
+					<span class="less" data-i18n="home_desc_less">Show less</span>
+				</button>
+			</div>
+		</section>
+
+		<!-- ── License guide CTA ─────────────────────────── -->
+		<section class="section container">
+			<div class="home-cta">
+				<div class="home-cta__glow" aria-hidden="true"></div>
+				<div class="home-cta__sign" aria-hidden="true">
+					<svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 12l10 10 10-10L12 2z"/><path d="M9.5 14v-2.2a1.8 1.8 0 011.8-1.8h3.2m0 0l-2.2-2.2M14.5 10l-2.2 2.2"/></svg>
+				</div>
+				<div class="home-cta__content">
+					<span class="home-cta__kicker" data-i18n="home_cta_kicker">License Guide</span>
+					<h2 data-i18n="home_cta_title">Need a Taxi License?</h2>
+					<p data-i18n="home_cta_body">Learn everything you need to know about getting your taxi driver's license in Sweden.</p>
+					<div class="home-cta__facts">
+						<span class="home-cta__fact" data-i18n="home_cta_chip1">≈ 2 months process</span>
+						<span class="home-cta__fact" data-i18n="home_cta_chip2">4 exams to pass</span>
+						<span class="home-cta__fact" data-i18n="home_cta_chip3">Total cost 4 425 kr</span>
+					</div>
+					<a href="taxi-licence-guide.html" class="home-cta__btn" data-i18n="home_cta_btn">View License Guide →</a>
+				</div>
+			</div>
+		</section>
+
+		<!-- ── Download ──────────────────────────────────── -->
+		<section class="download">
+			<div class="download__inner container">
+				<img class="download__icon" src="content/image/ci15qd8a7h5gf2zy8upo.jpg" alt="Drive Test app icon" />
+				<h2 data-i18n="home_download_title">Your licence starts here</h2>
+				<p data-i18n="home_download_sub">Download Drive Test free on Android, iOS or use it right in your browser.</p>
+				<div class="store-buttons">
+					<a href="https://play.google.com/store/apps/details?id=com.mohsinsapra.drivetest" class="store-btn" target="_blank" rel="noopener noreferrer" title="Get on Google Play">
+						<span class="store-btn__icon">
+							<svg viewBox="0 0 512 512" aria-hidden="true"><path fill="#00c3ff" d="M47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0z"/><path fill="#00e96e" d="M104.6 13l220.7 221.3 60.1-60.1L104.6 13z"/><path fill="#ffd60a" d="M472.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8z"/><path fill="#ff3a44" d="M104.6 499l280.8-161.2-60.1-60.1L104.6 499z"/></svg>
+						</span>
+						<span class="store-btn__text">
+							<small data-i18n="home_store_play_top">Get it on</small>
+							<strong>Google Play</strong>
+						</span>
 					</a>
-					<a href="content/image/screenshot_2.png" class="lightbox scroll-reveal" aria-label="Screenshot 2">
-						<img src="content/image/screenshot_2.png" class="app__screenshot" alt="App screenshot 2" />
+					<a href="https://apps.apple.com/app/drive-test-pro/id6765940954" class="store-btn" target="_blank" rel="noopener noreferrer" title="Download on the App Store">
+						<span class="store-btn__icon store-btn__icon--apple">
+							<svg viewBox="0 0 384 512" aria-hidden="true"><path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+						</span>
+						<span class="store-btn__text">
+							<small data-i18n="home_store_ios_top">Download on the</small>
+							<strong>App Store</strong>
+						</span>
 					</a>
-					<a href="content/image/screenshot_3.png" class="lightbox scroll-reveal" aria-label="Screenshot 3">
-						<img src="content/image/screenshot_3.png" class="app__screenshot" alt="App screenshot 3" />
-					</a>
-					<a href="content/image/screenshot_4.png" class="lightbox scroll-reveal" aria-label="Screenshot 4">
-						<img src="content/image/screenshot_4.png" class="app__screenshot" alt="App screenshot 4" />
-					</a>
-					<a href="content/image/screenshot_5.png" class="lightbox scroll-reveal" aria-label="Screenshot 5">
-						<img src="content/image/screenshot_5.png" class="app__screenshot" alt="App screenshot 5" />
-					</a>
-					<a href="content/image/screenshot_6.png" class="lightbox scroll-reveal" aria-label="Screenshot 6">
-						<img src="content/image/screenshot_6.png" class="app__screenshot" alt="App screenshot 6" />
-					</a>
-					<a href="content/image/screenshot_7.png" class="lightbox scroll-reveal" aria-label="Screenshot 7">
-						<img src="content/image/screenshot_7.png" class="app__screenshot" alt="App screenshot 7" />
-					</a>
-					<a href="content/image/screenshot_8.png" class="lightbox scroll-reveal" aria-label="Screenshot 8">
-						<img src="content/image/screenshot_8.png" class="app__screenshot" alt="App screenshot 8" />
-					</a>
-					<a href="content/image/screenshot_9.png" class="lightbox scroll-reveal" aria-label="Screenshot 9">
-						<img src="content/image/screenshot_9.png" class="app__screenshot" alt="App screenshot 9" />
+					<a href="https://mohsin.se/drivetest/" class="store-btn" target="_blank" rel="noopener noreferrer" title="Go to website">
+						<span class="store-btn__icon store-btn__icon--web">
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.9 5.7 3.9 9s-1.4 6.4-3.9 9c-2.5-2.6-3.9-5.7-3.9-9S9.5 5.6 12 3z"/></svg>
+						</span>
+						<span class="store-btn__text">
+							<small data-i18n="home_store_web_top">Launch as</small>
+							<strong data-i18n="home_store_web_name">Web App</strong>
+						</span>
 					</a>
 				</div>
 			</div>
-		</div><!-- /.screenshots-card -->
-		</section>
-
-		<section class="app__fulldescription app__section container">
-			<h2 class="app__section-title scroll-reveal" data-i18n="home_description_title">Description</h2>
-			<div class="app__fulldescription-content scroll-reveal" style="--reveal-delay: 100ms" data-i18n-html="home_description_html">
-				<p>DriveTest: Master Your Swedish Taxi License &amp; Driving Exams</p>
-			</div>
-		</section>
-
-		<section class="app__section container home-cta scroll-reveal">
-			<h2 data-i18n="home_cta_title">Need a Taxi License?</h2>
-			<p data-i18n="home_cta_body">Learn everything you need to know about getting your taxi driver's license in Sweden.</p>
-			<a href="taxi-licence-guide.html" class="home-cta__btn" data-i18n="home_cta_btn">View License Guide →</a>
 		</section>
 	</main>
 
@@ -213,6 +393,7 @@
 				</p>
 				<ul class="footer__links">
 					<li class="footer__link"><a href="taxi-licence-guide.html" data-i18n="footer_guide">License Guide</a></li>
+					<li class="footer__link"><a href="support.html" data-i18n="footer_support">Support</a></li>
 					<li class="footer__link"><a href="privacy-policy.html" data-i18n="footer_privacy">Privacy</a></li>
 					<li class="footer__link"><a href="delete-account.html" data-i18n="footer_delete">Delete Account</a></li>
 					<li class="footer__link"><a href="https://mohsinsapra.github.io/" target="_blank" rel="noopener noreferrer" data-i18n="footer_github">GitHub</a></li>
@@ -221,6 +402,36 @@
 		</div>
 	</footer>
 
+	<!-- ── Floating download dock ────────────────────────── -->
+	<div class="dock" id="download-dock">
+		<span class="dock__label" data-i18n="home_dock_label">Get the app</span>
+		<a href="https://play.google.com/store/apps/details?id=com.mohsinsapra.drivetest" class="store-btn store-btn--mini" target="_blank" rel="noopener noreferrer" title="Get on Google Play">
+			<span class="store-btn__icon">
+				<svg viewBox="0 0 512 512" aria-hidden="true"><path fill="#00c3ff" d="M47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0z"/><path fill="#00e96e" d="M104.6 13l220.7 221.3 60.1-60.1L104.6 13z"/><path fill="#ffd60a" d="M472.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8z"/><path fill="#ff3a44" d="M104.6 499l280.8-161.2-60.1-60.1L104.6 499z"/></svg>
+			</span>
+			<span class="store-btn__text"><strong>Google Play</strong></span>
+		</a>
+		<a href="https://apps.apple.com/app/drive-test-pro/id6765940954" class="store-btn store-btn--mini" target="_blank" rel="noopener noreferrer" title="Download on the App Store">
+			<span class="store-btn__icon store-btn__icon--apple">
+				<svg viewBox="0 0 384 512" aria-hidden="true"><path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+			</span>
+			<span class="store-btn__text"><strong>App Store</strong></span>
+		</a>
+	</div>
+
+	<!-- ── Live app modal (PWA inside a phone mockup) ────── -->
+	<div class="app-modal" id="app-modal" role="dialog" aria-modal="true" aria-label="Drive Test live app" aria-hidden="true">
+		<button type="button" class="app-modal__close" id="app-modal-close">
+			<svg viewBox="0 0 24 24" fill="none" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg>
+			<span data-i18n="home_modal_close">Close</span>
+		</button>
+		<div class="app-modal__phone">
+			<div class="app-modal__screen">
+				<iframe data-src="https://app.drivetest.se/" title="Drive Test app" allow="autoplay; fullscreen" loading="lazy"></iframe>
+			</div>
+		</div>
+	</div>
+
 	<script type="text/javascript" src="assets/tobi.min.js"></script>
 	<script>
 		window.onload = function () {
@@ -228,49 +439,9 @@
 		};
 	</script>
 	<script src="assets/i18n.js"></script>
-	<script src="assets/animations.js"></script>
-	<script>
-		(function () {
-			var MAX_TILT = 14;
-			var SCALE = 1.07;
-
-			function applyTilt(card) {
-				card.addEventListener('mousemove', function (e) {
-					var rect = card.getBoundingClientRect();
-					var x = e.clientX - rect.left;
-					var y = e.clientY - rect.top;
-					var cx = rect.width / 2;
-					var cy = rect.height / 2;
-					var rotateY = ((x - cx) / cx) * MAX_TILT;
-					var rotateX = -((y - cy) / cy) * MAX_TILT;
-					var img = card.querySelector('.app__screenshot');
-					if (img) {
-						img.style.transform = 'perspective(600px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) scale(' + SCALE + ')';
-						img.style.transition = 'transform 0.08s ease, box-shadow 0.25s ease';
-					}
-				});
-				card.addEventListener('mouseleave', function () {
-					var img = card.querySelector('.app__screenshot');
-					if (img) {
-						img.style.transform = 'perspective(600px) rotateX(0deg) rotateY(0deg) scale(1)';
-						img.style.transition = 'transform 0.4s ease, box-shadow 0.25s ease';
-					}
-				});
-			}
-
-			function initTilt() {
-				document.querySelectorAll('.app__screenshots-list a').forEach(applyTilt);
-			}
-
-			if (document.readyState === 'loading') {
-				document.addEventListener('DOMContentLoaded', initTilt);
-			} else {
-				initTilt();
-			}
-		})();
-	</script>
 	<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" integrity="sha384-g4NTh/Iv5PPU4xPyhEWqPcwtNXOvdaDI8LLnyYfyNZOjKJeYQyjzQ9X5275eBjpt" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" integrity="sha384-Z3REaz79l2IaAZqJsSABtTbhjgOUYyV3p90XNnAPCSHg3EMTz1fouunq9WZRtj3d" crossorigin="anonymous"></script>
-	<script src="assets/gsap-home.js"></script>
+	<script src="assets/home.js"></script>
+	<script type="module" src="assets/three-scene.js"></script>
 </body>
 </html>
