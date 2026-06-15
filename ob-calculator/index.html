@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OB Calculator · Vilotidsrapport</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0e14; --bg2:#0e121b; --card:rgba(255,255,255,.035); --stroke:rgba(255,255,255,.09);
+    --stroke2:rgba(255,255,255,.14); --ink:#eef2f8; --mut:#8a96a8; --mut2:#5f6b7d;
+    --ob1:#5b9dff; --ob1b:#1f3a63; --ob2:#ffb648; --ob2b:#5c3f12; --ok:#3ddc97;
+    --grad:linear-gradient(135deg,#5b9dff,#9d7bff 55%,#ff8fb0);
+    --r:16px; --shadow:0 20px 60px -20px rgba(0,0,0,.7);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:
+      radial-gradient(1100px 600px at 80% -10%,rgba(91,157,255,.14),transparent 60%),
+      radial-gradient(900px 500px at 0% 0%,rgba(255,143,176,.10),transparent 55%),
+      var(--bg);
+    color:var(--ink);font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased;letter-spacing:.1px}
+  .wrap{max-width:920px;margin:0 auto;padding:40px 18px 120px}
+  .mono{font-family:'JetBrains Mono',ui-monospace,monospace;font-variant-numeric:tabular-nums}
+
+  /* header */
+  header{display:flex;align-items:center;gap:14px;margin-bottom:8px;animation:fadeUp .6s both}
+  .logo{width:44px;height:44px;border-radius:13px;background:var(--grad);display:grid;place-items:center;
+    box-shadow:0 8px 26px -6px rgba(91,157,255,.55);font-size:22px}
+  h1{font-size:23px;font-weight:800;margin:0;letter-spacing:-.3px}
+  .tag{color:var(--mut);font-size:14px;margin:2px 0 26px;animation:fadeUp .6s .05s both}
+
+  /* cards */
+  .card{background:var(--card);border:1px solid var(--stroke);border-radius:var(--r);padding:20px;
+    margin-bottom:18px;backdrop-filter:blur(14px);box-shadow:var(--shadow);animation:fadeUp .6s both}
+  .card:nth-of-type(1){animation-delay:.08s}.card:nth-of-type(2){animation-delay:.14s}
+  .step{display:flex;align-items:center;gap:10px;margin-bottom:14px;font-weight:600;font-size:13px;color:var(--mut);
+    text-transform:uppercase;letter-spacing:1.4px}
+  .num{width:24px;height:24px;border-radius:8px;background:rgba(91,157,255,.16);color:var(--ob1);
+    display:grid;place-items:center;font-size:12px;font-weight:700}
+
+  label{display:block;font-size:12.5px;color:var(--mut);margin:0 0 6px;font-weight:500}
+  .field{position:relative}
+  input,select,textarea{width:100%;font:inherit;color:var(--ink);background:rgba(0,0,0,.28);
+    border:1px solid var(--stroke);border-radius:11px;padding:11px 13px;transition:.22s;outline:none}
+  input:focus,select:focus,textarea:focus{border-color:var(--ob1);box-shadow:0 0 0 3px rgba(91,157,255,.16)}
+  select{appearance:none;cursor:pointer}
+  textarea{min-height:170px;font-family:'JetBrains Mono',monospace;font-size:12.5px;line-height:1.6;white-space:pre;resize:vertical}
+  .row{display:flex;gap:14px;flex-wrap:wrap}.row>*{flex:1;min-width:170px}
+
+  button{font:inherit;font-weight:600;border:0;border-radius:11px;padding:12px 20px;cursor:pointer;
+    color:#fff;background:var(--grad);background-size:160% 160%;transition:.25s;position:relative;overflow:hidden}
+  button:hover{transform:translateY(-1px);box-shadow:0 12px 30px -10px rgba(91,157,255,.6);background-position:100% 0}
+  button:active{transform:translateY(0) scale(.985)}
+  button:disabled{opacity:.45;cursor:default;transform:none;box-shadow:none}
+  button.ghost{background:rgba(255,255,255,.06);border:1px solid var(--stroke)}
+  button.ghost:hover{background:rgba(255,255,255,.1);box-shadow:none}
+  .btnrow{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:16px}
+
+  /* dropzone */
+  .drop{border:1.5px dashed var(--stroke2);border-radius:14px;padding:34px 20px;text-align:center;color:var(--mut);
+    cursor:pointer;transition:.25s;position:relative;overflow:hidden}
+  .drop:hover{border-color:var(--ob1);color:var(--ink);background:rgba(91,157,255,.05)}
+  .drop.over{border-color:var(--ob1);background:rgba(91,157,255,.1);transform:scale(1.01)}
+  .drop .ic{font-size:30px;display:block;margin-bottom:8px;transition:.25s}
+  .drop:hover .ic{transform:translateY(-3px)}
+  .drop img{max-width:100%;max-height:360px;border-radius:11px;box-shadow:var(--shadow);animation:pop .4s both}
+
+  /* spinner */
+  .spin{width:17px;height:17px;border:2.5px solid rgba(255,255,255,.25);border-top-color:#fff;border-radius:50%;
+    display:inline-block;animation:rot .7s linear infinite;vertical-align:-3px}
+  .hint{color:var(--mut);font-size:13px}
+  .err{color:#ff9fb0;font-size:13.5px;white-space:pre-wrap;margin-top:10px}
+  .warn{color:var(--ob2);font-size:13px;margin-top:10px}
+
+  /* results */
+  .obwrap{display:grid;grid-template-columns:1fr;gap:18px}
+  .obcard{border:1px solid var(--stroke);border-radius:var(--r);overflow:hidden;background:rgba(0,0,0,.18);
+    animation:fadeUp .5s both}
+  .obhead{display:flex;align-items:center;justify-content:space-between;padding:15px 18px;
+    border-bottom:1px solid var(--stroke)}
+  .obhead .l{display:flex;align-items:center;gap:11px}
+  .pill{font-size:12px;font-weight:700;padding:4px 11px;border-radius:99px;letter-spacing:.4px}
+  .pill.o1{background:rgba(91,157,255,.16);color:var(--ob1);box-shadow:0 0 0 1px rgba(91,157,255,.25) inset}
+  .pill.o2{background:rgba(255,182,72,.16);color:var(--ob2);box-shadow:0 0 0 1px rgba(255,182,72,.25) inset}
+  .pill.o0{background:rgba(255,255,255,.07);color:var(--mut);box-shadow:0 0 0 1px var(--stroke) inset}
+  .pill.sm{font-size:11px;padding:2px 8px;font-weight:600;margin-right:5px}
+
+  /* editable timeline */
+  .tlcard{border:1px solid var(--stroke);border-radius:var(--r);overflow:hidden;background:rgba(0,0,0,.18);margin-top:18px;animation:fadeUp .5s both}
+  .tlcard .obhead{flex-wrap:wrap;gap:8px}
+  .tlscroll{overflow-x:auto}
+  table.tl{min-width:560px}
+  table.tl input.tin{font-family:'JetBrains Mono',monospace;font-size:12.5px;padding:6px 8px;border-radius:8px;
+    background:rgba(0,0,0,.32);border:1px solid var(--stroke);width:182px}
+  table.tl input.tin:focus{border-color:var(--ob1);box-shadow:0 0 0 3px rgba(91,157,255,.16)}
+  table.tl td{vertical-align:middle}
+  table.tl tr.bad input.tin{border-color:#ff7a90}
+  .xbtn{background:rgba(255,255,255,.05);border:1px solid var(--stroke);color:var(--mut);border-radius:8px;
+    padding:5px 9px;cursor:pointer;transition:.18s;font-size:12px}
+  .xbtn:hover{background:rgba(255,122,144,.16);color:#ff9fb0;border-color:rgba(255,122,144,.4)}
+  .tlfoot{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-top:1px solid var(--stroke);flex-wrap:wrap;gap:10px}
+  .tlfoot .tots span{margin-right:16px;font-size:13.5px;color:var(--mut)}
+  .tlfoot .tots b{color:var(--ink);font-weight:700}
+  .rate{color:var(--mut);font-size:13px}
+  .obamt{font-weight:700;font-size:16px}
+  table{width:100%;border-collapse:collapse;font-size:13.5px}
+  thead th{text-align:left;color:var(--mut2);font-weight:600;font-size:11.5px;letter-spacing:.6px;
+    text-transform:uppercase;padding:10px 18px;background:rgba(255,255,255,.02)}
+  tbody td{padding:9px 18px;border-top:1px solid rgba(255,255,255,.05)}
+  tbody tr{transition:background .15s}
+  tbody tr:hover{background:rgba(255,255,255,.035)}
+  td.t{text-align:right}
+  tr.rowin{animation:rowin .4s both}
+  .bar{height:3px;background:var(--stroke);border-radius:9px;overflow:hidden;margin-top:3px}
+  .bar i{display:block;height:100%;border-radius:9px;width:0;transition:width .9s cubic-bezier(.2,.7,.2,1)}
+  .o1 .bar i{background:var(--ob1)} .o2 .bar i{background:var(--ob2)}
+
+  /* summary */
+  .summary{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:20px}
+  .scard{background:rgba(0,0,0,.22);border:1px solid var(--stroke);border-radius:14px;padding:16px;animation:fadeUp .5s both}
+  .scard .k{color:var(--mut);font-size:12px;font-weight:500;letter-spacing:.3px}
+  .scard .v{font-size:22px;font-weight:800;margin-top:6px}
+  .scard .s{color:var(--mut);font-size:12.5px;margin-top:2px}
+  .scard.total{background:linear-gradient(135deg,rgba(61,220,151,.14),rgba(91,157,255,.1));border-color:rgba(61,220,151,.3)}
+  .scard.total .v{color:var(--ok)}
+  @media(max-width:620px){.summary{grid-template-columns:repeat(2,1fr)}}
+
+  /* anims */
+  @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  @keyframes rowin{from{opacity:0;transform:translateX(-8px)}to{opacity:1;transform:none}}
+  @keyframes pop{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:none}}
+  @keyframes rot{to{transform:rotate(360deg)}}
+  @media(prefers-reduced-motion){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header><div class="logo">🚕</div><div style="flex:1"><h1>OB Calculator</h1></div>
+    <a href="../" style="color:var(--mut);text-decoration:none;font-size:13px;border:1px solid var(--stroke);padding:8px 13px;border-radius:10px;transition:.2s" onmouseover="this.style.color='#eef2f8'" onmouseout="this.style.color='var(--mut)'">← DriveTest</a></header>
+  <p class="tag">Snap a Vilotidsrapport → AI reads it → you verify → OB1 / OB2 priced instantly.</p>
+
+  <!-- 1. connect -->
+  <div class="card">
+    <div class="step"><span class="num">1</span> Connect</div>
+    <div class="row">
+      <div class="field"><label>Groq API key <span class="hint">· stored only in this browser</span></label>
+        <input id="key" type="password" placeholder="gsk_…" autocomplete="off"></div>
+      <div class="field" style="flex:0 0 260px"><label>Model <span id="mstatus" class="hint"></span></label>
+        <select id="model"><option>add key to load models…</option></select></div>
+    </div>
+    <details style="margin-top:12px">
+      <summary class="hint" style="cursor:pointer">Advanced · API base URL (Worker proxy if CORS-blocked)</summary>
+      <input id="base" style="margin-top:8px" value="https://api.groq.com">
+    </details>
+  </div>
+
+  <!-- 2. upload -->
+  <div class="card">
+    <div class="step"><span class="num">2</span> Upload slip</div>
+    <div id="drop" class="drop"><span class="ic">📷</span>Click or drop a Vilotidsrapport photo</div>
+    <input id="file" type="file" accept="image/*" hidden>
+    <div class="btnrow"><button id="parse" disabled>Read photo</button>
+      <button class="ghost" id="manual">✎ Enter JSON manually</button>
+      <span id="status" class="hint"></span></div>
+    <div id="err" class="err"></div>
+  </div>
+
+  <!-- 3. verify -->
+  <div class="card" id="editCard" style="display:none">
+    <div class="step"><span class="num">3</span> Verify &amp; fix</div>
+    <label>Parsed data — correct any misread digit, drop unwanted days, tweak window / holidays</label>
+    <textarea id="cfg" spellcheck="false"></textarea>
+    <div id="notes" class="warn"></div>
+    <div class="btnrow"><button id="calc">Calculate OB</button><button class="ghost" id="copy">Copy JSON</button></div>
+  </div>
+
+  <!-- 4. results -->
+  <div id="out" style="display:none">
+    <div class="step" style="margin:6px 2px 14px"><span class="num">4</span> Result</div>
+    <div class="obwrap" id="obwrap"></div>
+    <div class="summary" id="summary"></div>
+    <div class="tlcard" id="tlcard"></div>
+  </div>
+</div>
+
+<script src="calc.js"></script>
+<script>
+const HOLIDAYS=["2026-01-01","2026-01-06","2026-04-03","2026-04-05","2026-04-06","2026-05-01",
+  "2026-05-14","2026-05-24","2026-06-06","2026-06-20","2026-10-31","2026-12-25","2026-12-26"];
+
+const PROMPT=`You read a Swedish taxi "Vilotidsrapport" (rest-time slip) from a photo and output JSON only.
+Each "Vilotid" block has a Datum (date) and up to two ranges "Från och med klockan – Till och med klockan". These are REST periods.
+Rules:
+- A block with a BLANK Datum continues the date of the block above (a day can have several rest periods).
+- "24:00" = midnight (end of day); keep it as "24:00".
+- A rest may cross midnight (written "23:37 –" on one block, "– 00:30" on the next); combine into one range on the earlier date when clear.
+- Read handwriting carefully; common confusions: 00 vs 02, 1 vs 7, 3 vs 5, 8 vs 6, 9 vs 4.
+Output EXACTLY:
+{ "entries":[ {"date":"YYYY-MM-DD","rests":[["HH:MM","HH:MM"]]} ], "uncertain":["notes on unclear digits"] }
+Two-digit year 26 = 2026. JSON only, no prose.`;
+
+const SEK=new Intl.NumberFormat('sv-SE',{style:'currency',currency:'SEK'});
+const $=s=>document.querySelector(s);
+let dataUrl=null;
+
+$('#key').value=localStorage.getItem('groqKey')||'';
+$('#base').value=localStorage.getItem('groqBase')||$('#base').value;
+$('#key').oninput=e=>{localStorage.setItem('groqKey',e.target.value);debouncedModels()};
+$('#base').oninput=e=>localStorage.setItem('groqBase',e.target.value);
+
+const api=p=>$('#base').value.replace(/\/$/,'')+'/openai/v1'+p;
+let mt; const debouncedModels=()=>{clearTimeout(mt);mt=setTimeout(loadModels,500)};
+if($('#key').value.length>20) loadModels();
+
+const VIS=id=>/(llama-4|maverick|scout|vision|llava|pixtral|qwen.*(vl|vision)|gemma.*vision)/i.test(id);
+async function loadModels(){
+  const key=$('#key').value.trim(); if(key.length<20)return;
+  $('#mstatus').innerHTML='<span class="spin"></span>';
+  try{
+    const r=await fetch(api('/models'),{headers:{Authorization:'Bearer '+key}});
+    if(!r.ok) throw new Error(r.status+' '+(await r.text()).slice(0,120));
+    let ids=(await r.json()).data.map(m=>m.id);
+    ids.sort((a,b)=>(VIS(b)-VIS(a))||a.localeCompare(b));
+    const saved=localStorage.getItem('groqModel');
+    $('#model').innerHTML=ids.map(id=>`<option ${id===saved?'selected':''}>${id}${VIS(id)?' · 👁 vision':''}</option>`).join('');
+    if(!saved){const f=ids.find(VIS)||ids[0]; if(f)$('#model').value=f;}
+    $('#mstatus').textContent=`· ${ids.length} models`;
+  }catch(e){$('#mstatus').textContent='· could not load ('+e.message+')';}
+}
+$('#model').onchange=e=>localStorage.setItem('groqModel',e.target.value.split(' · ')[0]);
+
+// upload
+const drop=$('#drop');
+drop.onclick=()=>$('#file').click();
+drop.ondragover=e=>{e.preventDefault();drop.classList.add('over')};
+drop.ondragleave=()=>drop.classList.remove('over');
+drop.ondrop=e=>{e.preventDefault();drop.classList.remove('over');if(e.dataTransfer.files[0])loadFile(e.dataTransfer.files[0])};
+$('#file').onchange=e=>e.target.files[0]&&loadFile(e.target.files[0]);
+function loadFile(f){const r=new FileReader();r.onload=()=>{dataUrl=r.result;drop.innerHTML=`<img src="${dataUrl}">`;$('#parse').disabled=false};r.readAsDataURL(f)}
+
+function nextDay(s){const d=new Date(s);d.setDate(d.getDate()+1);return d.toISOString().slice(0,10)}
+function holsFor(es){if(!es.length)return[];const d=es.map(e=>e.date).sort();return HOLIDAYS.filter(h=>h>=d[0]&&h<=d[d.length-1])}
+
+$('#parse').onclick=async()=>{
+  $('#err').textContent='';$('#status').innerHTML='<span class="spin"></span> reading…';$('#parse').disabled=true;
+  try{
+    const model=$('#model').value.split(' · ')[0];
+    const body={model,temperature:0,response_format:{type:'json_object'},
+      messages:[{role:'user',content:[{type:'text',text:PROMPT},{type:'image_url',image_url:{url:dataUrl}}]}]};
+    const res=await fetch(api('/chat/completions'),{method:'POST',
+      headers:{'Content-Type':'application/json',Authorization:'Bearer '+$('#key').value},body:JSON.stringify(body)});
+    if(!res.ok)throw new Error('API '+res.status+': '+(await res.text()).slice(0,400));
+    const p=JSON.parse((await res.json()).choices[0].message.content);
+    const es=p.entries||[];
+    const cfg={entries:es,holidays:holsFor(es),
+      window_start:es.length?es[0].date+' 00:00':'',window_end:es.length?nextDay(es[es.length-1].date)+' 00:00':'',
+      rates:{ob1:31.58,ob2:52.79}};
+    $('#cfg').value=JSON.stringify(cfg,null,2);
+    $('#notes').textContent=(p.uncertain&&p.uncertain.length)?'⚠ Double-check: '+p.uncertain.join(' · '):'';
+    $('#editCard').style.display='';$('#status').textContent='✓ read — verify below';
+    $('#editCard').scrollIntoView({behavior:'smooth'});
+  }catch(e){$('#err').textContent=e.message;$('#status').textContent='';}
+  finally{$('#parse').disabled=false;}
+};
+$('#copy').onclick=()=>navigator.clipboard.writeText($('#cfg').value);
+
+// enter JSON without a photo
+const TEMPLATE=JSON.stringify({
+  entries:[{date:"2026-05-01",rests:[["04:15","16:15"]]},
+           {date:"2026-05-02",rests:[["02:40","15:13"],["17:43","19:43"]]}],
+  window_start:"2026-05-01 00:00", window_end:"2026-05-03 00:00",
+  holidays:["2026-05-01"], rates:{ob1:31.58,ob2:52.79}
+},null,2);
+$('#manual').onclick=()=>{
+  if(!$('#cfg').value.trim()) $('#cfg').value=TEMPLATE;
+  $('#editCard').style.display='';
+  $('#cfg').scrollIntoView({behavior:'smooth'});
+  $('#cfg').focus();
+};
+
+let TL={list:[],holidays:new Set(),rates:{ob1:31.58,ob2:52.79}};
+
+$('#calc').onclick=()=>{
+  $('#err').textContent='';
+  try{
+    const cfg=JSON.parse($('#cfg').value);
+    const {intervals,rates,holidays}=compute(cfg);
+    TL.list=intervals.map(([a,b])=>[new Date(a),new Date(b)]);
+    TL.holidays=holidays; TL.rates=rates;
+    $('#out').style.display='';
+    renderAll(true);
+    $('#out').scrollIntoView({behavior:'smooth'});
+  }catch(e){$('#err').textContent='Calc error: '+e.message;}
+};
+
+const dl=d=>d.toLocaleDateString('en-GB',{day:'2-digit',month:'short'})+' '+d.toTimeString().slice(0,5);
+const pad=n=>String(n).padStart(2,'0');
+const toLocal=d=>`${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}T${pad(d.getHours())}:${pad(d.getMinutes())}`;
+const isoLocal=d=>toLocal(d).replace('T',' ');
+const bandCls=b=>b==='OB1'?'o1':b==='OB2'?'o2':'o0';
+
+// write the current timeline back into the JSON box as a lossless work-interval config
+function syncJson(){
+  $('#cfg').value=JSON.stringify({
+    work: TL.list.map(([a,b])=>[isoLocal(a),isoLocal(b)]),
+    holidays:[...TL.holidays], rates:TL.rates
+  },null,2);
+}
+function exportCSV(){
+  const rows=[['From','To','OB1','OB2','Normal','Hours']];
+  TL.list.forEach(([a,b])=>{const t=splitInterval(a,b,TL.holidays);const dur=Math.max(0,Math.round((b-a)/60000));
+    rows.push([isoLocal(a),isoLocal(b),fmt(t.OB1),fmt(t.OB2),fmt(t.NORMAL),fmt(dur)]);});
+  const csv=rows.map(r=>r.join(',')).join('\n');
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'})); a.download='ob-timeline.csv'; a.click();
+}
+
+function obCard(merged,band,rate,grandMax){
+  const rs=merged.filter(r=>r[2]===band);let mins=0;
+  const rows=rs.map(([a,b,_,m],i)=>{mins+=m;return `<tr class="rowin" style="animation-delay:${.03*i}s">
+    <td>${dl(a)} → ${dl(b)}</td><td class="t mono">${fmt(m)}</td></tr>`}).join('');
+  const amt=mins/60*rate, cls=bandCls(band);
+  return {html:`<div class="obcard ${cls}">
+    <div class="obhead"><div class="l"><span class="pill ${cls}">${band}</span><span class="rate">${rate} SEK/h · ${fmt(mins)} h</span></div>
+      <span class="obamt mono">${SEK.format(amt)}</span></div>
+    <table><thead><tr><th>From → To</th><th class="t">Worked</th></tr></thead><tbody>${rows}</tbody></table>
+    <div style="padding:0 18px 16px"><div class="bar"><i data-w="${grandMax?Math.round(mins/grandMax*100):0}"></i></div></div>
+  </div>`, mins, amt};
+}
+function countUp(el,to,fmtFn){const t0=performance.now(),d=650;
+  (function f(t){const k=Math.min(1,(t-t0)/d),e=1-Math.pow(1-k,3);el.textContent=fmtFn(to*e);if(k<1)requestAnimationFrame(f)})(performance.now())}
+
+function renderAll(animate){
+  TL.list.sort((x,y)=>x[0]-y[0]);
+  const rates=TL.rates;
+  const per=TL.list.map(([a,b])=>splitInterval(a,b,TL.holidays));
+  const totals={OB1:0,OB2:0,NORMAL:0};
+  per.forEach(t=>{totals.OB1+=t.OB1;totals.OB2+=t.OB2;totals.NORMAL+=t.NORMAL});
+  const {rows}=classifyIntervals(TL.list,TL.holidays);
+  const merged=mergeSameBand(rows);
+
+  // band cards
+  const gm=Math.max(totals.OB1,totals.OB2,1);
+  const c1=obCard(merged,'OB1',rates.ob1,gm), c2=obCard(merged,'OB2',rates.ob2,gm);
+  const total=c1.amt+c2.amt;
+  $('#obwrap').innerHTML=c1.html+c2.html;
+
+  // summary
+  $('#summary').innerHTML=`
+    <div class="scard"><div class="k">OB1 hours</div><div class="v mono" id="v1">${fmt(totals.OB1)}</div><div class="s">${SEK.format(c1.amt)}</div></div>
+    <div class="scard"><div class="k">OB2 hours</div><div class="v mono" id="v2">${fmt(totals.OB2)}</div><div class="s">${SEK.format(c2.amt)}</div></div>
+    <div class="scard"><div class="k">Normal (no OB)</div><div class="v mono">${fmt(totals.NORMAL)}</div><div class="s">unpaid premium</div></div>
+    <div class="scard total"><div class="k">Total OB pay</div><div class="v mono" id="vt">${SEK.format(total)}</div><div class="s">OB1 + OB2</div></div>`;
+
+  // editable timeline (one row per work period, sorted, mixed bands allowed)
+  const body=TL.list.map(([a,b],i)=>{
+    const t=per[i], dur=Math.round((b-a)/60000), bad=!(dur>0);
+    const badges=['OB2','OB1','NORMAL'].filter(k=>t[k]>0)
+      .map(k=>`<span class="pill sm ${bandCls(k)}">${k==='NORMAL'?'Norm':k} ${fmt(t[k])}</span>`).join('')||'<span class="hint">—</span>';
+    return `<tr class="${bad?'bad':''}">
+      <td><input class="tin" type="datetime-local" step="60" data-i="${i}" data-k="0" value="${toLocal(a)}"></td>
+      <td><input class="tin" type="datetime-local" step="60" data-i="${i}" data-k="1" value="${toLocal(b)}"></td>
+      <td>${badges}</td>
+      <td class="t mono">${bad?'<span style="color:#ff9fb0">0:00</span>':fmt(dur)}</td>
+      <td><button class="xbtn" data-del="${i}">✕</button></td></tr>`;
+  }).join('');
+  $('#tlcard').innerHTML=`
+    <div class="obhead"><div class="l"><b>Work timeline</b> <span class="rate">· editable · ${TL.list.length} periods</span></div>
+      <div style="display:flex;gap:8px">
+        <button class="xbtn" id="csvbtn" style="padding:7px 12px">⤓ CSV</button>
+        <button class="xbtn" id="addrow" style="padding:7px 12px">＋ Add period</button></div></div>
+    <div class="tlscroll"><table class="tl"><thead><tr>
+      <th>From</th><th>To</th><th>Breakdown</th><th class="t">Hours</th><th></th></tr></thead>
+      <tbody>${body}</tbody></table></div>
+    <div class="tlfoot"><div class="tots">
+      <span>OB1 <b class="mono">${fmt(totals.OB1)}</b></span>
+      <span>OB2 <b class="mono">${fmt(totals.OB2)}</b></span>
+      <span>Normal <b class="mono">${fmt(totals.NORMAL)}</b></span></div>
+      <div class="obamt mono">${SEK.format(total)}</div></div>`;
+
+  if(animate){
+    requestAnimationFrame(()=>document.querySelectorAll('.bar i').forEach(b=>b.style.width=b.dataset.w+'%'));
+    countUp($('#v1'),totals.OB1,m=>fmt(Math.round(m)));
+    countUp($('#v2'),totals.OB2,m=>fmt(Math.round(m)));
+    countUp($('#vt'),total,v=>SEK.format(v));
+  }
+}
+
+// edit + add/remove (delegated)
+$('#tlcard').addEventListener('change',e=>{
+  const inp=e.target.closest('.tin'); if(!inp)return;
+  const i=+inp.dataset.i, k=+inp.dataset.k, d=new Date(inp.value);
+  if(isNaN(d)) return;
+  TL.list[i][k]=d; renderAll(false); syncJson();
+});
+$('#tlcard').addEventListener('click',e=>{
+  if(e.target.id==='csvbtn'){ exportCSV(); return; }
+  if(e.target.id==='addrow'){
+    const last=TL.list[TL.list.length-1];
+    const base=last?new Date(last[1]):new Date();
+    TL.list.push([new Date(base),new Date(base.getTime()+3600000)]); renderAll(false); syncJson(); return;
+  }
+  const del=e.target.dataset.del;
+  if(del!==undefined){ TL.list.splice(+del,1); renderAll(false); syncJson(); }
+});
+</script>
+</body>
+</html>

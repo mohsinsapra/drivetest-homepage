@@ -9,7 +9,14 @@
       "Bash(git commit *)",
       "Bash(git push *)",
       "Skill(design-html)",
-      "Bash(curl -s \"https://drivetest.se/assets/animations.js\")"
+      "Bash(curl -s \"https://drivetest.se/assets/animations.js\")",
+      "Bash(python3 *)",
+      "mcp__plugin_playwright_playwright__browser_resize",
+      "Bash(curl -sI https://app.drivetest.se/)",
+      "Bash(curl -sI https://mohsin.se/drivetest/)",
+      "mcp__plugin_playwright_playwright__browser_navigate",
+      "mcp__plugin_playwright_playwright__browser_console_messages",
+      "mcp__plugin_playwright_playwright__browser_take_screenshot"
     ]
   }
 }
