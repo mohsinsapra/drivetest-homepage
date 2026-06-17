@@ -141,12 +141,49 @@
   @keyframes pop{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:none}}
   @keyframes rot{to{transform:rotate(360deg)}}
   @media(prefers-reduced-motion){*{animation:none!important;transition:none!important}}
+  .rules{background:var(--card);border:1px solid var(--stroke);border-radius:var(--r);padding:0 20px;margin-bottom:18px;animation:fadeUp .6s .04s both}
+  .rules>summary{list-style:none;cursor:pointer;padding:16px 0;font-weight:600;font-size:13.5px;display:flex;align-items:center;gap:8px}
+  .rules>summary::-webkit-details-marker{display:none}
+  .rules>summary .chev{margin-left:auto;color:var(--mut);transition:.2s}
+  .rules[open]>summary .chev{transform:rotate(180deg)}
+  .rules .how{color:var(--mut);font-size:13px;line-height:1.55;margin:0 0 14px}
+  .rules table{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:14px}
+  .rules th{text-align:left;color:var(--mut);font-weight:500;font-size:11px;text-transform:uppercase;letter-spacing:.5px;padding:0 10px 8px 0}
+  .rules td{padding:10px 10px 10px 0;border-top:1px solid var(--stroke);vertical-align:top;line-height:1.5}
+  .rules td.r{text-align:right;font-family:'JetBrains Mono',monospace;white-space:nowrap;color:var(--ink)}
 </style>
 </head>
 <body>
 <div class="wrap">
   <header><div class="logo">🚕</div><div><h1>OB Calculator</h1></div></header>
   <p class="tag">Snap a Vilotidsrapport → AI reads it → you verify → OB1 / OB2 priced instantly.</p>
+
+  <!-- 0. how OB is calculated -->
+  <details class="rules" open>
+    <summary>ℹ️ How OB is calculated — rates &amp; rules <span class="chev">▾</span></summary>
+    <p class="how"><b>Work = the gaps between your rest periods</b> on the Vilotidsrapport. Each work slice is split at 06:00 / 19:00 / midnight, then priced by the time of day and the weekday:</p>
+    <table>
+      <thead><tr><th>Band</th><th>When it applies</th><th class="r">Rate</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><span class="pill sm o2">OB2</span></td>
+          <td>Fri 19:00 → Sat 06:00 · Sat 19:00 → Sun 06:00 · Sun 19:00 → Mon 06:00 · public holidays &amp; the day before a public holiday, 19:00 → 06:00</td>
+          <td class="r">52.79 kr/h</td>
+        </tr>
+        <tr>
+          <td><span class="pill sm o1">OB1</span></td>
+          <td>Weekday nights (Mon–Fri) 19:00 → 06:00 · Saturdays &amp; Sundays 06:00 → 19:00 · public holidays 06:00 → 19:00</td>
+          <td class="r">31.58 kr/h</td>
+        </tr>
+        <tr>
+          <td><span class="pill sm o0">Normal</span></td>
+          <td>Mon–Fri daytime 06:00 → 19:00 (not a holiday) — no OB premium</td>
+          <td class="r">—</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="how">A night belongs to its <b>evening date</b>: a 00:00–06:00 slice is owned by the previous evening, so a Friday-night shift stays OB2 even past midnight. You can change the OB1 / OB2 rates in the data box, and override any single period's band in the result table.</p>
+  </details>
 
   <!-- 1. connect -->
   <div class="card">
