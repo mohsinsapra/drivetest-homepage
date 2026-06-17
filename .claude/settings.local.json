@@ -16,7 +16,8 @@
       "Bash(curl -sI https://mohsin.se/drivetest/)",
       "mcp__plugin_playwright_playwright__browser_navigate",
       "mcp__plugin_playwright_playwright__browser_console_messages",
-      "mcp__plugin_playwright_playwright__browser_take_screenshot"
+      "mcp__plugin_playwright_playwright__browser_take_screenshot",
+      "Bash(grep -iE \":root|--|font-family|background|#[0-9a-f]{3,6}\")"
     ]
   }
 }

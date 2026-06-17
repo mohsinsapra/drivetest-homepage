@@ -1,6 +1,14 @@
 // Taxi OB calculator — deterministic. Direct port of calc.py (already tested).
 // Work = gaps between rest periods; slices split at 06:00/19:00/midnight; OB1/OB2/normal.
 const OB_RATES = { ob1: 31.58, ob2: 52.79 };
+// editable boundary times (minutes from midnight): daytime 06:00, evening/OB 19:00.
+// defaults reproduce the original hard-coded behaviour exactly.
+let TIMES = { dayStart: 360, eveStart: 1140 };
+function setTimes(t) {
+  if (!t) return;
+  const n = (v, d) => (typeof v === 'number' && isFinite(v)) ? ((v % 1440) + 1440) % 1440 : d;
+  TIMES = { dayStart: n(t.dayStart, 360), eveStart: n(t.eveStart, 1140) };
+}
 
 function parseDate(s) { const [y, m, d] = s.split('-').map(Number); return new Date(y, m - 1, d); }
 
@@ -36,8 +44,9 @@ function subtract(ws, we, rests) {
 
 function nextBoundary(dt) {
   const cands = [];
-  for (const days of [0, 1]) for (const hh of [0, 6, 19]) {
-    const b = new Date(dt); b.setHours(0, 0, 0, 0); b.setDate(b.getDate() + days); b.setHours(hh);
+  for (const days of [0, 1]) for (const mm of [0, TIMES.dayStart, TIMES.eveStart]) {
+    const b = new Date(dt); b.setHours(0, 0, 0, 0); b.setDate(b.getDate() + days);
+    b.setHours(Math.floor(mm / 60), mm % 60, 0, 0);
     if (b > dt) cands.push(b.getTime());
   }
   return new Date(Math.min(...cands));
@@ -52,12 +61,13 @@ function classify(start, holidays) {
   const dow = start.getDay();
   const mins = start.getHours() * 60 + start.getMinutes();
   const isHol = d => holidays.has(dstr(d));
-  if (mins >= 360 && mins < 1140) {            // 06:00-19:00 daytime
+  const D = TIMES.dayStart, A = TIMES.eveStart;
+  if (mins >= D && mins < A) {                  // daytime (dayStart..eveStart)
     if (isHol(start) || dow === 6 || dow === 0) return 'OB1'; // Sat/Sun/holiday day
     return 'NORMAL';
   }
   let E = new Date(start); E.setHours(0, 0, 0, 0);
-  if (mins < 1140) E.setDate(E.getDate() - 1);  // 00:00-06:00 belongs to previous evening
+  if (mins < D) E.setDate(E.getDate() - 1);     // pre-dawn slice belongs to the previous evening
   const Edow = E.getDay();
   const Enext = new Date(E); Enext.setDate(Enext.getDate() + 1);
   const ob2 = Edow === 5 || Edow === 6 || Edow === 0 || isHol(E) || isHol(Enext); // Fri/Sat/Sun/holiday/holiday-eve
@@ -103,6 +113,7 @@ function classifyIntervals(intervals, holidays) {
 }
 
 function compute(cfg) {
+  setTimes(cfg.times);
   const holidays = new Set(cfg.holidays || []);
   const rates = Object.assign({}, OB_RATES, cfg.rates || {});
   let intervals;
@@ -122,7 +133,7 @@ function compute(cfg) {
     intervals = subtract(ws, we, rests);
   }
   const { rows, totals } = classifyIntervals(intervals, holidays);
-  return { rows, totals, rates, intervals, holidays };
+  return { rows, totals, rates, intervals, holidays, times: TIMES };
 }
 
 // Merge consecutive rows of the same band (rests between are excluded from time).
@@ -139,4 +150,4 @@ function mergeSameBand(rows) {
 const fmt = mins => `${Math.floor(mins / 60)}:${String(mins % 60).padStart(2, '0')}`;
 
 if (typeof module !== 'undefined')
-  module.exports = { compute, classifyIntervals, splitInterval, mergeSameBand, fmt, OB_RATES };
+  module.exports = { compute, classifyIntervals, splitInterval, mergeSameBand, fmt, OB_RATES, setTimes };

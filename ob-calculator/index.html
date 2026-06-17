@@ -164,6 +164,54 @@
     background:rgba(255,255,255,.12);color:#fff;font-size:18px;line-height:1;padding:0;cursor:pointer;display:grid;place-items:center;backdrop-filter:blur(6px);transition:.2s}
   .lb__btn:hover{background:rgba(255,255,255,.22)}
   .lb__hint{position:fixed;bottom:18px;left:0;right:0;text-align:center;color:rgba(255,255,255,.7);font-size:12.5px;pointer-events:none}
+  .lb__nav{position:fixed;top:50%;transform:translateY(-50%);z-index:5;width:46px;height:46px;border-radius:50%;
+    border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.12);color:#fff;font-size:24px;line-height:1;padding:0;
+    cursor:pointer;display:grid;place-items:center;backdrop-filter:blur(6px);transition:.2s}
+  .lb__nav:hover{background:rgba(255,255,255,.22)}
+  .lb__nav.prev{left:18px} .lb__nav.next{right:18px}
+  .lb__nav[hidden]{display:none}
+  .lb__count{position:fixed;top:22px;left:0;right:0;text-align:center;color:rgba(255,255,255,.82);font-size:13px;font-weight:700;pointer-events:none}
+
+  /* multi-image gallery */
+  .gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(112px,1fr));gap:12px}
+  .gal:empty{display:none}
+  .gal:not(:empty){margin-top:14px}
+  .gtile{position:relative;border-radius:13px;overflow:hidden;border:1px solid var(--border);background:var(--field);aspect-ratio:1;animation:pop .35s both}
+  .gtile img{width:100%;height:100%;object-fit:cover;display:block;cursor:zoom-in}
+  .gtile.error{border-color:var(--bad)} .gtile.done{border-color:var(--ok)}
+  .gbadge{position:absolute;top:6px;left:6px;font-size:10.5px;font-weight:800;padding:3px 7px;border-radius:99px;letter-spacing:.02em;backdrop-filter:blur(6px)}
+  .gbadge.pending,.gbadge.reading{background:rgba(0,0,0,.6);color:#fff}
+  .gbadge.done{background:var(--ok);color:#fff} .gbadge.error{background:var(--bad);color:#fff}
+  .gtile .gx{position:absolute;top:6px;right:6px;width:24px;height:24px;border-radius:50%;border:0;background:rgba(0,0,0,.55);color:#fff;
+    font-size:13px;line-height:1;padding:0;display:grid;place-items:center;cursor:pointer;backdrop-filter:blur(6px);transition:.18s}
+  .gtile .gx:hover{background:var(--bad)}
+  .gtile .gretry,.gtile .gread{position:absolute;left:6px;right:6px;bottom:6px;font-size:11px;font-weight:700;padding:5px 0;border-radius:8px;border:0;
+    background:var(--accent);color:#fff;cursor:pointer}
+  .gtile .gread{background:rgba(0,0,0,.6);backdrop-filter:blur(6px)}
+  .gtile .gread:hover{background:var(--accent)}
+  .gtile .gstop{position:absolute;left:6px;right:6px;bottom:6px;font-size:11px;font-weight:700;padding:5px 0;border-radius:8px;border:0;
+    background:var(--bad);color:#fff;cursor:pointer}
+  .gtile .greread{position:absolute;bottom:6px;right:6px;width:24px;height:24px;border-radius:50%;border:0;background:rgba(0,0,0,.55);
+    color:#fff;font-size:13px;line-height:1;padding:0;display:grid;place-items:center;cursor:pointer;backdrop-filter:blur(6px);transition:.18s}
+  .gtile .greread:hover{background:var(--accent)}
+
+  /* per-image verify blocks */
+  .vblock{border:1px solid var(--border);border-radius:14px;margin-bottom:12px;overflow:hidden;background:var(--field);transition:opacity .2s}
+  .vblock.vexcluded{opacity:.5}
+  .vhead{display:flex;align-items:center;gap:10px;padding:10px 12px;cursor:pointer;list-style:none}
+  .vhead::-webkit-details-marker{display:none}
+  .vthumb{width:34px;height:34px;border-radius:8px;object-fit:cover;border:1px solid var(--border);flex:0 0 auto}
+  .vname{font-weight:700;font-size:13.5px}
+  .vsub{color:var(--muted);font-size:12px}
+  .vchev{margin-left:auto;color:var(--muted);transition:.2s}
+  .vblock[open] .vchev{transform:rotate(180deg)}
+  .vbody{padding:0 12px 14px}
+  .vrow{display:flex;align-items:center;gap:14px;margin:2px 0 8px}
+  .vinc{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;color:var(--muted);font-weight:600;cursor:pointer;margin:0}
+  .vinc input{width:auto;margin:0}
+  .vbody textarea{min-height:130px}
+  .slip__count{position:absolute;top:-7px;left:-7px;min-width:22px;height:22px;border-radius:99px;background:var(--accent);color:#fff;
+    font-size:11px;font-weight:800;display:grid;place-items:center;padding:0 5px;box-shadow:0 4px 10px rgba(0,0,0,.35)}
 
   .rules{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:0 22px;margin-bottom:18px;box-shadow:var(--shadow);animation:fadeUp .6s .04s both}
   .rules>summary{list-style:none;cursor:pointer;padding:18px 0;font-weight:700;font-size:13.5px;display:flex;align-items:center;gap:8px;font-family:var(--font-body)}
@@ -175,6 +223,13 @@
   .rules th{text-align:left;color:var(--muted);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.05em;padding:0 10px 8px 0;background:none}
   .rules td{padding:10px 10px 10px 0;border-top:1px solid var(--border);vertical-align:top;line-height:1.5}
   .rules td.r{text-align:right;font-family:'JetBrains Mono',monospace;white-space:nowrap;color:var(--text)}
+  .rin{width:74px;text-align:right;padding:5px 8px;border-radius:8px;font-family:'JetBrains Mono',monospace;font-size:13px;display:inline-block}
+  .settings{border-top:1px solid var(--border);margin-top:4px;padding:16px 0 18px;display:grid;gap:14px}
+  .settings .srow{display:flex;gap:14px;flex-wrap:wrap}
+  .settings .sfield{flex:1;min-width:170px;display:flex;flex-direction:column}
+  .settings label{margin-bottom:5px}
+  .settings textarea{min-height:62px;font-size:12px;line-height:1.5}
+  .savedtag{color:var(--ok);font-weight:700;margin-left:4px}
 
   @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
   @keyframes rowin{from{opacity:0;transform:translateX(-8px)}to{opacity:1;transform:none}}
@@ -192,28 +247,41 @@
   <!-- 0. how OB is calculated -->
   <details class="rules" open>
     <summary>ℹ️ How OB is calculated — rates &amp; rules <span class="chev">▾</span></summary>
-    <p class="how"><b>Work = the gaps between your rest periods</b> on the Vilotidsrapport. Each work slice is split at 06:00 / 19:00 / midnight, then priced by the time of day and the weekday:</p>
+    <p class="how"><b>Work = the gaps between your rest periods</b> on the Vilotidsrapport. Each work slice is split at the <span class="t-day">06:00</span> / <span class="t-eve">19:00</span> boundaries (and midnight), then priced by the time of day and the weekday:</p>
     <table>
       <thead><tr><th>Band</th><th>When it applies</th><th class="r">Rate</th></tr></thead>
       <tbody>
         <tr>
           <td><span class="pill sm o2">OB2</span></td>
-          <td>Fri 19:00 → Sat 06:00 · Sat 19:00 → Sun 06:00 · Sun 19:00 → Mon 06:00 · public holidays &amp; the day before a public holiday, 19:00 → 06:00</td>
-          <td class="r">52.79 kr/h</td>
+          <td>Fri <span class="t-eve">19:00</span> → Sat <span class="t-day">06:00</span> · Sat <span class="t-eve">19:00</span> → Sun <span class="t-day">06:00</span> · Sun <span class="t-eve">19:00</span> → Mon <span class="t-day">06:00</span> · public holidays &amp; the day before a public holiday, <span class="t-eve">19:00</span> → <span class="t-day">06:00</span></td>
+          <td class="r"><input id="rateOb2" class="rin" type="number" step="0.01" min="0"> kr/h</td>
         </tr>
         <tr>
           <td><span class="pill sm o1">OB1</span></td>
-          <td>Weekday nights (Mon–Fri) 19:00 → 06:00 · Saturdays &amp; Sundays 06:00 → 19:00 · public holidays 06:00 → 19:00</td>
-          <td class="r">31.58 kr/h</td>
+          <td>Weekday nights (Mon–Fri) <span class="t-eve">19:00</span> → <span class="t-day">06:00</span> · Saturdays &amp; Sundays <span class="t-day">06:00</span> → <span class="t-eve">19:00</span> · public holidays <span class="t-day">06:00</span> → <span class="t-eve">19:00</span></td>
+          <td class="r"><input id="rateOb1" class="rin" type="number" step="0.01" min="0"> kr/h</td>
         </tr>
         <tr>
           <td><span class="pill sm o0">Normal</span></td>
-          <td>Mon–Fri daytime 06:00 → 19:00 (not a holiday) — no OB premium</td>
+          <td>Mon–Fri daytime <span class="t-day">06:00</span> → <span class="t-eve">19:00</span> (not a holiday) — no OB premium</td>
           <td class="r">—</td>
         </tr>
       </tbody>
     </table>
-    <p class="how">A night belongs to its <b>evening date</b>: a 00:00–06:00 slice is owned by the previous evening, so a Friday-night shift stays OB2 even past midnight. You can change the OB1 / OB2 rates in the data box, and override any single period's band in the result table.</p>
+    <p class="how">A night belongs to its <b>evening date</b>: a 00:00–<span class="t-day">06:00</span> slice is owned by the previous evening, so a Friday-night shift stays OB2 even past midnight.</p>
+    <div class="settings">
+      <div class="srow">
+        <div class="sfield"><label>Daytime starts <span class="hint">· the “06:00” boundary</span></label><input id="tDay" type="time" step="60"></div>
+        <div class="sfield"><label>Evening / OB starts <span class="hint">· the “19:00” boundary</span></label><input id="tEve" type="time" step="60"></div>
+      </div>
+      <div class="srow" style="align-items:center">
+        <button type="button" id="resetTimes" class="xbtn">↺ Reset times</button>
+        <button type="button" id="resetRates" class="xbtn">↺ Reset rates</button>
+        <button type="button" id="resetAll" class="xbtn">↺ Reset all</button>
+        <span id="setSaved" class="savedtag"></span>
+      </div>
+      <p class="how" style="margin:0">These two boundary times and the rates above apply to <b>every</b> photo; the weekday &amp; holiday rules are unchanged. Override any single period's band in the result table.</p>
+    </div>
   </details>
 
   <!-- 1. connect -->
@@ -239,10 +307,12 @@
 
   <!-- 2. upload -->
   <div class="card">
-    <div class="step"><span class="num">2</span> Upload slip</div>
-    <div id="drop" class="drop"><span class="ic">📷</span>Click or drop a Vilotidsrapport photo</div>
-    <input id="file" type="file" accept="image/*" hidden>
-    <div class="btnrow"><button id="parse" disabled>Read photo</button>
+    <div class="step"><span class="num">2</span> Upload slips</div>
+    <div id="drop" class="drop"><span class="ic">📷</span>Click or drop Vilotidsrapport photos <span class="hint">· add as many as you like</span></div>
+    <input id="file" type="file" accept="image/*" multiple hidden>
+    <div id="gal" class="gal"></div>
+    <div class="btnrow"><button id="parse" disabled>Read photos</button>
+      <button class="ghost" id="rereadAll" hidden>↻ Re-read all</button>
       <button class="ghost" id="manual">✎ Enter JSON manually</button>
       <span id="status" class="hint"></span></div>
     <div id="err" class="err"></div>
@@ -251,10 +321,11 @@
   <!-- 3. verify -->
   <div class="card" id="editCard" style="display:none">
     <div class="step"><span class="num">3</span> Verify &amp; fix</div>
-    <label>Parsed data — correct any misread digit, drop unwanted days, tweak window / holidays</label>
-    <textarea id="cfg" spellcheck="false"></textarea>
+    <label>One block per photo — correct any misread digit, drop unwanted days, or untick to exclude a slip from the total</label>
+    <div id="verify"></div>
+    <textarea id="cfg" hidden></textarea>
     <div id="notes" class="warn"></div>
-    <div class="btnrow"><button id="calc">Calculate OB</button><button class="ghost" id="copy">Copy JSON</button></div>
+    <div class="btnrow"><button id="calc">Calculate OB</button><button class="ghost" id="copy">Copy combined JSON</button></div>
   </div>
 
   <!-- 4. results -->
@@ -270,8 +341,11 @@
 
 <div class="lb" id="lb">
   <button class="lb__btn" id="lbClose" aria-label="Close viewer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><line x1="5" y1="5" x2="19" y2="19"/><line x1="5" y1="19" x2="19" y2="5"/></svg></button>
+  <button class="lb__nav prev" id="lbPrev" aria-label="Previous slip" hidden>‹</button>
+  <button class="lb__nav next" id="lbNext" aria-label="Next slip" hidden>›</button>
+  <div class="lb__count" id="lbCount"></div>
   <img id="lbImg" alt="Vilotidsrapport slip">
-  <div class="lb__hint">tap / scroll to zoom · drag to pan · Esc to close</div>
+  <div class="lb__hint">tap / scroll to zoom · drag to pan · ← → to switch · Esc to close</div>
 </div>
 
 <script src="calc.js"></script>
@@ -299,7 +373,9 @@ Two-digit year 26 = 2026. JSON only, no prose.`;
 
 const SEK=new Intl.NumberFormat('sv-SE',{style:'currency',currency:'SEK'});
 const $=s=>document.querySelector(s);
-let dataUrl=null;
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+let slips=[], slipSeq=0;   // each: {id,dataUrl|null,name,status:'pending'|'reading'|'done'|'error',cfg,err,included}
 
 const PROVIDERS={
   google:{label:'Google Gemini',base:'https://generativelanguage.googleapis.com',prefix:'/v1beta/openai',
@@ -357,43 +433,148 @@ $('#model').onchange=e=>localStorage.setItem(lsModel(),e.target.value.split(' ·
 
 applyProvider();
 
-// upload
-const drop=$('#drop');
-drop.onclick=()=>$('#file').click();
-drop.ondragover=e=>{e.preventDefault();drop.classList.add('over')};
-drop.ondragleave=()=>drop.classList.remove('over');
-drop.ondrop=e=>{e.preventDefault();drop.classList.remove('over');if(e.dataTransfer.files[0])loadFile(e.dataTransfer.files[0])};
-$('#file').onchange=e=>e.target.files[0]&&loadFile(e.target.files[0]);
-function loadFile(f){const r=new FileReader();r.onload=()=>{dataUrl=r.result;drop.innerHTML=`<img src="${dataUrl}">`;$('#parse').disabled=false};r.readAsDataURL(f)}
-
 function nextDay(s){const d=new Date(s);d.setDate(d.getDate()+1);return d.toISOString().slice(0,10)}
 function holsFor(es){if(!es.length)return[];const d=es.map(e=>e.date).sort();return HOLIDAYS.filter(h=>h>=d[0]&&h<=d[d.length-1])}
 
-$('#parse').onclick=async()=>{
-  $('#err').textContent='';$('#status').innerHTML='<span class="spin"></span> reading…';$('#parse').disabled=true;
+// ---------- global settings: OB rates + the two boundary times — applied to EVERY photo ----------
+const hmToMin=s=>{const m=/^(\d{1,2}):(\d{2})$/.exec(String(s||''));return m?(+m[1])*60+(+m[2]):0;};
+const minToHm=n=>`${String(Math.floor(n/60)).padStart(2,'0')}:${String(n%60).padStart(2,'0')}`;
+const DEF_SETTINGS={ob1:31.58,ob2:52.79,dayStart:'06:00',eveStart:'19:00'};
+let SETTINGS=Object.assign({},DEF_SETTINGS,JSON.parse(localStorage.getItem('ob_settings')||'{}'));
+let _saveT;
+function saveSettings(){
+  localStorage.setItem('ob_settings',JSON.stringify(SETTINGS));
+  const t=$('#setSaved'); t.textContent='✓ saved'; clearTimeout(_saveT); _saveT=setTimeout(()=>t.textContent='',1400);
+}
+function updateRuleTimes(){
+  document.querySelectorAll('.t-day').forEach(e=>e.textContent=SETTINGS.dayStart);
+  document.querySelectorAll('.t-eve').forEach(e=>e.textContent=SETTINGS.eveStart);
+}
+function fillSettings(){
+  $('#rateOb1').value=SETTINGS.ob1; $('#rateOb2').value=SETTINGS.ob2;
+  $('#tDay').value=SETTINGS.dayStart; $('#tEve').value=SETTINGS.eveStart;
+  updateRuleTimes();
+}
+$('#rateOb1').oninput=e=>{SETTINGS.ob1=+e.target.value||0;saveSettings();};
+$('#rateOb2').oninput=e=>{SETTINGS.ob2=+e.target.value||0;saveSettings();};
+$('#tDay').oninput=e=>{if(e.target.value){SETTINGS.dayStart=e.target.value;updateRuleTimes();saveSettings();}};
+$('#tEve').oninput=e=>{if(e.target.value){SETTINGS.eveStart=e.target.value;updateRuleTimes();saveSettings();}};
+$('#resetTimes').onclick=()=>{SETTINGS.dayStart=DEF_SETTINGS.dayStart;SETTINGS.eveStart=DEF_SETTINGS.eveStart;fillSettings();saveSettings();};
+$('#resetRates').onclick=()=>{SETTINGS.ob1=DEF_SETTINGS.ob1;SETTINGS.ob2=DEF_SETTINGS.ob2;fillSettings();saveSettings();};
+$('#resetAll').onclick=()=>{SETTINGS=Object.assign({},DEF_SETTINGS);fillSettings();saveSettings();};
+fillSettings();
+const gTimes=()=>({dayStart:hmToMin(SETTINGS.dayStart),eveStart:hmToMin(SETTINGS.eveStart)});
+
+// ---------- upload + multi-image gallery ----------
+const drop=$('#drop'), gal=$('#gal');
+drop.onclick=()=>$('#file').click();
+drop.ondragover=e=>{e.preventDefault();drop.classList.add('over')};
+drop.ondragleave=()=>drop.classList.remove('over');
+drop.ondrop=e=>{e.preventDefault();drop.classList.remove('over');addFiles(e.dataTransfer.files)};
+$('#file').onchange=e=>{addFiles(e.target.files);e.target.value='';};
+
+function addFiles(list){
+  [...(list||[])].filter(f=>f.type&&f.type.startsWith('image/')).forEach(f=>{
+    const r=new FileReader();
+    r.onload=()=>{ slips.push({id:++slipSeq,dataUrl:r.result,name:f.name||'photo',status:'pending',cfg:null,err:'',included:true}); renderGallery(); };
+    r.readAsDataURL(f);
+  });
+}
+const slipById=id=>slips.find(s=>s.id===id);
+const photoSlips=()=>slips.filter(s=>s.dataUrl);
+function removeSlip(id){ stopOne(id); slips=slips.filter(s=>s.id!==id); renderGallery(); renderVerify(); setSlip(); if(lb.classList.contains('open')&&!photoSlips().length) closeLb(); }
+function refreshParseBtn(){
+  $('#parse').disabled=!slips.some(s=>s.status==='pending'||s.status==='error');
+  $('#rereadAll').hidden=!slips.some(s=>s.dataUrl&&s.status==='done');
+}
+
+function renderGallery(){
+  gal.innerHTML=photoSlips().map(s=>{
+    const badge={pending:'pending',reading:'⏳ reading',done:'✓ read',error:'⚠ failed'}[s.status];
+    const action = s.status==='error'   ? `<button class="gretry" data-reread="${s.id}">↻ retry</button>`
+                 : s.status==='pending' ? `<button class="gread" data-reread="${s.id}" title="Read just this photo">▶ read</button>`
+                 : s.status==='reading' ? `<button class="gstop" data-stop="${s.id}" title="Stop reading">■ stop</button>`
+                 : s.status==='done'    ? `<button class="greread" data-reread="${s.id}" title="Re-read this photo">↻</button>`
+                 : '';
+    const tip=s.status==='error'?` title="${esc(s.err)}"`:'';
+    return `<div class="gtile ${s.status}"${tip}>
+      <img src="${s.dataUrl}" data-view="${s.id}" alt="${esc(s.name)}">
+      <span class="gbadge ${s.status}">${badge}</span>
+      <button class="gx" data-rm="${s.id}" title="Remove">✕</button>${action}</div>`;
+  }).join('');
+  refreshParseBtn(); setSlip();
+}
+gal.addEventListener('click',e=>{
+  const rm=e.target.closest('[data-rm]'); if(rm){removeSlip(+rm.dataset.rm);return;}
+  const st=e.target.closest('[data-stop]'); if(st){stopOne(+st.dataset.stop);return;}
+  const rr=e.target.closest('[data-reread]'); if(rr){readOne(+rr.dataset.reread);return;}
+  const v=e.target.closest('[data-view]'); if(v){openGallery(+v.dataset.view);}
+});
+
+// one LLM call PER image, sequential, pacing between calls to respect rate limits.
+// a failure marks only that slip 'error' — every already-read slip keeps its data.
+const controllers=new Map();   // slip id -> AbortController for the in-flight read
+function stopOne(id){ const c=controllers.get(id); if(c) c.abort(); }
+async function readSlip(s){
+  s.status='reading'; s.err=''; renderGallery();
+  const ctrl=new AbortController(); controllers.set(s.id,ctrl);
   try{
     const model=$('#model').value.split(' · ')[0];
     const body={model,temperature:0,response_format:{type:'json_object'},
-      messages:[{role:'user',content:[{type:'text',text:PROMPT},{type:'image_url',image_url:{url:dataUrl}}]}]};
-    const res=await fetch(api('/chat/completions'),{method:'POST',
+      messages:[{role:'user',content:[{type:'text',text:PROMPT},{type:'image_url',image_url:{url:s.dataUrl}}]}]};
+    const res=await fetch(api('/chat/completions'),{method:'POST',signal:ctrl.signal,
       headers:{'Content-Type':'application/json',Authorization:'Bearer '+$('#key').value},body:JSON.stringify(body)});
-    if(!res.ok)throw new Error('API '+res.status+': '+(await res.text()).slice(0,400));
+    if(!res.ok) throw new Error('API '+res.status+': '+(await res.text()).slice(0,300));
     const p=JSON.parse((await res.json()).choices[0].message.content);
     const es=p.entries||[];
-    const cfg={entries:es,holidays:holsFor(es),
-      window_start:es.length?es[0].date+' 00:00':'',window_end:es.length?nextDay(es[es.length-1].date)+' 00:00':'',
-      uncertain:p.uncertain||[],
-      rates:{ob1:31.58,ob2:52.79}};
-    $('#cfg').value=JSON.stringify(cfg,null,2);
-    $('#notes').innerHTML=uncSummary(p.uncertain);
-    $('#editCard').style.display='';$('#status').textContent='✓ read — verify below';
-    $('#editCard').scrollIntoView({behavior:'smooth'});
-  }catch(e){$('#err').textContent=e.message;$('#status').textContent='';}
-  finally{$('#parse').disabled=false;}
+    s.cfg={entries:es,holidays:holsFor(es),
+      window_start:es.length?es[0].date+' 00:00':'', window_end:es.length?nextDay(es[es.length-1].date)+' 00:00':'',
+      uncertain:p.uncertain||[], rates:{ob1:31.58,ob2:52.79}};
+    s.status='done'; renderGallery();
+  } finally { controllers.delete(s.id); }
+}
+
+$('#parse').onclick=()=>readAll(false);
+$('#rereadAll').onclick=()=>{
+  if(slips.some(s=>s.dataUrl&&s.status==='done') &&
+     !confirm('Re-read every photo from scratch? This re-runs the AI on each and overwrites any edits you made to their data.')) return;
+  readAll(true);
 };
+// force=true re-reads ALL photos (even already-read ones); otherwise only new + failed.
+async function readAll(force){
+  $('#err').textContent='';
+  const queue=slips.filter(s=> force ? !!s.dataUrl : (s.status==='pending'||s.status==='error'));
+  if(!queue.length) return;
+  $('#parse').disabled=true;
+  let ok=0, fail=0, stopped=0;
+  for(let i=0;i<queue.length;i++){
+    $('#status').innerHTML=`<span class="spin"></span> reading ${i+1} / ${queue.length}…`;
+    try{ await readSlip(queue[i]); ok++; }
+    catch(e){
+      if(e.name==='AbortError'){ queue[i].status='pending'; stopped++; renderGallery(); continue; }
+      queue[i].status='error'; queue[i].err=e.message; fail++; renderGallery();
+    }
+    if(i<queue.length-1) await sleep(700);   // pace requests so we don't trip the rate limit
+  }
+  renderVerify(); refreshParseBtn(); $('#parse').disabled=false;
+  const extra=(fail?` · <span style="color:var(--bad)">⚠ ${fail} failed — fix the key/model or hit ↻ retry</span>`:'')
+            +(stopped?` · ⏹ ${stopped} stopped`:'');
+  $('#status').innerHTML = (fail||stopped) ? `✓ ${ok} read${extra}` : `✓ ${ok} read — verify below`;
+  if(ok){ $('#editCard').style.display=''; $('#editCard').scrollIntoView({behavior:'smooth'}); }
+}
+// read a single photo on its own (a new one, a retry of a failed one, or a refresh of an already-read one)
+async function readOne(id){
+  const s=slipById(id); if(!s||!s.dataUrl) return;
+  $('#err').textContent=''; $('#status').innerHTML='<span class="spin"></span> reading 1 photo…';
+  try{ await readSlip(s); renderVerify(); refreshParseBtn(); $('#status').textContent='✓ read'; $('#editCard').style.display=''; }
+  catch(e){
+    if(e.name==='AbortError'){ s.status='pending'; renderGallery(); refreshParseBtn(); $('#status').textContent='⏹ stopped'; return; }
+    s.status='error'; s.err=e.message; renderGallery(); refreshParseBtn();
+    $('#status').innerHTML=`<span style="color:var(--bad)">⚠ ${esc(e.message)}</span>`; }
+}
 $('#copy').onclick=()=>navigator.clipboard.writeText($('#cfg').value);
 
-// enter JSON without a photo
+// enter JSON without a photo — added as its own (image-less) slip
 const TEMPLATE=JSON.stringify({
   entries:[{date:"2026-05-01",rests:[["04:15","16:15"]]},
            {date:"2026-05-02",rests:[["02:40","15:13"],["17:43","19:43"]]}],
@@ -401,11 +582,50 @@ const TEMPLATE=JSON.stringify({
   holidays:["2026-05-01"], rates:{ob1:31.58,ob2:52.79}
 },null,2);
 $('#manual').onclick=()=>{
-  if(!$('#cfg').value.trim()) $('#cfg').value=TEMPLATE;
-  $('#editCard').style.display='';
-  $('#cfg').scrollIntoView({behavior:'smooth'});
-  $('#cfg').focus();
+  slips.push({id:++slipSeq,dataUrl:null,name:'Manual entry',status:'done',cfg:JSON.parse(TEMPLATE),err:'',included:true});
+  renderVerify(); $('#editCard').style.display='';
+  $('#editCard').scrollIntoView({behavior:'smooth'});
 };
+
+// ---------- per-image verify ----------
+function renderVerify(){
+  const done=slips.filter(s=>s.status==='done');
+  $('#verify').innerHTML=done.map(s=>{
+    const manual=s.dataUrl===null;
+    const thumb=manual
+      ? `<div class="vthumb" style="display:grid;place-items:center;background:var(--ob1-soft);color:var(--accent)">✎</div>`
+      : `<img class="vthumb" data-view="${s.id}" src="${s.dataUrl}" alt="">`;
+    const nUnc=(s.cfg&&s.cfg.uncertain)?s.cfg.uncertain.length:0;
+    const nDays=(s.cfg&&s.cfg.entries)?s.cfg.entries.length:0;
+    const unc=nUnc?`<div class="warn" style="margin:0 0 8px">${uncSummary(s.cfg.uncertain)}</div>`:'';
+    return `<details class="vblock${s.included?'':' vexcluded'}" open data-id="${s.id}">
+      <summary class="vhead">${thumb}
+        <div><div class="vname">${esc(s.name)}</div>
+          <div class="vsub">${nDays} day${nDays===1?'':'s'}${nUnc?` · <span style="color:var(--ob2)">⚠ ${nUnc} to check</span>`:''}</div></div>
+        <span class="vchev">▾</span></summary>
+      <div class="vbody">
+        <div class="vrow">
+          <label class="vinc"><input type="checkbox" class="vincbox" data-id="${s.id}" ${s.included?'checked':''}> include in total</label>
+          ${manual?`<button class="xbtn" data-rmv="${s.id}">✕ remove</button>`:''}
+        </div>
+        ${unc}
+        <textarea class="vcfg" data-id="${s.id}" spellcheck="false">${esc(JSON.stringify(s.cfg,null,2))}</textarea>
+      </div></details>`;
+  }).join('');
+}
+$('#verify').addEventListener('change',e=>{
+  const inc=e.target.closest('.vincbox'); if(!inc) return;
+  const s=slipById(+inc.dataset.id); if(s) s.included=inc.checked;
+  inc.closest('.vblock').classList.toggle('vexcluded',!inc.checked);
+});
+$('#verify').addEventListener('input',e=>{
+  const ta=e.target.closest('.vcfg'); if(!ta) return;
+  const s=slipById(+ta.dataset.id); if(s){ try{ s.cfg=JSON.parse(ta.value); }catch(_){ } }
+});
+$('#verify').addEventListener('click',e=>{
+  const rm=e.target.closest('[data-rmv]'); if(rm){ e.preventDefault(); removeSlip(+rm.dataset.rmv); return; }
+  const v=e.target.closest('[data-view]'); if(v){ e.preventDefault(); openGallery(+v.dataset.view); }
+});
 
 let TL={list:[],holidays:new Set(),rates:{ob1:31.58,ob2:52.79}};
 
@@ -442,17 +662,33 @@ function uncSummary(arr){
   return `⚠ ${n} value${n>1?'s':''} look uncertain — kept as the model's best guess but <b>highlighted amber</b> in the timeline below. Hover a highlighted cell for the reason, then confirm or fix it:<br>• `+arr.map(uncLabel).join('<br>• ');
 }
 
+// merge = compute each slip in ITS OWN window, then concat the work intervals.
+// (never merge into one window — the gaps between separate weeks would become phantom work.)
 $('#calc').onclick=()=>{
   $('#err').textContent='';
   try{
-    const cfg=JSON.parse($('#cfg').value);
-    const {intervals,rates,holidays}=compute(cfg);
-    TL.list=intervals.map(iv=>iv[2]?[new Date(iv[0]),new Date(iv[1]),iv[2]]:[new Date(iv[0]),new Date(iv[1])]);
-    TL.holidays=holidays; TL.rates=rates;
-    UNCRAW=cfg.uncertain||[]; UNC=buildUnc(UNCRAW);
+    const blocks=[];
+    document.querySelectorAll('#verify .vcfg').forEach(ta=>{
+      const s=slipById(+ta.dataset.id); if(!s||!s.included) return;
+      const cfg=JSON.parse(ta.value); s.cfg=cfg;   // throws on bad JSON -> caught below
+      blocks.push(cfg);
+    });
+    if(!blocks.length) throw new Error('No slips included — tick at least one block.');
+    const gRates={ob1:SETTINGS.ob1,ob2:SETTINGS.ob2}, T=gTimes();   // rates + boundary times apply to every slip
+    TL.list=[]; const holidays=new Set(); UNCRAW=[];
+    blocks.forEach(cfg=>{
+      const c=Object.assign({},cfg,{rates:gRates,times:T});         // keep each slip's own window + holidays
+      const r=compute(c);
+      r.intervals.forEach(iv=>TL.list.push(iv[2]?[new Date(iv[0]),new Date(iv[1]),iv[2]]:[new Date(iv[0]),new Date(iv[1])]));
+      r.holidays.forEach(h=>holidays.add(h));
+      UNCRAW=UNCRAW.concat(cfg.uncertain||[]);
+    });
+    TL.holidays=holidays; TL.rates=gRates;
+    UNC=buildUnc(UNCRAW);
     $('#out').style.display='';
     setSlip();
     renderAll(true);
+    syncJson();                 // mirror combined timeline into hidden #cfg for Copy JSON
     $('#out').scrollIntoView({behavior:'smooth'});
   }catch(e){$('#err').textContent='Calc error: '+e.message;}
 };
@@ -590,24 +826,38 @@ $('#tlcard').addEventListener('click',e=>{
   if(del!==undefined){ TL.list.splice(+del,1); renderAll(false); syncJson(); }
 });
 
-// ---- slip image viewer (compare photo against the timeline) ----
+// ---- slip image viewer (compare photos against the timeline) ----
 function setSlip(){
-  const s=$('#slip');
-  if(dataUrl){
+  const s=$('#slip'), imgs=photoSlips();
+  if(imgs.length){
     s.classList.remove('empty');
-    s.innerHTML=`<button class="slip__fab" aria-label="View slip" title="View slip" style="background-image:url('${dataUrl}')"></button>`;
+    const count=imgs.length>1?`<span class="slip__count">${imgs.length}</span>`:'';
+    s.innerHTML=`<button class="slip__fab" aria-label="View slips" title="View slips" style="background-image:url('${imgs[0].dataUrl}')"></button>${count}`;
   } else { s.classList.add('empty'); s.innerHTML=''; }
 }
 
-// fullscreen zoom + pan lightbox
+// fullscreen zoom + pan lightbox, with prev/next across all photos
 const lb=$('#lb'), lbImg=$('#lbImg');
-let lz=1, lx=0, ly=0, drag=null;
+let lz=1, lx=0, ly=0, drag=null, galIdx=0;
 const lbApply=()=>{ lbImg.style.transform=`translate(${lx}px,${ly}px) scale(${lz})`; };
-function openLb(src){ lbImg.src=src; lz=1; lx=0; ly=0; lbApply(); lb.classList.add('open'); }
+function showLbAt(i){
+  const arr=photoSlips(); if(!arr.length){ closeLb(); return; }
+  galIdx=(i+arr.length)%arr.length;
+  lbImg.src=arr[galIdx].dataUrl; lz=1; lx=0; ly=0; lbApply();
+  const multi=arr.length>1;
+  $('#lbPrev').hidden=!multi; $('#lbNext').hidden=!multi;
+  $('#lbCount').textContent=multi?`${galIdx+1} / ${arr.length}`:'';
+}
+function openGallery(id){
+  const arr=photoSlips(); if(!arr.length) return;
+  lb.classList.add('open'); showLbAt(Math.max(0,arr.findIndex(s=>s.id===id)));
+}
 function closeLb(){ lb.classList.remove('open'); drag=null; }
-// tapping the floating thumbnail opens the fullscreen viewer
-document.addEventListener('click',e=>{ if(e.target.closest('.slip__fab')) openLb(dataUrl); });
+// tapping the floating thumbnail opens the viewer at the first photo
+document.addEventListener('click',e=>{ if(e.target.closest('.slip__fab')){ const a=photoSlips(); if(a.length) openGallery(a[0].id); } });
 $('#lbClose').onclick=closeLb;
+$('#lbPrev').onclick=()=>showLbAt(galIdx-1);
+$('#lbNext').onclick=()=>showLbAt(galIdx+1);
 lb.addEventListener('click',e=>{ if(e.target===lb) closeLb(); });
 lb.addEventListener('wheel',e=>{ e.preventDefault();
   lz=Math.min(8,Math.max(1, lz*(e.deltaY<0?1.15:1/1.15))); if(lz===1){lx=0;ly=0;} lbApply();
@@ -619,7 +869,12 @@ lbImg.addEventListener('pointermove',e=>{ if(!drag) return;
 });
 lbImg.addEventListener('pointerup',()=>{ if(drag&&!drag.moved){ lz=lz>1?1:2.5; lx=0; ly=0; lbApply(); } drag=null; });
 lbImg.addEventListener('pointercancel',()=>{ drag=null; });
-document.addEventListener('keydown',e=>{ if(e.key==='Escape'&&lb.classList.contains('open')) closeLb(); });
+document.addEventListener('keydown',e=>{
+  if(!lb.classList.contains('open')) return;
+  if(e.key==='Escape') closeLb();
+  else if(e.key==='ArrowLeft') showLbAt(galIdx-1);
+  else if(e.key==='ArrowRight') showLbAt(galIdx+1);
+});
 </script>
 <script>(function(){function ic(){var t=document.documentElement.getAttribute('data-theme')||'light';var e=document.querySelector('.theme-icon');if(e)e.textContent=t==='dark'?'☀️':'🌙';}ic();var b=document.getElementById('theme-toggle');if(b)b.addEventListener('click',function(){var c=document.documentElement.getAttribute('data-theme')||'light';var n=c==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);try{localStorage.setItem('dt_theme',n);}catch(e){}ic();});})();</script>
 </body>
