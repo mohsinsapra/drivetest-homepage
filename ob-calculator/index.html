@@ -210,6 +210,18 @@
   .vinc{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;color:var(--muted);font-weight:600;cursor:pointer;margin:0}
   .vinc input{width:auto;margin:0}
   .vbody textarea{min-height:130px}
+  .vtscroll{overflow-x:auto;margin-top:4px}
+  table.vt{width:100%;border-collapse:collapse;font-size:13px}
+  table.vt th{text-align:left;color:var(--muted);font-weight:700;font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;padding:4px 7px;background:none}
+  table.vt td{padding:3px 7px;border-top:1px solid var(--border);vertical-align:middle}
+  table.vt tr:first-child td{border-top:0}
+  .vt-in{font-family:'JetBrains Mono',monospace;font-size:13px;padding:8px 10px;border-radius:9px;background:var(--card);border:1px solid var(--field-bd);width:100%}
+  .vt-in.dt{font-family:var(--font-body)}
+  .vt-in:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--ob1-soft)}
+  .vt-in.unc{border-color:var(--ob2);background:var(--ob2-soft);box-shadow:0 0 0 1px var(--ob2) inset}
+  table.vt td.tt{width:98px} table.vt td.dd{width:152px} table.vt td.xx{width:36px;text-align:right}
+  .vt-del{padding:6px 9px}
+  .vt-add{margin-top:9px}
   .slip__count{position:absolute;top:-7px;left:-7px;min-width:22px;height:22px;border-radius:99px;background:var(--accent);color:#fff;
     font-size:11px;font-weight:800;display:grid;place-items:center;padding:0 5px;box-shadow:0 4px 10px rgba(0,0,0,.35)}
 
@@ -313,7 +325,7 @@
     <div id="gal" class="gal"></div>
     <div class="btnrow"><button id="parse" disabled>Read photos</button>
       <button class="ghost" id="rereadAll" hidden>↻ Re-read all</button>
-      <button class="ghost" id="manual">✎ Enter JSON manually</button>
+      <button class="ghost" id="manual">✎ Enter manually</button>
       <span id="status" class="hint"></span></div>
     <div id="err" class="err"></div>
   </div>
@@ -530,6 +542,7 @@ async function readSlip(s){
     s.cfg={entries:es,holidays:holsFor(es),
       window_start:es.length?es[0].date+' 00:00':'', window_end:es.length?nextDay(es[es.length-1].date)+' 00:00':'',
       uncertain:p.uncertain||[], rates:{ob1:31.58,ob2:52.79}};
+    s._rows=null;                                  // rebuild the editable table from fresh OCR
     s.status='done'; renderGallery();
   } finally { controllers.delete(s.id); }
 }
@@ -587,17 +600,66 @@ $('#manual').onclick=()=>{
   $('#editCard').scrollIntoView({behavior:'smooth'});
 };
 
-// ---------- per-image verify ----------
+// ---------- per-image verify (editable table, no raw JSON) ----------
+// flat editable rows kept on the slip as s._rows = [{date,from,to}]
+function ensureRows(s){
+  if(!s._rows){
+    s._rows=[];
+    (s.cfg&&s.cfg.entries||[]).forEach(e=>{
+      const rests=(e.rests&&e.rests.length)?e.rests:[['','']];
+      rests.forEach(r=>s._rows.push({date:e.date||'',from:r[0]||'',to:r[1]||''}));
+    });
+    if(!s._rows.length) s._rows.push({date:'',from:'',to:''});
+  }
+  return s._rows;
+}
+// rebuild cfg.entries + window from the rows (skipping incomplete rows so calc stays valid)
+function syncCfgFromRows(s){
+  ensureRows(s);
+  const out=[], idx={};
+  s._rows.forEach(r=>{
+    if(!r.date||!r.from||!r.to) return;
+    if(!(r.date in idx)){ idx[r.date]=out.length; out.push({date:r.date,rests:[]}); }
+    out[idx[r.date]].rests.push([r.from,r.to]);
+  });
+  s.cfg.entries=out;
+  const dates=out.map(e=>e.date).sort();
+  s.cfg.window_start=dates.length?dates[0]+' 00:00':'';
+  s.cfg.window_end=dates.length?nextDay(dates[dates.length-1])+' 00:00':'';
+}
+// map model-flagged uncertain values -> cell keys for highlighting
+function uncMap(cfg){
+  const m={};
+  (cfg&&cfg.uncertain||[]).forEach(u=>{ if(typeof u==='string')return;
+    if(u.field==='date') m[(u.date||'')+'|date']=u.reason||'uncertain';
+    else m[(u.date||'')+'|'+(u.rest||0)+'|'+u.field]=u.reason||'uncertain';
+  });
+  return m;
+}
 function renderVerify(){
   const done=slips.filter(s=>s.status==='done');
   $('#verify').innerHTML=done.map(s=>{
+    ensureRows(s);
     const manual=s.dataUrl===null;
     const thumb=manual
       ? `<div class="vthumb" style="display:grid;place-items:center;background:var(--ob1-soft);color:var(--accent)">✎</div>`
       : `<img class="vthumb" data-view="${s.id}" src="${s.dataUrl}" alt="">`;
-    const nUnc=(s.cfg&&s.cfg.uncertain)?s.cfg.uncertain.length:0;
-    const nDays=(s.cfg&&s.cfg.entries)?s.cfg.entries.length:0;
+    const m=uncMap(s.cfg);
+    const nUnc=(s.cfg&&s.cfg.uncertain)?s.cfg.uncertain.filter(u=>typeof u!=='string').length:0;
+    const nDays=new Set(s._rows.map(r=>r.date).filter(Boolean)).size;
     const unc=nUnc?`<div class="warn" style="margin:0 0 8px">${uncSummary(s.cfg.uncertain)}</div>`:'';
+    const cnt={};
+    const rows=s._rows.map((r,i)=>{
+      const ri = cnt[r.date]=(cnt[r.date]==null?0:cnt[r.date]+1);
+      const uD=m[(r.date||'')+'|date'], uF=m[(r.date||'')+'|'+ri+'|from'], uT=m[(r.date||'')+'|'+ri+'|to'];
+      const cell=(k,v,u,cls)=>`<input type="${k==='date'?'date':'text'}"${k==='date'?'':' inputmode="numeric" maxlength="5" placeholder="HH:MM"'} class="vt-in ${cls}${u?' unc':''}" ${u?`title="⚠ ${esc(u)}"`:''} data-row="${i}" data-k="${k}" value="${esc(v)}">`;
+      return `<tr>
+        <td class="dd">${cell('date',r.date,uD,'dt')}</td>
+        <td class="tt">${cell('from',r.from,uF,'')}</td>
+        <td class="tt">${cell('to',r.to,uT,'')}</td>
+        <td class="xx"><button class="xbtn vt-del" data-id="${s.id}" data-row="${i}" title="Remove rest">✕</button></td>
+      </tr>`;
+    }).join('');
     return `<details class="vblock${s.included?'':' vexcluded'}" open data-id="${s.id}">
       <summary class="vhead">${thumb}
         <div><div class="vname">${esc(s.name)}</div>
@@ -609,7 +671,9 @@ function renderVerify(){
           ${manual?`<button class="xbtn" data-rmv="${s.id}">✕ remove</button>`:''}
         </div>
         ${unc}
-        <textarea class="vcfg" data-id="${s.id}" spellcheck="false">${esc(JSON.stringify(s.cfg,null,2))}</textarea>
+        <div class="vtscroll"><table class="vt"><thead><tr><th>Date</th><th>Rest from</th><th>Rest to</th><th></th></tr></thead>
+          <tbody>${rows}</tbody></table></div>
+        <button class="xbtn vt-add" data-id="${s.id}">＋ Add rest</button>
       </div></details>`;
   }).join('');
 }
@@ -619,12 +683,20 @@ $('#verify').addEventListener('change',e=>{
   inc.closest('.vblock').classList.toggle('vexcluded',!inc.checked);
 });
 $('#verify').addEventListener('input',e=>{
-  const ta=e.target.closest('.vcfg'); if(!ta) return;
-  const s=slipById(+ta.dataset.id); if(s){ try{ s.cfg=JSON.parse(ta.value); }catch(_){ } }
+  const inp=e.target.closest('.vt-in'); if(!inp) return;
+  const s=slipById(+inp.closest('.vblock').dataset.id); if(!s) return;
+  s._rows[+inp.dataset.row][inp.dataset.k]=inp.value;
+  syncCfgFromRows(s);
 });
 $('#verify').addEventListener('click',e=>{
   const rm=e.target.closest('[data-rmv]'); if(rm){ e.preventDefault(); removeSlip(+rm.dataset.rmv); return; }
-  const v=e.target.closest('[data-view]'); if(v){ e.preventDefault(); openGallery(+v.dataset.view); }
+  const v=e.target.closest('[data-view]'); if(v){ e.preventDefault(); openGallery(+v.dataset.view); return; }
+  const del=e.target.closest('.vt-del'); if(del){ const s=slipById(+del.dataset.id);
+    s._rows.splice(+del.dataset.row,1); if(!s._rows.length) s._rows.push({date:'',from:'',to:''});
+    syncCfgFromRows(s); renderVerify(); return; }
+  const add=e.target.closest('.vt-add'); if(add){ const s=slipById(+add.dataset.id);
+    const last=s._rows[s._rows.length-1]; s._rows.push({date:last?last.date:'',from:'',to:''});
+    syncCfgFromRows(s); renderVerify(); return; }
 });
 
 let TL={list:[],holidays:new Set(),rates:{ob1:31.58,ob2:52.79}};
@@ -668,12 +740,13 @@ $('#calc').onclick=()=>{
   $('#err').textContent='';
   try{
     const blocks=[];
-    document.querySelectorAll('#verify .vcfg').forEach(ta=>{
-      const s=slipById(+ta.dataset.id); if(!s||!s.included) return;
-      const cfg=JSON.parse(ta.value); s.cfg=cfg;   // throws on bad JSON -> caught below
-      blocks.push(cfg);
+    slips.forEach(s=>{
+      if(s.status!=='done'||!s.included) return;
+      syncCfgFromRows(s);                          // rebuild entries from the editable table
+      blocks.push(s.cfg);
     });
     if(!blocks.length) throw new Error('No slips included — tick at least one block.');
+    if(!blocks.some(c=>c.entries&&c.entries.length)) throw new Error('No complete rest rows — each row needs a date, a from and a to time.');
     const gRates={ob1:SETTINGS.ob1,ob2:SETTINGS.ob2}, T=gTimes();   // rates + boundary times apply to every slip
     TL.list=[]; const holidays=new Set(); UNCRAW=[];
     blocks.forEach(cfg=>{
