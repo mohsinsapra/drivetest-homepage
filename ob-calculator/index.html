@@ -50,6 +50,24 @@
   h1{font-family:var(--font-display);font-size:26px;font-weight:800;letter-spacing:-.02em;margin:0}
   .tag{color:var(--muted);font-size:15px;margin:4px 0 28px;animation:fadeUp .6s .05s both}
 
+  /* how-it-works circular step flow */
+  .flow{display:flex;align-items:flex-start;margin:10px 0 30px;overflow-x:auto;animation:fadeUp .6s .05s both;
+    scrollbar-width:none}
+  .flow::-webkit-scrollbar{display:none}
+  .flow .fstep{flex:1 0 0;min-width:80px;display:flex;flex-direction:column;align-items:center;text-align:center;position:relative}
+  .flow .fcirc{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;position:relative;z-index:1;
+    background:linear-gradient(140deg,var(--accent),var(--accent-2));color:#fff;
+    font-family:var(--font-display);font-weight:800;font-size:21px;box-shadow:0 10px 24px -8px var(--accent)}
+  .flow .flabel{font-size:13px;font-weight:800;margin-top:10px;color:var(--text)}
+  .flow .fsub{font-size:11.5px;color:var(--muted);margin-top:3px;line-height:1.35;max-width:130px}
+  .flow .fstep:not(:last-child)::after{content:"";position:absolute;top:27px;left:calc(50% + 36px);
+    width:calc(100% - 72px);height:2px;background:linear-gradient(90deg,var(--accent),var(--accent-2));opacity:.4}
+  @media(max-width:560px){
+    .flow .fcirc{width:46px;height:46px;font-size:18px}
+    .flow .fstep:not(:last-child)::after{top:22px;left:calc(50% + 30px);width:calc(100% - 60px)}
+    .flow .fsub{display:none}
+  }
+
   .card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:22px;margin-bottom:18px;
     box-shadow:var(--shadow);animation:fadeUp .6s both}
   .step{display:flex;align-items:center;gap:10px;margin-bottom:15px;font-weight:700;font-size:12px;color:var(--yellow);
@@ -243,6 +261,41 @@
   .settings textarea{min-height:62px;font-size:12px;line-height:1.5}
   .savedtag{color:var(--ok);font-weight:700;margin-left:4px}
 
+  /* editable Swedish public-holiday list (nested, collapsed by default) */
+  .hols{border:1px solid var(--border);border-radius:14px;background:var(--field);overflow:hidden}
+  .hols>summary{list-style:none;cursor:pointer;padding:12px 14px;font-weight:700;font-size:13px;
+    display:flex;align-items:center;gap:8px;font-family:var(--font-body)}
+  .hols>summary::-webkit-details-marker{display:none}
+  .hols>summary .hcount{color:var(--muted);font-weight:600}
+  .hols>summary .chev{margin-left:auto;color:var(--muted);transition:.2s}
+  .hols[open]>summary .chev{transform:rotate(180deg)}
+  .hols .how{padding:0 14px;margin:8px 0 10px}
+  .holstable{padding:0 14px;overflow-x:auto}
+  .hols table{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:8px}
+  .hols th{text-align:left;color:var(--muted);font-weight:700;font-size:10.5px;letter-spacing:.07em;
+    text-transform:uppercase;padding:4px 8px 6px 0;background:none;border:0}
+  .hols td{padding:5px 8px 5px 0;border-top:1px solid var(--border);vertical-align:middle}
+  .hols input.hin{width:100%;font-size:13px;padding:7px 9px;border-radius:9px;
+    background:var(--card);border:1px solid var(--field-bd);font-family:'JetBrains Mono',monospace}
+  .hols input.hin.dt{font-family:var(--font-body)}
+  .hols input.hin:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--ob1-soft)}
+  .hols td.htd-date{width:150px} .hols td.hx{width:36px;text-align:right}
+  .hols .hfoot{display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:2px 14px 14px}
+
+  /* landing sample slip */
+  .samplegrid{display:grid;grid-template-columns:210px 1fr;gap:22px;align-items:start;margin-top:4px}
+  .sampleimg{display:block;border-radius:14px;overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow);transition:transform .15s;cursor:zoom-in}
+  .sampleimg:hover{transform:translateY(-2px)}
+  .sampleimg img{display:block;width:100%;height:auto}
+  .samplecap{color:var(--muted);font-size:12px;margin-top:7px;text-align:center}
+  .sampletable table{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:14px}
+  .sampletable th{text-align:left;color:var(--muted);font-weight:700;font-size:10.5px;letter-spacing:.07em;
+    text-transform:uppercase;padding:0 12px 7px 0}
+  .sampletable td{padding:8px 12px 8px 0;border-top:1px solid var(--border);vertical-align:top}
+  .sampletable td.mono{font-family:'JetBrains Mono',monospace;white-space:nowrap}
+  .sampletable .holtag{font-size:10.5px;font-weight:800;color:var(--ob2);margin-left:6px}
+  @media(max-width:600px){.samplegrid{grid-template-columns:1fr}.sampleimg{max-width:230px}}
+
   @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
   @keyframes rowin{from{opacity:0;transform:translateX(-8px)}to{opacity:1;transform:none}}
   @keyframes pop{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:none}}
@@ -254,11 +307,16 @@
 <div class="topbar"><button type="button" id="theme-toggle" class="topbar__btn" aria-label="Toggle theme"><span class="theme-icon">🌙</span></button></div>
 <div class="wrap">
   <header><h1>OB Calculator</h1></header>
-  <p class="tag">Snap a Vilotidsrapport → AI reads it → you verify → OB1 / OB2 priced instantly.</p>
+  <div class="flow" aria-label="How it works">
+    <div class="fstep"><div class="fcirc">1</div><div class="flabel">Snap</div><div class="fsub">Photograph your Vilotidsrapport</div></div>
+    <div class="fstep"><div class="fcirc">2</div><div class="flabel">AI reads</div><div class="fsub">Rest times extracted automatically</div></div>
+    <div class="fstep"><div class="fcirc">3</div><div class="flabel">Verify</div><div class="fsub">Check &amp; fix any misread digit</div></div>
+    <div class="fstep"><div class="fcirc">4</div><div class="flabel">Priced</div><div class="fsub">OB1 / OB2 totals instantly</div></div>
+  </div>
 
   <!-- 0. how OB is calculated -->
   <details class="rules" open>
-    <summary>ℹ️ How OB is calculated — rates &amp; rules <span class="chev">▾</span></summary>
+    <summary>How OB is calculated — rates &amp; rules <span class="chev">▾</span></summary>
     <p class="how"><b>Work = the gaps between your rest periods</b> on the Vilotidsrapport. Each work slice is split at the <span class="t-day">06:00</span> / <span class="t-eve">19:00</span> boundaries (and midnight), then priced by the time of day and the weekday:</p>
     <table>
       <thead><tr><th>Band</th><th>When it applies</th><th class="r">Rate</th></tr></thead>
@@ -293,8 +351,52 @@
         <span id="setSaved" class="savedtag"></span>
       </div>
       <p class="how" style="margin:0">These two boundary times and the rates above apply to <b>every</b> photo; the weekday &amp; holiday rules are unchanged. Override any single period's band in the result table.</p>
+
+      <details class="hols" id="holsBox">
+        <summary>Swedish public holidays <span class="hcount" id="holsCount"></span><span class="chev">▾</span></summary>
+        <p class="how">These dates drive the holiday rule: a holiday daytime <span class="t-day">06:00</span>–<span class="t-eve">19:00</span> counts as <b>OB1</b>, and the holiday night plus the evening before a holiday count as <b>OB2</b>. The list is <b>computed automatically for any year</b> (it follows Easter forward each year), so it's never tied to one year — just pick the year. Edit a date, remove one, or add your own; changes are saved per year in this browser and applied when you Calculate.</p>
+        <div class="hfoot" style="padding-bottom:6px">
+          <label style="margin:0;display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);font-weight:600">Year
+            <input id="holYear" class="hin dt" type="number" min="2000" max="2100" step="1" style="width:96px"></label>
+        </div>
+        <div class="holstable">
+          <table>
+            <thead><tr><th class="htd-date">Date</th><th>Holiday</th><th></th></tr></thead>
+            <tbody id="holsBody"></tbody>
+          </table>
+        </div>
+        <div class="hfoot">
+          <button type="button" id="holAdd" class="xbtn">＋ Add holiday</button>
+          <button type="button" id="holReset" class="xbtn">↺ Reset year to computed</button>
+        </div>
+      </details>
     </div>
   </details>
+
+  <!-- sample slip (so a first-time visitor sees how it works) -->
+  <div class="card">
+    <div class="step"><span class="num">✦</span> See a sample</div>
+    <p class="hint" style="margin:-4px 0 14px">This is a real Vilotidsrapport. The blue handwriting are your <b>rest periods</b>; the <b>work</b> we price is the gaps between them. Load it to watch OB1 / OB2 get calculated.</p>
+    <div class="samplegrid">
+      <div>
+        <div class="sampleimg" id="sampleImg" role="button" tabindex="0" aria-label="Enlarge sample slip">
+          <img src="sample-vilotidsrapport.jpg" alt="Sample Swedish taxi Vilotidsrapport rest-time slip" loading="lazy"></div>
+        <div class="samplecap">tap to enlarge</div>
+      </div>
+      <div class="sampletable">
+        <table>
+          <thead><tr><th>Date</th><th>Rest periods (from → to)</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">2026-04-30</td><td class="mono">00:00 → 15:21</td></tr>
+            <tr><td class="mono">2026-05-01<span class="holtag">HOLIDAY</span></td><td class="mono">04:15 → 16:15</td></tr>
+            <tr><td class="mono">2026-05-02</td><td class="mono">02:40 → 15:13<br>17:43 → 19:43</td></tr>
+            <tr><td class="mono">2026-05-03</td><td class="mono">03:11 → 24:00</td></tr>
+          </tbody>
+        </table>
+        <button id="loadSample">▶ Load this sample &amp; calculate</button>
+      </div>
+    </div>
+  </div>
 
   <!-- 1. connect -->
   <div class="card">
@@ -362,8 +464,49 @@
 
 <script src="calc.js"></script>
 <script>
-const HOLIDAYS=["2026-01-01","2026-01-06","2026-04-03","2026-04-05","2026-04-06","2026-05-01",
-  "2026-05-14","2026-05-24","2026-06-06","2026-06-20","2026-10-31","2026-12-25","2026-12-26"];
+// Swedish public holidays (red days) are COMPUTED for any year — never hard-coded to one year.
+// Fixed dates + Easter (Anonymous Gregorian / Computus) + the Midsummer & All-Saints Saturday rules.
+function easterSunday(y){
+  const a=y%19,b=Math.floor(y/100),c=y%100,d=Math.floor(b/4),e=b%4,
+    f=Math.floor((b+8)/25),g=Math.floor((b-f+1)/3),h=(19*a+b-d-g+15)%30,
+    i=Math.floor(c/4),k=c%4,l=(32+2*e+2*i-h-k)%7,m=Math.floor((a+11*h+22*l)/451);
+  return new Date(y,Math.floor((h+l-7*m+114)/31)-1,((h+l-7*m+114)%31)+1);
+}
+const isoD=d=>`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+const addDays=(d,n)=>{const x=new Date(d);x.setDate(x.getDate()+n);return x;};
+function swedishHolidays(y){
+  const e=easterSunday(y);
+  const sat=(mo,from)=>{const d=new Date(y,mo,from);d.setDate(from+((6-d.getDay()+7)%7));return d;};
+  return [
+    {date:`${y}-01-01`,name:"Nyårsdagen"},
+    {date:`${y}-01-06`,name:"Trettondedag jul"},
+    {date:isoD(addDays(e,-2)),name:"Långfredagen"},
+    {date:isoD(e),name:"Påskdagen"},
+    {date:isoD(addDays(e,1)),name:"Annandag påsk"},
+    {date:`${y}-05-01`,name:"Första maj"},
+    {date:isoD(addDays(e,39)),name:"Kristi himmelsfärdsdag"},
+    {date:isoD(addDays(e,49)),name:"Pingstdagen"},
+    {date:`${y}-06-06`,name:"Sveriges nationaldag"},
+    {date:isoD(sat(5,20)),name:"Midsommardagen"},        // Saturday between Jun 20–26
+    {date:isoD(sat(9,31)),name:"Alla helgons dag"},       // Saturday between Oct 31–Nov 6
+    {date:`${y}-12-25`,name:"Juldagen"},
+    {date:`${y}-12-26`,name:"Annandag jul"}
+  ].sort((a,b)=>a.date.localeCompare(b.date));
+}
+// Saved overrides are kept PER YEAR; any year without an override is computed on demand.
+function loadHolStore(){
+  try{const raw=JSON.parse(localStorage.getItem('ob_holidays')||'null');
+    if(raw&&typeof raw==='object'&&!Array.isArray(raw)) return raw;          // already per-year
+    if(Array.isArray(raw)&&raw.length){                                      // migrate old flat array
+      const y=(raw[0].date||'').slice(0,4)||String(new Date().getFullYear());
+      return {[y]:raw.map(h=>({date:(h.date||'').trim(),name:h.name||''}))};
+    }
+  }catch(e){}
+  return {};
+}
+let HOL_STORE=loadHolStore();
+const saveHolStore=()=>localStorage.setItem('ob_holidays',JSON.stringify(HOL_STORE));
+const holidaysForYear=y=>HOL_STORE[y]?HOL_STORE[y]:swedishHolidays(+y);
 
 const PROMPT=`You read a Swedish taxi "Vilotidsrapport" (rest-time slip) from a photo and output JSON only.
 Each "Vilotid" block has a Datum (date) and up to two ranges "Från och med klockan – Till och med klockan". These are REST periods.
@@ -446,7 +589,14 @@ $('#model').onchange=e=>localStorage.setItem(lsModel(),e.target.value.split(' ·
 applyProvider();
 
 function nextDay(s){const d=new Date(s);d.setDate(d.getDate()+1);return d.toISOString().slice(0,10)}
-function holsFor(es){if(!es.length)return[];const d=es.map(e=>e.date).sort();return HOLIDAYS.filter(h=>h>=d[0]&&h<=d[d.length-1])}
+function holsFor(es){
+  if(!es.length)return[];
+  const ds=es.map(e=>e.date).filter(Boolean).sort(); if(!ds.length)return[];
+  const y0=+ds[0].slice(0,4), y1=+ds[ds.length-1].slice(0,4);
+  let all=[];
+  for(let y=y0;y<=y1;y++) all=all.concat(holidaysForYear(y).map(h=>(h.date||'').trim()).filter(Boolean));
+  return all.filter(h=>h>=ds[0]&&h<=ds[ds.length-1]);
+}
 
 // ---------- global settings: OB rates + the two boundary times — applied to EVERY photo ----------
 const hmToMin=s=>{const m=/^(\d{1,2}):(\d{2})$/.exec(String(s||''));return m?(+m[1])*60+(+m[2]):0;};
@@ -476,6 +626,41 @@ $('#resetRates').onclick=()=>{SETTINGS.ob1=DEF_SETTINGS.ob1;SETTINGS.ob2=DEF_SET
 $('#resetAll').onclick=()=>{SETTINGS=Object.assign({},DEF_SETTINGS);fillSettings();saveSettings();};
 fillSettings();
 const gTimes=()=>({dayStart:hmToMin(SETTINGS.dayStart),eveStart:hmToMin(SETTINGS.eveStart)});
+
+// ---------- editable Swedish public-holiday list, per year (feeds the holiday OB1/OB2 rule) ----------
+const holsBody=$('#holsBody');
+let holYear=new Date().getFullYear();
+const curHols=()=>HOL_STORE[holYear]||swedishHolidays(holYear);
+// materialise the displayed year as an editable override before mutating it
+const editYear=()=>{ if(!HOL_STORE[holYear]) HOL_STORE[holYear]=swedishHolidays(holYear); return HOL_STORE[holYear]; };
+function holsCount(){
+  const n=curHols().filter(h=>(h.date||'').trim()).length;
+  const custom=!!HOL_STORE[holYear];
+  $('#holsCount').textContent=`· ${holYear} · ${n} date${n===1?'':'s'}${custom?' · edited':' · auto'}`;
+}
+function renderHolidays(){
+  $('#holYear').value=holYear;
+  holsBody.innerHTML=curHols().map((h,i)=>`<tr>
+    <td class="htd-date"><input class="hin dt" type="date" data-i="${i}" data-k="date" value="${esc(h.date||'')}"></td>
+    <td><input class="hin" type="text" data-i="${i}" data-k="name" placeholder="Holiday name" value="${esc(h.name||'')}"></td>
+    <td class="hx"><button class="xbtn holdel" data-i="${i}" title="Remove">✕</button></td>
+  </tr>`).join('');
+  holsCount();
+}
+$('#holYear').onchange=e=>{ const y=parseInt(e.target.value,10); if(y>=2000&&y<=2100){holYear=y;renderHolidays();} else e.target.value=holYear; };
+holsBody.addEventListener('input',e=>{
+  const inp=e.target.closest('.hin'); if(!inp)return;
+  editYear()[+inp.dataset.i][inp.dataset.k]=inp.value; saveHolStore(); holsCount();
+});
+holsBody.addEventListener('click',e=>{
+  const del=e.target.closest('.holdel'); if(!del)return;
+  editYear().splice(+del.dataset.i,1); saveHolStore(); renderHolidays();
+});
+$('#holAdd').onclick=()=>{ editYear().push({date:holYear+'-',name:''}); saveHolStore(); renderHolidays();
+  const last=holsBody.querySelector('tr:last-child input.dt'); if(last) last.focus(); };
+$('#holReset').onclick=()=>{ if(HOL_STORE[holYear]&&!confirm(`Reset ${holYear} back to the computed Swedish public holidays?`))return;
+  delete HOL_STORE[holYear]; saveHolStore(); renderHolidays(); };
+renderHolidays();
 
 // ---------- upload + multi-image gallery ----------
 const drop=$('#drop'), gal=$('#gal');
@@ -598,6 +783,24 @@ $('#manual').onclick=()=>{
   slips.push({id:++slipSeq,dataUrl:null,name:'Manual entry',status:'done',cfg:JSON.parse(TEMPLATE),err:'',included:true});
   renderVerify(); $('#editCard').style.display='';
   $('#editCard').scrollIntoView({behavior:'smooth'});
+};
+
+// ---------- built-in sample slip: prefilled rest periods read off sample-vilotidsrapport.jpg ----------
+const SAMPLE_ENTRIES=[
+  {date:"2026-04-30",rests:[["00:00","15:21"]]},
+  {date:"2026-05-01",rests:[["04:15","16:15"]]},
+  {date:"2026-05-02",rests:[["02:40","15:13"],["17:43","19:43"]]},
+  {date:"2026-05-03",rests:[["03:11","24:00"]]}
+];
+$('#loadSample').onclick=()=>{
+  // attach as a normal "read" slip with its image, so the gallery/viewer/timeline all work
+  const entries=JSON.parse(JSON.stringify(SAMPLE_ENTRIES));
+  const cfg={entries,holidays:holsFor(entries),
+    window_start:entries[0].date+' 00:00',window_end:nextDay(entries[entries.length-1].date)+' 00:00',
+    uncertain:[],rates:{ob1:SETTINGS.ob1,ob2:SETTINGS.ob2}};
+  slips.push({id:++slipSeq,dataUrl:'sample-vilotidsrapport.jpg',name:'Sample slip',status:'done',cfg,err:'',included:true});
+  renderGallery(); renderVerify(); $('#editCard').style.display='';
+  $('#calc').click();   // run the calculation and reveal the result
 };
 
 // ---------- per-image verify (editable table, no raw JSON) ----------
@@ -750,7 +953,7 @@ $('#calc').onclick=()=>{
     const gRates={ob1:SETTINGS.ob1,ob2:SETTINGS.ob2}, T=gTimes();   // rates + boundary times apply to every slip
     TL.list=[]; const holidays=new Set(); UNCRAW=[];
     blocks.forEach(cfg=>{
-      const c=Object.assign({},cfg,{rates:gRates,times:T});         // keep each slip's own window + holidays
+      const c=Object.assign({},cfg,{rates:gRates,times:T,holidays:holsFor(cfg.entries||[])}); // live holiday list, own window
       const r=compute(c);
       r.intervals.forEach(iv=>TL.list.push(iv[2]?[new Date(iv[0]),new Date(iv[1]),iv[2]]:[new Date(iv[0]),new Date(iv[1])]));
       r.holidays.forEach(h=>holidays.add(h));
@@ -803,7 +1006,20 @@ function obCard(merged,band,rate,grandMax){
 function countUp(el,to,fmtFn){const t0=performance.now(),d=650;
   (function f(t){const k=Math.min(1,(t-t0)/d),e=1-Math.pow(1-k,3);el.textContent=fmtFn(to*e);if(k<1)requestAnimationFrame(f)})(performance.now())}
 
+// Always break each auto (non-overridden) work period into one row per OB band —
+// the same thing the old ⤲ split button did, now applied automatically on every render.
+function autoSplitAll(){
+  const out=[];
+  for(const iv of TL.list){
+    if(iv[2]){ out.push(iv); continue; }            // manual band override -> keep whole
+    const merged=mergeSameBand(classifyIntervals([[iv[0],iv[1]]],TL.holidays).rows);
+    if(merged.length<=1) out.push(iv);              // already a single band
+    else merged.forEach(m=>out.push([new Date(m[0]),new Date(m[1])]));
+  }
+  TL.list=out;
+}
 function renderAll(animate){
+  autoSplitAll();
   TL.list.sort((x,y)=>x[0]-y[0]);
   const rates=TL.rates;
   const per=TL.list.map(r=>splitInterval(r[0],r[1],TL.holidays,r[2]));
@@ -832,7 +1048,6 @@ function renderAll(animate){
     const a=r[0],b=r[1],ov=r[2]||'AUTO';
     const t=per[i], dur=Math.round((b-a)/60000), bad=!(dur>0);
     const ua=uncReason(a), ub=uncReason(b); if(ua)uncCount++; if(ub)uncCount++;
-    const canSplit=!r[2] && ['OB1','OB2','NORMAL'].filter(k=>t[k]>0).length>1;
     const badges=['OB2','OB1','NORMAL'].filter(k=>t[k]>0)
       .map(k=>`<span class="pill sm ${bandCls(k)}">${k==='NORMAL'?'Norm':k} ${fmt(t[k])}</span>`).join('')||'<span class="hint">—</span>';
     const flag=(ua||ub)?`<span class="uflag" title="⚠ ${esc(ua||ub)}">⚠</span>`:'';
@@ -845,7 +1060,7 @@ function renderAll(animate){
       <td>${sel}</td>
       <td>${flag}${badges}</td>
       <td class="t mono">${bad?'<span style="color:#ff9fb0">0:00</span>':fmt(dur)}</td>
-      <td class="acts">${canSplit?`<button class="xbtn split" data-split="${i}" title="Split into separate OB1/OB2 rows so you can edit each part">⤲</button>`:''}<button class="xbtn" data-del="${i}">✕</button></td></tr>`;
+      <td class="acts"><button class="xbtn" data-del="${i}">✕</button></td></tr>`;
   }).join('');
   $('#tlcard').innerHTML=`
     <div class="obhead"><div class="l"><b>Work timeline</b> <span class="rate">· editable · ${TL.list.length} periods${uncCount?` · <span style="color:var(--ob2)">⚠ ${uncCount} to verify</span>`:''}</span></div>
@@ -878,14 +1093,6 @@ $('#tlcard').addEventListener('change',e=>{
   if(isNaN(d)) return;
   TL.list[i][k]=d; renderAll(false); syncJson();
 });
-// split ONE multi-band period into one editable row per distinct OB band run
-function splitRow(i){
-  const a=TL.list[i][0], b=TL.list[i][1];
-  const merged=mergeSameBand(classifyIntervals([[a,b]],TL.holidays).rows);
-  if(merged.length<2) return;
-  TL.list.splice(i,1,...merged.map(m=>[new Date(m[0]),new Date(m[1])]));
-  renderAll(false); syncJson();
-}
 $('#tlcard').addEventListener('click',e=>{
   if(e.target.id==='csvbtn'){ exportCSV(); return; }
   if(e.target.id==='addrow'){
@@ -893,8 +1100,6 @@ $('#tlcard').addEventListener('click',e=>{
     const base=last?new Date(last[1]):new Date();
     TL.list.push([new Date(base),new Date(base.getTime()+3600000)]); renderAll(false); syncJson(); return;
   }
-  const sp=e.target.dataset.split;
-  if(sp!==undefined){ splitRow(+sp); return; }
   const del=e.target.dataset.del;
   if(del!==undefined){ TL.list.splice(+del,1); renderAll(false); syncJson(); }
 });
@@ -925,6 +1130,13 @@ function openGallery(id){
   const arr=photoSlips(); if(!arr.length) return;
   lb.classList.add('open'); showLbAt(Math.max(0,arr.findIndex(s=>s.id===id)));
 }
+// open a single standalone image (e.g. the landing sample) in the same lightbox
+function openImage(url){
+  lb.classList.add('open'); lbImg.src=url; lz=1; lx=0; ly=0; lbApply();
+  $('#lbPrev').hidden=true; $('#lbNext').hidden=true; $('#lbCount').textContent='';
+}
+$('#sampleImg').addEventListener('click',()=>openImage('sample-vilotidsrapport.jpg'));
+$('#sampleImg').addEventListener('keydown',e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); openImage('sample-vilotidsrapport.jpg'); } });
 function closeLb(){ lb.classList.remove('open'); drag=null; }
 // tapping the floating thumbnail opens the viewer at the first photo
 document.addEventListener('click',e=>{ if(e.target.closest('.slip__fab')){ const a=photoSlips(); if(a.length) openGallery(a[0].id); } });
