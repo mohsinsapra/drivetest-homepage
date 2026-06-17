@@ -1,0 +1,171 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - link "Drive Test" [ref=e3] [cursor=pointer]:
+      - /url: /
+    - generic [ref=e4]:
+      - generic [ref=e5]: EN
+      - link "SV" [ref=e6] [cursor=pointer]:
+        - /url: /ob-taxi-sweden/sv/
+    - button "Toggle dark mode" [ref=e7] [cursor=pointer]: 🌙
+  - generic [ref=e8]:
+    - banner [ref=e9]:
+      - generic [ref=e10]: Sweden · Taxi pay
+      - heading "Taxi OB Calculator Sweden" [level=1] [ref=e11]
+      - paragraph [ref=e12]: What OB is for Swedish taxi drivers — and exactly how OB1 and OB2 are calculated from your Vilotidsrapport. Then price your OB pay in seconds with our free calculator.
+    - article [ref=e13]:
+      - paragraph [ref=e14]:
+        - strong [ref=e15]: OB
+        - text: is one of the most important — and most misunderstood — parts of a taxi driver's pay in Sweden. If you drive evenings, nights, weekends or holidays, a big share of your wage comes from OB supplements. This guide explains what OB means, how OB1 and OB2 differ, and how the amount is worked out from your rest-time slip, so you can check that every krona you've earned actually shows up on your payslip.
+      - generic [ref=e16]:
+        - figure [ref=e17]:
+          - img "A Vilotidsrapport rest-time slip with a clock" [ref=e18]
+        - generic [ref=e24]:
+          - heading "What is OB?" [level=2] [ref=e25]
+          - paragraph [ref=e26]:
+            - text: OB stands for
+            - strong [ref=e27]: obekväm arbetstid
+            - text: — "inconvenient working hours." It's a wage supplement paid
+            - emphasis [ref=e28]: on top of
+            - text: "your normal hourly rate when you work at times most people don't: evenings, nights, weekends and public holidays. The rates and exact hours come from the collective agreement (Taxiavtalet)."
+          - paragraph [ref=e29]:
+            - text: For taxi drivers, OB is tied to the
+            - strong [ref=e30]: Vilotidsrapport
+            - text: — the rest-time slip that records when you rested during a shift. Your
+            - emphasis [ref=e31]: worked
+            - text: time is simply the gaps between those rest periods, and each gap is priced by when it happened.
+      - heading "OB1 vs OB2 — the two bands" [level=2] [ref=e32]
+      - paragraph [ref=e33]: There are two OB levels. OB2 is the higher one, paid for the most antisocial hours; OB1 is the lower one. Everything else is Normal time with no supplement.
+      - table [ref=e34]:
+        - rowgroup [ref=e35]:
+          - row "Band When it applies Example rate" [ref=e36]:
+            - columnheader "Band" [ref=e37]
+            - columnheader "When it applies" [ref=e38]
+            - columnheader "Example rate" [ref=e39]
+        - rowgroup [ref=e40]:
+          - row "OB2 Fri 19:00 → Sat 06:00 · Sat 19:00 → Sun 06:00 · Sun 19:00 → Mon 06:00 · public holidays and the day before a holiday, 19:00 → 06:00 52.79 kr/h" [ref=e41]:
+            - cell "OB2" [ref=e42]:
+              - generic [ref=e43]: OB2
+            - cell "Fri 19:00 → Sat 06:00 · Sat 19:00 → Sun 06:00 · Sun 19:00 → Mon 06:00 · public holidays and the day before a holiday, 19:00 → 06:00" [ref=e44]
+            - cell "52.79 kr/h" [ref=e45]
+          - row "OB1 Weekday nights (Mon–Fri) 19:00 → 06:00 · Saturdays & Sundays 06:00 → 19:00 · public holidays 06:00 → 19:00 31.58 kr/h" [ref=e46]:
+            - cell "OB1" [ref=e47]:
+              - generic [ref=e48]: OB1
+            - cell "Weekday nights (Mon–Fri) 19:00 → 06:00 · Saturdays & Sundays 06:00 → 19:00 · public holidays 06:00 → 19:00" [ref=e49]
+            - cell "31.58 kr/h" [ref=e50]
+          - row "Normal Mon–Fri daytime 06:00 → 19:00 (not a holiday) —" [ref=e51]:
+            - cell "Normal" [ref=e52]:
+              - generic [ref=e53]: Normal
+            - cell "Mon–Fri daytime 06:00 → 19:00 (not a holiday)" [ref=e54]
+            - cell "—" [ref=e55]
+      - paragraph [ref=e56]: The figures above are the calculator's default example rates. Your actual OB rates depend on your collective agreement and the year — you can change them in the calculator.
+      - generic [ref=e57]:
+        - figure [ref=e58]:
+          - img "Day and night, representing OB1 and OB2" [ref=e59]
+        - generic [ref=e70]:
+          - heading "Day, night and the \"evening date\" rule" [level=2] [ref=e71]
+          - paragraph [ref=e72]:
+            - text: A night belongs to its
+            - strong [ref=e73]: evening date
+            - text: ": the slice from 00:00–06:00 is owned by the previous evening. So a shift that starts late on Friday and runs past midnight into Saturday morning still counts as a"
+            - strong [ref=e74]: Friday night
+            - text: — and stays OB2. This is the rule that trips most people up when they try to add hours by hand.
+      - heading "How taxi OB is calculated, step by step" [level=2] [ref=e75]
+      - list [ref=e76]:
+        - listitem [ref=e77]:
+          - strong [ref=e78]: Read the Vilotidsrapport.
+          - text: Note each day's date and its rest periods (from–to times).
+        - listitem [ref=e79]:
+          - strong [ref=e80]: Find the worked time.
+          - text: Worked time = the gaps
+          - emphasis [ref=e81]: between
+          - text: rest periods within the day's window.
+        - listitem [ref=e82]:
+          - strong [ref=e83]: Split each worked slice
+          - text: at 06:00 and 19:00 (and midnight), so no slice spans two bands.
+        - listitem [ref=e84]:
+          - strong [ref=e85]: Classify each slice
+          - text: as Normal, OB1 or OB2 by the time of day and the weekday (using the evening-date rule for nights).
+        - listitem [ref=e86]:
+          - strong [ref=e87]: Multiply
+          - text: the OB1 and OB2 minutes by their rates and add them up — that's your OB pay.
+      - generic [ref=e88]:
+        - heading "Worked example" [level=3] [ref=e89]
+        - paragraph [ref=e90]: "Friday shift, one rest period 04:15–16:15:"
+        - paragraph [ref=e91]:
+          - text: Worked time is 00:00–04:15 and 16:15–24:00. The early-morning slice belongs to Thursday evening →
+          - generic [ref=e92]: OB1
+          - text: 4 h 15 m. 16:15–19:00 is Friday daytime →
+          - generic [ref=e93]: Normal
+          - text: 2 h 45 m. 19:00–24:00 is Friday evening →
+          - generic [ref=e94]: OB2
+          - text: 5 h. At the example rates that's 4.25 × 31.58 + 5 × 52.79 =
+          - strong [ref=e95]: 796.33 kr
+          - text: of OB on top of base pay.
+      - generic [ref=e96]:
+        - figure [ref=e97]:
+          - img "A residence-permit card with a verification shield" [ref=e98]
+        - generic [ref=e106]:
+          - heading "OB and your work / residence permit" [level=2] [ref=e107]
+          - paragraph [ref=e108]:
+            - text: If you work in Sweden on a
+            - strong [ref=e109]: work permit
+            - text: ", OB is more than pay — it's part of your employment record, and it can be a"
+            - strong [ref=e110]: sensitive area
+            - text: .
+      - generic [ref=e111]:
+        - heading "⚠ Why Migrationsverket may look at your OB" [level=3] [ref=e112]
+        - paragraph [ref=e113]:
+          - text: When you apply to
+          - strong [ref=e114]: extend your permit
+          - text: or for
+          - strong [ref=e115]: permanent residence (PR)
+          - text: ", Migrationsverket checks that your real working conditions matched the terms your permit was granted on — the agreed salary, the hours, and that your total pay reaches the collective-agreement level"
+          - emphasis [ref=e116]: including OB supplements
+          - text: .
+        - paragraph [ref=e117]: "Practical points:"
+        - list [ref=e118]:
+          - listitem [ref=e119]:
+            - text: Your reported OB and hours should match your
+            - strong [ref=e120]: Vilotidsrapport and payslips
+            - text: . Under-reported OB or mismatched hours can raise questions during an extension or PR review.
+          - listitem [ref=e121]:
+            - text: Keep your
+            - strong [ref=e122]: own copies
+            - text: of rest-time slips and payslips — you may be asked to show your monthly pay met the required level.
+          - listitem [ref=e123]:
+            - text: If an employer under-pays or mis-reports OB, it can affect
+            - emphasis [ref=e124]: your
+            - text: permit case, not only theirs.
+        - paragraph [ref=e125]: Getting OB right protects both your income and your residence-permit case. Use the calculator to check every slip and keep a clean record.
+      - heading "Frequently asked questions" [level=2] [ref=e126]
+      - group [ref=e127]:
+        - generic "What does OB mean? ▾" [ref=e128] [cursor=pointer]:
+          - text: What does OB mean?
+          - generic [ref=e129]: ▾
+      - group [ref=e130]:
+        - generic "How much is OB for taxi drivers in Sweden? ▾" [ref=e131] [cursor=pointer]:
+          - text: How much is OB for taxi drivers in Sweden?
+          - generic [ref=e132]: ▾
+      - group [ref=e133]:
+        - generic "Does a night shift past midnight stay OB2? ▾" [ref=e134] [cursor=pointer]:
+          - text: Does a night shift past midnight stay OB2?
+          - generic [ref=e135]: ▾
+      - group [ref=e136]:
+        - generic "Do I need the Vilotidsrapport to calculate OB? ▾" [ref=e137] [cursor=pointer]:
+          - text: Do I need the Vilotidsrapport to calculate OB?
+          - generic [ref=e138]: ▾
+      - paragraph [ref=e139]: This page is general information, not legal or tax advice. OB rates and rules come from your collective agreement; permit decisions are made by Migrationsverket. For your own situation, check with Migrationsverket and your union (e.g. Transport).
+      - generic [ref=e140]:
+        - heading "Calculate your taxi OB now" [level=2] [ref=e141]
+        - paragraph [ref=e142]: Snap your Vilotidsrapport → AI reads it → you verify → OB1 / OB2 priced instantly.
+        - link "Open the Taxi OB Calculator →" [ref=e143] [cursor=pointer]:
+          - /url: /ob-calculator/
+    - navigation [ref=e144]:
+      - link "Drive Test home" [ref=e145] [cursor=pointer]:
+        - /url: /
+      - link "Blog" [ref=e146] [cursor=pointer]:
+        - /url: /blog/
+      - link "OB Calculator" [ref=e147] [cursor=pointer]:
+        - /url: /ob-calculator/
+      - link "Svenska" [ref=e148] [cursor=pointer]:
+        - /url: /ob-taxi-sweden/sv/

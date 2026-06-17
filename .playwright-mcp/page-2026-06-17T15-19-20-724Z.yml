@@ -1,0 +1,115 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - button "SV" [ref=e3] [cursor=pointer]
+    - button "Toggle dark mode" [ref=e4] [cursor=pointer]: 🌙
+  - main [ref=e5]:
+    - heading "Drive Test" [level=1] [ref=e10]:
+      - generic [ref=e11]:
+        - generic [ref=e12]: D
+        - generic [ref=e13]: r
+        - generic [ref=e14]: i
+        - generic [ref=e15]: v
+        - generic [ref=e16]: e
+      - generic [ref=e17]:
+        - generic [ref=e18]: T
+        - generic [ref=e19]: e
+        - generic [ref=e20]: s
+        - generic [ref=e21]: t
+    - generic [ref=e25]:
+      - generic [ref=e26]:
+        - generic [ref=e27]: Taxiförarlegitimation
+        - generic [ref=e28]: ✦
+        - generic [ref=e29]: AI Tutor
+        - generic [ref=e30]: ✦
+        - generic [ref=e31]: Yrkeskunnande
+        - generic [ref=e32]: ✦
+        - generic [ref=e33]: B-körkort
+        - generic [ref=e34]: ✦
+        - generic [ref=e35]: Map Reading
+        - generic [ref=e36]: ✦
+        - generic [ref=e37]: Traffic & Safety
+        - generic [ref=e38]: ✦
+        - generic [ref=e39]: Professional Knowledge
+        - generic [ref=e40]: ✦
+      - generic [ref=e41]:
+        - generic [ref=e42]: Taxiförarlegitimation
+        - generic [ref=e43]: ✦
+        - generic [ref=e44]: AI Tutor
+        - generic [ref=e45]: ✦
+        - generic [ref=e46]: Yrkeskunnande
+        - generic [ref=e47]: ✦
+        - generic [ref=e48]: B-körkort
+        - generic [ref=e49]: ✦
+        - generic [ref=e50]: Map Reading
+        - generic [ref=e51]: ✦
+        - generic [ref=e52]: Traffic & Safety
+        - generic [ref=e53]: ✦
+        - generic [ref=e54]: Professional Knowledge
+        - generic [ref=e55]: ✦
+    - generic [ref=e63]:
+      - link "Screenshot 1" [ref=e64] [cursor=pointer]:
+        - /url: content/image/screenshot_1.png
+        - img "App screenshot 1" [ref=e65]
+      - link "Screenshot 2" [ref=e66] [cursor=pointer]:
+        - /url: content/image/screenshot_2.png
+        - img "App screenshot 2" [ref=e67]
+      - link "Screenshot 3" [ref=e68] [cursor=pointer]:
+        - /url: content/image/screenshot_3.png
+        - img "App screenshot 3" [ref=e69]
+      - link "Screenshot 4" [ref=e70] [cursor=pointer]:
+        - /url: content/image/screenshot_4.png
+        - img "App screenshot 4" [ref=e71]
+      - link "Screenshot 5" [ref=e72] [cursor=pointer]:
+        - /url: content/image/screenshot_5.png
+        - img "App screenshot 5" [ref=e73]
+      - link "Screenshot 6" [ref=e74] [cursor=pointer]:
+        - /url: content/image/screenshot_6.png
+        - img "App screenshot 6" [ref=e75]
+      - link "Screenshot 7" [ref=e76] [cursor=pointer]:
+        - /url: content/image/screenshot_7.png
+        - img "App screenshot 7" [ref=e77]
+      - link "Screenshot 8" [ref=e78] [cursor=pointer]:
+        - /url: content/image/screenshot_8.png
+        - img "App screenshot 8" [ref=e79]
+      - link "Screenshot 9" [ref=e80] [cursor=pointer]:
+        - /url: content/image/screenshot_9.png
+        - img "App screenshot 9" [ref=e81]
+  - contentinfo [ref=e94]:
+    - generic [ref=e96]:
+      - paragraph [ref=e97]: ©2026 All rights reserved
+      - list [ref=e98]:
+        - listitem [ref=e99]:
+          - link "Blog" [ref=e100] [cursor=pointer]:
+            - /url: /blog/
+        - listitem [ref=e101]:
+          - link "OB Calculator" [ref=e102] [cursor=pointer]:
+            - /url: /ob-calculator/
+        - listitem [ref=e103]:
+          - link "License Guide" [ref=e104] [cursor=pointer]:
+            - /url: taxi-licence-guide.html
+        - listitem [ref=e105]:
+          - link "Support" [ref=e106] [cursor=pointer]:
+            - /url: support.html
+        - listitem [ref=e107]:
+          - link "Privacy" [ref=e108] [cursor=pointer]:
+            - /url: privacy-policy.html
+        - listitem [ref=e109]:
+          - link "Delete Account" [ref=e110] [cursor=pointer]:
+            - /url: delete-account.html
+        - listitem [ref=e111]:
+          - link "GitHub" [ref=e112] [cursor=pointer]:
+            - /url: https://mohsinsapra.github.io/
+  - generic:
+    - generic: Get the app
+    - link "Google Play":
+      - /url: https://play.google.com/store/apps/details?id=com.mohsinsapra.drivetest
+      - generic:
+        - img
+      - generic:
+        - strong: Google Play
+    - link "App Store":
+      - /url: https://apps.apple.com/app/drive-test-pro/id6765940954
+      - generic:
+        - img
+      - generic:
+        - strong: App Store

@@ -7,6 +7,8 @@
 
     "footer_rights": "All rights reserved",
     "footer_home": "Home",
+    "footer_blog": "Blog",
+    "footer_ob": "OB Calculator",
     "footer_guide": "License Guide",
     "footer_privacy": "Privacy",
     "footer_delete": "Delete Account",
@@ -142,6 +144,8 @@
 
     "footer_rights": "Alla rättigheter förbehållna",
     "footer_home": "Hem",
+    "footer_blog": "Blogg",
+    "footer_ob": "OB-kalkylator",
     "footer_guide": "Licensguide",
     "footer_privacy": "Integritet",
     "footer_delete": "Radera konto",

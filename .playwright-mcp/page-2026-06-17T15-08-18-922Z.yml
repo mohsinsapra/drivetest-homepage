@@ -1,0 +1,171 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - link "Drive Test" [ref=e3] [cursor=pointer]:
+      - /url: /
+    - generic [ref=e4]:
+      - link "EN" [ref=e5] [cursor=pointer]:
+        - /url: /ob-taxi-sweden/
+      - generic [ref=e6]: SV
+    - button "Växla mörkt läge" [ref=e7] [cursor=pointer]: ☀️
+  - generic [ref=e8]:
+    - banner [ref=e9]:
+      - generic [ref=e10]: Sverige · Taxilön
+      - heading "Taxi OB-kalkylator Sverige" [level=1] [ref=e11]
+      - paragraph [ref=e12]: Vad OB innebär för taxiförare i Sverige — och exakt hur OB1 och OB2 räknas ut från din vilotidsrapport. Räkna sedan ut din OB-ersättning på några sekunder med vår gratis kalkylator.
+    - article [ref=e13]:
+      - paragraph [ref=e14]:
+        - strong [ref=e15]: OB
+        - text: är en av de viktigaste — och mest missförstådda — delarna av en taxiförares lön i Sverige. Kör du kvällar, nätter, helger eller röda dagar kommer en stor del av lönen från OB-tillägg. Den här guiden förklarar vad OB betyder, hur OB1 och OB2 skiljer sig åt och hur beloppet räknas ut från din vilotidsrapport — så att du kan kontrollera att varje krona du tjänat faktiskt syns på lönespecen.
+      - generic [ref=e16]:
+        - figure [ref=e17]:
+          - img "En vilotidsrapport med en klocka" [ref=e18]
+        - generic [ref=e24]:
+          - heading "Vad är OB?" [level=2] [ref=e25]
+          - paragraph [ref=e26]:
+            - text: OB står för
+            - strong [ref=e27]: obekväm arbetstid
+            - text: . Det är ett lönetillägg
+            - emphasis [ref=e28]: utöver
+            - text: "din vanliga timlön när du arbetar på tider då de flesta inte gör det: kvällar, nätter, helger och röda dagar. Satserna och de exakta tiderna kommer från kollektivavtalet (Taxiavtalet)."
+          - paragraph [ref=e29]:
+            - text: För taxiförare är OB kopplat till
+            - strong [ref=e30]: vilotidsrapporten
+            - text: — som visar när du vilade under ett pass. Din
+            - emphasis [ref=e31]: arbetade
+            - text: tid är helt enkelt mellanrummen mellan viloperioderna, och varje mellanrum prissätts efter när det inträffade.
+      - heading "OB1 mot OB2 — de två nivåerna" [level=2] [ref=e32]
+      - paragraph [ref=e33]: Det finns två OB-nivåer. OB2 är den högre, för de mest obekväma timmarna; OB1 är den lägre. Allt annat är Normal tid utan tillägg.
+      - table [ref=e34]:
+        - rowgroup [ref=e35]:
+          - row "Nivå När det gäller Exempelsats" [ref=e36]:
+            - columnheader "Nivå" [ref=e37]
+            - columnheader "När det gäller" [ref=e38]
+            - columnheader "Exempelsats" [ref=e39]
+        - rowgroup [ref=e40]:
+          - row "OB2 Fre 19:00 → lör 06:00 · lör 19:00 → sön 06:00 · sön 19:00 → mån 06:00 · röda dagar och dagen före röd dag, 19:00 → 06:00 52,79 kr/h" [ref=e41]:
+            - cell "OB2" [ref=e42]:
+              - generic [ref=e43]: OB2
+            - cell "Fre 19:00 → lör 06:00 · lör 19:00 → sön 06:00 · sön 19:00 → mån 06:00 · röda dagar och dagen före röd dag, 19:00 → 06:00" [ref=e44]
+            - cell "52,79 kr/h" [ref=e45]
+          - row "OB1 Vardagsnätter (mån–fre) 19:00 → 06:00 · lördagar & söndagar 06:00 → 19:00 · röda dagar 06:00 → 19:00 31,58 kr/h" [ref=e46]:
+            - cell "OB1" [ref=e47]:
+              - generic [ref=e48]: OB1
+            - cell "Vardagsnätter (mån–fre) 19:00 → 06:00 · lördagar & söndagar 06:00 → 19:00 · röda dagar 06:00 → 19:00" [ref=e49]
+            - cell "31,58 kr/h" [ref=e50]
+          - row "Normal Mån–fre dagtid 06:00 → 19:00 (ej röd dag) —" [ref=e51]:
+            - cell "Normal" [ref=e52]:
+              - generic [ref=e53]: Normal
+            - cell "Mån–fre dagtid 06:00 → 19:00 (ej röd dag)" [ref=e54]
+            - cell "—" [ref=e55]
+      - paragraph [ref=e56]: Siffrorna ovan är kalkylatorns exempelsatser. Dina verkliga OB-satser beror på ditt kollektivavtal och året — du kan ändra dem i kalkylatorn.
+      - generic [ref=e57]:
+        - figure [ref=e58]:
+          - img "Dag och natt, OB1 och OB2" [ref=e59]
+        - generic [ref=e70]:
+          - heading "Dag, natt och regeln om \"kvällsdatum\"" [level=2] [ref=e71]
+          - paragraph [ref=e72]:
+            - text: En natt tillhör sitt
+            - strong [ref=e73]: kvällsdatum
+            - text: ": delen 00:00–06:00 ägs av kvällen före. Ett pass som börjar sent på fredagen och fortsätter förbi midnatt in på lördag morgon räknas alltså fortfarande som en"
+            - strong [ref=e74]: fredagsnatt
+            - text: — och förblir OB2. Det är den här regeln som ställer till det mest när man försöker räkna timmar för hand.
+      - heading "Så räknas taxi-OB ut, steg för steg" [level=2] [ref=e75]
+      - list [ref=e76]:
+        - listitem [ref=e77]:
+          - strong [ref=e78]: Läs vilotidsrapporten.
+          - text: Notera varje dags datum och dess viloperioder (från–till-tider).
+        - listitem [ref=e79]:
+          - strong [ref=e80]: Hitta arbetad tid.
+          - text: Arbetad tid = mellanrummen
+          - emphasis [ref=e81]: mellan
+          - text: viloperioderna inom dagens fönster.
+        - listitem [ref=e82]:
+          - strong [ref=e83]: Dela varje arbetad del
+          - text: vid 06:00 och 19:00 (och midnatt), så att ingen del spänner över två nivåer.
+        - listitem [ref=e84]:
+          - strong [ref=e85]: Klassa varje del
+          - text: som Normal, OB1 eller OB2 efter tid på dygnet och veckodag (med kvällsdatum-regeln för nätter).
+        - listitem [ref=e86]:
+          - strong [ref=e87]: Multiplicera
+          - text: OB1- och OB2-minuterna med satserna och summera — det är din OB-ersättning.
+      - generic [ref=e88]:
+        - heading "Räkneexempel" [level=3] [ref=e89]
+        - paragraph [ref=e90]: "Fredagspass, en viloperiod 04:15–16:15:"
+        - paragraph [ref=e91]:
+          - text: Arbetad tid är 00:00–04:15 och 16:15–24:00. Den tidiga morgondelen tillhör torsdagskvällen →
+          - generic [ref=e92]: OB1
+          - text: 4 tim 15 min. 16:15–19:00 är fredag dagtid →
+          - generic [ref=e93]: Normal
+          - text: 2 tim 45 min. 19:00–24:00 är fredagskväll →
+          - generic [ref=e94]: OB2
+          - text: 5 tim. Med exempelsatserna blir det 4,25 × 31,58 + 5 × 52,79 =
+          - strong [ref=e95]: 796,33 kr
+          - text: i OB utöver grundlönen.
+      - generic [ref=e96]:
+        - figure [ref=e97]:
+          - img "Ett uppehållstillståndskort med en kontrollsköld" [ref=e98]
+        - generic [ref=e106]:
+          - heading "OB och ditt arbets-/uppehållstillstånd" [level=2] [ref=e107]
+          - paragraph [ref=e108]:
+            - text: Arbetar du i Sverige på
+            - strong [ref=e109]: arbetstillstånd
+            - text: är OB mer än lön — det är en del av din anställningshistorik, och det kan vara ett
+            - strong [ref=e110]: känsligt område
+            - text: .
+      - generic [ref=e111]:
+        - heading "⚠ Varför Migrationsverket kan granska din OB" [level=3] [ref=e112]
+        - paragraph [ref=e113]:
+          - text: När du ansöker om att
+          - strong [ref=e114]: förlänga ditt tillstånd
+          - text: eller om
+          - strong [ref=e115]: permanent uppehållstillstånd (PUT)
+          - text: kontrollerar Migrationsverket att dina verkliga arbetsvillkor motsvarade det tillståndet beviljades på — avtalad lön, arbetstid och att din totala lön når kollektivavtalsnivå
+          - emphasis [ref=e116]: inklusive OB-tillägg
+          - text: .
+        - paragraph [ref=e117]: "Praktiska punkter:"
+        - list [ref=e118]:
+          - listitem [ref=e119]:
+            - text: Din rapporterade OB och arbetstid ska stämma med
+            - strong [ref=e120]: vilotidsrapport och lönespecar
+            - text: . För lågt rapporterad OB eller tider som inte stämmer kan väcka frågor vid en förlängning eller PUT-prövning.
+          - listitem [ref=e121]:
+            - text: Spara
+            - strong [ref=e122]: egna kopior
+            - text: av vilotidsrapporter och lönespecar — du kan behöva visa att månadslönen nådde rätt nivå.
+          - listitem [ref=e123]:
+            - text: Om en arbetsgivare betalar för lite eller rapporterar fel OB kan det drabba
+            - emphasis [ref=e124]: ditt
+            - text: tillståndsärende, inte bara arbetsgivarens.
+        - paragraph [ref=e125]: Att få OB rätt skyddar både din inkomst och ditt uppehållstillståndsärende. Använd kalkylatorn för att kontrollera varje rapport och hålla ordning.
+      - heading "Vanliga frågor" [level=2] [ref=e126]
+      - group [ref=e127]:
+        - generic "Vad betyder OB? ▾" [ref=e128] [cursor=pointer]:
+          - text: Vad betyder OB?
+          - generic [ref=e129]: ▾
+      - group [ref=e130]:
+        - generic "Hur mycket är OB för taxiförare i Sverige? ▾" [ref=e131] [cursor=pointer]:
+          - text: Hur mycket är OB för taxiförare i Sverige?
+          - generic [ref=e132]: ▾
+      - group [ref=e133]:
+        - generic "Förblir ett nattpass efter midnatt OB2? ▾" [ref=e134] [cursor=pointer]:
+          - text: Förblir ett nattpass efter midnatt OB2?
+          - generic [ref=e135]: ▾
+      - group [ref=e136]:
+        - generic "Behöver jag vilotidsrapporten för att räkna OB? ▾" [ref=e137] [cursor=pointer]:
+          - text: Behöver jag vilotidsrapporten för att räkna OB?
+          - generic [ref=e138]: ▾
+      - paragraph [ref=e139]: Den här sidan är allmän information, inte juridisk eller skatterådgivning. OB-satser och regler kommer från ditt kollektivavtal; tillståndsbeslut fattas av Migrationsverket. För din egen situation, kontrollera med Migrationsverket och ditt fackförbund (t.ex. Transport).
+      - generic [ref=e140]:
+        - heading "Räkna ut din taxi-OB nu" [level=2] [ref=e141]
+        - paragraph [ref=e142]: Fota din vilotidsrapport → AI läser den → du verifierar → OB1 / OB2 prissätts direkt.
+        - link "Öppna OB-kalkylatorn →" [ref=e143] [cursor=pointer]:
+          - /url: /ob-calculator/
+    - navigation [ref=e144]:
+      - link "Drive Test hem" [ref=e145] [cursor=pointer]:
+        - /url: /
+      - link "Blogg" [ref=e146] [cursor=pointer]:
+        - /url: /blog/sv/
+      - link "OB-kalkylator" [ref=e147] [cursor=pointer]:
+        - /url: /ob-calculator/
+      - link "English" [ref=e148] [cursor=pointer]:
+        - /url: /ob-taxi-sweden/
