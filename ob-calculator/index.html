@@ -380,7 +380,7 @@
     <div class="samplegrid">
       <div>
         <div class="sampleimg" id="sampleImg" role="button" tabindex="0" aria-label="Enlarge sample slip">
-          <img src="sample-vilotidsrapport.jpg" alt="Sample Swedish taxi Vilotidsrapport rest-time slip" loading="lazy"></div>
+          <img src="sample-vilotidsrapport-v2.jpg" alt="Sample Swedish taxi Vilotidsrapport rest-time slip" loading="lazy"></div>
         <div class="samplecap">tap to enlarge</div>
       </div>
       <div class="sampletable">
@@ -785,7 +785,7 @@ $('#manual').onclick=()=>{
   $('#editCard').scrollIntoView({behavior:'smooth'});
 };
 
-// ---------- built-in sample slip: prefilled rest periods read off sample-vilotidsrapport.jpg ----------
+// ---------- built-in sample slip: prefilled rest periods read off sample-vilotidsrapport-v2.jpg ----------
 const SAMPLE_ENTRIES=[
   {date:"2026-04-30",rests:[["00:00","15:21"]]},
   {date:"2026-05-01",rests:[["04:15","16:15"]]},
@@ -798,7 +798,7 @@ $('#loadSample').onclick=()=>{
   const cfg={entries,holidays:holsFor(entries),
     window_start:entries[0].date+' 00:00',window_end:nextDay(entries[entries.length-1].date)+' 00:00',
     uncertain:[],rates:{ob1:SETTINGS.ob1,ob2:SETTINGS.ob2}};
-  slips.push({id:++slipSeq,dataUrl:'sample-vilotidsrapport.jpg',name:'Sample slip',status:'done',cfg,err:'',included:true});
+  slips.push({id:++slipSeq,dataUrl:'sample-vilotidsrapport-v2.jpg',name:'Sample slip',status:'done',cfg,err:'',included:true});
   renderGallery(); renderVerify(); $('#editCard').style.display='';
   $('#calc').click();   // run the calculation and reveal the result
 };
@@ -1135,8 +1135,8 @@ function openImage(url){
   lb.classList.add('open'); lbImg.src=url; lz=1; lx=0; ly=0; lbApply();
   $('#lbPrev').hidden=true; $('#lbNext').hidden=true; $('#lbCount').textContent='';
 }
-$('#sampleImg').addEventListener('click',()=>openImage('sample-vilotidsrapport.jpg'));
-$('#sampleImg').addEventListener('keydown',e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); openImage('sample-vilotidsrapport.jpg'); } });
+$('#sampleImg').addEventListener('click',()=>openImage('sample-vilotidsrapport-v2.jpg'));
+$('#sampleImg').addEventListener('keydown',e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); openImage('sample-vilotidsrapport-v2.jpg'); } });
 function closeLb(){ lb.classList.remove('open'); drag=null; }
 // tapping the floating thumbnail opens the viewer at the first photo
 document.addEventListener('click',e=>{ if(e.target.closest('.slip__fab')){ const a=photoSlips(); if(a.length) openGallery(a[0].id); } });
