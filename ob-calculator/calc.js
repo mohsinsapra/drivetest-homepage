@@ -65,9 +65,11 @@ function classify(start, holidays) {
 }
 
 // Split ONE work interval into per-band minutes (no row output).
-function splitInterval(a, b, holidays) {
+// override (optional 'OB1'|'OB2'|'NORMAL') forces the whole interval into one band.
+function splitInterval(a, b, holidays, override) {
   const t = { OB1: 0, OB2: 0, NORMAL: 0 };
   if (!(b > a)) return t;
+  if (override) { t[override] = Math.round((b - a) / 60000); return t; }
   let cur = new Date(a);
   while (cur < b) {
     let nb = nextBoundary(cur); if (nb > b) nb = new Date(b);
@@ -77,11 +79,18 @@ function splitInterval(a, b, holidays) {
 }
 
 // Classify a set of raw work intervals -> band-split rows + totals.
+// An interval may carry an optional 3rd element = manual band override.
 function classifyIntervals(intervals, holidays) {
   const totals = { OB1: 0, OB2: 0, NORMAL: 0 }, rows = [];
   const sorted = [...intervals].sort((x, y) => x[0] - y[0]);
-  for (const [a, b] of sorted) {
+  for (const iv of sorted) {
+    const a = iv[0], b = iv[1], override = iv[2];
     if (!(b > a)) continue;
+    if (override) {                                  // manual override -> single segment
+      const mins = Math.round((b - a) / 60000);
+      totals[override] += mins; rows.push([new Date(a), new Date(b), override, mins]);
+      continue;
+    }
     let cur = new Date(a);
     while (cur < b) {
       let nb = nextBoundary(cur); if (nb > b) nb = new Date(b);
@@ -101,7 +110,10 @@ function compute(cfg) {
     // direct work-interval mode (used by the editable timeline write-back)
     intervals = cfg.work.map(w => {
       const a = Array.isArray(w) ? w[0] : w.from, b = Array.isArray(w) ? w[1] : w.to;
-      return [new Date(String(a).replace(' ', 'T')), new Date(String(b).replace(' ', 'T'))];
+      const ov = Array.isArray(w) ? w[2] : w.band;
+      const iv = [new Date(String(a).replace(' ', 'T')), new Date(String(b).replace(' ', 'T'))];
+      if (ov) iv.push(ov);
+      return iv;
     });
   } else {
     const rests = loadRests(cfg.entries);
