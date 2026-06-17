@@ -235,10 +235,6 @@
     .vt-in.dt{width:118px;min-width:118px}
     table.vt td.tt .vt-in{width:60px;text-align:center}
     .vt-del{padding:6px 7px}
-    /* keep the two OB boundary times side-by-side instead of full-width & empty-looking */
-    .rules{padding:0 14px}
-    .settings .sfield{min-width:120px}
-    .settings input[type=time]{text-align:center}
   }
   .slip__count{position:absolute;top:-7px;left:-7px;min-width:22px;height:22px;border-radius:99px;background:var(--accent);color:#fff;
     font-size:11px;font-weight:800;display:grid;place-items:center;padding:0 5px;box-shadow:0 4px 10px rgba(0,0,0,.35)}
@@ -260,6 +256,14 @@
   .settings label{margin-bottom:5px}
   .settings textarea{min-height:62px;font-size:12px;line-height:1.5}
   .savedtag{color:var(--ok);font-weight:700;margin-left:4px}
+  /* mobile: keep the two OB boundary times side-by-side, not full-width & empty-looking
+     (placed AFTER the base .settings rules so it actually wins — media queries add no specificity) */
+  @media(max-width:600px){
+    .rules{padding:0 14px}
+    .settings .srow{gap:10px}
+    .settings .sfield{min-width:0;flex:1 1 0}
+    .settings input[type=time]{text-align:center;padding:11px 6px}
+  }
 
   /* editable Swedish public-holiday list (nested, collapsed by default) */
   .hols{border:1px solid var(--border);border-radius:14px;background:var(--field);overflow:hidden}
