@@ -19,7 +19,7 @@
     --field:#f1f0fb; --field-bd:rgba(20,19,43,.1);
     --ob1:#5a51fe; --ob1-soft:rgba(90,81,254,.12);
     --ob2:#c98a00; --ob2-soft:rgba(232,168,0,.16);
-    --ok:#0c9b67; --bad:#e0577a; --r:22px;
+    --ok:#0c9b67; --bad:#e0577a; --bad-soft:rgba(224,87,122,.14); --r:22px;
   }
   [data-theme="dark"]{
     --bg:#0b0a15; --bg-2:#110f20; --card:#14121f; --text:#eceaf8; --muted:#9b98c2;
@@ -28,7 +28,7 @@
     --field:rgba(255,255,255,.045); --field-bd:rgba(236,234,248,.12);
     --ob1:#9d96ff; --ob1-soft:rgba(123,114,255,.18);
     --ob2:#ffd60a; --ob2-soft:rgba(255,214,10,.14);
-    --ok:#3ddc97; --bad:#ff9fb0;
+    --ok:#3ddc97; --bad:#ff9fb0; --bad-soft:rgba(255,159,176,.16);
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -154,6 +154,10 @@
   table.tl input.tin.unc{border-color:var(--ob2);background:var(--ob2-soft);
     box-shadow:0 0 0 1px var(--ob2) inset}
   table.tl tr.warnrow td{background:var(--ob2-soft)}
+  /* overlapping work periods (double-counted minutes) -> red, distinct from amber "to verify" */
+  table.tl tr.overlap td{background:var(--bad-soft)}
+  table.tl tr.overlap input.tin{border-color:var(--bad)}
+  .oflag{cursor:help;margin-right:5px;color:var(--bad);font-weight:800}
   .uflag{cursor:help;margin-right:5px}
   .xbtn{background:var(--field);border:1px solid var(--border);color:var(--muted);border-radius:9px;padding:6px 10px;
     cursor:pointer;transition:.18s;font-family:var(--font-body);font-weight:600;font-size:12px}
@@ -221,16 +225,44 @@
   .vt-in.dt{font-family:var(--font-body)}
   .vt-in:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--ob1-soft)}
   .vt-in.unc{border-color:var(--ob2);background:var(--ob2-soft);box-shadow:0 0 0 1px var(--ob2) inset}
+  /* rest periods that overlap another rest in the same slip -> red (data-entry / OCR error) */
+  table.vt tr.ovl td{background:var(--bad-soft)}
+  table.vt tr.ovl input.vt-in{border-color:var(--bad)}
+  table.vt td.vfl{width:18px;text-align:center;padding:3px 0}      /* fixed flag column -> inputs stay aligned */
+  table.vt tr:not(.ovl) .oflag{visibility:hidden}                   /* keep the column width, just hide the mark */
   table.vt td.tt{width:98px} table.vt td.dd{width:152px} table.vt td.xx{width:36px;text-align:right}
+  table.vt td.dh{width:26px;text-align:center;padding-right:0}
   .vt-del{padding:6px 9px}
   .vt-add{margin-top:9px}
+  /* drag-to-reorder rows (works with mouse + touch via the handle) */
+  .vt .drag{cursor:grab;color:var(--muted);user-select:none;touch-action:none;line-height:1;font-size:15px;padding:6px 2px;border-radius:7px}
+  .vt .drag:hover{color:var(--accent);background:var(--ob1-soft)}
+  table.vt tr.dragging{opacity:.35}
+  /* insertion indicator: a free-floating line (NOT inside the table, so it can't reflow columns)
+     that smoothly fills across the target row instead of snapping in */
+  .vt-line{position:fixed;z-index:9998;pointer-events:none;height:2.5px;border-radius:3px;
+    background:var(--accent);box-shadow:0 0 8px var(--accent);transform-origin:left center;
+    animation:vtFill .24s ease-out forwards}
+  @keyframes vtFill{from{transform:scaleX(0);opacity:.35}to{transform:scaleX(1);opacity:1}}
+  /* full-width floating clone of the row that follows the pointer */
+  .vt-ghost{position:fixed;left:0;top:0;z-index:9999;pointer-events:none;transform:translateY(-50%);box-sizing:border-box;
+    display:flex;gap:12px;align-items:center;padding:10px 14px;border-radius:11px;
+    background:var(--card);border:1.5px solid var(--accent);box-shadow:0 12px 30px rgba(0,0,0,.32);
+    font-size:13px;font-family:'JetBrains Mono',monospace;white-space:nowrap;overflow:hidden}
+  .vt-ghost .gh{color:var(--accent);font-size:16px;line-height:1;flex:0 0 auto}
+  .vt-ghost .gd{font-family:var(--font-body);color:var(--text);font-weight:600;flex:0 0 auto}
+  .vt-ghost .gt{color:var(--muted);margin-left:auto;flex:0 0 auto}
+  body.vt-dragging{cursor:grabbing!important;user-select:none}
+  /* sort toolbar above the verify blocks */
+  .vtoolbar{display:flex;justify-content:flex-end;margin:0 0 10px}
+  .vt-sort{display:inline-flex;align-items:center;gap:6px;font-size:13px;padding:8px 13px}
   /* mobile: keep the verify table's time inputs from clipping HH:MM */
   @media(max-width:600px){
     .card{padding:18px 14px}
     .vbody{padding:0 8px 12px}
     table.vt{font-size:12.5px}
     table.vt th,table.vt td{padding:3px 4px}
-    table.vt td.dd{width:auto} table.vt td.tt{width:64px} table.vt td.xx{width:30px}
+    table.vt td.dd{width:auto} table.vt td.tt{width:64px} table.vt td.xx{width:30px} table.vt td.dh{width:22px}
     .vt-in{padding:8px 5px;font-size:12.5px}
     .vt-in.dt{width:118px;min-width:118px}
     table.vt td.tt .vt-in{width:60px;text-align:center}
@@ -440,7 +472,8 @@
   <!-- 3. verify -->
   <div class="card" id="editCard" style="display:none">
     <div class="step"><span class="num">3</span> Verify &amp; fix</div>
-    <label>One block per photo — correct any misread digit, drop unwanted days, or untick to exclude a slip from the total</label>
+    <label>One block per photo — correct any misread digit, drop unwanted days, or untick to exclude a slip from the total. Drag <span style="opacity:.7">⠿</span> to reorder rows.</label>
+    <div class="vtoolbar"><button class="ghost vt-sort" id="sortDate" title="Sort the blocks and their rows by date">↕ Sort by date</button></div>
     <div id="verify"></div>
     <textarea id="cfg" hidden></textarea>
     <div id="notes" class="warn"></div>
@@ -750,7 +783,7 @@ async function readAll(force){
     }
     if(i<queue.length-1) await sleep(700);   // pace requests so we don't trip the rate limit
   }
-  renderVerify(); refreshParseBtn(); $('#parse').disabled=false;
+  sortAll(); renderGallery(); renderVerify(); refreshParseBtn(); $('#parse').disabled=false;   // auto-order blocks + rows by date
   const extra=(fail?` · <span style="color:var(--bad)">⚠ ${fail} failed — fix the key/model or hit ↻ retry</span>`:'')
             +(stopped?` · ⏹ ${stopped} stopped`:'');
   $('#status').innerHTML = (fail||stopped) ? `✓ ${ok} read${extra}` : `✓ ${ok} read — verify below`;
@@ -760,19 +793,71 @@ async function readAll(force){
 async function readOne(id){
   const s=slipById(id); if(!s||!s.dataUrl) return;
   $('#err').textContent=''; $('#status').innerHTML='<span class="spin"></span> reading 1 photo…';
-  try{ await readSlip(s); renderVerify(); refreshParseBtn(); $('#status').textContent='✓ read'; $('#editCard').style.display=''; }
+  try{ await readSlip(s); sortAll(); renderGallery(); renderVerify(); refreshParseBtn(); $('#status').textContent='✓ read'; $('#editCard').style.display=''; }
   catch(e){
     if(e.name==='AbortError'){ s.status='pending'; renderGallery(); refreshParseBtn(); $('#status').textContent='⏹ stopped'; return; }
     s.status='error'; s.err=e.message; renderGallery(); refreshParseBtn();
     $('#status').innerHTML=`<span style="color:var(--bad)">⚠ ${esc(e.message)}</span>`; }
 }
-$('#copy').onclick=()=>navigator.clipboard.writeText($('#cfg').value);
+// Copy the editable REST data (one block per slip) so a paste can refill the Verify table faithfully.
+// (We export rests/entries, not the computed work intervals — those can't round-trip into the rest table.)
+$('#copy').onclick=()=>{
+  const blocks=slips.filter(s=>s.status==='done'&&s.included)
+    .map(s=>{ syncCfgFromRows(s); return {name:s.name||'slip', entries:s.cfg.entries||[]}; })
+    .filter(b=>b.entries.length);
+  const data = blocks.length===1
+    ? {entries:blocks[0].entries, rates:{ob1:SETTINGS.ob1,ob2:SETTINGS.ob2}}   // single slip -> simple shape
+    : {slips:blocks, rates:{ob1:SETTINGS.ob1,ob2:SETTINGS.ob2}};               // several slips -> keep them separate
+  navigator.clipboard.writeText(JSON.stringify(data,null,2));
+  $('#status') && ($('#status').textContent='✓ copied');
+};
 
-// Paste JSON from the clipboard (with a prompt fallback) and restore the calculation.
-// Accepts BOTH shapes we emit: the combined timeline ({work,…}) and the slip shape ({entries,…}).
+// Paste JSON from the clipboard (with a prompt fallback) and FILL the Verify table — like manual entry.
+// The user reviews/fixes the rows, then clicks Calculate. Accepts {entries,…}, {slips:[{name,entries}]},
+// and (legacy) the combined {work,…} timeline which is restored straight to the result.
 async function readClip(){
   try{ const t=await navigator.clipboard.readText(); if(t&&t.trim()) return t; }catch(_){}
   return window.prompt('Paste the JSON you copied earlier:')||'';
+}
+function addEntriesBlock(name,entries,rates,uncertain,note){   // -> one editable Verify block from a list of rest entries
+  slips.push({id:++slipSeq,dataUrl:null,name:name||'Pasted JSON',status:'done',included:true,err:'',_note:note||'',
+    cfg:{entries:entries||[],holidays:holsFor(entries||[]),uncertain:uncertain||[],
+         window_start:'',window_end:'',rates:rates||{ob1:SETTINGS.ob1,ob2:SETTINGS.ob2}}});
+}
+// count how many work intervals overlap at least one other (raw, before merging)
+function countWorkOverlaps(work){
+  const iv=work.map(w=>[+new Date(String(w[0]).replace(' ','T')),+new Date(String(w[1]).replace(' ','T'))])
+               .filter(p=>p[1]>p[0]);
+  let n=0; for(let i=0;i<iv.length;i++){ for(let j=i+1;j<iv.length;j++){
+    if(Math.max(iv[i][0],iv[j][0])<Math.min(iv[i][1],iv[j][1])){ n++; break; } } }
+  return n;
+}
+// Convert a combined WORK timeline back into rest entries so it can fill the Verify table.
+// rests = the complement of (merged) work within the full-day window; multi-day gaps are
+// chunked at midnight so each row stays <24h. Verified to round-trip exactly through calc.js.
+function workToEntries(work){
+  const D=s=>new Date(String(s).replace(' ','T'));
+  const pad=n=>String(n).padStart(2,'0');
+  const hhmm=d=>pad(d.getHours())+':'+pad(d.getMinutes());
+  const ds=d=>`${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
+  const mid=d=>{const x=new Date(d);x.setHours(0,0,0,0);return x;};
+  const add1=d=>{const x=new Date(d);x.setDate(x.getDate()+1);return x;};
+  const isMid=d=>d.getHours()===0&&d.getMinutes()===0;
+  let iv=work.map(w=>[D(w[0]),D(w[1])]).filter(p=>p[1]>p[0]).sort((a,b)=>a[0]-b[0]);
+  if(!iv.length) return [];
+  const merged=[iv[0].slice()];                                   // union overlapping/adjacent work
+  for(let i=1;i<iv.length;i++){const last=merged[merged.length-1];
+    if(iv[i][0]<=last[1]){ if(iv[i][1]>last[1]) last[1]=iv[i][1]; } else merged.push(iv[i].slice());}
+  const winStart=mid(merged[0][0]), winEnd=add1(mid(merged[merged.length-1][1]));
+  const rests=[]; let cur=new Date(winStart);
+  for(const [ws,we] of merged){ if(ws>cur) rests.push([new Date(cur),new Date(ws)]); if(we>cur) cur=new Date(we); }
+  if(cur<winEnd) rests.push([new Date(cur),new Date(winEnd)]);
+  const out=[], idx={}; const push=(date,from,to)=>{ if(!(date in idx)){idx[date]=out.length;out.push({date,rests:[]});} out[idx[date]].rests.push([from,to]); };
+  for(const [a,b] of rests){
+    if((b-a)/3600000<24){ push(ds(a),hhmm(a),isMid(b)?'24:00':hhmm(b)); }
+    else { let c=new Date(a); while(c<b){ const nm=add1(mid(c)), seg=nm<b?nm:b; push(ds(c),hhmm(c),isMid(seg)?'24:00':hhmm(seg)); c=seg; } }
+  }
+  return out;
 }
 $('#paste').onclick=async()=>{
   $('#err').textContent='';
@@ -782,23 +867,26 @@ $('#paste').onclick=async()=>{
     parsed=JSON.parse(raw);
   }catch(e){ $('#err').textContent='Paste error: clipboard is not valid JSON ('+e.message+')'; return; }
   try{
-    if(parsed && Array.isArray(parsed.work) && parsed.work.length){      // combined timeline -> restore results directly
-      const D=s=>new Date(String(s).replace(' ','T'));
-      TL.list=parsed.work.map(w=> w[2]?[D(w[0]),D(w[1]),w[2]]:[D(w[0]),D(w[1])]);
-      TL.holidays=new Set(parsed.holidays||[]);
-      TL.rates=parsed.rates||{ob1:SETTINGS.ob1,ob2:SETTINGS.ob2};
-      UNCRAW=parsed.uncertain||[]; UNC=buildUnc(UNCRAW);
-      $('#out').style.display=''; setSlip(); renderAll(true); syncJson();
-      $('#out').scrollIntoView({behavior:'smooth'});
-    }else if(parsed && Array.isArray(parsed.entries) && parsed.entries.length){ // slip shape -> add as an editable block
-      slips.push({id:++slipSeq,dataUrl:null,name:'Pasted JSON',status:'done',included:true,err:'',
-        cfg:{entries:parsed.entries,holidays:parsed.holidays||[],uncertain:parsed.uncertain||[],
-             window_start:parsed.window_start||'',window_end:parsed.window_end||'',
-             rates:parsed.rates||{ob1:SETTINGS.ob1,ob2:SETTINGS.ob2}}});
-      renderVerify(); $('#editCard').style.display='';
+    const rates=parsed&&parsed.rates;
+    if(parsed && Array.isArray(parsed.slips) && parsed.slips.length){          // several slips -> one Verify block each
+      let n=0; parsed.slips.forEach(b=>{ if(b&&Array.isArray(b.entries)&&b.entries.length){ addEntriesBlock(b.name,b.entries,rates); n++; } });
+      if(!n){ $('#err').textContent='Paste error: no rest rows found in the pasted slips.'; return; }
+      sortAll(); renderVerify(); $('#editCard').style.display='';
+      $('#editCard').scrollIntoView({behavior:'smooth'});       // no auto-calc — fix, then Calculate
+    }else if(parsed && Array.isArray(parsed.entries) && parsed.entries.length){ // single slip -> fill Verify
+      addEntriesBlock(parsed.name,parsed.entries,rates);
+      sortAll(); renderVerify(); $('#editCard').style.display='';
       $('#editCard').scrollIntoView({behavior:'smooth'});
+    }else if(parsed && Array.isArray(parsed.work) && parsed.work.length){      // combined timeline -> rebuild rest rows and fill Verify
+      const entries=workToEntries(parsed.work);
+      if(!entries.length){ $('#err').textContent='Paste error: no usable work intervals.'; return; }
+      const nWovl=countWorkOverlaps(parsed.work);
+      const note=nWovl?`⧉ ${nWovl} overlapping work period${nWovl===1?'':'s'} in the pasted JSON were merged automatically — no minute is counted twice. Check the rest rows below match your slip.`:'';
+      addEntriesBlock('Pasted JSON',entries,rates,parsed.uncertain||[],note);
+      sortAll(); renderVerify(); $('#editCard').style.display='';
+      $('#editCard').scrollIntoView({behavior:'smooth'});       // no auto-calc — fix, then Calculate
     }else{
-      $('#err').textContent='Paste error: JSON has no "work" or "entries" data to load.';
+      $('#err').textContent='Paste error: JSON has no "entries", "slips" or "work" data to load.';
     }
   }catch(e){ $('#err').textContent='Paste error: '+e.message; }
 };
@@ -861,6 +949,16 @@ function syncCfgFromRows(s){
   s.cfg.window_start=dates.length?dates[0]+' 00:00':'';
   s.cfg.window_end=dates.length?nextDay(dates[dates.length-1])+' 00:00':'';
 }
+// ---- date sorting (rows inside a slip, and the slip blocks themselves) ----
+const cmp=(a,b)=>(a||'~').localeCompare(b||'~');               // empty values sort last
+function sortRows(s){ ensureRows(s);
+  s._rows.sort((a,b)=> cmp(a.date,b.date) || cmp(a.from,b.from) || cmp(a.to,b.to));
+  syncCfgFromRows(s);
+}
+const slipMinDate=s=>{ ensureRows(s); const d=s._rows.map(r=>r.date).filter(Boolean).sort(); return d.length?d[0]:'~'; };
+function sortSlips(){ slips.sort((a,b)=> cmp(slipMinDate(a),slipMinDate(b))); }   // earliest-dated block first
+function sortAll(){ slips.forEach(s=>{ if(s.status==='done') sortRows(s); }); sortSlips(); }
+
 // map model-flagged uncertain values -> cell keys for highlighting
 function uncMap(cfg){
   const m={};
@@ -869,6 +967,30 @@ function uncMap(cfg){
     else m[(u.date||'')+'|'+(u.rest||0)+'|'+u.field]=u.reason||'uncertain';
   });
   return m;
+}
+// Flag rest rows whose time interval overlaps another rest row in the same slip.
+// Uses the same datetime rule as loadRests (to<=from rolls to the next day).
+function restOverlaps(rows){
+  const iv=rows.map(r=>{
+    if(!r.date||!r.from||!r.to) return null;
+    let a,b; try{ a=parseDT(r.date,r.from); b=parseDT(r.date,r.to); }catch(_){ return null; }
+    if(isNaN(a)||isNaN(b)) return null;
+    if(b<=a) b=new Date(b.getTime()+86400000);
+    return [+a,+b];
+  });
+  return iv.map((p,i)=> !!p && iv.some((o,j)=> j!==i && o && Math.max(p[0],o[0]) < Math.min(p[1],o[1]) ));
+}
+function restOvlMsg(n){ return n?`⧉ ${n} rest period${n===1?'':'s'} overlap another — they cover the same time twice. Fix or remove the duplicate so the work between rests is correct.`:''; }
+// re-evaluate overlaps for one slip block and update the marks IN PLACE (no re-render -> caret/typing preserved)
+function paintRestOverlaps(block){
+  if(!block) return;
+  const s=slipById(+block.dataset.id); if(!s) return;
+  const ovl=restOverlaps(s._rows), n=ovl.filter(Boolean).length;
+  block.querySelectorAll('table.vt tbody tr').forEach((tr,i)=>tr.classList.toggle('ovl',!!ovl[i]));
+  const cnt=block.querySelector('.ovlcount');
+  if(cnt) cnt.innerHTML = n?` · <span style="color:var(--bad)">⧉ ${n} overlapping</span>`:'';
+  const note=block.querySelector('.ovlnote');
+  if(note){ note.innerHTML=restOvlMsg(n); note.style.display=n?'':'none'; }
 }
 function renderVerify(){
   const done=slips.filter(s=>s.status==='done');
@@ -881,31 +1003,37 @@ function renderVerify(){
     const m=uncMap(s.cfg);
     const nUnc=(s.cfg&&s.cfg.uncertain)?s.cfg.uncertain.filter(u=>typeof u!=='string').length:0;
     const nDays=new Set(s._rows.map(r=>r.date).filter(Boolean)).size;
+    const ovl=restOverlaps(s._rows);                          // which rest rows clash with another in this slip
+    const nOvl=ovl.filter(Boolean).length;
     const unc=nUnc?`<div class="warn" style="margin:0 0 8px">${uncSummary(s.cfg.uncertain)}</div>`:'';
+    const ovlNote=`<div class="warn ovlnote" style="margin:0 0 8px;color:var(--bad)${nOvl?'':';display:none'}">${restOvlMsg(nOvl)}</div>`;
+    const pasteNote=s._note?`<div class="warn" style="margin:0 0 8px;color:var(--bad)">${esc(s._note)}</div>`:'';
     const cnt={};
     const rows=s._rows.map((r,i)=>{
       const ri = cnt[r.date]=(cnt[r.date]==null?0:cnt[r.date]+1);
       const uD=m[(r.date||'')+'|date'], uF=m[(r.date||'')+'|'+ri+'|from'], uT=m[(r.date||'')+'|'+ri+'|to'];
       const cell=(k,v,u,cls)=>`<input type="${k==='date'?'date':'text'}"${k==='date'?'':' inputmode="numeric" maxlength="5" placeholder="HH:MM"'} class="vt-in ${cls}${u?' unc':''}" ${u?`title="⚠ ${esc(u)}"`:''} data-row="${i}" data-k="${k}" value="${esc(v)}">`;
-      return `<tr>
+      return `<tr class="${ovl[i]?'ovl':''}" data-id="${s.id}" data-row="${i}">
+        <td class="dh"><span class="drag" title="Drag to reorder">⠿</span></td>
         <td class="dd">${cell('date',r.date,uD,'dt')}</td>
         <td class="tt">${cell('from',r.from,uF,'')}</td>
         <td class="tt">${cell('to',r.to,uT,'')}</td>
+        <td class="vfl"><span class="oflag" title="Overlaps another rest period in this slip">⧉</span></td>
         <td class="xx"><button class="xbtn vt-del" data-id="${s.id}" data-row="${i}" title="Remove rest">✕</button></td>
       </tr>`;
     }).join('');
     return `<details class="vblock${s.included?'':' vexcluded'}" open data-id="${s.id}">
       <summary class="vhead">${thumb}
         <div><div class="vname">${esc(s.name)}</div>
-          <div class="vsub">${nDays} day${nDays===1?'':'s'}${nUnc?` · <span style="color:var(--ob2)">⚠ ${nUnc} to check</span>`:''}</div></div>
+          <div class="vsub">${nDays} day${nDays===1?'':'s'}${nUnc?` · <span style="color:var(--ob2)">⚠ ${nUnc} to check</span>`:''}<span class="ovlcount">${nOvl?` · <span style="color:var(--bad)">⧉ ${nOvl} overlapping</span>`:''}</span></div></div>
         <span class="vchev">▾</span></summary>
       <div class="vbody">
         <div class="vrow">
           <label class="vinc"><input type="checkbox" class="vincbox" data-id="${s.id}" ${s.included?'checked':''}> include in total</label>
           ${manual?`<button class="xbtn" data-rmv="${s.id}">✕ remove</button>`:''}
         </div>
-        ${unc}
-        <div class="vtscroll"><table class="vt"><thead><tr><th>Date</th><th>Rest from</th><th>Rest to</th><th></th></tr></thead>
+        ${unc}${pasteNote}${ovlNote}
+        <div class="vtscroll"><table class="vt"><thead><tr><th></th><th>Date</th><th>Rest from</th><th>Rest to</th><th></th><th></th></tr></thead>
           <tbody>${rows}</tbody></table></div>
         <button class="xbtn vt-add" data-id="${s.id}">＋ Add rest</button>
       </div></details>`;
@@ -919,8 +1047,18 @@ $('#verify').addEventListener('change',e=>{
 $('#verify').addEventListener('input',e=>{
   const inp=e.target.closest('.vt-in'); if(!inp) return;
   const s=slipById(+inp.closest('.vblock').dataset.id); if(!s) return;
+  if(inp.dataset.k==='from'||inp.dataset.k==='to'){     // auto-insert the colon so HH flows straight into MM
+    const d=inp.value.replace(/\D/g,'').slice(0,4);
+    const v=d.length>=3 ? d.slice(0,2)+':'+d.slice(2) : d;
+    if(v!==inp.value){ inp.value=v; try{inp.setSelectionRange(v.length,v.length);}catch(_){} }
+  }
   s._rows[+inp.dataset.row][inp.dataset.k]=inp.value;
   syncCfgFromRows(s);
+  paintRestOverlaps(inp.closest('.vblock'));            // refresh overlap marks live while typing
+});
+// also refresh on focus (covers paste/programmatic changes and re-checking when you tab into a field)
+$('#verify').addEventListener('focusin',e=>{
+  const inp=e.target.closest('.vt-in'); if(inp) paintRestOverlaps(inp.closest('.vblock'));
 });
 $('#verify').addEventListener('click',e=>{
   const rm=e.target.closest('[data-rmv]'); if(rm){ e.preventDefault(); removeSlip(+rm.dataset.rmv); return; }
@@ -932,6 +1070,62 @@ $('#verify').addEventListener('click',e=>{
     const last=s._rows[s._rows.length-1]; s._rows.push({date:last?last.date:'',from:'',to:''});
     syncCfgFromRows(s); renderVerify(); return; }
 });
+
+// drag-to-reorder rows (pointer events -> mouse + touch). Reorders only within the same slip.
+let vdrag=null;
+const clearDragHi=()=>document.querySelectorAll('#verify tr.dragging').forEach(x=>x.classList.remove('dragging'));
+function killGhost(){ if(vdrag){ if(vdrag.ghost){vdrag.ghost.remove();vdrag.ghost=null;} if(vdrag.line){vdrag.line.remove();vdrag.line=null;} } document.body.classList.remove('vt-dragging'); }
+function moveGhost(y){ if(vdrag&&vdrag.ghost){ vdrag.ghost.style.top=y+'px'; } }   // full-width ghost: fixed L/W, only Y follows the pointer
+// floating insertion line laid over the target row's top edge (lives on <body>, never inside the table → no column reflow)
+function showLine(tr){
+  if(!vdrag) return;
+  if(!vdrag.line){ const l=document.createElement('div'); l.className='vt-line'; document.body.appendChild(l); vdrag.line=l; }
+  const r=tr.getBoundingClientRect(), l=vdrag.line;
+  l.style.left=r.left+'px'; l.style.width=r.width+'px'; l.style.top=r.top+'px';
+  l.style.animation='none'; void l.offsetWidth; l.style.animation='';   // restart the fill animation for the new row
+}
+function hideLine(){ if(vdrag&&vdrag.line){ vdrag.line.remove(); vdrag.line=null; } }
+$('#verify').addEventListener('pointerdown',e=>{
+  const h=e.target.closest('.drag'); if(!h) return;
+  const tr=h.closest('tr[data-row]'); if(!tr) return;
+  e.preventDefault();
+  vdrag={id:+tr.dataset.id, from:+tr.dataset.row, ghost:null, line:null, over:null};
+  // a full-width clone of the row, matching its on-screen left edge + width
+  const rect=tr.getBoundingClientRect();
+  const ins=tr.querySelectorAll('.vt-in'); const val=i=>(ins[i]&&ins[i].value||'').trim();
+  const g=document.createElement('div'); g.className='vt-ghost';
+  g.style.left=rect.left+'px'; g.style.width=rect.width+'px';
+  g.innerHTML=`<span class="gh">⠿</span><span class="gd">${esc(val(0)||'—')}</span><span class="gt">${esc(val(1)||'··')} → ${esc(val(2)||'··')}</span>`;
+  document.body.appendChild(g); vdrag.ghost=g; document.body.classList.add('vt-dragging');
+  tr.classList.add('dragging');
+  moveGhost(e.clientY);
+  try{ h.setPointerCapture(e.pointerId); }catch(_){}
+});
+$('#verify').addEventListener('pointermove',e=>{
+  if(!vdrag) return;
+  moveGhost(e.clientY);
+  const el=document.elementFromPoint(e.clientX,e.clientY);
+  const tr=el&&el.closest&&el.closest('tr[data-row]');
+  const target=(tr && +tr.dataset.id===vdrag.id && +tr.dataset.row!==vdrag.from) ? tr : null;
+  if(target===vdrag.over) return;            // same target -> let the fill animation play out, don't restart it
+  vdrag.over=target;
+  if(target) showLine(target); else hideLine();
+});
+$('#verify').addEventListener('pointerup',e=>{
+  if(!vdrag) return;
+  const el=document.elementFromPoint(e.clientX,e.clientY);
+  const tr=el&&el.closest&&el.closest('tr[data-row]');
+  const s=slipById(vdrag.id);
+  if(s && tr && +tr.dataset.id===vdrag.id){
+    const from=vdrag.from, to=+tr.dataset.row;
+    if(to!==from){ const m=s._rows.splice(from,1)[0]; s._rows.splice(to,0,m); syncCfgFromRows(s); }
+  }
+  killGhost(); vdrag=null; clearDragHi(); renderVerify();
+});
+$('#verify').addEventListener('pointercancel',()=>{ if(vdrag){ killGhost(); vdrag=null; clearDragHi(); renderVerify(); } });
+
+// manual "Sort by date" — orders both the blocks and the rows inside each
+$('#sortDate').onclick=()=>{ sortAll(); renderGallery(); renderVerify(); };
 
 let TL={list:[],holidays:new Set(),rates:{ob1:31.58,ob2:52.79}};
 
@@ -1053,10 +1247,8 @@ function renderAll(animate){
   autoSplitAll();
   TL.list.sort((x,y)=>x[0]-y[0]);
   const rates=TL.rates;
-  const per=TL.list.map(r=>splitInterval(r[0],r[1],TL.holidays,r[2]));
-  const totals={OB1:0,OB2:0,NORMAL:0};
-  per.forEach(t=>{totals.OB1+=t.OB1;totals.OB2+=t.OB2;totals.NORMAL+=t.NORMAL});
-  const {rows}=classifyIntervals(TL.list,TL.holidays);
+  const per=TL.list.map(r=>splitInterval(r[0],r[1],TL.holidays,r[2]));   // per-row breakdown for the timeline badges
+  const {rows,totals}=classifyIntervals(TL.list,TL.holidays);            // merged totals — overlapping minutes counted once
   const merged=mergeSameBand(rows);
 
   // band cards
@@ -1073,19 +1265,23 @@ function renderAll(animate){
     <div class="scard total"><div class="k">Total OB pay</div><div class="v mono" id="vt">${SEK.format(total)}</div><div class="s">OB1 + OB2</div></div>`;
 
   // editable timeline (one row per work period, sorted, mixed bands allowed)
-  let uncCount=0;
+  let uncCount=0, ovlCount=0;
   const esc=s=>String(s).replace(/"/g,'&quot;');
+  // a period overlaps if it shares any minute with another period (these minutes are de-duplicated before pricing)
+  const ovl=TL.list.map((r,i)=> TL.list.some((o,j)=> j!==i && Math.max(+r[0],+o[0]) < Math.min(+r[1],+o[1]) ));
   const body=TL.list.map((r,i)=>{
     const a=r[0],b=r[1],ov=r[2]||'AUTO';
     const t=per[i], dur=Math.round((b-a)/60000), bad=!(dur>0);
     const ua=uncReason(a), ub=uncReason(b); if(ua)uncCount++; if(ub)uncCount++;
+    const isOvl=ovl[i]; if(isOvl)ovlCount++;
     const badges=['OB2','OB1','NORMAL'].filter(k=>t[k]>0)
       .map(k=>`<span class="pill sm ${bandCls(k)}">${k==='NORMAL'?'Norm':k} ${fmt(t[k])}</span>`).join('')||'<span class="hint">—</span>';
-    const flag=(ua||ub)?`<span class="uflag" title="⚠ ${esc(ua||ub)}">⚠</span>`:'';
+    const oflag=isOvl?`<span class="oflag" title="Overlaps another period — the shared minutes are counted only once in the totals. Edit or remove the duplicate.">⧉</span>`:'';
+    const flag=oflag+((ua||ub)?`<span class="uflag" title="⚠ ${esc(ua||ub)}">⚠</span>`:'');
     const sel=`<select class="bandsel ${r[2]?'ov':''}" data-i="${i}" title="Auto = classify by time/day · or force a band">`+
       [['AUTO','Auto'],['OB1','OB1'],['OB2','OB2'],['NORMAL','Normal']]
         .map(([v,lab])=>`<option value="${v}" ${v===ov?'selected':''}>${lab}</option>`).join('')+`</select>`;
-    return `<tr class="${bad?'bad':''}${(ua||ub)?' warnrow':''}">
+    return `<tr class="${bad?'bad':''}${(ua||ub)?' warnrow':''}${isOvl?' overlap':''}">
       <td><input class="tin${ua?' unc':''}" ${ua?`title="⚠ ${esc(ua)}"`:''} type="datetime-local" step="60" data-i="${i}" data-k="0" value="${toLocal(a)}"></td>
       <td><input class="tin${ub?' unc':''}" ${ub?`title="⚠ ${esc(ub)}"`:''} type="datetime-local" step="60" data-i="${i}" data-k="1" value="${toLocal(b)}"></td>
       <td>${sel}</td>
@@ -1094,8 +1290,9 @@ function renderAll(animate){
       <td class="acts"><button class="xbtn" data-del="${i}">✕</button></td></tr>`;
   }).join('');
   $('#tlcard').innerHTML=`
-    <div class="obhead"><div class="l"><b>Work timeline</b> <span class="rate">· editable · ${TL.list.length} periods${uncCount?` · <span style="color:var(--ob2)">⚠ ${uncCount} to verify</span>`:''}</span></div>
+    <div class="obhead"><div class="l"><b>Work timeline</b> <span class="rate">· editable · ${TL.list.length} periods${uncCount?` · <span style="color:var(--ob2)">⚠ ${uncCount} to verify</span>`:''}${ovlCount?` · <span style="color:var(--bad)">⧉ ${ovlCount} overlapping</span>`:''}</span></div>
       <div style="display:flex;gap:8px">
+        ${ovlCount?`<button class="xbtn fixovl" id="fixovl" style="padding:7px 12px" title="Merge the ${ovlCount} overlapping periods into clean, non-overlapping ones. Manual band overrides are kept as-is.">⧉ Fix overlaps</button>`:''}
         <button class="xbtn" id="csvbtn" style="padding:7px 12px">⤓ CSV</button>
         <button class="xbtn" id="addrow" style="padding:7px 12px">＋ Add period</button></div></div>
     <div class="tlscroll"><table class="tl"><thead><tr>
@@ -1126,6 +1323,7 @@ $('#tlcard').addEventListener('change',e=>{
 });
 $('#tlcard').addEventListener('click',e=>{
   if(e.target.id==='csvbtn'){ exportCSV(); return; }
+  if(e.target.id==='fixovl'){ fixOverlaps(); return; }
   if(e.target.id==='addrow'){
     const last=TL.list[TL.list.length-1];
     const base=last?new Date(last[1]):new Date();
@@ -1134,6 +1332,27 @@ $('#tlcard').addEventListener('click',e=>{
   const del=e.target.dataset.del;
   if(del!==undefined){ TL.list.splice(+del,1); renderAll(false); syncJson(); }
 });
+
+// Collapse overlapping/abutting work periods into clean non-overlapping ones.
+// Same union logic the pricing engine uses, so totals don't change — just tidies the timeline.
+// Manual band-override periods are kept untouched.
+function fixOverlaps(){
+  const plain=[], keep=[];
+  for(const r of TL.list){
+    if(!(+r[1]>+r[0])) continue;                       // drop zero/negative-length rows
+    if(r[2]) keep.push([new Date(r[0]),new Date(r[1]),r[2]]);
+    else plain.push([new Date(r[0]),new Date(r[1])]);
+  }
+  plain.sort((a,b)=>a[0]-b[0]);
+  const merged=[];
+  for(const [a,b] of plain){
+    const last=merged[merged.length-1];
+    if(last && a<=last[1]){ if(b>last[1]) last[1]=b; }  // overlap or abut -> extend
+    else merged.push([new Date(a),new Date(b)]);
+  }
+  TL.list=merged.concat(keep).sort((a,b)=>a[0]-b[0]);
+  renderAll(true); syncJson();
+}
 
 // ---- slip image viewer (compare photos against the timeline) ----
 function setSlip(){

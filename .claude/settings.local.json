@@ -17,7 +17,20 @@
       "mcp__plugin_playwright_playwright__browser_navigate",
       "mcp__plugin_playwright_playwright__browser_console_messages",
       "mcp__plugin_playwright_playwright__browser_take_screenshot",
-      "Bash(grep -iE \":root|--|font-family|background|#[0-9a-f]{3,6}\")"
+      "Bash(grep -iE \":root|--|font-family|background|#[0-9a-f]{3,6}\")",
+      "Bash(node *)",
+      "Bash(cp \"/Users/muhammadmohsin/Downloads/IMG_0593 2.JPG\" ob-calculator/sample-vilotidsrapport.jpg)",
+      "Bash(sips -g pixelWidth -g pixelHeight ob-calculator/sample-vilotidsrapport.jpg)",
+      "Bash(sips -Z 1400 -s formatOptions 72 ob-calculator/sample-vilotidsrapport.jpg)",
+      "Bash(cp /Users/muhammadmohsin/.claude/image-cache/12324b79-3f59-452b-9564-41a47d762ee5/6.png ob-calculator/sample-vilotidsrapport.jpg)",
+      "Bash(sips -s format jpeg -Z 1400 -s formatOptions 72 ob-calculator/sample-vilotidsrapport.jpg)",
+      "Bash(sips -g pixelWidth -g pixelHeight -g format ob-calculator/sample-vilotidsrapport.jpg)",
+      "Bash(curl -sI \"https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.css\")",
+      "Bash(curl -sI \"https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.esm.min.js\")",
+      "Bash(curl -s \"https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.esm.min.js\")",
+      "Bash(mkdir -p /Users/muhammadmohsin/Documents/Learning/TAXI/App/ob-calculator-src/src /Users/muhammadmohsin/Documents/Learning/TAXI/App/ob-calculator-src/public)",
+      "Bash(cp /Users/muhammadmohsin/Documents/Learning/TAXI/App/drivetest-homepage/ob-calculator/calc.js /Users/muhammadmohsin/Documents/Learning/TAXI/App/ob-calculator-src/src/calc.js)",
+      "Bash(cp /Users/muhammadmohsin/Documents/Learning/TAXI/App/drivetest-homepage/ob-calculator/sample-vilotidsrapport-v2.jpg /Users/muhammadmohsin/Documents/Learning/TAXI/App/ob-calculator-src/public/sample-vilotidsrapport-v2.jpg)"
     ]
   }
 }
