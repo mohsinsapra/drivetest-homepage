@@ -88,11 +88,30 @@ function splitInterval(a, b, holidays, override) {
   return t;
 }
 
+// Merge overlapping/touching work intervals so no minute is ever paid twice.
+// Manual-override intervals (3rd element) are passed through untouched.
+function mergeOverlaps(intervals) {
+  const plain = [], keep = [];
+  for (const iv of intervals) {
+    if (!(iv[1] > iv[0])) continue;
+    if (iv[2]) keep.push(iv);                      // manual override -> never merged
+    else plain.push([new Date(iv[0]), new Date(iv[1])]);
+  }
+  plain.sort((x, y) => x[0] - y[0]);
+  const merged = [];
+  for (const [a, b] of plain) {
+    const last = merged[merged.length - 1];
+    if (last && a <= last[1]) { if (b > last[1]) last[1] = b; }  // overlap/abut -> extend
+    else merged.push([new Date(a), new Date(b)]);
+  }
+  return merged.concat(keep);
+}
+
 // Classify a set of raw work intervals -> band-split rows + totals.
 // An interval may carry an optional 3rd element = manual band override.
 function classifyIntervals(intervals, holidays) {
   const totals = { OB1: 0, OB2: 0, NORMAL: 0 }, rows = [];
-  const sorted = [...intervals].sort((x, y) => x[0] - y[0]);
+  const sorted = mergeOverlaps(intervals).sort((x, y) => x[0] - y[0]);
   for (const iv of sorted) {
     const a = iv[0], b = iv[1], override = iv[2];
     if (!(b > a)) continue;
@@ -150,4 +169,4 @@ function mergeSameBand(rows) {
 const fmt = mins => `${Math.floor(mins / 60)}:${String(mins % 60).padStart(2, '0')}`;
 
 if (typeof module !== 'undefined')
-  module.exports = { compute, classifyIntervals, splitInterval, mergeSameBand, fmt, OB_RATES, setTimes };
+  module.exports = { compute, classifyIntervals, mergeOverlaps, splitInterval, mergeSameBand, fmt, OB_RATES, setTimes };
