@@ -432,6 +432,7 @@
     <div class="btnrow"><button id="parse" disabled>Read photos</button>
       <button class="ghost" id="rereadAll" hidden>↻ Re-read all</button>
       <button class="ghost" id="manual">✎ Enter manually</button>
+      <button class="ghost" id="paste">⎘ Paste JSON</button>
       <span id="status" class="hint"></span></div>
     <div id="err" class="err"></div>
   </div>
@@ -766,6 +767,41 @@ async function readOne(id){
     $('#status').innerHTML=`<span style="color:var(--bad)">⚠ ${esc(e.message)}</span>`; }
 }
 $('#copy').onclick=()=>navigator.clipboard.writeText($('#cfg').value);
+
+// Paste JSON from the clipboard (with a prompt fallback) and restore the calculation.
+// Accepts BOTH shapes we emit: the combined timeline ({work,…}) and the slip shape ({entries,…}).
+async function readClip(){
+  try{ const t=await navigator.clipboard.readText(); if(t&&t.trim()) return t; }catch(_){}
+  return window.prompt('Paste the JSON you copied earlier:')||'';
+}
+$('#paste').onclick=async()=>{
+  $('#err').textContent='';
+  let parsed;
+  try{
+    const raw=await readClip(); if(!raw.trim()) return;
+    parsed=JSON.parse(raw);
+  }catch(e){ $('#err').textContent='Paste error: clipboard is not valid JSON ('+e.message+')'; return; }
+  try{
+    if(parsed && Array.isArray(parsed.work) && parsed.work.length){      // combined timeline -> restore results directly
+      const D=s=>new Date(String(s).replace(' ','T'));
+      TL.list=parsed.work.map(w=> w[2]?[D(w[0]),D(w[1]),w[2]]:[D(w[0]),D(w[1])]);
+      TL.holidays=new Set(parsed.holidays||[]);
+      TL.rates=parsed.rates||{ob1:SETTINGS.ob1,ob2:SETTINGS.ob2};
+      UNCRAW=parsed.uncertain||[]; UNC=buildUnc(UNCRAW);
+      $('#out').style.display=''; setSlip(); renderAll(true); syncJson();
+      $('#out').scrollIntoView({behavior:'smooth'});
+    }else if(parsed && Array.isArray(parsed.entries) && parsed.entries.length){ // slip shape -> add as an editable block
+      slips.push({id:++slipSeq,dataUrl:null,name:'Pasted JSON',status:'done',included:true,err:'',
+        cfg:{entries:parsed.entries,holidays:parsed.holidays||[],uncertain:parsed.uncertain||[],
+             window_start:parsed.window_start||'',window_end:parsed.window_end||'',
+             rates:parsed.rates||{ob1:SETTINGS.ob1,ob2:SETTINGS.ob2}}});
+      renderVerify(); $('#editCard').style.display='';
+      $('#editCard').scrollIntoView({behavior:'smooth'});
+    }else{
+      $('#err').textContent='Paste error: JSON has no "work" or "entries" data to load.';
+    }
+  }catch(e){ $('#err').textContent='Paste error: '+e.message; }
+};
 
 // enter JSON without a photo — added as its own (image-less) slip
 const TEMPLATE=JSON.stringify({
