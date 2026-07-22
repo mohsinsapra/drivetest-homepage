@@ -32,6 +32,24 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://drivetest.se/ob-taxi-sweden/"/>
   </url>
   <url>
+    <loc>https://drivetest.se/medborgarskapsprov/</loc>
+    <lastmod>2026-07-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drivetest.se/medborgarskapsprov/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://drivetest.se/medborgarskapsprov/sv/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drivetest.se/medborgarskapsprov/"/>
+  </url>
+  <url>
+    <loc>https://drivetest.se/medborgarskapsprov/sv/</loc>
+    <lastmod>2026-07-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://drivetest.se/medborgarskapsprov/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://drivetest.se/medborgarskapsprov/sv/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://drivetest.se/medborgarskapsprov/"/>
+  </url>
+  <url>
     <loc>https://drivetest.se/blog/</loc>
     <lastmod>2026-06-17</lastmod>
     <changefreq>weekly</changefreq>
