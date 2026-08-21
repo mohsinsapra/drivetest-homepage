@@ -1,0 +1,61 @@
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  padding: 34px;
+  position: relative;
+}
+
+.body {
+  overflow: hidden;
+  max-height: 260px;
+  transition: max-height 0.5s cubic-bezier(0.22, 0.7, 0.2, 1);
+  position: relative;
+}
+
+.bodyOpen {
+  max-height: 4000px;
+}
+
+.fade {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 90px;
+  background: linear-gradient(180deg, transparent, var(--card));
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.fadeHidden {
+  opacity: 0;
+}
+
+.toggle {
+  margin-top: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: 11px 20px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  min-height: 44px;
+}
+
+.toggle svg {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.3s ease;
+}
+
+.toggleOpen svg {
+  transform: rotate(180deg);
+}

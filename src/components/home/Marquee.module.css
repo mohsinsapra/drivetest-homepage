@@ -1,0 +1,74 @@
+.wrap {
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 20px 0;
+  background: var(--bg-2);
+}
+
+.wrap::before,
+.wrap::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.wrap::before {
+  left: 0;
+  background: linear-gradient(90deg, var(--bg-2), transparent);
+}
+
+.wrap::after {
+  right: 0;
+  background: linear-gradient(-90deg, var(--bg-2), transparent);
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  animation: scroll 26s linear infinite;
+}
+
+.wrap:hover .track {
+  animation-play-state: paused;
+}
+
+.group {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.item {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 17px;
+  color: var(--text);
+  white-space: nowrap;
+  padding: 0 10px;
+}
+
+.star {
+  color: var(--accent);
+  padding: 0 18px;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    animation: none;
+  }
+}

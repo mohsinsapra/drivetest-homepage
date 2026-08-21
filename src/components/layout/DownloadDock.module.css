@@ -1,0 +1,48 @@
+.dock {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--dock-bg);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-pill);
+  padding: 8px 10px;
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  box-shadow: var(--shadow);
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.dock.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--muted);
+  padding-left: 6px;
+  display: none;
+}
+
+@media (min-width: 560px) {
+  .label {
+    display: inline;
+  }
+}
+
+@media (max-width: 480px) {
+  .dock {
+    left: 16px;
+    right: 16px;
+    justify-content: center;
+  }
+}

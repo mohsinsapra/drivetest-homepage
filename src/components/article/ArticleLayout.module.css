@@ -1,0 +1,16 @@
+.grid {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 56px;
+  align-items: start;
+}
+
+.body {
+  min-width: 0;
+}
+
+@media (max-width: 899px) {
+  .grid {
+    display: block;
+  }
+}

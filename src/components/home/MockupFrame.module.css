@@ -1,0 +1,94 @@
+.phone {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  aspect-ratio: 9 / 18;
+  border-radius: 36px;
+  padding: 10px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.phoneNotch {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 34%;
+  height: 16px;
+  background: var(--bg);
+  border-radius: 0 0 12px 12px;
+  z-index: 2;
+}
+
+.phoneScreen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 26px;
+  overflow: hidden;
+  background: var(--bg);
+  padding: 26px 16px 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.browser {
+  width: 100%;
+  max-width: 440px;
+  height: 100%;
+  margin: 0 auto;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+}
+
+.browserBar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-2);
+}
+
+.dots {
+  display: flex;
+  gap: 6px;
+}
+
+.dots span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--border);
+}
+
+.urlPill {
+  flex: 1;
+  text-align: center;
+  font-size: 11px;
+  color: var(--muted);
+  background: var(--card);
+  border-radius: var(--radius-pill);
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+}
+
+.browserBody {
+  padding: 20px;
+  flex: 1;
+  min-height: 0;
+}
+
+.skel {
+  height: 10px;
+  border-radius: 6px;
+  background: var(--border);
+}

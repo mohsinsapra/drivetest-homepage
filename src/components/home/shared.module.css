@@ -1,0 +1,95 @@
+/* Shared primitives reused across home/* components. */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s cubic-bezier(0.22, 0.7, 0.2, 1), transform 0.5s cubic-bezier(0.22, 0.7, 0.2, 1);
+}
+
+.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.sectionHead {
+  text-align: center;
+  max-width: 620px;
+  margin: 0 auto 56px;
+}
+
+.sectionTitle {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 42px);
+  line-height: 1.1;
+  margin: 0 0 14px;
+}
+
+.sectionSub {
+  color: var(--muted);
+  font-size: 16.5px;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 26px;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(120deg, var(--accent), var(--accent-2));
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  min-height: 44px;
+}
+
+.btnPrimary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(90, 81, 254, 0.28);
+}
+
+.btnPrimary:focus-visible,
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.btnGhost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: var(--radius-pill);
+  background: var(--card);
+  border: 1.5px solid var(--border);
+  color: var(--text);
+  font-weight: 700;
+  font-size: 14.5px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+  min-height: 44px;
+}
+
+.btnGhost:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}

@@ -1,0 +1,106 @@
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  padding: 34px;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 32px;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .card {
+    grid-template-columns: 1fr;
+  }
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  margin: 0;
+}
+
+.newChip {
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  background: linear-gradient(120deg, var(--success), var(--accent));
+  color: #14132b;
+  padding: 3px 9px;
+  border-radius: var(--radius-pill);
+}
+
+.desc {
+  color: var(--muted);
+  font-size: 15.5px;
+  line-height: 1.65;
+  margin: 0 0 20px;
+  max-width: 480px;
+}
+
+.receipt {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  font-family: var(--font-body);
+}
+
+.receiptHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px dashed var(--border);
+}
+
+.receiptTitle {
+  font-weight: 700;
+  font-size: 13.5px;
+}
+
+.receiptDate {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.receiptRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12.5px;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.receiptChips {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.obChip {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+}
+
+.ob1 {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.ob2 {
+  background: color-mix(in srgb, var(--orange) 18%, transparent);
+  color: var(--orange);
+}

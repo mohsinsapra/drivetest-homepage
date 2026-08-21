@@ -1,0 +1,56 @@
+.list {
+  list-style: none;
+  margin: 22px 0;
+  padding: 0;
+  counter-reset: step;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.item {
+  counter-increment: step;
+  display: flex;
+  gap: 16px;
+  padding: 14px 0;
+  position: relative;
+}
+
+.item:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  left: 15px;
+  top: 44px;
+  bottom: -6px;
+  width: 1px;
+  background: var(--border);
+}
+
+.num {
+  flex: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.num::before {
+  content: counter(step);
+}
+
+.body {
+  padding-top: 4px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.body :global(strong) {
+  color: var(--text);
+}

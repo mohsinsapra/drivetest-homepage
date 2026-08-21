@@ -1,0 +1,122 @@
+.wrap {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.ringWrap {
+  position: relative;
+  width: 84px;
+  height: 84px;
+  flex-shrink: 0;
+}
+
+.ringWrap svg {
+  transform: rotate(-90deg);
+}
+
+.ringTrack {
+  fill: none;
+  stroke: var(--border);
+  stroke-width: 7;
+}
+
+.ringVal {
+  fill: none;
+  stroke: var(--success);
+  stroke-width: 7;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 1.1s cubic-bezier(0.22, 0.7, 0.2, 1);
+}
+
+.ringLabel {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 17px;
+}
+
+.chips {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-end;
+}
+
+.chip {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  height: 90px;
+  margin-bottom: 18px;
+  padding: 0 4px;
+}
+
+.barCol {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  height: 100%;
+}
+
+.bar {
+  width: 100%;
+  border-radius: 5px 5px 0 0;
+  background: linear-gradient(180deg, var(--accent-2), var(--accent));
+  height: 0%;
+  transition: height 0.8s cubic-bezier(0.22, 0.7, 0.2, 1);
+}
+
+.categories {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.catRow {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.catTop {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11.5px;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.catBar {
+  height: 6px;
+  border-radius: 3px;
+  background: var(--border);
+  overflow: hidden;
+}
+
+.catFill {
+  height: 100%;
+  border-radius: 3px;
+  background: var(--accent);
+  width: 0%;
+  transition: width 0.9s cubic-bezier(0.22, 0.7, 0.2, 1);
+}

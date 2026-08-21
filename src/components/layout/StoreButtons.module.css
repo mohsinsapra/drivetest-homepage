@@ -1,0 +1,56 @@
+.row {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--card);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 12px 18px;
+  color: var(--text);
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.btn:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.text small {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.text strong {
+  font-size: 14px;
+}
+
+.mini {
+  padding: 8px 12px;
+}
+
+.mini .icon {
+  width: 18px;
+  height: 18px;
+}
+
+.mini .text strong {
+  font-size: 12.5px;
+}

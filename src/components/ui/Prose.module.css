@@ -1,0 +1,238 @@
+.prose {
+  font-size: 1.15rem;
+  line-height: 1.75;
+  color: var(--text);
+  max-width: 72ch;
+}
+
+.prose :global(h2) {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 4vw, 28px);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 42px 0 12px;
+  scroll-margin-top: 100px;
+}
+
+.prose :global(h3) {
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 700;
+  margin: 26px 0 8px;
+}
+
+.prose :global(p) {
+  margin: 0 0 16px;
+}
+
+.prose :global(ul),
+.prose :global(ol) {
+  margin: 0 0 16px;
+  padding-left: 22px;
+}
+
+.prose :global(li) {
+  margin: 6px 0;
+}
+
+.prose :global(strong) {
+  font-weight: 700;
+}
+
+.prose :global(hr) {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 32px 0;
+}
+
+.prose :global(a) {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.prose :global(table) {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+  margin: 18px 0;
+  display: block;
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+
+.prose :global(table tbody tr:nth-child(even)) {
+  background: var(--bg-2);
+}
+
+.prose :global(.toc ol) {
+  list-style: decimal;
+  counter-reset: none;
+}
+
+.prose :global(.toc ol li::before) {
+  content: none;
+}
+
+.prose :global(ol:not(.toc ol)) {
+  list-style: none;
+  counter-reset: prose-step;
+  padding-left: 0;
+}
+
+.prose :global(ol:not(.toc ol) > li) {
+  counter-increment: prose-step;
+  position: relative;
+  padding-left: 40px;
+  margin: 10px 0;
+}
+
+.prose :global(ol:not(.toc ol) > li::before) {
+  content: counter(prose-step);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prose :global(th) {
+  text-align: left;
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0 12px 10px 0;
+}
+
+.prose :global(td) {
+  padding: 12px 12px 12px 0;
+  border-top: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.prose :global(.highlight-box),
+.prose :global(.toc),
+.prose :global(.callout),
+.prose :global(.card),
+.prose :global(.step-section),
+.prose :global(.tip-box),
+.prose :global(.cost-box),
+.prose :global(.exam-types-box),
+.prose :global(.requirements-list),
+.prose :global(.guide-intro),
+.prose :global(.guide-cta-section) {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 22px 24px;
+  margin: 22px 0;
+  box-shadow: var(--shadow);
+}
+
+.prose :global(.highlight-box),
+.prose :global(.tip-box),
+.prose :global(.cost-box) {
+  border-left: 4px solid var(--accent);
+}
+
+.prose :global(.tip-box) {
+  border-left-color: var(--yellow);
+}
+
+.prose :global(.cost-box strong) {
+  color: var(--accent);
+}
+
+.prose :global(.step-section) {
+  border-radius: var(--radius-lg);
+}
+
+.prose :global(.step-section h2) {
+  display: flex;
+  align-items: center;
+  margin-top: 0;
+  font-size: 20px;
+}
+
+.prose :global(.guide-main-title) {
+  text-align: center;
+  margin: 56px 0 24px;
+  font-size: clamp(22px, 4vw, 30px);
+}
+
+.prose :global(.practical-exam-title) {
+  margin-top: 16px;
+}
+
+.prose :global(.step-number) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+.prose :global(.cta-button) {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 15px;
+  border: 0;
+  border-radius: 14px;
+  padding: 13px 24px;
+  color: #fff;
+  background: linear-gradient(120deg, var(--accent), var(--accent-2));
+  margin: 8px 8px 0 0;
+  transition: 0.25s;
+}
+
+.prose :global(.cta-button.secondary) {
+  background: transparent;
+  color: var(--accent);
+  border: 1.5px solid var(--accent);
+}
+
+.prose :global(.cta-button:hover) {
+  transform: translateY(-1px);
+}
+
+.prose :global(.step-images) {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin: 16px 0;
+}
+
+.prose :global(.step-image-wrapper) {
+  flex: 1 1 160px;
+  text-align: center;
+}
+
+.prose :global(.step-image-wrapper img) {
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  width: 100%;
+}
+
+.prose :global(.step-label) {
+  display: block;
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--muted);
+}
