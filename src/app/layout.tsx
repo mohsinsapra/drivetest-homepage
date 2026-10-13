@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Bricolage_Grotesque, Geist } from "next/font/google";
+import { Funnel_Display, Geist } from "next/font/google";
 import { themeInitScript } from "@/lib/theme";
 import "@/styles/tokens.css";
 import "@/styles/globals.css";
 
-const bricolage = Bricolage_Grotesque({
-  variable: "--font-bricolage",
+const funnel = Funnel_Display({
+  variable: "--font-funnel",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   display: "swap",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${bricolage.variable} ${geist.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${funnel.variable} ${geist.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         <Script id="gtm" strategy="afterInteractive">
