@@ -82,7 +82,7 @@ export const nav = {
     obCalculator: "OB-kalkylator",
     guide: "Guide till taxiförarlegitimation",
     getTheApp: "Skaffa appen",
-    webApp: "Webbappen",
+    webApp: "Webbapp",
     exams: "Prov",
     taxiLicence: "Taxiförarlegitimation",
     compare: "Jämför",

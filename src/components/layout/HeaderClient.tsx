@@ -199,7 +199,7 @@ export default function HeaderClient({ lang, currentPath, index }: { lang: Lang;
               <Icon name="search" />
               <span>{t.search}</span>
             </button>
-            <a href={urls.livePwaIframe} className={`${styles.tool} ${styles.hideSm}`} target="_blank" rel="noopener noreferrer">
+            <a href={urls.livePwaIframe} className={styles.tool} target="_blank" rel="noopener noreferrer">
               <Icon name="web" />
               <span>{t.webApp}</span>
             </a>
@@ -254,6 +254,12 @@ export default function HeaderClient({ lang, currentPath, index }: { lang: Lang;
             <div className={styles.menuMobileOnly}>
               <h2 className={styles.menuTitle}>{t.storeTitle}</h2>
               <ul className={styles.menuList}>
+                <li>
+                  <Link href={altHref} hrefLang={lang === "en" ? "sv" : "en"} lang={lang === "en" ? "sv" : "en"} onClick={close}>
+                    {t.language}
+                    <span aria-hidden="true"> ›</span>
+                  </Link>
+                </li>
                 <li>
                   <a href={urls.livePwaIframe} target="_blank" rel="noopener noreferrer">
                     {t.webApp}

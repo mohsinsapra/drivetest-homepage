@@ -118,3 +118,29 @@
     margin: 20px 0 0 0;
   }
 }
+
+/* Mobile: photo first, full-bleed; "On this page" box after the intro */
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 0;
+  }
+  .withMedia {
+    display: flex;
+    flex-direction: column;
+  }
+  .media {
+    display: contents;
+  }
+  .photo {
+    order: -1;
+    width: calc(100% + 2 * var(--gutter));
+    max-width: none;
+    margin: 0 calc(-1 * var(--gutter));
+  }
+  .media > nav,
+  .media > details,
+  .noPhoto > nav {
+    order: 1;
+    margin: 24px 0 8px;
+  }
+}

@@ -299,3 +299,79 @@
     display: none;
   }
 }
+
+/* ---- Mobile (Trafikverket-style): one solid navy bar ---- */
+@media (max-width: 768px) {
+  .topbar,
+  .navRow {
+    display: none;
+  }
+  .mainRow {
+    background: var(--brand);
+  }
+  .mainInner {
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0 8px;
+    min-height: 92px;
+    padding: 0 12px 0 16px;
+  }
+  .logo {
+    flex-direction: row;
+    justify-content: flex-start;
+    width: auto;
+    gap: 10px;
+    padding: 0;
+    background: none;
+    font-size: 15px;
+    align-self: center;
+  }
+  .logo:hover {
+    background: none;
+  }
+  .logo img {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: #fff;
+    padding: 2px;
+  }
+  .tools {
+    gap: 0;
+  }
+  .tool {
+    color: #fff;
+    min-width: 60px;
+    padding: 8px 6px;
+    font-size: 14px;
+    gap: 4px;
+  }
+  .tool svg {
+    width: 32px;
+    height: 32px;
+  }
+  .tool:focus-visible,
+  .logo:focus-visible {
+    outline: 3px solid var(--yellow);
+    outline-offset: 2px;
+  }
+  .searchToggle {
+    display: flex;
+  }
+  .searchWrap {
+    display: none;
+    order: 3;
+    flex: 0 0 100%;
+    padding: 0 4px 16px;
+  }
+  .searchWrap[data-open="true"] {
+    display: block;
+  }
+  .searchInput,
+  .searchBtn {
+    height: 44px;
+  }
+  .menuPanel {
+    max-height: calc(100vh - 92px);
+  }
+}

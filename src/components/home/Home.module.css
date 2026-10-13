@@ -256,3 +256,43 @@
 .faqAnswer a {
   color: var(--brand-ink);
 }
+
+/* ---- Mobile (Trafikverket-style) ---- */
+@media (max-width: 768px) {
+  .heroInner {
+    display: flex;
+    flex-direction: column;
+  }
+  .heroPhoto {
+    order: -1;
+    min-height: 220px;
+    height: 220px;
+  }
+  .heroText {
+    padding: 28px 24px 32px;
+  }
+  .widgets {
+    margin: 24px 4px 0;
+  }
+  .widget {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 16px;
+    align-items: center;
+    padding: 20px 20px 24px;
+  }
+  .widgetIcon {
+    margin: 0;
+    height: auto;
+  }
+  .widget h2 {
+    margin: 0;
+  }
+  .widget p,
+  .widgetLinks {
+    grid-column: 1 / -1;
+  }
+  .widget p {
+    margin: 12px 0 20px;
+  }
+}
