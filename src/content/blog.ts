@@ -1,5 +1,7 @@
 // AUTO-PORTED from legacy blog/index.html + blog/sv/index.html
 
+import { articles } from "./articles";
+
 export interface BlogPost {
   title: string;
   tag: string;
@@ -7,6 +9,18 @@ export interface BlogPost {
   href: string;
   cover: string;
 }
+
+/** Posts derived from the article modules (newest first), so copy lives in one place. */
+const articlePosts = (lang: "en" | "sv"): BlogPost[] =>
+  [...articles]
+    .sort((a, b) => b[lang].lastUpdated.localeCompare(a[lang].lastUpdated))
+    .map((a) => ({
+      title: a[lang].title,
+      tag: a[lang].tag,
+      excerpt: a[lang].excerpt,
+      href: lang === "en" ? `/blog/${a.slug}/` : `/sv/blog/${a.slug}/`,
+      cover: a[lang].cover,
+    }));
 
 export const blog = {
   en: {
@@ -17,6 +31,7 @@ export const blog = {
     metaDescription:
       "Guides and articles for taxi drivers in Sweden: OB pay, the Vilotidsrapport, the taxi licence exam and more.",
     posts: [
+      ...articlePosts("en"),
       {
         title: "Swedish Citizenship Test 2026 — requirements & the medborgarskapsprov",
         tag: "Citizenship",
@@ -43,6 +58,7 @@ export const blog = {
     metaDescription:
       "Guider och artiklar för taxiförare i Sverige: OB-ersättning, vilotidsrapporten, taxiförarlegitimation med mera.",
     posts: [
+      ...articlePosts("sv"),
       {
         title: "Medborgarskapsprovet 2026 — krav & hur du förbereder dig",
         tag: "Medborgarskap",

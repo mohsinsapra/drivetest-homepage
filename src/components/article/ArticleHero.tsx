@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Container from "@/components/ui/Container";
 import styles from "./ArticleHero.module.css";
 
 export default function ArticleHero({
@@ -20,6 +21,7 @@ export default function ArticleHero({
 }) {
   return (
     <header className={styles.hero}>
+      <Container>
       {kicker && <span className={styles.kicker}>{kicker}</span>}
       <h1 className={styles.title}>{title}</h1>
       {lead && <div className={styles.lead}>{lead}</div>}
@@ -30,6 +32,7 @@ export default function ArticleHero({
           ← {backLabel}
         </a>
       )}
+      </Container>
     </header>
   );
 }

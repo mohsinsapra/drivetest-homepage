@@ -1,5 +1,7 @@
 import type { MetadataRoute } from "next";
 import { absoluteUrl, localePath } from "@/lib/i18n";
+import { landingPages } from "@/content/landing";
+import { articles } from "@/content/articles";
 
 export const dynamic = "force-static";
 
@@ -12,6 +14,8 @@ const PATHS = [
   "/support/",
   "/privacy-policy/",
   "/delete-account/",
+  ...landingPages.map((p) => `/${p.slug}/`),
+  ...articles.map((a) => `/blog/${a.slug}/`),
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

@@ -1,7 +1,7 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 16px;
 }
 
 @media (max-width: 900px) {
@@ -10,84 +10,191 @@
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 600px) {
   .grid {
     grid-template-columns: 1fr;
   }
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: 26px;
+  overflow: hidden;
   box-shadow: var(--shadow);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.card:hover {
-  transform: translateY(-4px);
 }
 
 .cardWide {
   grid-column: 1 / -1;
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
+  flex-direction: row;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 600px) {
   .cardWide {
     flex-direction: column;
   }
 }
 
-.iconBox {
-  width: 44px;
-  height: 44px;
-  flex-shrink: 0;
-  border-radius: 14px;
-  background: var(--accent-soft);
-  color: var(--accent);
+.top {
+  background: var(--grad-card);
+  height: 190px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 16px;
+  padding: 20px;
 }
 
-.cardWide .iconBox {
-  margin-bottom: 0;
+.cardWide .top {
+  height: auto;
+  min-height: 190px;
+  flex: 0 0 46%;
 }
 
-.iconBox svg {
-  width: 22px;
-  height: 22px;
+@media (max-width: 600px) {
+  .cardWide .top {
+    flex: none;
+  }
+}
+
+.body {
+  padding: 22px 24px 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .cardTitle {
   font-family: var(--font-display);
-  font-size: 17px;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
   margin: 0 0 8px;
   display: flex;
   align-items: center;
   gap: 8px;
+  flex-wrap: wrap;
+}
+
+.aiChip {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: var(--accent);
+  color: #fff;
 }
 
 .cardDesc {
   color: var(--muted);
-  font-size: 14.5px;
-  line-height: 1.6;
+  font-size: 15px;
+  line-height: 1.55;
   margin: 0;
 }
 
-.aiChip {
-  display: inline-flex;
-  align-items: center;
-  font-size: 10.5px;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  background: linear-gradient(120deg, var(--accent), var(--accent-2));
-  color: #fff;
-  padding: 2px 8px;
+.mock {
+  width: 100%;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mockRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.chip {
+  padding: 8px 14px;
   border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.85);
+  color: #14141a;
+  font-size: 13px;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(20, 20, 26, 0.08);
+}
+
+.chipOn {
+  background: #14141a;
+  color: #fff;
+}
+
+.bubble {
+  background: rgba(255, 255, 255, 0.92);
+  color: #14141a;
+  border-radius: 14px 14px 14px 4px;
+  padding: 10px 14px;
+  font-size: 13px;
+  line-height: 1.45;
+  box-shadow: 0 2px 8px rgba(20, 20, 26, 0.08);
+  max-width: 88%;
+}
+
+.bubbleMe {
+  align-self: flex-end;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 14px 14px 4px 14px;
+}
+
+.okRow {
+  background: rgba(255, 255, 255, 0.92);
+  color: #1f7a3a;
+  font-weight: 600;
+  font-size: 13px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  align-self: flex-start;
+}
+
+.line {
+  height: 9px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.bmRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.55);
+  padding: 9px 12px;
+  border-radius: 10px;
+}
+
+.bmRow .line {
+  background: rgba(20, 20, 26, 0.18);
+  flex: none;
+}
+
+.bmIco {
+  width: 12px;
+  height: 16px;
+  border-radius: 2px 2px 0 0;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
+.bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  height: 120px;
+  width: 220px;
+}
+
+.bars span {
+  flex: 1;
+  border-radius: 6px 6px 0 0;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.bars span:last-child {
+  background: var(--accent);
 }

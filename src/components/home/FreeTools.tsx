@@ -12,7 +12,7 @@ export default function FreeTools({ lang }: { lang: Lang }) {
   return (
     <Section id="tools">
       <Reveal className={shared.sectionHead}>
-        <span className={shared.kicker}>✦ {h.home_tools_kicker}</span>
+        <span className={shared.kicker}>{h.home_tools_kicker}</span>
         <h2 className={shared.sectionTitle}>{h.home_tools_title}</h2>
         <p className={shared.sectionSub}>{h.home_tools_sub}</p>
       </Reveal>

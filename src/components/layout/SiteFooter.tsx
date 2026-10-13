@@ -1,75 +1,83 @@
 import Link from "next/link";
 import type { Lang } from "@/lib/i18n";
 import { localePath } from "@/lib/i18n";
-import { footer, urls } from "@/content/site";
+import { footer, footerColumns, examLinks, urls } from "@/content/site";
 import Container from "../ui/Container";
 import styles from "./SiteFooter.module.css";
 
+type FooterLink = { href: string; label: string; external?: boolean };
+
 export default function SiteFooter({ lang }: { lang: Lang }) {
   const f = footer[lang];
+  const c = footerColumns[lang];
   const year = new Date().getFullYear();
 
-  const product = [
-    { href: localePath(lang, "/"), label: f.home },
-    { href: "/ob-calculator/", label: f.ob },
-    { href: localePath(lang, "/taxi-licence-guide/"), label: f.guide },
-  ];
-  const resources = [
-    { href: localePath(lang, "/blog/"), label: f.blog },
-    { href: localePath(lang, "/support/"), label: f.support },
-    { href: urls.github, label: f.github, external: true },
-  ];
-  const legal = [
-    { href: localePath(lang, "/privacy-policy/"), label: f.privacy },
-    { href: localePath(lang, "/delete-account/"), label: f.delete },
+  const columns: { title: string; links: FooterLink[] }[] = [
+    {
+      title: c.exams,
+      links: examLinks[lang].map((e) => ({ href: localePath(lang, e.path), label: e.label })),
+    },
+    {
+      title: c.forTitle,
+      links: c.forLinks.map((e) => ({ href: localePath(lang, e.path), label: e.label })),
+    },
+    {
+      title: c.compareTitle,
+      links: c.compareLinks.map((e) => ({ href: localePath(lang, e.path), label: e.label })),
+    },
+    {
+      title: c.resourcesTitle,
+      links: [
+        { href: localePath(lang, "/blog/"), label: f.blog },
+        { href: localePath(lang, "/taxi-licence-guide/"), label: f.guide },
+        { href: "/ob-calculator/", label: f.ob },
+        { href: localePath(lang, "/support/"), label: f.support },
+        { href: urls.github, label: f.github, external: true },
+      ],
+    },
   ];
 
   return (
     <footer className={styles.footer}>
       <Container>
         <div className={styles.grid}>
-          <div>
-            <div className={styles.colTitle}>Product</div>
-            <ul className={styles.colLinks}>
-              {product.map((l) => (
-                <li key={l.href}>
-                  <Link href={l.href}>{l.label}</Link>
-                </li>
-              ))}
-            </ul>
+          <div className={styles.brandCol}>
+            <Link href={localePath(lang, "/")} className={styles.brand}>
+              <img src="/assets/icon.png" alt="" />
+              <span>Drive Test</span>
+            </Link>
+            <p className={styles.tagline}>{c.tagline}</p>
+            <a href={`${localePath(lang, "/")}#download`} className={styles.cta}>
+              {c.cta}
+            </a>
+            <p className={styles.note}>{c.note}</p>
           </div>
-          <div>
-            <div className={styles.colTitle}>Resources</div>
-            <ul className={styles.colLinks}>
-              {resources.map((l) =>
-                l.external ? (
+          {columns.map((col) => (
+            <div key={col.title}>
+              <div className={styles.colTitle}>{col.title}</div>
+              <ul className={styles.colLinks}>
+                {col.links.map((l) => (
                   <li key={l.href}>
-                    <a href={l.href} target="_blank" rel="noopener noreferrer">
-                      {l.label}
-                    </a>
+                    {l.external ? (
+                      <a href={l.href} target="_blank" rel="noopener noreferrer">
+                        {l.label}
+                      </a>
+                    ) : (
+                      <Link href={l.href}>{l.label}</Link>
+                    )}
                   </li>
-                ) : (
-                  <li key={l.href}>
-                    <Link href={l.href}>{l.label}</Link>
-                  </li>
-                )
-              )}
-            </ul>
-          </div>
-          <div>
-            <div className={styles.colTitle}>Legal</div>
-            <ul className={styles.colLinks}>
-              {legal.map((l) => (
-                <li key={l.href}>
-                  <Link href={l.href}>{l.label}</Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
         <div className={styles.bottom}>
           <span>
-            {year} · {f.rights}
+            © {year} Drive Test · {f.rights}
+          </span>
+          <span className={styles.legal}>
+            <Link href={localePath(lang, "/privacy-policy/")}>{f.privacy}</Link>
+            <Link href={localePath(lang, "/delete-account/")}>{f.delete}</Link>
           </span>
         </div>
       </Container>

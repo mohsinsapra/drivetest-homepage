@@ -13,7 +13,7 @@ export default function Pricing({ lang }: { lang: Lang }) {
   return (
     <Section id="pricing">
       <Reveal className={shared.sectionHead}>
-        <span className={shared.kicker}>✦ {p.kicker}</span>
+        <span className={shared.kicker}>{p.kicker}</span>
         <h2 className={shared.sectionTitle}>{p.title}</h2>
         <p className={shared.sectionSub}>{p.sub}</p>
       </Reveal>

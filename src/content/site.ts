@@ -46,6 +46,8 @@ export const nav = {
     obCalculator: "OB Calculator",
     guide: "License Guide",
     getTheApp: "Get the app",
+    exams: "Exams",
+    menu: "Menu",
   },
   sv: {
     howItWorks: "Så fungerar det",
@@ -55,6 +57,71 @@ export const nav = {
     obCalculator: "OB-kalkylator",
     guide: "Licensguide",
     getTheApp: "Skaffa appen",
+    exams: "Prov",
+    menu: "Meny",
+  },
+};
+
+/** Shared link groups used by the header dropdown and footer columns. Paths are language-neutral. */
+export const examLinks = {
+  en: [
+    { path: "/exams/taxi-licence/", label: "Taxi licence exam" },
+    { path: "/exams/taxi-company/", label: "Taxi company (Yrkeskunnande)" },
+    { path: "/exams/goods-and-bus/", label: "Goods & bus transport" },
+    { path: "/exams/driving-licence/", label: "Driving licence theory" },
+    { path: "/exams/citizenship-test/", label: "Citizenship test" },
+  ],
+  sv: [
+    { path: "/exams/taxi-licence/", label: "Taxiförarlegitimation" },
+    { path: "/exams/taxi-company/", label: "Taxiföretag (Yrkeskunnande)" },
+    { path: "/exams/goods-and-bus/", label: "Gods & buss" },
+    { path: "/exams/driving-licence/", label: "B-körkort teori" },
+    { path: "/exams/citizenship-test/", label: "Medborgarskapsprov" },
+  ],
+};
+
+export const footerColumns = {
+  en: {
+    exams: "Exams",
+    forTitle: "For",
+    forLinks: [
+      { path: "/for/new-taxi-drivers/", label: "New taxi drivers" },
+      { path: "/for/international-drivers/", label: "International drivers" },
+      { path: "/for/taxi-companies/", label: "Taxi companies" },
+      { path: "/for/driving-schools/", label: "Driving schools" },
+    ],
+    compareTitle: "Compare",
+    compareLinks: [
+      { path: "/compare/", label: "All comparisons" },
+      { path: "/compare/drive-test-vs-books/", label: "Drive Test vs books" },
+      { path: "/compare/drive-test-vs-free-online-tests/", label: "vs free online tests" },
+      { path: "/compare/drive-test-vs-taxi-schools/", label: "vs taxi schools" },
+    ],
+    resourcesTitle: "Resources",
+    tagline: "Exam prep for taxi, transport and driving licence tests in Sweden.",
+    cta: "Get the app",
+    note: "Free to start · iOS, Android & Web",
+  },
+  sv: {
+    exams: "Prov",
+    forTitle: "För",
+    forLinks: [
+      { path: "/for/new-taxi-drivers/", label: "Nya taxiförare" },
+      { path: "/for/international-drivers/", label: "Förare med annat modersmål" },
+      { path: "/for/taxi-companies/", label: "Taxiföretag" },
+      { path: "/for/driving-schools/", label: "Trafikskolor" },
+    ],
+    compareTitle: "Jämför",
+    compareLinks: [
+      { path: "/compare/", label: "Alla jämförelser" },
+      { path: "/compare/drive-test-vs-books/", label: "Drive Test vs böcker" },
+      { path: "/compare/drive-test-vs-free-online-tests/", label: "vs gratis onlinetester" },
+      { path: "/compare/drive-test-vs-taxi-schools/", label: "vs taxiskolor" },
+    ],
+    resourcesTitle: "Resurser",
+    tagline: "Provträning för taxi-, transport- och körkortsprov i Sverige.",
+    cta: "Skaffa appen",
+    note: "Gratis att börja · iOS, Android & webb",
   },
 };
 

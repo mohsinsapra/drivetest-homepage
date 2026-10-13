@@ -1,54 +1,84 @@
 import type { Lang } from "@/lib/i18n";
-import { home } from "@/content/home";
+import { home, homeExtra, demo } from "@/content/home";
 import { Section } from "@/components/ui/Section";
 import Reveal from "./Reveal";
 import shared from "./shared.module.css";
 import styles from "./Features.module.css";
 
-const ICONS: Record<string, React.ReactNode> = {
-  ai: (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9L12 3z" />
-      <path d="M19 15l.9 2.1L22 18l-2.1.9L19 21l-.9-2.1L16 18l2.1-.9L19 15z" />
-    </svg>
-  ),
-  modes: (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <rect x="3" y="4" width="18" height="16" rx="2" />
-      <path d="M8 10h8M8 14h5" />
-    </svg>
-  ),
-  lang: (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M12 3a9 9 0 100 18 9 9 0 000-18z" />
-      <path d="M3 12h18M12 3c2.5 2.6 3.9 5.7 3.9 9S14.5 18.4 12 21c-2.5-2.6-3.9-5.7-3.9-9S9.5 5.6 12 3z" />
-    </svg>
-  ),
-  explain: (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M9 18h6M10 21h4M12 3a6 6 0 00-4 10.5c.6.6 1 1.5 1 2.5h6c0-1 .4-1.9 1-2.5A6 6 0 0012 3z" />
-    </svg>
-  ),
-  bookmark: (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M6 3h12a1 1 0 011 1v17l-7-4-7 4V4a1 1 0 011-1z" />
-    </svg>
-  ),
-  analytics: (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M4 20V10M10 20V4M16 20v-7M21 20H3" />
-    </svg>
-  ),
-  ready: (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z" />
-      <path d="M9 12l2 2 4-4" />
-    </svg>
-  ),
-};
+function Mock({ k, lang }: { k: string; lang: Lang }) {
+  const x = homeExtra[lang];
+  const d = demo[lang];
+  switch (k) {
+    case "ai":
+      return (
+        <div className={styles.mock}>
+          <div className={`${styles.bubble} ${styles.bubbleMe}`}>{x.chatQ}</div>
+          <div className={styles.bubble}>{x.chatA}</div>
+        </div>
+      );
+    case "modes":
+      return (
+        <div className={styles.mockRow}>
+          {x.featureTags.modes.map((m, i) => (
+            <span key={m} className={`${styles.chip} ${i === 0 ? styles.chipOn : ""}`}>
+              {m}
+            </span>
+          ))}
+        </div>
+      );
+    case "lang":
+      return (
+        <div className={styles.mockRow}>
+          {x.langs.map((m, i) => (
+            <span key={m} className={`${styles.chip} ${i === 0 ? styles.chipOn : ""}`}>
+              {m}
+            </span>
+          ))}
+        </div>
+      );
+    case "explain":
+      return (
+        <div className={styles.mock}>
+          <div className={styles.okRow}>✓ {d.correctLabel}</div>
+          <div className={styles.line} style={{ width: "92%" }} />
+          <div className={styles.line} style={{ width: "70%" }} />
+        </div>
+      );
+    case "bookmark":
+      return (
+        <div className={styles.mock}>
+          {[88, 64, 76].map((w) => (
+            <div key={w} className={styles.bmRow}>
+              <span className={styles.bmIco} aria-hidden="true" />
+              <div className={styles.line} style={{ width: `${w}%` }} />
+            </div>
+          ))}
+        </div>
+      );
+    case "analytics":
+      return (
+        <div className={styles.bars} aria-hidden="true">
+          {[40, 62, 48, 78, 66, 90].map((h, i) => (
+            <span key={i} style={{ height: `${h}%` }} />
+          ))}
+        </div>
+      );
+    default:
+      return (
+        <div className={styles.mockRow}>
+          {d.collagePills1.map((m, i) => (
+            <span key={m} className={`${styles.chip} ${i === 0 ? styles.chipOn : ""}`}>
+              {m}
+            </span>
+          ))}
+        </div>
+      );
+  }
+}
 
 export default function Features({ lang }: { lang: Lang }) {
   const h = home[lang];
+  const x = homeExtra[lang];
 
   const features = [
     { key: "modes", title: h.home_feature1_title, desc: h.home_feature1_desc },
@@ -62,15 +92,17 @@ export default function Features({ lang }: { lang: Lang }) {
   return (
     <Section id="features">
       <Reveal className={shared.sectionHead}>
-        <span className={shared.kicker}>✦ {h.home_features_kicker}</span>
+        <span className={shared.kicker}>{h.home_features_kicker}</span>
         <h2 className={shared.sectionTitle}>{h.home_features_title}</h2>
         <p className={shared.sectionSub}>{h.home_features_sub}</p>
       </Reveal>
 
       <div className={styles.grid}>
         <Reveal className={`${styles.card} ${styles.cardWide}`}>
-          <span className={styles.iconBox}>{ICONS.ai}</span>
-          <div>
+          <div className={styles.top}>
+            <Mock k="ai" lang={lang} />
+          </div>
+          <div className={styles.body}>
             <h3 className={styles.cardTitle}>
               {h.home_feature_ai_title} <span className={styles.aiChip}>AI</span>
             </h3>
@@ -80,9 +112,13 @@ export default function Features({ lang }: { lang: Lang }) {
 
         {features.map((f) => (
           <Reveal className={styles.card} key={f.title}>
-            <span className={styles.iconBox}>{ICONS[f.key]}</span>
-            <h3 className={styles.cardTitle}>{f.title}</h3>
-            <p className={styles.cardDesc}>{f.desc}</p>
+            <div className={styles.top}>
+              <Mock k={f.key} lang={lang} />
+            </div>
+            <div className={styles.body}>
+              <h3 className={styles.cardTitle}>{f.title}</h3>
+              <p className={styles.cardDesc}>{f.desc}</p>
+            </div>
           </Reveal>
         ))}
       </div>

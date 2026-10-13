@@ -1,6 +1,7 @@
 import type { Lang } from "@/lib/i18n";
 import { localePath } from "@/lib/i18n";
 import { guide } from "@/content/guide";
+import { getLanding } from "@/content/landing";
 import SiteHeader from "@/components/layout/SiteHeader";
 import SiteFooter from "@/components/layout/SiteFooter";
 import DownloadDock from "@/components/layout/DownloadDock";
@@ -8,6 +9,8 @@ import { Section } from "@/components/ui/Section";
 import Prose from "@/components/ui/Prose";
 import ArticleHero from "@/components/article/ArticleHero";
 import AutoToc from "@/components/article/AutoToc";
+import RelatedLinks from "@/components/article/RelatedLinks";
+import { getArticle } from "@/content/articles";
 import CtaCard from "@/components/article/CtaCard";
 import StoreButtons from "@/components/layout/StoreButtons";
 import { estimateReadingMinutes } from "@/components/article/readingTime";
@@ -44,6 +47,21 @@ export default function GuideScreen({ lang }: { lang: Lang }) {
           <CtaCard title={ctaTitle} body={ctaBody}>
             <StoreButtons mini />
           </CtaCard>
+
+          <RelatedLinks
+            title={lang === "en" ? "Related" : "Relaterat"}
+            items={[
+              {
+                href: localePath(lang, "/exams/taxi-licence/"),
+                tag: lang === "en" ? "Exam" : "Prov",
+                label: getLanding("exams/taxi-licence")![lang].title,
+              },
+              ...["taxi-licence-cost-sweden", "taxi-licence-exam-questions", "how-to-pass-taxi-licence-test", "taxi-licence-medical-requirements"].map((slug) => {
+                const a = getArticle(slug)![lang];
+                return { href: localePath(lang, `/blog/${slug}/`), tag: a.tag, label: a.title };
+              }),
+            ]}
+          />
         </Section>
       </main>
       <SiteFooter lang={lang} />

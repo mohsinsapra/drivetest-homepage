@@ -1,21 +1,21 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Syne, Hanken_Grotesk } from "next/font/google";
+import { Bricolage_Grotesque, Geist } from "next/font/google";
 import { themeInitScript } from "@/lib/theme";
 import "@/styles/tokens.css";
 import "@/styles/globals.css";
 
-const syne = Syne({
-  variable: "--font-syne",
+const bricolage = Bricolage_Grotesque({
+  variable: "--font-bricolage",
   subsets: ["latin"],
-  weight: ["600", "700", "800"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
-const hanken = Hanken_Grotesk({
-  variable: "--font-hanken",
+const geist = Geist({
+  variable: "--font-geist",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${syne.variable} ${hanken.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${bricolage.variable} ${geist.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         <Script id="gtm" strategy="afterInteractive">

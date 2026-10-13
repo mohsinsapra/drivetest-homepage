@@ -9,6 +9,7 @@ import Marquee from "@/components/home/Marquee";
 import Reveal from "@/components/home/Reveal";
 import HowItWorks from "@/components/home/HowItWorks";
 import Features from "@/components/home/Features";
+import WhySection from "@/components/home/WhySection";
 import Screenshots from "@/components/home/Screenshots";
 import FreeTools from "@/components/home/FreeTools";
 import Pricing from "@/components/home/Pricing";
@@ -33,9 +34,11 @@ export default function HomeScreen({ lang }: { lang: Lang }) {
 
         <Features lang={lang} />
 
+        <WhySection lang={lang} />
+
         <Section id="screenshots">
           <Reveal className={shared.sectionHead}>
-            <span className={shared.kicker}>✦ {h.home_screenshots_title}</span>
+            <span className={shared.kicker}>{h.home_screenshots_title}</span>
             <h2 className={shared.sectionTitle}>{h.home_screens_sub}</h2>
           </Reveal>
           <Screenshots />
@@ -45,17 +48,17 @@ export default function HomeScreen({ lang }: { lang: Lang }) {
 
         <Pricing lang={lang} />
 
+        <LicenceCta lang={lang} />
+
+        <Faq lang={lang} />
+
         <Section id="description">
           <Reveal className={shared.sectionHead}>
-            <span className={shared.kicker}>✦ {h.home_description_title}</span>
+            <span className={shared.kicker}>{h.home_description_title}</span>
             <h2 className={shared.sectionTitle}>{h.home_desc_heading}</h2>
           </Reveal>
           <Description html={h.descriptionHtml} moreLabel={h.home_desc_more} lessLabel={h.home_desc_less} />
         </Section>
-
-        <LicenceCta lang={lang} />
-
-        <Faq lang={lang} />
 
         <Download lang={lang} />
       </main>

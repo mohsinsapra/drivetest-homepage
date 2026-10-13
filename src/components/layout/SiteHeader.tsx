@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import type { Lang } from "@/lib/i18n";
 import { localePath, alternatePath } from "@/lib/i18n";
-import { nav } from "@/content/site";
+import { nav, examLinks } from "@/content/site";
 import ThemeToggle from "./ThemeToggle";
 import styles from "./SiteHeader.module.css";
 
@@ -25,13 +25,12 @@ export default function SiteHeader({ lang, currentPath = "/" }: { lang: Lang; cu
     return () => window.removeEventListener("keydown", onKey);
   }, [open]);
 
+  const exams = examLinks[lang].map((e) => ({ href: localePath(lang, e.path), label: e.label }));
   const links = [
     { href: anchor("#how-it-works"), label: t.howItWorks },
     { href: anchor("#pricing"), label: t.pricing },
-    { href: anchor("#faq"), label: t.faq },
     { href: localePath(lang, "/blog/"), label: t.blog },
     { href: "/ob-calculator/", label: t.obCalculator },
-    { href: localePath(lang, "/taxi-licence-guide/"), label: t.guide },
   ];
 
   const altHref = alternatePath(lang, currentPath);
@@ -46,6 +45,21 @@ export default function SiteHeader({ lang, currentPath = "/" }: { lang: Lang; cu
           </Link>
 
           <nav className={styles.links}>
+            <div className={styles.dropWrap}>
+              <Link href={localePath(lang, "/exams/taxi-licence/")} className={styles.link}>
+                {t.exams}
+                <svg className={styles.caret} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M6 9l6 6 6-6" />
+                </svg>
+              </Link>
+              <div className={styles.menu}>
+                {exams.map((e) => (
+                  <Link key={e.href} href={e.href} className={styles.menuLink}>
+                    {e.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
             {links.map((l) => (
               <a key={l.href} href={l.href} className={styles.link}>
                 {l.label}
@@ -103,6 +117,14 @@ export default function SiteHeader({ lang, currentPath = "/" }: { lang: Lang; cu
               </svg>
             </button>
           </div>
+          <Link href={localePath(lang, "/exams/taxi-licence/")} className={styles.mobileLink} onClick={() => setOpen(false)}>
+            {t.exams}
+          </Link>
+          {exams.map((e) => (
+            <Link key={e.href} href={e.href} className={`${styles.mobileLink} ${styles.mobileSub}`} onClick={() => setOpen(false)}>
+              {e.label}
+            </Link>
+          ))}
           {links.map((l) => (
             <a key={l.href} href={l.href} className={styles.mobileLink} onClick={() => setOpen(false)}>
               {l.label}

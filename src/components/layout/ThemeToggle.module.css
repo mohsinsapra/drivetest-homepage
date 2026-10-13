@@ -4,10 +4,10 @@
   justify-content: center;
   width: 36px;
   height: 36px;
-  border-radius: var(--radius-pill);
-  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-strong);
   background: transparent;
-  color: var(--muted);
+  color: var(--text);
   cursor: pointer;
   transition: border-color 0.2s, color 0.2s, transform 0.2s;
 }

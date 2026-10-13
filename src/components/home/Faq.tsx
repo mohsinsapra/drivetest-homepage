@@ -18,7 +18,7 @@ export default function Faq({ lang }: { lang: Lang }) {
   return (
     <Section id="faq">
       <Reveal className={shared.sectionHead}>
-        <span className={shared.kicker}>✦ FAQ</span>
+        <span className={shared.kicker}>FAQ</span>
         <h2 className={shared.sectionTitle}>{title}</h2>
       </Reveal>
 

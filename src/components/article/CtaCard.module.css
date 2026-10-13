@@ -1,8 +1,8 @@
 .card {
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  border-radius: var(--radius-lg);
+  background: var(--panel);
+  border-radius: var(--radius-xl);
   padding: 44px 36px;
-  text-align: center;
+  text-align: left;
   color: #fff;
   margin: 36px 0;
   box-shadow: var(--shadow);
@@ -15,9 +15,9 @@
 }
 
 .body {
-  opacity: 0.92;
+  opacity: 0.8;
   max-width: 480px;
-  margin: 0 auto 22px;
+  margin: 0 0 22px;
   font-size: 15px;
   line-height: 1.6;
 }
@@ -25,7 +25,7 @@
 .actions {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 10px;
 }
 
@@ -33,15 +33,15 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: #fff;
-  color: var(--accent);
-  padding: 13px 26px;
-  border-radius: var(--radius-pill);
-  font-weight: 700;
+  background: var(--accent);
+  color: #fff;
+  padding: 13px 24px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
   font-size: 14.5px;
   transition: transform 0.2s ease;
 }
 
 .btn:hover {
-  transform: translateY(-2px);
+  filter: brightness(1.1);
 }

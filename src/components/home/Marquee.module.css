@@ -4,7 +4,8 @@
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
   padding: 20px 0;
-  background: var(--bg-2);
+  background: transparent;
+  margin-top: 56px;
 }
 
 .wrap::before,
@@ -20,12 +21,12 @@
 
 .wrap::before {
   left: 0;
-  background: linear-gradient(90deg, var(--bg-2), transparent);
+  background: linear-gradient(90deg, var(--bg), transparent);
 }
 
 .wrap::after {
   right: 0;
-  background: linear-gradient(-90deg, var(--bg-2), transparent);
+  background: linear-gradient(-90deg, var(--bg), transparent);
 }
 
 .track {
@@ -46,16 +47,16 @@
 
 .item {
   font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 17px;
-  color: var(--text);
+  font-weight: 500;
+  font-size: 18px;
+  color: var(--muted);
   white-space: nowrap;
   padding: 0 10px;
 }
 
 .star {
-  color: var(--accent);
-  padding: 0 18px;
+  color: var(--border-strong);
+  padding: 0 22px;
 }
 
 @keyframes scroll {

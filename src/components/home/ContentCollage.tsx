@@ -36,7 +36,7 @@ export default function ContentCollage({
         <div className={`${styles.card} ${active === 0 ? styles.active : ""}`}>
           <BrowserFrame url="app.drivetest.se">
             <div className={styles.label}>{label1}</div>
-            <div className={styles.sub}>3 knowledge exams</div>
+            <div className={styles.sub}>3 study categories</div>
             <div className={styles.pillRow}>
               {pills1.map((p) => (
                 <span className={styles.pill} key={p}>

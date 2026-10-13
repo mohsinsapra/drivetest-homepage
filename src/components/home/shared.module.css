@@ -16,31 +16,34 @@
   align-items: center;
   gap: 6px;
   color: var(--accent);
-  font-weight: 700;
-  font-size: 13px;
-  letter-spacing: 0.08em;
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .sectionHead {
-  text-align: center;
-  max-width: 620px;
-  margin: 0 auto 56px;
+  text-align: left;
+  max-width: 680px;
+  margin: 0 0 40px;
 }
 
 .sectionTitle {
   font-family: var(--font-display);
-  font-size: clamp(28px, 4vw, 42px);
-  line-height: 1.1;
-  margin: 0 0 14px;
+  font-size: clamp(30px, 4.6vw, 52px);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  margin: 0 0 16px;
 }
 
 .sectionSub {
   color: var(--muted);
-  font-size: 16.5px;
-  line-height: 1.65;
+  font-size: 17px;
+  line-height: 1.6;
   margin: 0;
+  max-width: 560px;
 }
 
 .btnPrimary {
@@ -48,21 +51,21 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 13px 26px;
-  border-radius: var(--radius-pill);
-  background: linear-gradient(120deg, var(--accent), var(--accent-2));
+  padding: 0 22px;
+  border-radius: var(--radius-sm);
+  background: var(--accent);
   color: #fff;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 15px;
   border: none;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  min-height: 44px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s;
+  min-height: 46px;
 }
 
 .btnPrimary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 28px rgba(90, 81, 254, 0.28);
+  filter: brightness(1.08);
+  box-shadow: 0 8px 22px rgba(90, 81, 254, 0.3);
 }
 
 .btnPrimary:focus-visible,
@@ -77,19 +80,18 @@ button:focus-visible {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 12px 24px;
-  border-radius: var(--radius-pill);
+  padding: 0 22px;
+  border-radius: var(--radius-sm);
   background: var(--card);
-  border: 1.5px solid var(--border);
+  border: 1px solid var(--border-strong);
   color: var(--text);
-  font-weight: 700;
-  font-size: 14.5px;
+  font-weight: 600;
+  font-size: 15px;
   cursor: pointer;
-  transition: border-color 0.2s ease, transform 0.2s ease;
-  min-height: 44px;
+  transition: border-color 0.2s;
+  min-height: 46px;
 }
 
 .btnGhost:hover {
   border-color: var(--accent);
-  transform: translateY(-1px);
 }
