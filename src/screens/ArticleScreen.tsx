@@ -26,11 +26,11 @@ import styles from "./Article.module.css";
 const CTA = {
   en: {
     title: "Practise for the exam in Drive Test",
-    body: "Here you practise with exam-style questions and explanations, with an AI tutor, text-to-speech in several languages and progress tracking. The app is available for iOS, Android and web.",
+    body: "Here you practise with exam-style questions and explanations, with an AI tutor, text-to-speech in several languages and progress tracking. The app is available for iOS and Android.",
   },
   sv: {
     title: "Öva inför provet i Drive Test",
-    body: "Här övar du med provliknande frågor och förklaringar, med AI-handledare, text-till-tal på flera språk och framstegsspårning. Appen finns för iOS, Android och webben.",
+    body: "Här övar du med provliknande frågor och förklaringar, med AI-handledare, text-till-tal på flera språk och framstegsspårning. Appen finns för iOS och Android.",
   },
 } as const;
 

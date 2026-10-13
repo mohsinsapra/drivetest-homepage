@@ -13,7 +13,7 @@ const en: LandingPage = {
     "Do you want to work as a taxi driver in Sweden? You need a taxiförarlegitimation, and getting one takes several steps. Drive Test helps with the step you control yourself: preparing for the theory exams.",
   stats: [
     { value: "3", label: "Study modes to fit your day" },
-    { value: "3", label: "Platforms: iOS, Android and web" },
+    { value: "2", label: "Platforms: iOS and Android" },
     { value: "Free", label: "Free categories to start with" },
   ],
   problems: [
@@ -68,7 +68,7 @@ const sv: LandingPage = {
     "Vill du arbeta som taxiförare i Sverige? Du behöver en taxiförarlegitimation, och vägen dit har flera steg. Drive Test hjälper dig med det steg du styr själv: att förbereda dig inför teoriproven.",
   stats: [
     { value: "3", label: "Studielägen som passar din vardag" },
-    { value: "3", label: "Plattformar: iOS, Android och webben" },
+    { value: "2", label: "Plattformar: iOS och Android" },
     { value: "Gratis", label: "Gratis kategorier att börja med" },
   ],
   problems: [

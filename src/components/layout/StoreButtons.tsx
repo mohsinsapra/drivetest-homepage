@@ -5,14 +5,10 @@ export default function StoreButtons({
   mini = false,
   playLabelTop = "Get it on",
   iosLabelTop = "Download on the",
-  webLabelTop = "Launch as",
-  webLabelName = "Web App",
 }: {
   mini?: boolean;
   playLabelTop?: string;
   iosLabelTop?: string;
-  webLabelTop?: string;
-  webLabelName?: string;
 }) {
   const btnClass = `${styles.btn} ${mini ? styles.mini : ""}`;
   return (
@@ -71,26 +67,6 @@ export default function StoreButtons({
           </span>
         )}
       </a>
-      {!mini && (
-        <a
-          href={urls.livePwaIframe}
-          className={btnClass}
-          target="_blank"
-          rel="noopener noreferrer"
-          title="Go to website"
-        >
-          <span className={styles.icon}>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" aria-hidden="true">
-              <circle cx="12" cy="12" r="9" />
-              <path d="M3 12h18M12 3c2.5 2.6 3.9 5.7 3.9 9s-1.4 6.4-3.9 9c-2.5-2.6-3.9-5.7-3.9-9S9.5 5.6 12 3z" />
-            </svg>
-          </span>
-          <span className={styles.text}>
-            <small>{webLabelTop}</small>
-            <strong>{webLabelName}</strong>
-          </span>
-        </a>
-      )}
     </div>
   );
 }

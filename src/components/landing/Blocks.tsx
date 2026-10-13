@@ -74,14 +74,13 @@ export function InfoBoxes({
   );
 }
 
-/** Brand CTA box with the three ways into the app. */
+/** Brand CTA box with the store links. */
 export function AppCta({ lang, title, body, extra, id = "download" }: { lang: Lang; title: string; body?: string; extra?: ReactNode; id?: string }) {
   const t = L[lang].ctaButtons;
   return (
     <CtaCard id={id} title={title} body={body}>
       <CtaButton href={urls.playStore}>{t.play}</CtaButton>
       <CtaButton href={urls.appStore}>{t.ios}</CtaButton>
-      <CtaButton href={urls.livePwaIframe}>{t.web}</CtaButton>
       {extra}
     </CtaCard>
   );

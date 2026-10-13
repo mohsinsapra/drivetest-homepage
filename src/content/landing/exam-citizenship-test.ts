@@ -14,7 +14,7 @@ const en: LandingPage = {
   stats: [
     { value: "136", label: "Practice questions" },
     { value: "13", label: "Chapters of Sverige i fokus covered" },
-    { value: "3", label: "Platforms: iOS, Android and web" },
+    { value: "2", label: "Platforms: iOS and Android" },
   ],
   problems: [
     { icon: "book", title: "A new test, little to compare with", text: "The society test is new, so there are few previous exams or reliable practice resources to study from." },
@@ -69,7 +69,7 @@ const sv: LandingPage = {
   stats: [
     { value: "136", label: "Övningsfrågor" },
     { value: "13", label: "Kapitel i Sverige i fokus täcks" },
-    { value: "3", label: "Plattformar: iOS, Android och webben" },
+    { value: "2", label: "Plattformar: iOS och Android" },
   ],
   problems: [
     { icon: "book", title: "Nytt prov, lite att jämföra med", text: "Samhällsprovet är nytt, så det finns få tidigare prov och pålitliga övningsresurser att plugga på." },

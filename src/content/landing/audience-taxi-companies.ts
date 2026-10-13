@@ -13,7 +13,7 @@ const en: LandingPage = {
     "Every new driver needs a taxiförarlegitimation, and every taxi company needs someone with yrkeskunnande. With Drive Test, your drivers and owners can prepare for the exams on their own phones, when it suits them.",
   stats: [
     { value: "2", label: "Paths covered: driver licence and yrkeskunnande" },
-    { value: "3", label: "Platforms: iOS, Android and web" },
+    { value: "2", label: "Platforms: iOS and Android" },
     { value: "3", label: "Study modes for different routines" },
   ],
   problems: [
@@ -22,7 +22,7 @@ const en: LandingPage = {
     { icon: "book", title: "Owners need business knowledge", text: "Legislation, finance and management are required for the traffic permit but unrelated to daily driving." },
   ],
   solutions: [
-    { icon: "phone", title: "Self-paced on any phone", text: "Drivers practise between shifts on iOS, Android or the web, without classroom scheduling." },
+    { icon: "phone", title: "Self-paced on any phone", text: "Drivers practise between shifts on iOS or Android, without classroom scheduling." },
     { icon: "language", title: "Multi-language and speech", text: "Text-to-speech and multi-language support help recruits who are not yet fluent in Swedish." },
     { icon: "chart", title: "Visible readiness", text: "Each learner sees their own category results and knows when to book." },
   ],
@@ -68,7 +68,7 @@ const sv: LandingPage = {
     "Varje ny förare behöver en taxiförarlegitimation, och varje taxiföretag behöver någon med yrkeskunnande. Med Drive Test kan dina förare och ägare förbereda sig inför proven i sin egen mobil, när det passar dem.",
   stats: [
     { value: "2", label: "Vägar som täcks: förarlegitimation och yrkeskunnande" },
-    { value: "3", label: "Plattformar: iOS, Android och webben" },
+    { value: "2", label: "Plattformar: iOS och Android" },
     { value: "3", label: "Studielägen för olika rutiner" },
   ],
   problems: [
@@ -77,7 +77,7 @@ const sv: LandingPage = {
     { icon: "book", title: "Ägare behöver affärskunskap", text: "Lagstiftning, ekonomi och ledning krävs för trafiktillståndet men har inget med daglig körning att göra." },
   ],
   solutions: [
-    { icon: "phone", title: "I egen takt i valfri mobil", text: "Förare övar mellan passen på iOS, Android eller webben, utan schemalagda lektioner." },
+    { icon: "phone", title: "I egen takt i valfri mobil", text: "Förare övar mellan passen på iOS eller Android, utan schemalagda lektioner." },
     { icon: "language", title: "Flerspråkigt och uppläst", text: "Text-till-tal och flerspråkigt stöd hjälper rekryter som ännu inte är flytande i svenska." },
     { icon: "chart", title: "Synlig beredskap", text: "Varje elev ser sina egna resultat per kategori och vet när det är dags att boka." },
   ],

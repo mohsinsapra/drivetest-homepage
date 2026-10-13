@@ -6,8 +6,6 @@ export const siteName = "Drive Test";
 export const urls = {
   playStore: "https://play.google.com/store/apps/details?id=com.mohsinsapra.drivetest",
   appStore: "https://apps.apple.com/app/drive-test-pro/id6765940954",
-  webApp: "https://mohsin.se/drivetest/",
-  livePwaIframe: "https://app.drivetest.se/",
   github: "https://mohsinsapra.github.io/",
   supportEmail: "support@drivetest.se",
 };
@@ -50,7 +48,6 @@ export const nav = {
     obCalculator: "OB Calculator",
     guide: "Taxi licence guide",
     getTheApp: "Get the app",
-    webApp: "Web app",
     exams: "Exams",
     taxiLicence: "Taxi licence",
     compare: "Compare",
@@ -82,7 +79,6 @@ export const nav = {
     obCalculator: "OB-kalkylator",
     guide: "Guide till taxiförarlegitimation",
     getTheApp: "Skaffa appen",
-    webApp: "Webbapp",
     exams: "Prov",
     taxiLicence: "Taxiförarlegitimation",
     compare: "Jämför",
@@ -146,7 +142,7 @@ export const footerColumns = {
     resourcesTitle: "About Drive Test",
     tagline: "Practise for taxi, transport and driving licence tests in Sweden.",
     cta: "Get the app",
-    note: "Free to start · iOS, Android & Web",
+    note: "Free to start · iOS & Android",
   },
   sv: {
     exams: "Prov",
@@ -167,7 +163,7 @@ export const footerColumns = {
     resourcesTitle: "Om Drive Test",
     tagline: "Öva inför taxi-, transport- och körkortsprov i Sverige.",
     cta: "Skaffa appen",
-    note: "Gratis att börja · iOS, Android & webb",
+    note: "Gratis att börja · iOS & Android",
   },
 };
 
@@ -203,6 +199,6 @@ export const jsonLd = {
     name: "Drive Test",
     url: "https://drivetest.se/",
     logo: "https://drivetest.se/assets/favicon.png",
-    sameAs: [urls.playStore, urls.webApp],
+    sameAs: [urls.playStore, urls.appStore],
   },
 };

@@ -38,7 +38,7 @@ const en: LandingPage = {
     rows: [
       ["Instant feedback on answers", "No", "Varies", "Teacher feedback in class", "Yes, with explanations"],
       ["Progress tracking", "Self-managed", "Often limited", "Depends on the school", "Charts and history"],
-      ["Study anywhere", "Yes", "Yes, with internet", "At set times and places", "iOS, Android and web"],
+      ["Study anywhere", "Yes", "Yes, with internet", "At set times and places", "iOS and Android"],
       ["Text-to-speech / multi-language", "No", "Varies", "Depends on the school", "Yes"],
       ["Personal teacher", "No", "No", "Yes", "AI tutor only"],
       ["Cost", "Book price", "Free", "Course fee", "Free categories, paid plans in app"],
@@ -94,7 +94,7 @@ const sv: LandingPage = {
     rows: [
       ["Direkt återkoppling på svar", "Nej", "Varierar", "Lärarens återkoppling i klassen", "Ja, med förklaringar"],
       ["Framstegsuppföljning", "Eget ansvar", "Ofta begränsad", "Beror på skolan", "Diagram och historik"],
-      ["Plugga var som helst", "Ja", "Ja, med internet", "På bestämda tider och platser", "iOS, Android och webben"],
+      ["Plugga var som helst", "Ja", "Ja, med internet", "På bestämda tider och platser", "iOS och Android"],
       ["Text-till-tal / flerspråkigt", "Nej", "Varierar", "Beror på skolan", "Ja"],
       ["Personlig lärare", "Nej", "Nej", "Ja", "Endast AI-tutor"],
       ["Kostnad", "Bokpris", "Gratis", "Kursavgift", "Gratis kategorier, betalplaner i appen"],

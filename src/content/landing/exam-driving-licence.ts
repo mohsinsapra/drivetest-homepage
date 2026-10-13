@@ -13,7 +13,7 @@ const en: LandingPage = {
     "Preparing for the B-körkort teoriprov? In Drive Test you practise driving licence theory with exam-style questions, explanations and progress tracking, so you know where you stand before the theory test in Sweden.",
   stats: [
     { value: "3", label: "Study modes: Practice, Custom and Review" },
-    { value: "3", label: "Platforms: iOS, Android and web" },
+    { value: "2", label: "Platforms: iOS and Android" },
     { value: "Free", label: "Free categories to try first" },
   ],
   problems: [
@@ -35,7 +35,7 @@ const en: LandingPage = {
     {
       heading: "Study driving licence theory with Drive Test",
       html:
-        "<p>Drive Test includes B-körkort among its category areas. Use <strong>Practice</strong> mode to learn a topic, <strong>Custom</strong> mode to build a test with your own length and timer, and <strong>Review</strong> mode to go back through what you missed. Bookmark the questions that keep tripping you up.</p><p>Every question has a <strong>deep-dive explanation</strong> that tells you why the right answer is right, and your <strong>AI tutor</strong> can explain it again if the rule still feels abstract. Results are shown in charts, so you can see your readiness grow session by session.</p><p>Drive Test works on iOS, Android and in the browser. Confirm which categories are free and which are included in the paid plan inside the app before you subscribe. Premium access is category-based and managed through the App Store, Google Play or Stripe.</p>",
+        "<p>Drive Test includes B-körkort among its category areas. Use <strong>Practice</strong> mode to learn a topic, <strong>Custom</strong> mode to build a test with your own length and timer, and <strong>Review</strong> mode to go back through what you missed. Bookmark the questions that keep tripping you up.</p><p>Every question has a <strong>deep-dive explanation</strong> that tells you why the right answer is right, and your <strong>AI tutor</strong> can explain it again if the rule still feels abstract. Results are shown in charts, so you can see your readiness grow session by session.</p><p>Drive Test works on iOS and Android. Confirm which categories are free and which are included in the paid plan inside the app before you subscribe. Premium access is category-based and managed through the App Store, Google Play or Stripe.</p>",
     },
     {
       heading: "On the day of the test",
@@ -68,7 +68,7 @@ const sv: LandingPage = {
     "Förbereder du dig för teoriprovet till B-körkort? I Drive Test övar du körkortsteori med provliknande frågor, förklaringar och uppföljning av framsteg, så att du vet var du står inför teoriprovet.",
   stats: [
     { value: "3", label: "Studielägen: Övning, Anpassat och Granska" },
-    { value: "3", label: "Plattformar: iOS, Android och webben" },
+    { value: "2", label: "Plattformar: iOS och Android" },
     { value: "Gratis", label: "Gratis kategorier att prova först" },
   ],
   problems: [
@@ -90,7 +90,7 @@ const sv: LandingPage = {
     {
       heading: "Plugga körkortsteori med Drive Test",
       html:
-        "<p>Drive Test har B-körkort bland sina kategoriområden. Använd <strong>Övning</strong> för att lära dig ett område, <strong>Anpassat</strong> för att bygga ett prov med egen längd och timer och <strong>Granska</strong> för att gå igenom det du missat. Bokmärk de frågor som ständigt får dig att snubbla.</p><p>Varje fråga har en <strong>djupgående förklaring</strong> som visar varför det rätta svaret är rätt, och din <strong>AI-tutor</strong> kan förklara igen om regeln fortfarande känns abstrakt. Resultaten visas i diagram, så du ser hur beredskapen växer pass för pass.</p><p>Drive Test fungerar på iOS, Android och i webbläsaren. Bekräfta i appen vilka kategorier som är gratis och vilka som ingår i betalplanen innan du prenumererar. Premiumåtkomst är kategoribaserad och hanteras via App Store, Google Play eller Stripe.</p>",
+        "<p>Drive Test har B-körkort bland sina kategoriområden. Använd <strong>Övning</strong> för att lära dig ett område, <strong>Anpassat</strong> för att bygga ett prov med egen längd och timer och <strong>Granska</strong> för att gå igenom det du missat. Bokmärk de frågor som ständigt får dig att snubbla.</p><p>Varje fråga har en <strong>djupgående förklaring</strong> som visar varför det rätta svaret är rätt, och din <strong>AI-tutor</strong> kan förklara igen om regeln fortfarande känns abstrakt. Resultaten visas i diagram, så du ser hur beredskapen växer pass för pass.</p><p>Drive Test fungerar på iOS och Android. Bekräfta i appen vilka kategorier som är gratis och vilka som ingår i betalplanen innan du prenumererar. Premiumåtkomst är kategoribaserad och hanteras via App Store, Google Play eller Stripe.</p>",
     },
     {
       heading: "På provdagen",

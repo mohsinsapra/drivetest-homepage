@@ -13,7 +13,7 @@ const en: LandingPage = {
     "Here you practise for the taxi licence test in Sweden. You get exam-style questions for the taxiförarlegitimation kunskapsprov, an explanation for every answer and an overview of your results before you book the exam at Trafikverket.",
   stats: [
     { value: "3", label: "Study modes: Practice, Custom and Review" },
-    { value: "3", label: "Platforms: iOS, Android and web" },
+    { value: "2", label: "Platforms: iOS and Android" },
     { value: "Free", label: "Free categories to try before you subscribe" },
   ],
   problems: [
@@ -40,7 +40,7 @@ const en: LandingPage = {
     {
       heading: "Study in your own language",
       html:
-        "<p>A large share of Sweden's taxi drivers have another mother tongue than Swedish. Drive Test has <strong>multi-language support and full text-to-speech</strong>, so you can listen to questions and answers while you read. That helps you understand what a question is really asking, which matters when the wording is legal or technical.</p><p>Practise on your phone on the bus, between shifts or at home. The app is available on iOS, Android and as a web app, and your progress follows your account. Offline access to your test history is included, so a weak connection does not have to stop you from reviewing.</p><p>Once your theory is solid, the next steps are the medical certificate, the driving test and the application to Transportstyrelsen. If you also plan to run a taxi company, see our page on the <a href=\"/exams/taxi-company/\">yrkeskunnande taxi exam</a>.</p>",
+        "<p>A large share of Sweden's taxi drivers have another mother tongue than Swedish. Drive Test has <strong>multi-language support and full text-to-speech</strong>, so you can listen to questions and answers while you read. That helps you understand what a question is really asking, which matters when the wording is legal or technical.</p><p>Practise on your phone on the bus, between shifts or at home. The app is available on iOS and Android, and your progress follows your account. Offline access to your test history is included, so a weak connection does not have to stop you from reviewing.</p><p>Once your theory is solid, the next steps are the medical certificate, the driving test and the application to Transportstyrelsen. If you also plan to run a taxi company, see our page on the <a href=\"/exams/taxi-company/\">yrkeskunnande taxi exam</a>.</p>",
     },
   ],
   faq: [
@@ -52,7 +52,7 @@ const en: LandingPage = {
   ],
   related: ["exams/taxi-company", "for/new-taxi-drivers", "for/international-drivers", "compare/drive-test-vs-books"],
   ctaTitle: "Practise for the taxi licence test",
-  ctaText: "Download Drive Test on iOS or Android, or use it in your browser. You can try the free categories first.",
+  ctaText: "Download Drive Test on iOS or Android. You can try the free categories first.",
 };
 
 const sv: LandingPage = {
@@ -68,7 +68,7 @@ const sv: LandingPage = {
     "Hos oss övar du inför taxiförarlegitimation prov. Du får provliknande frågor inför kunskapsprovet, en förklaring till varje svar och en översikt över dina resultat innan du bokar provet hos Trafikverket.",
   stats: [
     { value: "3", label: "Studielägen: Övning, Anpassat och Granska" },
-    { value: "3", label: "Plattformar: iOS, Android och webben" },
+    { value: "2", label: "Plattformar: iOS och Android" },
     { value: "Gratis", label: "Gratis kategorier att prova innan du prenumererar" },
   ],
   problems: [
@@ -95,7 +95,7 @@ const sv: LandingPage = {
     {
       heading: "Studera på ditt eget språk",
       html:
-        "<p>Många taxiförare i Sverige har ett annat modersmål än svenska. Drive Test har <strong>flerspråkigt stöd och fullt text-till-tal</strong>, så att du kan lyssna på frågor och svar medan du läser. Det gör det lättare att förstå vad en fråga egentligen handlar om, särskilt när formuleringarna är juridiska eller tekniska.</p><p>Öva i mobilen på bussen, mellan passen eller hemma. Appen finns för iOS och Android och som webbapp, och dina framsteg följer ditt konto. Du har även offlineåtkomst till din provhistorik, så en svag uppkoppling behöver inte stoppa dig från att repetera.</p><p>När teorin sitter är nästa steg läkarintyg, körprov och ansökan till Transportstyrelsen. Planerar du också att driva taxiföretag, läs om <a href=\"/sv/exams/taxi-company/\">yrkeskunnande taxi</a>.</p><p>Oavsett väg du väljer: kontrollera gällande regler och avgifter hos Trafikverket och Transportstyrelsen, håll studiepassen korta och regelbundna och gå igenom dina misstag samma dag medan de är färska.</p>",
+        "<p>Många taxiförare i Sverige har ett annat modersmål än svenska. Drive Test har <strong>flerspråkigt stöd och fullt text-till-tal</strong>, så att du kan lyssna på frågor och svar medan du läser. Det gör det lättare att förstå vad en fråga egentligen handlar om, särskilt när formuleringarna är juridiska eller tekniska.</p><p>Öva i mobilen på bussen, mellan passen eller hemma. Appen finns för iOS och Android, och dina framsteg följer ditt konto. Du har även offlineåtkomst till din provhistorik, så en svag uppkoppling behöver inte stoppa dig från att repetera.</p><p>När teorin sitter är nästa steg läkarintyg, körprov och ansökan till Transportstyrelsen. Planerar du också att driva taxiföretag, läs om <a href=\"/sv/exams/taxi-company/\">yrkeskunnande taxi</a>.</p><p>Oavsett väg du väljer: kontrollera gällande regler och avgifter hos Trafikverket och Transportstyrelsen, håll studiepassen korta och regelbundna och gå igenom dina misstag samma dag medan de är färska.</p>",
     },
   ],
   faq: [
@@ -107,7 +107,7 @@ const sv: LandingPage = {
   ],
   related: ["exams/taxi-company", "for/new-taxi-drivers", "for/international-drivers", "compare/drive-test-vs-books"],
   ctaTitle: "Öva inför taxiprovet",
-  ctaText: "Ladda ned Drive Test till iOS eller Android, eller använd webbappen. Du kan prova de gratis kategorierna först.",
+  ctaText: "Ladda ned Drive Test till iOS eller Android. Du kan prova de gratis kategorierna först.",
 };
 
 export const examTaxiLicence = { en, sv };

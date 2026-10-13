@@ -14,7 +14,7 @@ const en: LandingPage = {
   stats: [
     { value: "4", label: "Sub-tests in the official yrkeskunnande exam" },
     { value: "3", label: "Study modes to match how you learn" },
-    { value: "3", label: "Platforms: iOS, Android and web" },
+    { value: "2", label: "Platforms: iOS and Android" },
   ],
   problems: [
     { icon: "book", title: "Heavy theory", text: "Legislation, company management and finance are far from the driver's seat, and hard to learn from raw text." },
@@ -52,7 +52,7 @@ const en: LandingPage = {
   ],
   related: ["exams/taxi-licence", "for/taxi-companies", "exams/goods-and-bus", "compare/drive-test-vs-taxi-schools"],
   ctaTitle: "Prepare for yrkeskunnande",
-  ctaText: "Try the free categories on iOS, Android or the web app and build a study plan around the six-month window.",
+  ctaText: "Try the free categories on iOS or Android and build a study plan around the six-month window.",
 };
 
 const sv: LandingPage = {
@@ -69,7 +69,7 @@ const sv: LandingPage = {
   stats: [
     { value: "4", label: "Delprov i det officiella provet i yrkeskunnande" },
     { value: "3", label: "Studielägen som passar hur du lär dig" },
-    { value: "3", label: "Plattformar: iOS, Android och webben" },
+    { value: "2", label: "Plattformar: iOS och Android" },
   ],
   problems: [
     { icon: "book", title: "Tung teori", text: "Lagstiftning, företagsledning och ekonomi ligger långt från förarsätet och är svåra att lära sig av ren text." },
@@ -107,7 +107,7 @@ const sv: LandingPage = {
   ],
   related: ["exams/taxi-licence", "for/taxi-companies", "exams/goods-and-bus", "compare/drive-test-vs-taxi-schools"],
   ctaTitle: "Förbered dig inför yrkeskunnande",
-  ctaText: "Prova de gratis kategorierna på iOS, Android eller webben och bygg en studieplan runt de sex månaderna.",
+  ctaText: "Prova de gratis kategorierna på iOS eller Android och bygg en studieplan runt de sex månaderna.",
 };
 
 export const examTaxiCompany = { en, sv };

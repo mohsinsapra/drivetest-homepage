@@ -4,22 +4,15 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import type { Lang } from "@/lib/i18n";
 import { localePath, alternatePath } from "@/lib/i18n";
-import { nav, examLinks, footerColumns, footer, urls } from "@/content/site";
+import { nav, examLinks, footerColumns, footer } from "@/content/site";
 import { searchEntries, type SearchEntry } from "@/lib/searchIndex";
 import styles from "./SiteHeader.module.css";
 
 const MENU_ID = "site-menu-panel";
 
-function Icon({ name }: { name: "web" | "phone" | "menu" | "close" | "search" }) {
+function Icon({ name }: { name: "phone" | "menu" | "close" | "search" }) {
   const common = { viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: 1.6, strokeLinecap: "round" as const, strokeLinejoin: "round" as const, "aria-hidden": true, width: 28, height: 28 };
   switch (name) {
-    case "web":
-      return (
-        <svg {...common}>
-          <rect x="3" y="4" width="18" height="12" rx="1" />
-          <path d="M8 20h8M12 16v4" />
-        </svg>
-      );
     case "phone":
       return (
         <svg {...common}>
@@ -199,10 +192,6 @@ export default function HeaderClient({ lang, currentPath, index }: { lang: Lang;
               <Icon name="search" />
               <span>{t.search}</span>
             </button>
-            <a href={urls.livePwaIframe} className={styles.tool} target="_blank" rel="noopener noreferrer">
-              <Icon name="web" />
-              <span>{t.webApp}</span>
-            </a>
             <a href={downloadHref} className={`${styles.tool} ${styles.hideSm}`}>
               <Icon name="phone" />
               <span>{t.getTheApp}</span>
@@ -259,12 +248,6 @@ export default function HeaderClient({ lang, currentPath, index }: { lang: Lang;
                     {t.language}
                     <span aria-hidden="true"> ›</span>
                   </Link>
-                </li>
-                <li>
-                  <a href={urls.livePwaIframe} target="_blank" rel="noopener noreferrer">
-                    {t.webApp}
-                    <span aria-hidden="true"> ›</span>
-                  </a>
                 </li>
                 <li>
                   <a href={downloadHref} onClick={close}>

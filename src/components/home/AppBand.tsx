@@ -22,8 +22,6 @@ export default function AppBand({ lang }: { lang: Lang }) {
             <StoreButtons
               playLabelTop={h.home_store_play_top}
               iosLabelTop={h.home_store_ios_top}
-              webLabelTop={h.home_store_web_top}
-              webLabelName={h.home_store_web_name}
             />
           </div>
           <div className={styles.appShot}>

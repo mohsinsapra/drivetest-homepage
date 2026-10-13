@@ -13,7 +13,7 @@ const en: LandingPage = {
     "Learners need to practise theory often. Drive Test gives your students driving licence theory practice on their phone, with explanations and progress tracking, alongside the lessons you already give.",
   stats: [
     { value: "3", label: "Study modes: Practice, Custom and Review" },
-    { value: "3", label: "Platforms: iOS, Android and web" },
+    { value: "2", label: "Platforms: iOS and Android" },
     { value: "Free", label: "Free categories for learners to try" },
   ],
   problems: [
@@ -35,7 +35,7 @@ const en: LandingPage = {
     {
       heading: "What the app can and cannot do",
       html:
-        "<p>To keep expectations clear: Drive Test is an app for <strong>individual learners</strong>. Each student has their own account and plan. We do not provide school dashboards, teacher accounts or group reporting, and we do not offer price packages for schools at this time. Learners confirm the available categories and prices in the app.</p><p>What it does well is give students a place to practise: exam-style questions, explanations, bookmarking for difficult questions, performance charts, test history and daily activity tracking. Students who prefer to listen can use text-to-speech.</p><ul><li>Works on iOS, Android and in the browser.</li><li>Free categories let students try before they subscribe.</li><li>Premium access is category-based and paid through the App Store, Google Play or Stripe.</li></ul><p>If you have questions about how the app might fit your school, reach us through the support page.</p>",
+        "<p>To keep expectations clear: Drive Test is an app for <strong>individual learners</strong>. Each student has their own account and plan. We do not provide school dashboards, teacher accounts or group reporting, and we do not offer price packages for schools at this time. Learners confirm the available categories and prices in the app.</p><p>What it does well is give students a place to practise: exam-style questions, explanations, bookmarking for difficult questions, performance charts, test history and daily activity tracking. Students who prefer to listen can use text-to-speech.</p><ul><li>Works on iOS and Android.</li><li>Free categories let students try before they subscribe.</li><li>Premium access is category-based and paid through the App Store, Google Play or Stripe.</li></ul><p>If you have questions about how the app might fit your school, reach us through the support page.</p>",
     },
     {
       heading: "Students who want to work as professional drivers",
@@ -52,7 +52,7 @@ const en: LandingPage = {
   ],
   related: ["exams/driving-licence", "for/international-drivers", "compare/drive-test-vs-books", "compare/drive-test-vs-free-online-tests"],
   ctaTitle: "Tell your learners about the app",
-  ctaText: "Try Drive Test on iOS, Android or the web to see if it suits your students.",
+  ctaText: "Try Drive Test on iOS or Android to see if it suits your students.",
 };
 
 const sv: LandingPage = {
@@ -68,7 +68,7 @@ const sv: LandingPage = {
     "Eleverna behöver öva teori ofta. Drive Test ger dina elever provliknande körkortsteori i mobilen, med förklaringar och uppföljning av framsteg, vid sidan av de lektioner du redan håller.",
   stats: [
     { value: "3", label: "Studielägen: Övning, Anpassat och Granska" },
-    { value: "3", label: "Plattformar: iOS, Android och webben" },
+    { value: "2", label: "Plattformar: iOS och Android" },
     { value: "Gratis", label: "Gratis kategorier för eleverna att prova" },
   ],
   problems: [
@@ -90,7 +90,7 @@ const sv: LandingPage = {
     {
       heading: "Vad appen kan och inte kan",
       html:
-        "<p>För att hålla förväntningarna tydliga: Drive Test är en app för <strong>enskilda elever</strong>. Varje elev har eget konto och egen plan. Vi erbjuder inga skolvyer, lärarkonton eller grupprapporter, och vi har inga prispaket för skolor i dagsläget. Eleverna bekräftar tillgängliga kategorier och priser i appen.</p><p>Det den gör bra är att ge eleverna en plats att öva: provliknande frågor, förklaringar, bokmärkning av svåra frågor, resultatdiagram, provhistorik och daglig aktivitetsuppföljning. Elever som föredrar att lyssna kan använda text-till-tal.</p><ul><li>Fungerar på iOS, Android och i webbläsaren.</li><li>Gratis kategorier låter eleverna prova innan de prenumererar.</li><li>Premiumåtkomst är kategoribaserad och betalas via App Store, Google Play eller Stripe.</li></ul><p>Har du frågor om hur appen kan passa din skola når du oss via supportsidan.</p>",
+        "<p>För att hålla förväntningarna tydliga: Drive Test är en app för <strong>enskilda elever</strong>. Varje elev har eget konto och egen plan. Vi erbjuder inga skolvyer, lärarkonton eller grupprapporter, och vi har inga prispaket för skolor i dagsläget. Eleverna bekräftar tillgängliga kategorier och priser i appen.</p><p>Det den gör bra är att ge eleverna en plats att öva: provliknande frågor, förklaringar, bokmärkning av svåra frågor, resultatdiagram, provhistorik och daglig aktivitetsuppföljning. Elever som föredrar att lyssna kan använda text-till-tal.</p><ul><li>Fungerar på iOS och Android.</li><li>Gratis kategorier låter eleverna prova innan de prenumererar.</li><li>Premiumåtkomst är kategoribaserad och betalas via App Store, Google Play eller Stripe.</li></ul><p>Har du frågor om hur appen kan passa din skola når du oss via supportsidan.</p>",
     },
     {
       heading: "Elever som vill arbeta som yrkesförare",
@@ -107,7 +107,7 @@ const sv: LandingPage = {
   ],
   related: ["exams/driving-licence", "for/international-drivers", "compare/drive-test-vs-books", "compare/drive-test-vs-free-online-tests"],
   ctaTitle: "Berätta om appen för dina elever",
-  ctaText: "Prova Drive Test på iOS, Android eller webben för att se om den passar dina elever.",
+  ctaText: "Prova Drive Test på iOS eller Android för att se om den passar dina elever.",
 };
 
 export const audienceDrivingSchools = { en, sv };

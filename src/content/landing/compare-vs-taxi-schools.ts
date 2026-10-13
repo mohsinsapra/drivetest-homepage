@@ -17,7 +17,7 @@ const en: LandingPage = {
     { icon: "alert", title: "Not a replacement for practice", text: "Even with a course, you still need to practise questions yourself between sessions." },
   ],
   solutions: [
-    { icon: "phone", title: "Flexible daily practice", text: "Study when you have time, on iOS, Android or the web." },
+    { icon: "phone", title: "Flexible daily practice", text: "Study when you have time, on iOS or Android." },
     { icon: "brain", title: "Explanations on demand", text: "Deep-dive explanations and an AI tutor answer your questions at any hour." },
     { icon: "check", title: "A complement, not a competitor", text: "Use the app for repetition and a course for teacher contact." },
   ],
@@ -79,7 +79,7 @@ const sv: LandingPage = {
     { icon: "alert", title: "Ersätter inte övning", text: "Även med kurs behöver du öva frågor själv mellan lektionerna." },
   ],
   solutions: [
-    { icon: "phone", title: "Flexibel daglig övning", text: "Plugga när du har tid, på iOS, Android eller webben." },
+    { icon: "phone", title: "Flexibel daglig övning", text: "Plugga när du har tid, på iOS eller Android." },
     { icon: "brain", title: "Förklaringar när du behöver dem", text: "Djupgående förklaringar och en AI-tutor svarar på dina frågor när som helst på dygnet." },
     { icon: "check", title: "Ett komplement, inte en konkurrent", text: "Använd appen för repetition och en kurs för lärarkontakt." },
   ],

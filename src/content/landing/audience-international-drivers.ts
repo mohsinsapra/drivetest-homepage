@@ -14,7 +14,7 @@ const en: LandingPage = {
   stats: [
     { value: "TTS", label: "Full text-to-speech support" },
     { value: "AI", label: "Built-in AI tutor to explain answers" },
-    { value: "3", label: "Platforms: iOS, Android and web" },
+    { value: "2", label: "Platforms: iOS and Android" },
   ],
   problems: [
     { icon: "language", title: "Legal Swedish is hard", text: "Long sentences with formal vocabulary can hide a simple question." },
@@ -35,7 +35,7 @@ const en: LandingPage = {
     {
       heading: "Multi-language support and text-to-speech",
       html:
-        "<p>Drive Test is built so that language is not the barrier. <strong>Full text-to-speech support</strong> reads questions and answers aloud, which is useful if you understand spoken Swedish better than written, or if you learn better by listening. <strong>Multi-language support</strong> helps you grasp the content before you drill the exact exam wording.</p><p>Every answer comes with a <strong>deep-dive explanation</strong>. If a sentence is still confusing, the <strong>AI tutor</strong> can rephrase and explain in more than one way. Combine this with <strong>bookmarks</strong> for the words and rules that keep tripping you up, and with <strong>Review</strong> mode to repeat the ones you missed.</p><p>Check inside the app for the full list of supported languages, since we do not list them here. The app works on iOS, Android and in the browser.</p>",
+        "<p>Drive Test is built so that language is not the barrier. <strong>Full text-to-speech support</strong> reads questions and answers aloud, which is useful if you understand spoken Swedish better than written, or if you learn better by listening. <strong>Multi-language support</strong> helps you grasp the content before you drill the exact exam wording.</p><p>Every answer comes with a <strong>deep-dive explanation</strong>. If a sentence is still confusing, the <strong>AI tutor</strong> can rephrase and explain in more than one way. Combine this with <strong>bookmarks</strong> for the words and rules that keep tripping you up, and with <strong>Review</strong> mode to repeat the ones you missed.</p><p>Check inside the app for the full list of supported languages, since we do not list them here. The app works on iOS and Android.</p>",
     },
     {
       heading: "Study plan if Swedish is not your first language",
@@ -69,7 +69,7 @@ const sv: LandingPage = {
   stats: [
     { value: "TTS", label: "Fullt stöd för text-till-tal" },
     { value: "AI", label: "Inbyggd AI-tutor som förklarar svar" },
-    { value: "3", label: "Plattformar: iOS, Android och webben" },
+    { value: "2", label: "Plattformar: iOS och Android" },
   ],
   problems: [
     { icon: "language", title: "Juridisk svenska är svår", text: "Långa meningar med formella ord kan gömma en enkel fråga." },
@@ -90,7 +90,7 @@ const sv: LandingPage = {
     {
       heading: "Flerspråkigt stöd och text-till-tal",
       html:
-        "<p>Drive Test är byggt så att språket inte ska vara hindret. <strong>Fullt text-till-tal-stöd</strong> läser upp frågor och svar, vilket är användbart om du förstår talad svenska bättre än skriven, eller lär dig bättre genom att lyssna. <strong>Flerspråkigt stöd</strong> hjälper dig förstå innehållet innan du övar in provets exakta ordalydelse.</p><p>Varje svar har en <strong>djupgående förklaring</strong>. Är en mening fortfarande förvirrande kan <strong>AI-tutorn</strong> formulera om och förklara på fler än ett sätt. Kombinera det med <strong>bokmärken</strong> för de ord och regler som ständigt stoppar dig, och med <strong>Granska</strong> för att repetera det du missat.</p><p>Se i appen för den fullständiga listan över språk som stöds, eftersom vi inte listar dem här. Appen fungerar på iOS, Android och i webbläsaren.</p><p>Oavsett väg du väljer: kontrollera gällande regler och avgifter hos Trafikverket och Transportstyrelsen, håll studiepassen korta och regelbundna och gå igenom dina misstag samma dag medan de är färska.</p>",
+        "<p>Drive Test är byggt så att språket inte ska vara hindret. <strong>Fullt text-till-tal-stöd</strong> läser upp frågor och svar, vilket är användbart om du förstår talad svenska bättre än skriven, eller lär dig bättre genom att lyssna. <strong>Flerspråkigt stöd</strong> hjälper dig förstå innehållet innan du övar in provets exakta ordalydelse.</p><p>Varje svar har en <strong>djupgående förklaring</strong>. Är en mening fortfarande förvirrande kan <strong>AI-tutorn</strong> formulera om och förklara på fler än ett sätt. Kombinera det med <strong>bokmärken</strong> för de ord och regler som ständigt stoppar dig, och med <strong>Granska</strong> för att repetera det du missat.</p><p>Se i appen för den fullständiga listan över språk som stöds, eftersom vi inte listar dem här. Appen fungerar på iOS och Android.</p><p>Oavsett väg du väljer: kontrollera gällande regler och avgifter hos Trafikverket och Transportstyrelsen, håll studiepassen korta och regelbundna och gå igenom dina misstag samma dag medan de är färska.</p>",
     },
     {
       heading: "Studieplan om svenska inte är ditt modersmål",

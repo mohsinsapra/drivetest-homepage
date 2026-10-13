@@ -13,7 +13,7 @@ const en: LandingPage = {
     "Running a haulage or bus company in Sweden requires a traffic manager with proven professional competence. Drive Test supports your yrkeskunnande exam preparation for goods transport (godstrafik) and passenger transport (persontrafik) with exam-style practice and clear explanations.",
   stats: [
     { value: "3", label: "Study modes: Practice, Custom and Review" },
-    { value: "3", label: "Platforms: iOS, Android and web" },
+    { value: "2", label: "Platforms: iOS and Android" },
     { value: "Free", label: "Free categories to try before you subscribe" },
   ],
   problems: [
@@ -68,7 +68,7 @@ const sv: LandingPage = {
     "Ett åkeri eller bussföretag i Sverige måste ha en trafikansvarig med styrkt yrkeskunnande. Drive Test stödjer din förberedelse inför yrkeskunnande-provet för godstrafik och persontrafik med provliknande övning och tydliga förklaringar.",
   stats: [
     { value: "3", label: "Studielägen: Övning, Anpassat och Granska" },
-    { value: "3", label: "Plattformar: iOS, Android och webben" },
+    { value: "2", label: "Plattformar: iOS och Android" },
     { value: "Gratis", label: "Gratis kategorier att prova innan du prenumererar" },
   ],
   problems: [
