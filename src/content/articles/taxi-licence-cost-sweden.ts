@@ -17,9 +17,9 @@ const en: ArticleContent = {
   lastUpdated: "2026-10-13",
   lastUpdatedLabel: "Updated 13 October 2026",
   title: "Taxi Licence Cost in Sweden: Every Fee (2026)",
-  lede: "The <strong>taxi licence cost in Sweden</strong> is made up of exam fees paid to Trafikverket, an application fee and a card fee paid to Transportstyrelsen, and a medical certificate. Here is every fee we could verify as of 2026, with links to the official pages.",
+  lede: "The <strong>taxi licence cost in Sweden</strong> is made up of exam fees paid to Trafikverket, an application fee and a card fee paid to Transportstyrelsen, and a medical certificate. Below is every fee we could verify as of 2026, with links to the official pages.",
   intro:
-    "Before you start, it helps to know what getting a <strong>taxiförarlegitimation</strong> will cost in total. Fees are set by authorities and change from time to time, so treat the numbers below as a snapshot <strong>as of 2026</strong> and always confirm on the official pages: Trafikverket's <a href=\"https://www.trafikverket.se/korkort/priser/\">price page</a> (last updated 7 January 2026 when we checked) and Transportstyrelsen's <a href=\"https://www.transportstyrelsen.se/sv/om-oss/avgifter/avgifter-inom-vagtrafik/avgifter-for-tillstands--och-andra-provningar/Yrkestrafik/\">fee page</a>.",
+    "Before you start, you need to know what getting a <strong>taxiförarlegitimation</strong> will cost in total. Fees are set by authorities and change from time to time, so treat the numbers below as a snapshot <strong>as of 2026</strong> and always confirm on the official pages: Trafikverket's <a href=\"https://www.trafikverket.se/korkort/priser/\">price page</a> (last updated 7 January 2026 when we checked) and Transportstyrelsen's <a href=\"https://www.transportstyrelsen.se/sv/om-oss/avgifter/avgifter-inom-vagtrafik/avgifter-for-tillstands--och-andra-provningar/Yrkestrafik/\">fee page</a>.",
   excerpt:
     "A verified, itemised breakdown of what it costs to get a taxi driver licence in Sweden as of 2026.",
   cover: "/assets/blog/ob-permit-paperwork.jpg",
@@ -88,9 +88,9 @@ const sv: ArticleContent = {
   lastUpdated: "2026-10-13",
   lastUpdatedLabel: "Uppdaterad 13 oktober 2026",
   title: "Vad kostar taxilegitimation? Alla avgifter 2026",
-  lede: "Frågan <strong>vad kostar taxilegitimation</strong> har ett tydligt svar i delar: provavgifter till Trafikverket, ansökningsavgift och kortavgift till Transportstyrelsen samt ett läkarintyg. Här är varje avgift vi kunnat kontrollera 2026, med länkar till de officiella sidorna.",
+  lede: "Frågan <strong>vad kostar taxilegitimation</strong> har ett tydligt svar i delar: provavgifter till Trafikverket, ansökningsavgift och kortavgift till Transportstyrelsen samt ett läkarintyg. Nedan finns varje avgift vi kunnat kontrollera 2026, med länkar till de officiella sidorna.",
   intro:
-    "Innan du börjar är det bra att veta vad en <strong>taxiförarlegitimation</strong> kostar totalt. Avgifterna bestäms av myndigheterna och ändras då och då, så se beloppen nedan som en ögonblicksbild <strong>för 2026</strong> och bekräfta alltid på de officiella sidorna: Trafikverkets <a href=\"https://www.trafikverket.se/korkort/priser/\">prissida</a> (senast uppdaterad 7 januari 2026 när vi kontrollerade) och Transportstyrelsens <a href=\"https://www.transportstyrelsen.se/sv/om-oss/avgifter/avgifter-inom-vagtrafik/avgifter-for-tillstands--och-andra-provningar/Yrkestrafik/\">avgiftssida</a>.",
+    "Innan du börjar behöver du veta vad en <strong>taxiförarlegitimation</strong> kostar totalt. Avgifterna bestäms av myndigheterna och ändras då och då, så se beloppen nedan som en ögonblicksbild <strong>för 2026</strong> och bekräfta alltid på de officiella sidorna: Trafikverkets <a href=\"https://www.trafikverket.se/korkort/priser/\">prissida</a> (senast uppdaterad 7 januari 2026 när vi kontrollerade) och Transportstyrelsens <a href=\"https://www.transportstyrelsen.se/sv/om-oss/avgifter/avgifter-inom-vagtrafik/avgifter-for-tillstands--och-andra-provningar/Yrkestrafik/\">avgiftssida</a>.",
   excerpt:
     "En kontrollerad och specificerad genomgång av vad det kostar att få taxiförarlegitimation i Sverige 2026.",
   cover: "/assets/blog/ob-permit-paperwork.jpg",

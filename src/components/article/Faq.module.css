@@ -1,14 +1,24 @@
 .list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
 }
 
 .item {
   background: var(--card);
   border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  overflow: hidden;
+}
+
+.itemOpen {
+  border-color: var(--brand);
+}
+
+.heading {
+  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: 0;
+  line-height: inherit;
 }
 
 .question {
@@ -17,54 +27,47 @@
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 18px 22px;
+  padding: 14px 16px;
   background: none;
-  border: none;
+  border: 0;
   text-align: left;
-  font-family: var(--font-body);
+  font-family: inherit;
+  font-size: 16px;
   font-weight: 700;
-  font-size: 15.5px;
-  color: var(--text);
+  line-height: 1.4;
+  color: var(--brand-ink);
   cursor: pointer;
+}
+
+.question:hover span {
+  text-decoration: underline;
 }
 
 .icon {
   flex: none;
-  width: 22px;
-  height: 22px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: var(--accent-soft);
-  color: var(--accent);
-  transition: transform 0.3s ease;
+  color: var(--brand);
 }
 
 .iconOpen {
-  transform: rotate(45deg);
+  transform: rotate(180deg);
 }
 
 .panel {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.35s ease;
+  border-top: 1px solid var(--border);
 }
 
 .panelInner {
-  padding: 0 22px 20px;
-  color: var(--muted);
-  font-size: 14.5px;
-  line-height: 1.65;
+  padding: 14px 16px 6px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text);
 }
 
-.panelInner :global(a) {
-  color: var(--accent);
+.panelInner p {
+  margin: 0 0 12px;
+}
+
+.panelInner a {
+  color: var(--brand);
   text-decoration: underline;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .panel {
-    transition: none;
-  }
 }

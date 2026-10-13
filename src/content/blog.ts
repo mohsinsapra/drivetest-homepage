@@ -25,8 +25,8 @@ const articlePosts = (lang: "en" | "sv"): BlogPost[] =>
 export const blog = {
   en: {
     eyebrow: "Drive Test · Blog",
-    title: "Guides for taxi drivers in Sweden",
-    lede: "Clear, practical articles on taxi pay, the Vilotidsrapport, OB supplements and getting your taxi licence.",
+    title: "Articles for taxi drivers in Sweden",
+    lede: "Articles about taxi pay, the Vilotidsrapport, OB supplements and how to get your taxi licence.",
     metaTitle: "Blog – Taxi licence, exams & pay in Sweden | Drive Test",
     metaDescription:
       "Guides and articles for taxi drivers in Sweden: OB pay, the Vilotidsrapport, the taxi licence exam and more.",
@@ -52,8 +52,8 @@ export const blog = {
   },
   sv: {
     eyebrow: "Drive Test · Blogg",
-    title: "Guider för taxiförare i Sverige",
-    lede: "Tydliga, praktiska artiklar om taxilön, vilotidsrapporten, OB-tillägg och att ta taxiförarlegitimation.",
+    title: "Artiklar för taxiförare i Sverige",
+    lede: "Artiklar om taxilön, vilotidsrapporten, OB-tillägg och hur du får taxiförarlegitimation.",
     metaTitle: "Blogg – Taxilegitimation, prov & lön i Sverige | Drive Test",
     metaDescription:
       "Guider och artiklar för taxiförare i Sverige: OB-ersättning, vilotidsrapporten, taxiförarlegitimation med mera.",

@@ -1,0 +1,258 @@
+/* Hero */
+.hero {
+  background: var(--bg);
+}
+.heroInner {
+  max-width: var(--container);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.heroText {
+  background: #fff;
+  padding: 28px var(--gutter) 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 4px;
+}
+.heroText h1 {
+  margin-bottom: 12px;
+  font-size: 30px;
+}
+.heroText p {
+  max-width: 640px;
+  margin-bottom: 20px;
+}
+.heroPhoto {
+  min-height: 220px;
+  position: relative;
+}
+.heroPhoto img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 55%;
+}
+@media (min-width: 900px) {
+  .heroInner {
+    grid-template-columns: 1fr 1fr;
+    min-height: 340px;
+  }
+  .heroText {
+    padding: 40px 48px 40px 16px;
+  }
+  .heroText h1 {
+    font-size: var(--fs-h1);
+  }
+  .heroPhoto {
+    min-height: 340px;
+  }
+}
+
+/* Widgets */
+.widgets {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-top: 24px;
+}
+@media (min-width: 900px) {
+  .widgets {
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 32px;
+  }
+}
+.widget {
+  background: #fff;
+  box-shadow: var(--shadow);
+  padding: 20px 20px 24px;
+  display: flex;
+  flex-direction: column;
+}
+.widgetIcon {
+  color: var(--brand);
+  margin-bottom: 8px;
+  height: 32px;
+}
+.widget h2 {
+  font-size: var(--fs-h2-sm);
+  margin-bottom: 10px;
+}
+.widget h2 a {
+  color: var(--brand-ink);
+}
+.widget p {
+  margin-bottom: 20px;
+}
+.widgetLinks {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-top: auto;
+}
+@media (min-width: 480px) {
+  .widgetLinks {
+    grid-template-columns: 1fr 1fr;
+  }
+  .widgetLinks > :last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+}
+@media (min-width: 900px) and (max-width: 1199px) {
+  .widgetLinks {
+    grid-template-columns: 1fr;
+  }
+}
+.chev {
+  display: inline-block;
+  margin-left: 6px;
+  font-weight: 600;
+}
+
+/* Generic blocks */
+.block {
+  padding: 40px 0 0;
+}
+.blockTitle {
+  margin-bottom: 20px;
+}
+.moreRow {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 24px;
+}
+
+/* App band */
+.appBox {
+  background: #fff;
+  box-shadow: var(--shadow);
+  display: grid;
+  grid-template-columns: 1fr;
+  overflow: hidden;
+}
+.appText {
+  padding: 24px 20px 28px;
+}
+.appText h2 {
+  margin-bottom: 10px;
+}
+.appList {
+  margin: 0 0 24px;
+  padding-left: 1.2em;
+}
+.appList li {
+  margin-bottom: 6px;
+}
+.appShot {
+  background: var(--brand-soft);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 24px 24px 0;
+  max-height: 440px;
+  overflow: hidden;
+}
+.appShot img {
+  width: 220px;
+  height: auto;
+  border: 1px solid var(--border);
+  border-bottom: 0;
+}
+@media (min-width: 800px) {
+  .appBox {
+    grid-template-columns: 1.4fr 1fr;
+  }
+  .appText {
+    padding: 32px 40px;
+  }
+}
+
+/* Tool card */
+.toolBox {
+  background: #fff;
+  box-shadow: var(--shadow);
+  border-left: 4px solid var(--brand);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 24px 20px;
+}
+.toolBadge {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--brand);
+  margin-bottom: 6px;
+}
+.toolText h3 {
+  font-size: var(--fs-h2-sm);
+  margin-bottom: 10px;
+}
+.toolText h3 a {
+  color: var(--brand-ink);
+}
+.toolText p {
+  max-width: 640px;
+  margin-bottom: 18px;
+}
+.toolImg {
+  display: none;
+  width: 150px;
+  height: auto;
+  border: 1px solid var(--border);
+  justify-self: end;
+}
+@media (min-width: 700px) {
+  .toolBox {
+    grid-template-columns: 1fr auto;
+    padding: 28px 32px;
+  }
+  .toolImg {
+    display: block;
+  }
+}
+
+/* FAQ */
+.faq {
+  display: grid;
+  gap: 8px;
+}
+.faqItem {
+  background: #fff;
+  box-shadow: var(--shadow);
+}
+.faqItem summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 20px;
+  font-weight: 600;
+  color: var(--brand-ink);
+}
+.faqItem summary::-webkit-details-marker {
+  display: none;
+}
+.faqItem summary:hover span {
+  text-decoration: underline;
+}
+.faqItem summary svg {
+  flex: none;
+  transition: transform 0.15s;
+}
+.faqItem[open] summary svg {
+  transform: rotate(180deg);
+}
+.faqAnswer {
+  padding: 0 20px 18px;
+  max-width: 820px;
+}
+.faqAnswer a {
+  color: var(--brand-ink);
+}

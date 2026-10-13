@@ -13,9 +13,7 @@ export default function Toc({ items, title = "On this page" }: { items: TocItem[
 
   useEffect(() => {
     if (!items.length) return;
-    const els = items
-      .map((it) => document.getElementById(it.id))
-      .filter((el): el is HTMLElement => !!el);
+    const els = items.map((it) => document.getElementById(it.id)).filter((el): el is HTMLElement => !!el);
     if (!els.length) return;
 
     const observer = new IntersectionObserver(
@@ -26,7 +24,7 @@ export default function Toc({ items, title = "On this page" }: { items: TocItem[
           setActive(topMost.target.id);
         }
       },
-      { rootMargin: "-96px 0px -60% 0px", threshold: [0, 1] }
+      { rootMargin: "-80px 0px -60% 0px", threshold: [0, 1] }
     );
     els.forEach((el) => observer.observe(el));
     return () => observer.disconnect();
@@ -34,31 +32,22 @@ export default function Toc({ items, title = "On this page" }: { items: TocItem[
 
   if (!items.length) return null;
 
-  const List = (
-    <ul className={styles.list}>
-      {items.map((it) => (
-        <li className={styles.item} key={it.id}>
-          <a
-            href={`#${it.id}`}
-            className={`${styles.link} ${active === it.id ? styles.linkActive : ""}`}
-          >
-            {it.label}
-          </a>
-        </li>
-      ))}
-    </ul>
-  );
-
   return (
-    <>
-      <nav className={styles.wrap} aria-label={title}>
-        <span className={styles.label}>{title}</span>
-        {List}
-      </nav>
-      <details className={styles.mobile}>
-        <summary className={styles.mobileSummary}>{title}</summary>
-        {List}
-      </details>
-    </>
+    <nav className={styles.wrap} aria-label={title}>
+      <h2 className={styles.label}>{title}</h2>
+      <ul className={styles.list}>
+        {items.map((it) => (
+          <li className={styles.item} key={it.id}>
+            <a
+              href={`#${it.id}`}
+              className={`${styles.link} ${active === it.id ? styles.linkActive : ""}`}
+              aria-current={active === it.id ? "location" : undefined}
+            >
+              {it.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
   );
 }

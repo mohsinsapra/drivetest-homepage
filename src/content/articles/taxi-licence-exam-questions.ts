@@ -17,7 +17,7 @@ const en: ArticleContent = {
   lastUpdated: "2026-10-13",
   lastUpdatedLabel: "Updated 13 October 2026",
   title: "Taxi Licence Exam Questions in Sweden: What to Expect",
-  lede: "The <strong>taxi licence exam questions</strong> in Sweden are split across two theory tests, safety and behaviour, and legislation, plus a practical driving test. Here is what each part covers, how it is scored, and a set of original example questions so you know what the style feels like.",
+  lede: "The <strong>taxi licence exam questions</strong> in Sweden are split across two theory tests, safety and behaviour, and legislation, plus a practical driving test. Below you can read what each part covers, how it is scored, and a set of original example questions that show the question style.",
   intro:
     "If you are planning to get your <strong>taxiförarlegitimation</strong>, the first thing you probably want to know is what the exam actually asks. Trafikverket publishes the structure, the topics and the pass marks, but not the questions themselves. This guide walks through what is public, explains how to think about each topic area, and gives you clearly labelled <em>example-style</em> questions that we wrote ourselves. They are not real exam questions, they are practice material.",
   excerpt:
@@ -109,7 +109,7 @@ const sv: ArticleContent = {
   lastUpdated: "2026-10-13",
   lastUpdatedLabel: "Uppdaterad 13 oktober 2026",
   title: "Taxiförarlegitimation frågor: så ser provet ut",
-  lede: "Frågorna till <strong>taxiförarlegitimation</strong> delas upp i två teoriprov, säkerhet och beteende samt lagstiftning, plus ett körprov. Här går vi igenom vad varje del innehåller, hur den poängsätts och vi ger dig egna övningsfrågor så att du känner igen stilen.",
+  lede: "Frågorna till <strong>taxiförarlegitimation</strong> delas upp i två teoriprov, säkerhet och beteende samt lagstiftning, plus ett körprov. Här går vi igenom vad varje del innehåller och hur den poängsätts. Du får också egna övningsfrågor som visar frågestilen.",
   intro:
     "Ska du ta <strong>taxiförarlegitimation</strong> vill du säkert veta vad provet faktiskt frågar om. Trafikverket publicerar upplägg, områden och godkändgränser, men inte själva frågorna. Den här guiden går igenom det som är offentligt, förklarar hur du ska tänka kring varje område och ger dig tydligt märkta <em>exempelfrågor</em> som vi har skrivit själva. De är alltså inte riktiga provfrågor, utan övningsmaterial.",
   excerpt:

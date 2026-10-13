@@ -7,10 +7,10 @@ const en: LandingPage = {
   metaDescription:
     "Compare ways to study for the Swedish taxi and driving exams: books, free online tests, taxi schools and an app. A fair look at what each option does well.",
   eyebrow: "Compare",
-  title: "What is the best way to study for the taxi exam?",
-  titleAccent: "A fair comparison",
+  title: "How to study for the taxi exam",
+  titleAccent: "Compare the options",
   lede:
-    "There is no single right way to prepare for the taxiförarlegitimation or yrkeskunnande exams. Books, free online tests, classroom courses and apps each have strengths. Here is an honest look at how Drive Test compares, so you can pick what fits your life.",
+    "There is no single right way to prepare for the taxiförarlegitimation or yrkeskunnande exams. Books, free online tests, classroom courses and apps each have strengths. On this page you can see how Drive Test compares, so you can choose what suits you.",
   problems: [
     { icon: "alert", title: "Too many options", text: "Books, courses, websites and apps all promise to get you through, and it is hard to tell what you actually need." },
     { icon: "money", title: "Cost and time", text: "Courses cost money and set dates, while free material can vary in quality and age." },
@@ -23,12 +23,12 @@ const en: LandingPage = {
   ],
   sections: [
     {
-      heading: "What to look for in exam preparation",
+      heading: "What to consider when you prepare",
       html:
         "<p>Whichever route you take, good preparation for the Swedish taxi and transport exams has four things in common. First, it matches what the exam asks: <strong>the questions test understanding</strong> of rules and situations, not just recall. Second, it gives <strong>feedback</strong> after each answer so you learn from mistakes. Third, it shows <strong>progress</strong> so you know when you are ready. Fourth, it fits your <strong>language and schedule</strong>.</p><p>According to Trafikverket, the taxi licence theory test has two parts, Säkerhet och beteende and Lagstiftning, to be passed within six months of the first. The exams are in Swedish, and confirming current rules at Trafikverket and Transportstyrelsen is always wise. Our <a href=\"/taxi-licence-guide/\">taxi licence guide</a> gives an overview of the whole process.</p><p>Use the three comparisons below to see how Drive Test stacks up against common alternatives. We have tried to be fair: each has real strengths, and we say where Drive Test is not the best fit.</p>",
     },
     {
-      heading: "At a glance: four ways to study",
+      heading: "Four ways to study at a glance",
       html:
         "<p>The table summarises how the main methods differ in general terms. Individual books, courses and websites vary, so treat this as a guide rather than a rule.</p><ul><li><strong>Books and PDFs</strong> give depth and a reference to return to, but no automatic feedback. See <a href=\"/compare/drive-test-vs-books/\">Drive Test vs books</a>.</li><li><strong>Free online tests</strong> cost nothing and are good for a quick check, but quality, explanations and tracking vary. See <a href=\"/compare/drive-test-vs-free-online-tests/\">Drive Test vs free online tests</a>.</li><li><strong>Taxi schools and classroom courses</strong> offer a teacher and a fixed schedule, but cost more and need set times. See <a href=\"/compare/drive-test-vs-taxi-schools/\">Drive Test vs taxi schools</a>.</li><li><strong>An app like Drive Test</strong> offers exam-style practice, explanations, an AI tutor, text-to-speech and progress tracking on your phone, but it is a study aid, not a teacher.</li></ul><p>Many successful candidates mix methods. If you want a starting point, try the free categories in Drive Test and see how it feels.</p>",
     },
@@ -52,8 +52,8 @@ const en: LandingPage = {
     { q: "Does Drive Test guarantee I will pass?", aHtml: "No. It is a study aid. Regular practice and understanding your mistakes give you the best chance, but we cannot guarantee results." },
   ],
   related: ["compare/drive-test-vs-books", "compare/drive-test-vs-free-online-tests", "compare/drive-test-vs-taxi-schools", "exams/taxi-licence"],
-  ctaTitle: "Try it yourself, free to start",
-  ctaText: "Download Drive Test and explore the free categories to see if the app suits how you study.",
+  ctaTitle: "Try the free categories",
+  ctaText: "Download Drive Test and try the free categories to see if the app suits how you study.",
 };
 
 const sv: LandingPage = {
@@ -63,10 +63,10 @@ const sv: LandingPage = {
   metaDescription:
     "Jämför sätt att plugga inför taxi- och körkortsproven i Sverige: böcker, gratis provsajter, taxiskolor och en app. En rättvis titt på alla alternativ.",
   eyebrow: "Jämför",
-  title: "Vilket är det bästa sättet att plugga taxiprovet?",
-  titleAccent: "En rättvis jämförelse",
+  title: "Så pluggar du inför taxiprovet",
+  titleAccent: "Jämför alternativen",
   lede:
-    "Det finns inget enda rätt sätt att förbereda sig för proven till taxiförarlegitimation eller yrkeskunnande. Böcker, gratis provsajter, klassrumskurser och appar har alla styrkor. Här är en ärlig titt på hur Drive Test står sig, så att du kan välja det som passar ditt liv.",
+    "Det finns inget enda rätt sätt att förbereda sig för proven till taxiförarlegitimation eller yrkeskunnande. Böcker, gratis provsajter, klassrumskurser och appar har alla styrkor. Här kan du se hur Drive Test står sig, så att du kan välja det som passar dig.",
   problems: [
     { icon: "alert", title: "För många alternativ", text: "Böcker, kurser, sajter och appar lovar att få dig igenom, och det är svårt att veta vad du faktiskt behöver." },
     { icon: "money", title: "Kostnad och tid", text: "Kurser kostar pengar och har fasta datum, medan gratismaterial kan variera i kvalitet och ålder." },
@@ -79,12 +79,12 @@ const sv: LandingPage = {
   ],
   sections: [
     {
-      heading: "Vad du bör leta efter i provförberedelser",
+      heading: "Att tänka på när du förbereder dig",
       html:
         "<p>Vilken väg du än väljer har bra förberedelse för de svenska taxi- och transportproven fyra saker gemensamt. För det första matchar den vad provet frågar efter: <strong>frågorna testar förståelse</strong> av regler och situationer, inte bara minne. För det andra ger den <strong>återkoppling</strong> efter varje svar så att du lär dig av misstag. För det tredje visar den <strong>framsteg</strong> så att du vet när du är redo. För det fjärde passar den ditt <strong>språk och schema</strong>.</p><p>Enligt Trafikverket har teoriprovet för taxiförarlegitimation två delprov, Säkerhet och beteende samt Lagstiftning, som ska vara godkända inom sex månader från det första. Proven är på svenska, och det är alltid klokt att bekräfta gällande regler hos Trafikverket och Transportstyrelsen. Vår <a href=\"/sv/taxi-licence-guide/\">guide till taxiförarlegitimation</a> ger en överblick över hela processen.</p><p>Använd de tre jämförelserna nedan för att se hur Drive Test står sig mot vanliga alternativ. Vi har försökt vara rättvisa: alla har verkliga styrkor, och vi säger var Drive Test inte är bäst.</p>",
     },
     {
-      heading: "I korthet: fyra sätt att plugga",
+      heading: "Fyra sätt att plugga i korthet",
       html:
         "<p>Tabellen sammanfattar hur de huvudsakliga metoderna skiljer sig åt i stora drag. Enskilda böcker, kurser och sajter varierar, så se det som en vägledning snarare än en regel.</p><ul><li><strong>Böcker och pdf:er</strong> ger djup och ett uppslagsverk att återvända till, men ingen automatisk återkoppling. Se <a href=\"/sv/compare/drive-test-vs-books/\">Drive Test eller böcker</a>.</li><li><strong>Gratis provsajter</strong> kostar inget och är bra för en snabb koll, men kvalitet, förklaringar och uppföljning varierar. Se <a href=\"/sv/compare/drive-test-vs-free-online-tests/\">Drive Test eller gratis provsajter</a>.</li><li><strong>Taxiskolor och klassrumskurser</strong> ger en lärare och ett fast schema, men kostar mer och kräver bestämda tider. Se <a href=\"/sv/compare/drive-test-vs-taxi-schools/\">Drive Test eller taxiskola</a>.</li><li><strong>En app som Drive Test</strong> ger provliknande övning, förklaringar, AI-tutor, text-till-tal och framstegsuppföljning i mobilen, men är ett studiestöd, inte en lärare.</li></ul><p>Många som lyckas blandar metoder. Vill du ha en startpunkt, prova de gratis kategorierna i Drive Test och känn efter.</p>",
     },
@@ -108,8 +108,8 @@ const sv: LandingPage = {
     { q: "Garanterar Drive Test att jag klarar provet?", aHtml: "Nej. Det är ett studiestöd. Regelbunden övning och förståelse för dina misstag ger bäst chans, men vi kan inte garantera resultat." },
   ],
   related: ["compare/drive-test-vs-books", "compare/drive-test-vs-free-online-tests", "compare/drive-test-vs-taxi-schools", "exams/taxi-licence"],
-  ctaTitle: "Prova själv, gratis att börja",
-  ctaText: "Ladda ned Drive Test och utforska de gratis kategorierna för att se om appen passar hur du pluggar.",
+  ctaTitle: "Prova de gratis kategorierna",
+  ctaText: "Ladda ned Drive Test och prova de gratis kategorierna för att se om appen passar hur du pluggar.",
 };
 
 export const compareHub = { en, sv };

@@ -20,9 +20,9 @@ export const medborgarskapsprov = {
     lastUpdatedLabel: "Updated 22 July 2026",
     title: "Swedish Citizenship & the New Medborgarskapsprov",
     lede:
-      "New Swedish citizenship rules came into force on <strong>6 June 2026</strong>, and a brand-new <strong>citizenship test on Swedish society</strong> opens in <strong>August 2026</strong>. Here's exactly what's required to become a Swedish citizen, who has to sit the test, and how to prepare for it.",
+      "New Swedish citizenship rules came into force on <strong>6 June 2026</strong>, and a new <strong>citizenship test on Swedish society</strong> opens in <strong>August 2026</strong>. Here's exactly what's required to become a Swedish citizen, who has to sit the test, and how to prepare for it.",
     intro:
-      "Becoming a Swedish citizen now means meeting six clear requirements — legal status, identity, years of residence, knowledge of Swedish and Swedish society, self-support, and an orderly life — and, for many applicants, passing a new knowledge test. This guide walks through each requirement in plain language, based on Migrationsverket's own published rules, and explains exactly what the new citizenship test covers and how to get ready for it.",
+      "Becoming a Swedish citizen now means meeting six clear requirements — legal status, identity, years of residence, knowledge of Swedish and Swedish society, self-support, and an orderly life — and, for many applicants, passing a new knowledge test. On this page each requirement is explained, based on Migrationsverket's own published rules, and explains exactly what the new citizenship test covers and how to get ready for it.",
     sections: [
       {
         heading: "What changed on 6 June 2026",

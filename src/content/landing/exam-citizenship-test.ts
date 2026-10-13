@@ -8,9 +8,9 @@ const en: LandingPage = {
     "Practise for Sweden's medborgarskapsprov with 136 questions from the official study book Sverige i fokus, chapter tests and mock exams in the Drive Test app.",
   eyebrow: "Exam · Medborgarskapsprov",
   title: "Swedish citizenship test practice",
-  titleAccent: "built on Sverige i fokus",
+  titleAccent: "based on Sverige i fokus",
   lede:
-    "Applying for Swedish citizenship? The new medborgarskapsprov tests your knowledge of Swedish society. Drive Test's preparation module is built from UHR's official study book Sverige i fokus, with 136 practice questions across all 13 chapters.",
+    "Are you applying for Swedish citizenship? The medborgarskapsprov tests your knowledge of Swedish society. Drive Test's preparation module is built from UHR's official study book Sverige i fokus, with 136 practice questions across all 13 chapters.",
   stats: [
     { value: "136", label: "Practice questions" },
     { value: "13", label: "Chapters of Sverige i fokus covered" },
@@ -33,12 +33,12 @@ const en: LandingPage = {
         "<p>New Swedish citizenship rules came into force on <strong>6 June 2026</strong>, and they include a formal knowledge requirement. Applicants aged 16 to 66 generally have to show knowledge of the Swedish language and of Swedish society. The <strong>medborgarskapsprov</strong> in samhällskunskap (society knowledge) is run by the Swedish Council for Higher Education (UHR) and became available in August 2026, while the Swedish-language test is being introduced in stages.</p><p>The society test is based on UHR's study book <em>Sverige i fokus</em>, which covers 13 chapters including Sweden's democratic system. Exemptions exist, for example for people who meet the language requirement in other ways, so check Migrationsverket and UHR for your own situation. The details of question numbers, time limit and pass mark should be confirmed with UHR; we do not state figures that we could not verify.</p><p>Our full guide to the rules, years of residence and fees is on the <a href=\"/medborgarskapsprov/\">Swedish citizenship test article</a>.</p>",
     },
     {
-      heading: "Practise with Drive Test",
+      heading: "Practise in Drive Test",
       html:
         "<p>The Drive Test citizenship module has <strong>136 practice questions</strong> spread over all 13 chapters, chapter tests, full mock exams and the complete <em>Sverige i fokus</em> book in one app. That lets you read a chapter and test yourself on it straight away, which is a far more effective loop than reading the whole book first and testing later.</p><p>As in the rest of the app, you get explanations for the answers, bookmarks for tricky questions and analytics that show which chapters are strong and which need another pass. <strong>Text-to-speech and multi-language support</strong> can help you work through dense text about society, history and institutions.</p><p>Check the app for the exact way the citizenship module is offered and what is included in the free and paid plans before you subscribe. Drive Test is a study aid and does not replace official information from Migrationsverket and UHR.</p>",
     },
     {
-      heading: "A simple study plan",
+      heading: "Plan your studies",
       html:
         "<ul><li><strong>Week by week.</strong> Take one or two chapters per week, reading first and practising right after.</li><li><strong>Repeat the misses.</strong> Use Review mode on the questions you got wrong until they stop appearing.</li><li><strong>Finish with mock exams.</strong> Sit a full mock a few days before the real test to get a feel for the pace.</li><li><strong>Keep it daily.</strong> Twenty focused minutes beat one long weekend session.</li></ul><p>If you are also working in Sweden, or considering a career such as taxi driving, read about <a href=\"/exams/taxi-licence/\">the taxi licence test</a> or browse the <a href=\"/blog/\">blog</a>.</p><p>Rules for citizenship, fees and processing times change, so always rely on Migrationsverket for the latest requirements. Our <a href=\"/medborgarskapsprov/\">citizenship guide</a> summarises what we know and when it was last updated.</p>",
     },
@@ -51,7 +51,7 @@ const en: LandingPage = {
     { q: "Is the test in Swedish?", aHtml: "The test and study book are in Swedish. Drive Test offers multi-language support and text-to-speech to help you study." },
   ],
   related: ["for/international-drivers", "exams/taxi-licence", "exams/driving-licence", "compare/drive-test-vs-books"],
-  ctaTitle: "Start preparing for the medborgarskapsprov",
+  ctaTitle: "Prepare for the medborgarskapsprov",
   ctaText: "Download Drive Test and work through Sverige i fokus chapter by chapter with practice questions.",
 };
 
@@ -63,9 +63,9 @@ const sv: LandingPage = {
     "Öva inför medborgarskapsprovet med 136 övningsfrågor från studieboken Sverige i fokus, kapiteltest och provtentor. Medborgarskapsprov övningsprov i appen.",
   eyebrow: "Prov · Medborgarskapsprov",
   title: "Medborgarskapsprov: övningsprov",
-  titleAccent: "byggt på Sverige i fokus",
+  titleAccent: "baserat på Sverige i fokus",
   lede:
-    "Ansöker du om svenskt medborgarskap? Det nya medborgarskapsprovet testar dina kunskaper om det svenska samhället. Drive Tests förberedelsemodul är byggd på UHR:s officiella studiebok Sverige i fokus, med 136 övningsfrågor fördelade på alla 13 kapitel.",
+    "Ansöker du om svenskt medborgarskap? Medborgarskapsprovet testar dina kunskaper om det svenska samhället. Drive Tests förberedelsemodul är byggd på UHR:s officiella studiebok Sverige i fokus, med 136 övningsfrågor fördelade på alla 13 kapitel.",
   stats: [
     { value: "136", label: "Övningsfrågor" },
     { value: "13", label: "Kapitel i Sverige i fokus täcks" },
@@ -93,7 +93,7 @@ const sv: LandingPage = {
         "<p>Drive Tests medborgarskapsmodul har <strong>136 övningsfrågor</strong> fördelade på alla 13 kapitel, kapiteltest, fullständiga provtentor och hela boken <em>Sverige i fokus</em> i en och samma app. Då kan du läsa ett kapitel och testa dig direkt, vilket är ett mycket effektivare upplägg än att läsa hela boken först och testa sig sist.</p><p>Precis som i resten av appen får du förklaringar till svaren, bokmärken för knepiga frågor och statistik som visar vilka kapitel som sitter och vilka som behöver ett varv till. <strong>Text-till-tal och flerspråkigt stöd</strong> kan hjälpa dig genom tät text om samhälle, historia och institutioner.</p><p>Se i appen hur medborgarskapsmodulen erbjuds och vad som ingår i gratis- och betalplanerna innan du prenumererar. Drive Test är ett studiestöd och ersätter inte officiell information från Migrationsverket och UHR.</p>",
     },
     {
-      heading: "En enkel studieplan",
+      heading: "Planera dina studier",
       html:
         "<ul><li><strong>Vecka för vecka.</strong> Ta ett eller två kapitel i veckan: läs först och öva direkt efteråt.</li><li><strong>Upprepa felen.</strong> Använd Granska på de frågor du svarat fel på tills de slutar dyka upp.</li><li><strong>Avsluta med provtentor.</strong> Gör en hel provtenta några dagar före det riktiga provet för att få känsla för tempot.</li><li><strong>Gör det dagligen.</strong> Tjugo fokuserade minuter slår ett långt helgpass.</li></ul><p>Jobbar du också i Sverige, eller funderar på ett yrke som taxiförare, läs om <a href=\"/sv/exams/taxi-licence/\">taxiförarlegitimation prov</a> eller bläddra i <a href=\"/sv/blog/\">bloggen</a>.</p><p>Regler om medborgarskap, avgifter och handläggningstider ändras, så lita alltid på Migrationsverket för de senaste kraven. Vår <a href=\"/sv/medborgarskapsprov/\">guide om medborgarskapsprovet</a> sammanfattar vad vi vet och när den senast uppdaterades.</p><p>Oavsett väg du väljer: kontrollera gällande regler och avgifter hos Trafikverket och Transportstyrelsen, håll studiepassen korta och regelbundna och gå igenom dina misstag samma dag medan de är färska.</p>",
     },
@@ -106,7 +106,7 @@ const sv: LandingPage = {
     { q: "Är provet på svenska?", aHtml: "Provet och studieboken är på svenska. Drive Test har flerspråkigt stöd och text-till-tal som hjälper dig att studera." },
   ],
   related: ["for/international-drivers", "exams/taxi-licence", "exams/driving-licence", "compare/drive-test-vs-books"],
-  ctaTitle: "Börja förbereda dig för medborgarskapsprovet",
+  ctaTitle: "Förbered dig inför medborgarskapsprovet",
   ctaText: "Ladda ned Drive Test och arbeta dig igenom Sverige i fokus kapitel för kapitel med övningsfrågor.",
 };
 

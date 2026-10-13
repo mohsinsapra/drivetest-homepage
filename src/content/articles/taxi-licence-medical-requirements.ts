@@ -17,7 +17,7 @@ const en: ArticleContent = {
   lastUpdated: "2026-10-13",
   lastUpdatedLabel: "Updated 13 October 2026",
   title: "Taxi Licence Medical Requirements in Sweden",
-  lede: "The <strong>taxi licence medical requirements</strong> in Sweden mean you need a medical certificate (läkarintyg) with your application, including a check of your vision, and you must be judged suitable as a driver. Here is how each part works and what to prepare.",
+  lede: "The <strong>taxi licence medical requirements</strong> in Sweden mean you need a medical certificate (läkarintyg) with your application, including a check of your vision, and you must be judged suitable as a driver. Below you can read how each part works and what to prepare.",
   intro:
     "Passing the exams is only one step toward a <strong>taxiförarlegitimation</strong>. Transportstyrelsen also needs to be sure you are medically fit to carry passengers and that you are a suitable person for the job. This guide explains the medical certificate, the vision part, and the suitability check, using Transportstyrelsen's own pages. We do not give medical advice: if you have a health question, talk to your doctor.",
   excerpt:
@@ -112,7 +112,7 @@ const sv: ArticleContent = {
   lastUpdated: "2026-10-13",
   lastUpdatedLabel: "Uppdaterad 13 oktober 2026",
   title: "Läkarintyg taxi: medicinska krav och lämplighet",
-  lede: "Ett <strong>läkarintyg för taxi</strong> är ett krav när du ansöker om taxiförarlegitimation, och det inkluderar en kontroll av synen. Dessutom måste du bedömas som lämplig som förare. Här går vi igenom hur varje del fungerar och vad du ska förbereda.",
+  lede: "Ett <strong>läkarintyg för taxi</strong> är ett krav när du ansöker om taxiförarlegitimation, och det inkluderar en kontroll av synen. Dessutom måste du bedömas som lämplig som förare. Här går vi igenom hur varje del fungerar och vad du behöver förbereda.",
   intro:
     "Att klara proven är bara ett steg på vägen mot en <strong>taxiförarlegitimation</strong>. Transportstyrelsen vill också vara säker på att du är medicinskt lämplig att köra passagerare och att du är en lämplig person för yrket. Den här guiden förklarar läkarintyget, synkravet och lämplighetsprövningen utifrån Transportstyrelsens egna sidor. Vi ger inga medicinska råd: har du en hälsofråga, prata med din läkare.",
   excerpt:

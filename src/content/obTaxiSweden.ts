@@ -31,9 +31,9 @@ export const obTaxiSweden = {
     lastUpdated: "2026-06-17",
     lastUpdatedLabel: "Updated 17 June 2026",
     title: "Taxi OB Calculator Sweden",
-    lede: "<strong>OB</strong> — short for <strong>obekväm arbetstid</strong> (\"inconvenient working hours\") — is the extra pay Swedish taxi drivers earn for evenings, nights, weekends and holidays. Here's exactly how OB1 and OB2 are worked out from your Vilotidsrapport, then price it in seconds with our free calculator.",
+    lede: "<strong>OB</strong> — short for <strong>obekväm arbetstid</strong> (\"inconvenient working hours\") — is the extra pay Swedish taxi drivers earn for evenings, nights, weekends and holidays. On this page you can read how OB1 and OB2 are worked out from your Vilotidsrapport. You can then calculate it with the free calculator.",
     intro:
-      "<strong>OB</strong> is one of the most important — and most misunderstood — parts of a taxi driver's pay in Sweden. If you drive evenings, nights, weekends or holidays, a big share of your wage comes from OB supplements. This guide explains what OB means, how OB1 and OB2 differ, and how the amount is worked out from your rest-time slip, so you can check that every krona you've earned actually shows up on your payslip.",
+      "<strong>OB</strong> is part of a taxi driver's pay in Sweden. If you drive evenings, nights, weekends or holidays, a big share of your wage comes from OB supplements. This guide explains what OB means, how OB1 and OB2 differ, and how the amount is worked out from your rest-time slip, so you can check that your payslip is correct.",
     sections: [
       {
         heading: "What is OB?",
@@ -112,9 +112,9 @@ export const obTaxiSweden = {
     ] as ArticleFaqItem[],
     disclaimer:
       "This page is general information, not legal or tax advice. OB rates and rules come from your collective agreement; permit decisions are made by Migrationsverket. For your own situation, check with Migrationsverket and your union (e.g. Transport).",
-    ctaTitle: "Calculate your taxi OB now",
-    ctaBody: "Snap your Vilotidsrapport → AI reads it → you verify → OB1 / OB2 priced instantly.",
-    ctaBtn: "Open the Taxi OB Calculator →",
+    ctaTitle: "Calculate your taxi OB",
+    ctaBody: "Photograph your Vilotidsrapport. The AI reads it, you check it, and OB1 and OB2 are calculated.",
+    ctaBtn: "Open the Taxi OB Calculator ›",
   },
   sv: {
     metaTitle: "Taxi OB-kalkylator Sverige – Vad är OB och hur räknar man ut det? | Drive Test",
@@ -124,7 +124,7 @@ export const obTaxiSweden = {
     lastUpdated: "2026-06-17",
     lastUpdatedLabel: "Uppdaterad 17 juni 2026",
     title: "Taxi OB-kalkylator Sverige",
-    lede: "<strong>OB</strong> — <strong>obekväm arbetstid</strong> — är den extra ersättning svenska taxiförare får för kvällar, nätter, helger och röda dagar. Här är exakt hur OB1 och OB2 räknas ut från din vilotidsrapport, räkna sedan ut det på några sekunder med vår gratis kalkylator.",
+    lede: "<strong>OB</strong> — <strong>obekväm arbetstid</strong> — är den extra ersättning svenska taxiförare får för kvällar, nätter, helger och röda dagar. Här kan du läsa hur OB1 och OB2 räknas ut från din vilotidsrapport. Sedan kan du räkna ut det med den kostnadsfria kalkylatorn.",
     intro:
       "<strong>OB</strong> är en av de viktigaste — och mest missförstådda — delarna av en taxiförares lön i Sverige. Kör du kvällar, nätter, helger eller röda dagar kommer en stor del av lönen från OB-tillägg. Den här guiden förklarar vad OB betyder, hur OB1 och OB2 skiljer sig åt och hur beloppet räknas ut från din vilotidsrapport — så att du kan kontrollera att varje krona du tjänat faktiskt syns på lönespecen.",
     sections: [
@@ -205,9 +205,9 @@ export const obTaxiSweden = {
     ] as ArticleFaqItem[],
     disclaimer:
       "Den här sidan är allmän information, inte juridisk eller skatterådgivning. OB-satser och regler kommer från ditt kollektivavtal; tillståndsbeslut fattas av Migrationsverket. För din egen situation, kontrollera med Migrationsverket och ditt fackförbund (t.ex. Transport).",
-    ctaTitle: "Räkna ut din taxi-OB nu",
-    ctaBody: "Fota din vilotidsrapport → AI läser den → du verifierar → OB1 / OB2 prissätts direkt.",
-    ctaBtn: "Öppna OB-kalkylatorn →",
+    ctaTitle: "Räkna ut din taxi-OB",
+    ctaBody: "Fotografera din vilotidsrapport. AI:n läser den, du kontrollerar den och OB1 och OB2 räknas ut.",
+    ctaBtn: "Öppna OB-kalkylatorn ›",
   },
 };
 

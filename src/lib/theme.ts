@@ -7,7 +7,8 @@ export const THEME_STORAGE_KEY = "dt_theme";
  * avoiding a flash of the wrong theme. Reads localStorage['dt_theme']
  * (kept EXACTLY as this key — the embedded OB calculator reads it too).
  */
-export const themeInitScript = `try{var t=localStorage.getItem('${THEME_STORAGE_KEY}');if(!t)t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';document.documentElement.setAttribute('data-theme',t);}catch(e){}`;
+// The site is light-only; always set data-theme="light" (key kept for the OB calculator).
+export const themeInitScript = `document.documentElement.setAttribute('data-theme','light');`;
 
 export function getStoredTheme(): Theme | null {
   if (typeof window === "undefined") return null;

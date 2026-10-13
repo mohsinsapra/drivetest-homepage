@@ -8,9 +8,9 @@ const en: LandingPage = {
     "Want to become a taxi driver in Sweden? See the steps to a taxiförarlegitimation and prepare for the theory exams with practice questions in Drive Test.",
   eyebrow: "For new taxi drivers",
   title: "Become a taxi driver in Sweden",
-  titleAccent: "with a clear plan",
+  titleAccent: "step by step",
   lede:
-    "Dreaming of working as a taxi driver in Sweden? The route to a taxiförarlegitimation has several steps. Drive Test helps with the one you control the most: preparing for the theory exams with focused practice.",
+    "Do you want to work as a taxi driver in Sweden? You need a taxiförarlegitimation, and getting one takes several steps. Drive Test helps with the step you control yourself: preparing for the theory exams.",
   stats: [
     { value: "3", label: "Study modes to fit your day" },
     { value: "3", label: "Platforms: iOS, Android and web" },
@@ -28,17 +28,17 @@ const en: LandingPage = {
   ],
   sections: [
     {
-      heading: "The route to a taxiförarlegitimation",
+      heading: "How to get a taxiförarlegitimation",
       html:
         "<p>To work as a taxi driver in Sweden you need a <strong>taxiförarlegitimation</strong> from Transportstyrelsen. Typical requirements include a minimum age, a B licence held for a number of years (or a D licence), medical fitness, suitability for the profession and passing the exams. The exact conditions and fees change over time, so confirm them with Transportstyrelsen and Trafikverket.</p><p>In practice the steps are: gather your documents, pass the theory exams and the driving test at Trafikverket, get a medical certificate (<em>läkarintyg</em>) and apply to Transportstyrelsen. Our <a href=\"/taxi-licence-guide/\">complete taxi licence guide</a> explains each step, including costs and tips on scheduling.</p><p>According to Trafikverket, the theory test has two parts, Säkerhet och beteende and Lagstiftning, and both must be passed within six months of your first passed part. The exams are in Swedish. Book the driving test early, since the number of time slots is limited and waiting times can be long.</p>",
     },
     {
-      heading: "Build a study routine that works",
+      heading: "Plan your studies",
       html:
         "<p>Most new drivers study alongside a job or family. Short daily sessions beat occasional marathons. Open Drive Test in <strong>Practice</strong> mode for twenty minutes on the bus, review your wrong answers in <strong>Review</strong> mode, and use <strong>Custom</strong> mode with a timer as the exam approaches.</p><p>Each question has an explanation, so you understand why an answer is right. When it still does not click, ask the <strong>AI tutor</strong>. <strong>Bookmark</strong> the questions you find hard and revisit them until they feel easy.</p><p>The dashboard tracks activity, category results and your full test history. That makes it easy to see when you are consistently doing well in every area. Then you can book the exams with confidence rather than hope.</p><p>Whatever route you choose, check current rules and fees with Trafikverket and Transportstyrelsen, keep your study sessions short and regular, and review your mistakes the same day while they are fresh.</p>",
     },
     {
-      heading: "After the licence: start working",
+      heading: "After the licence",
       html:
         "<p>Once you have your legitimation, you can start working for a taxi company. Understanding how pay works is part of the job. Many drivers receive an OB supplement for evenings, nights and weekends, and our free <a href=\"/ob-taxi-sweden/\">OB calculator</a> reads your rest-time report so you can check your hours and pay.</p><p>Some drivers later want to run their own business. That requires a different qualification, <strong>yrkeskunnande</strong>, for the taxi company's traffic permit; see the <a href=\"/exams/taxi-company/\">yrkeskunnande taxi</a> page.</p><p>If Swedish is not your first language, read the page for <a href=\"/for/international-drivers/\">international drivers</a> to see how multi-language support and text-to-speech can help you. For further reading, the <a href=\"/blog/\">blog</a> has guides on exams and licences.</p><p>Whatever route you choose, check current rules and fees with Trafikverket and Transportstyrelsen, keep your study sessions short and regular, and review your mistakes the same day while they are fresh.</p>",
     },
@@ -51,8 +51,8 @@ const en: LandingPage = {
     { q: "Are the taxi exams in English?", aHtml: "No, they are in Swedish. Use multi-language support and text-to-speech in the app to prepare." },
   ],
   related: ["exams/taxi-licence", "for/international-drivers", "exams/taxi-company", "compare/drive-test-vs-taxi-schools"],
-  ctaTitle: "Take your first step towards the taxi licence",
-  ctaText: "Download Drive Test and start with the free categories today.",
+  ctaTitle: "Start preparing for the taxi licence",
+  ctaText: "Download Drive Test and start with the free categories.",
 };
 
 const sv: LandingPage = {
@@ -63,9 +63,9 @@ const sv: LandingPage = {
     "Vill du bli taxiförare i Sverige? Se stegen till taxiförarlegitimation och förbered dig för teoriproven med övningsfrågor i Drive Test-appen.",
   eyebrow: "För nya taxiförare",
   title: "Bli taxiförare i Sverige",
-  titleAccent: "med en tydlig plan",
+  titleAccent: "steg för steg",
   lede:
-    "Drömmer du om att jobba som taxiförare i Sverige? Vägen till taxiförarlegitimation har flera steg. Drive Test hjälper dig med det steg du styr mest över: att förbereda dig för teoriproven med fokuserad övning.",
+    "Vill du arbeta som taxiförare i Sverige? Du behöver en taxiförarlegitimation, och vägen dit har flera steg. Drive Test hjälper dig med det steg du styr själv: att förbereda dig inför teoriproven.",
   stats: [
     { value: "3", label: "Studielägen som passar din vardag" },
     { value: "3", label: "Plattformar: iOS, Android och webben" },
@@ -83,17 +83,17 @@ const sv: LandingPage = {
   ],
   sections: [
     {
-      heading: "Vägen till taxiförarlegitimation",
+      heading: "Så får du taxiförarlegitimation",
       html:
         "<p>För att jobba som taxiförare i Sverige behöver du en <strong>taxiförarlegitimation</strong> från Transportstyrelsen. Vanliga krav är en lägsta ålder, B-körkort under ett antal år (eller D-körkort), medicinsk lämplighet, lämplighet för yrket och godkända prov. De exakta villkoren och avgifterna ändras över tid, så bekräfta dem hos Transportstyrelsen och Trafikverket.</p><p>I praktiken är stegen: samla dina dokument, klara teoriproven och körprovet hos Trafikverket, skaffa ett läkarintyg och ansök hos Transportstyrelsen. Vår <a href=\"/sv/taxi-licence-guide/\">kompletta guide till taxiförarlegitimation</a> förklarar varje steg, inklusive kostnader och schemaläggningstips.</p><p>Enligt Trafikverket har teoriprovet två delprov, Säkerhet och beteende samt Lagstiftning, och båda ska vara godkända inom sex månader från ditt första godkända delprov. Proven är på svenska. Boka körprovet i god tid, eftersom antalet tider är begränsat och väntetiderna kan vara långa.</p>",
     },
     {
-      heading: "Bygg en studierutin som fungerar",
+      heading: "Planera dina studier",
       html:
         "<p>De flesta nya förare pluggar vid sidan av jobb eller familj. Korta dagliga pass slår enstaka maratonpass. Öppna Drive Test i läget <strong>Övning</strong> i tjugo minuter på bussen, gå igenom felsvaren i <strong>Granska</strong> och använd <strong>Anpassat</strong> med timer när provet närmar sig.</p><p>Varje fråga har en förklaring, så du förstår varför ett svar är rätt. När det ändå inte klickar kan du fråga <strong>AI-tutorn</strong>. <strong>Bokmärk</strong> frågor du tycker är svåra och återvänd tills de känns enkla.</p><p>Översikten följer din aktivitet, dina resultat per kategori och hela din provhistorik. Då är det lätt att se när du konsekvent klarar dig bra inom alla områden. Då kan du boka proven med självförtroende i stället för hopp.</p><p>Oavsett väg du väljer: kontrollera gällande regler och avgifter hos Trafikverket och Transportstyrelsen, håll studiepassen korta och regelbundna och gå igenom dina misstag samma dag medan de är färska.</p>",
     },
     {
-      heading: "Efter legitimationen: börja jobba",
+      heading: "Efter legitimationen",
       html:
         "<p>När du har din legitimation kan du börja jobba hos ett taxibolag. Att förstå hur lönen fungerar är en del av jobbet. Många förare får OB-tillägg för kvällar, nätter och helger, och vår kostnadsfria <a href=\"/sv/ob-taxi-sweden/\">OB-kalkylator</a> läser din vilotidsrapport så att du kan kontrollera tid och lön.</p><p>Vissa förare vill senare driva eget. Då krävs en annan kompetens, <strong>yrkeskunnande</strong>, för taxiföretagets trafiktillstånd; läs sidan om <a href=\"/sv/exams/taxi-company/\">yrkeskunnande taxi</a>.</p><p>Om svenska inte är ditt förstaspråk, läs sidan för <a href=\"/sv/for/international-drivers/\">förare med annat modersmål</a> och se hur flerspråkigt stöd och text-till-tal kan hjälpa dig. Mer läsning hittar du i <a href=\"/sv/blog/\">bloggen</a> med guider om prov och legitimationer.</p><p>Oavsett väg du väljer: kontrollera gällande regler och avgifter hos Trafikverket och Transportstyrelsen, håll studiepassen korta och regelbundna och gå igenom dina misstag samma dag medan de är färska.</p>",
     },
@@ -106,8 +106,8 @@ const sv: LandingPage = {
     { q: "Är taxiproven på engelska?", aHtml: "Nej, de är på svenska. Använd flerspråkigt stöd och text-till-tal i appen för att förbereda dig." },
   ],
   related: ["exams/taxi-licence", "for/international-drivers", "exams/taxi-company", "compare/drive-test-vs-taxi-schools"],
-  ctaTitle: "Ta ditt första steg mot taxiförarlegitimation",
-  ctaText: "Ladda ned Drive Test och börja med de gratis kategorierna redan idag.",
+  ctaTitle: "Börja förbereda dig för taxiförarlegitimation",
+  ctaText: "Ladda ned Drive Test och börja med de gratis kategorierna.",
 };
 
 export const audienceNewTaxiDrivers = { en, sv };

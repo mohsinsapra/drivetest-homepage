@@ -8,80 +8,43 @@ import { articleJsonLd, faqJsonLd, breadcrumbJsonLd } from "@/lib/seoJsonLd";
 import JsonLd from "@/components/seo/JsonLd";
 import SiteHeader from "@/components/layout/SiteHeader";
 import SiteFooter from "@/components/layout/SiteFooter";
-import DownloadDock from "@/components/layout/DownloadDock";
-import { Section } from "@/components/ui/Section";
 import Prose from "@/components/ui/Prose";
-import ArticleHero, { MetaPill } from "@/components/article/ArticleHero";
+import ArticleHero from "@/components/article/ArticleHero";
 import ArticleLayout from "@/components/article/ArticleLayout";
-import Toc, { type TocItem } from "@/components/article/Toc";
+import type { TocItem } from "@/components/article/Toc";
 import Faq from "@/components/article/Faq";
 import Callout from "@/components/article/Callout";
 import DataTable from "@/components/article/DataTable";
 import Steps from "@/components/article/Steps";
-import CtaCard, { CtaButton } from "@/components/article/CtaCard";
 import RelatedLinks, { type RelatedLink } from "@/components/article/RelatedLinks";
-import Reveal from "@/components/article/Reveal";
 import { estimateReadingMinutes } from "@/components/article/readingTime";
+import { AppCta, LastUpdated } from "@/components/landing/Blocks";
+import Chevron from "@/components/landing/Chevron";
+import { L, slugify } from "@/components/landing/labels";
 import styles from "./Article.module.css";
 
-function slugify(text: string): string {
-  return text
-    .toLowerCase()
-    .trim()
-    .replace(/[^\w\såäö-]/g, "")
-    .replace(/\s+/g, "-")
-    .slice(0, 60);
-}
-
-const T = {
+const CTA = {
   en: {
-    faq: "Frequently asked questions",
-    related: "Related",
-    sources: "Sources",
-    sourcesNote: "Figures and rules were checked against these official pages. Always confirm current details with the authority.",
-    min: "min read",
-    home: "Home",
-    blog: "Blog",
-    ctaTitle: "Practise for the exam with Drive Test",
-    ctaBody:
-      "Exam-style questions with explanations, an AI tutor, text-to-speech in several languages and progress tracking. Free to start on iOS, Android and web.",
-    ctaBtn: "Get the app",
-    exam: "Exam",
-    audience: "For",
-    guide: "Guide",
-    article: "Article",
+    title: "Practise for the exam in Drive Test",
+    body: "Here you practise with exam-style questions and explanations, with an AI tutor, text-to-speech in several languages and progress tracking. The app is available for iOS, Android and web.",
   },
   sv: {
-    faq: "Vanliga frågor",
-    related: "Relaterat",
-    sources: "Källor",
-    sourcesNote: "Siffror och regler är kontrollerade mot dessa officiella sidor. Bekräfta alltid aktuella uppgifter hos myndigheten.",
-    min: "min läsning",
-    home: "Hem",
-    blog: "Blogg",
-    ctaTitle: "Plugga inför provet med Drive Test",
-    ctaBody:
-      "Provliknande frågor med förklaringar, en AI-handledare, text-till-tal på flera språk och framstegsspårning. Gratis att börja på iOS, Android och webb.",
-    ctaBtn: "Skaffa appen",
-    exam: "Prov",
-    audience: "För",
-    guide: "Guide",
-    article: "Artikel",
+    title: "Öva inför provet i Drive Test",
+    body: "Här övar du med provliknande frågor och förklaringar, med AI-handledare, text-till-tal på flera språk och framstegsspårning. Appen finns för iOS, Android och webben.",
   },
 } as const;
 
-/** Resolve a related path (already locale-prefixed in content) to a card. */
+/** Resolve a related path (already locale-prefixed in content) to a link row. */
 function resolveRelated(lang: Lang, href: string): RelatedLink | null {
   const neutral = href.replace(/^\/sv\//, "/");
-  const t = T[lang];
   const m = neutral.match(/^\/blog\/([^/]+)\/$/);
   if (m) {
     const a = getArticle(m[1]);
-    return a ? { href, tag: a[lang].tag, label: a[lang].title } : null;
+    return a ? { href, label: a[lang].title } : null;
   }
-  if (neutral === "/taxi-licence-guide/") return { href, tag: t.guide, label: guide[lang].headerTitle };
+  if (neutral === "/taxi-licence-guide/") return { href, label: guide[lang].headerTitle };
   const l = getLanding(neutral.replace(/^\/|\/$/g, ""));
-  if (l) return { href, tag: l.kind === "exam" ? t.exam : l.kind === "audience" ? t.audience : t.guide, label: l[lang].title };
+  if (l) return { href, label: l[lang].title };
   return null;
 }
 
@@ -89,128 +52,117 @@ export default function ArticleScreen({ lang, slug }: { lang: Lang; slug: string
   const mod = getArticle(slug);
   if (!mod) throw new Error(`Unknown article: ${slug}`);
   const a = mod[lang];
-  const t = T[lang];
+  const t = L[lang];
   const b = blog[lang];
+  const c = CTA[lang];
   const path = `/blog/${slug}/`;
 
   const toc: TocItem[] = a.sections
     .filter((s) => s.heading)
     .map((s) => ({ id: slugify(s.heading as string), label: s.heading as string }));
+  toc.push({ id: "faq", label: t.faq });
+  if (a.sources.length > 0) toc.push({ id: "sources", label: t.sources });
 
-  const readingMinutes = estimateReadingMinutes([
-    a.intro,
-    a.lede,
-    ...a.sections.map((s) => s.html ?? ""),
-    ...a.faq.map((f) => f.aHtml),
-  ]);
-
+  const readingMinutes = estimateReadingMinutes([a.intro, a.lede, ...a.sections.map((s) => s.html ?? ""), ...a.faq.map((f) => f.aHtml)]);
   const related = a.related.map((h) => resolveRelated(lang, h)).filter((r): r is RelatedLink => !!r);
 
   return (
     <>
       <JsonLd
         data={[
-          articleJsonLd(lang, {
-            path,
-            headline: a.title,
-            description: a.metaDescription,
-            dateModified: a.lastUpdated,
-            image: a.cover,
-          }),
+          articleJsonLd(lang, { path, headline: a.title, description: a.metaDescription, dateModified: a.lastUpdated, image: a.cover }),
           faqJsonLd(lang, a.faq),
           breadcrumbJsonLd(lang, [
-            { name: t.home, path: "/" },
+            { name: lang === "sv" ? "Hem" : "Home", path: "/" },
             { name: t.blog, path: "/blog/" },
             { name: a.title, path },
           ]),
         ]}
       />
       <SiteHeader lang={lang} currentPath={path} />
-      <main>
+      <main id="main">
         <ArticleHero
-          kicker={a.eyebrow}
+          lang={lang}
+          crumbs={[
+            { label: t.home, href: localePath(lang, "/") },
+            { label: t.blog, href: localePath(lang, "/blog/") },
+            { label: a.title },
+          ]}
           title={a.title}
           lead={<span dangerouslySetInnerHTML={{ __html: a.lede }} />}
           meta={
-            <>
-              <MetaPill>
-                {readingMinutes} {t.min}
-              </MetaPill>
-              <MetaPill>{a.lastUpdatedLabel}</MetaPill>
-            </>
+            <span>
+              {readingMinutes} {t.minRead}
+            </span>
           }
+          image={{ src: a.cover, alt: a.title }}
+          toc={toc}
+          tocTitle={t.onThisPage}
         />
 
-        <Section>
-          <ArticleLayout sidebar={<Toc items={toc} />}>
-            <div className={styles.section}>
-              <p className={styles.introLead} dangerouslySetInnerHTML={{ __html: a.intro }} />
+        <ArticleLayout>
+          <div className={styles.main}>
+            <p className={styles.intro} dangerouslySetInnerHTML={{ __html: a.intro }} />
 
-              {a.sections.map((s, i) => (
-                <Reveal key={i} as="div">
-                  {s.heading && <h2 id={slugify(s.heading)}>{s.heading}</h2>}
-                  {s.image && (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img className={styles.image} src={s.image.src} alt={s.image.alt} loading="lazy" width={600} height={400} />
-                  )}
-                  {s.html && <Prose html={s.html} />}
-                  {s.table && <DataTable headers={s.table.headers} rows={s.table.rows} />}
-                  {s.list &&
-                    (s.list.ordered ? (
-                      <Steps items={s.list.items} />
-                    ) : (
-                      <Prose html={`<ul>${s.list.items.map((it) => `<li>${it}</li>`).join("")}</ul>`} />
-                    ))}
-                  {s.card && (
-                    <div className={styles.exampleCard}>
-                      <h3>{s.card.title}</h3>
-                      <Prose html={s.card.html} />
-                    </div>
-                  )}
-                  {s.alert && (
-                    <Callout
-                      tone="warn"
-                      title={s.alert.title}
-                      html={s.alert.html}
-                      listHtml={s.alert.list ? `<ul>${s.alert.list.map((it) => `<li>${it}</li>`).join("")}</ul>` : undefined}
-                    />
-                  )}
-                </Reveal>
-              ))}
+            {a.sections.map((s, i) => (
+              <div key={i}>
+                {s.heading && <h2 id={slugify(s.heading)}>{s.heading}</h2>}
+                {s.image && (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img className={styles.image} src={s.image.src} alt={s.image.alt} loading="lazy" width={600} height={400} />
+                )}
+                {s.html && <Prose html={s.html} />}
+                {s.table && <DataTable headers={s.table.headers} rows={s.table.rows} />}
+                {s.list &&
+                  (s.list.ordered ? (
+                    <Steps items={s.list.items} />
+                  ) : (
+                    <Prose html={`<ul>${s.list.items.map((it) => `<li>${it}</li>`).join("")}</ul>`} />
+                  ))}
+                {s.card && (
+                  <div className={styles.exampleCard}>
+                    <h3>{s.card.title}</h3>
+                    <Prose html={s.card.html} />
+                  </div>
+                )}
+                {s.alert && (
+                  <Callout
+                    tone="warn"
+                    title={s.alert.title}
+                    html={s.alert.html}
+                    listHtml={s.alert.list ? `<ul>${s.alert.list.map((it) => `<li>${it}</li>`).join("")}</ul>` : undefined}
+                  />
+                )}
+              </div>
+            ))}
 
-              <h2>{t.faq}</h2>
-              <Faq items={a.faq} />
+            <h2 id="faq">{t.faq}</h2>
+            <Faq items={a.faq} />
 
-              {a.sources.length > 0 && (
-                <>
-                  <h2 id="sources">{t.sources}</h2>
-                  <p className={styles.sourcesNote}>{t.sourcesNote}</p>
-                  <ul className={styles.sources}>
-                    {a.sources.map((s) => (
-                      <li key={s.url}>
-                        <a href={s.url} target="_blank" rel="noopener noreferrer">
-                          {s.label}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </>
-              )}
-            </div>
+            {a.sources.length > 0 && (
+              <>
+                <h2 id="sources">{t.sources}</h2>
+                <p className={styles.sourcesNote}>{t.sourcesNote}</p>
+                <ul className={styles.sources}>
+                  {a.sources.map((s) => (
+                    <li key={s.url}>
+                      <a href={s.url} target="_blank" rel="noopener noreferrer">
+                        <span>{s.label}</span>
+                        <Chevron />
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </>
+            )}
 
-            <CtaCard title={t.ctaTitle} body={t.ctaBody}>
-              <CtaButton href={`${localePath(lang, "/")}#download`}>{t.ctaBtn}</CtaButton>
-            </CtaCard>
-
-            <RelatedLinks
-              title={t.related}
-              items={[{ href: localePath(lang, "/blog/"), tag: t.blog, label: b.title }, ...related]}
-            />
-          </ArticleLayout>
-        </Section>
+            <AppCta lang={lang} title={c.title} body={c.body} />
+            <RelatedLinks title={t.related} items={[{ href: localePath(lang, "/blog/"), label: b.title }, ...related]} />
+            <LastUpdated lang={lang} iso={a.lastUpdated} />
+          </div>
+        </ArticleLayout>
       </main>
       <SiteFooter lang={lang} />
-      <DownloadDock />
     </>
   );
 }

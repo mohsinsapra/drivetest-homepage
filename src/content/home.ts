@@ -293,7 +293,7 @@ export const faq = {
   en: [
     { q: "Can I use my account on multiple devices?", a: "Yes. Sign in with the same Google or Apple account on any device and your progress, subscriptions, and settings will sync automatically." },
     { q: "I can't log in — what should I do?", a: "Make sure you're using the same sign-in method (Google or Apple) you used when you first registered. If the problem persists, try signing out of your Google/Apple account on the device and signing back in, then retry. If you're still stuck, <a href=\"mailto:support@drivetest.se\">email us</a> with your registered email address." },
-    { q: "How do I delete my account and data?", a: "You can request full account and data deletion from the app under <strong>Settings → Delete Account</strong>, or visit our <a href=\"delete-account.html\">Delete Account page</a> for step-by-step instructions." },
+    { q: "How do I delete my account and data?", a: "You can request full account and data deletion from the app under <strong>Settings → Delete Account</strong>, or visit our <a href=\"/delete-account/\">Delete Account page</a> for step-by-step instructions." },
     { q: "How do I cancel my subscription?", a: "Subscriptions are managed through the App Store (iOS) or Google Play (Android). On iPhone: go to <strong>Settings → [your name] → Subscriptions</strong>, select Drive Test, and tap <em>Cancel Subscription</em>. On Android: open Google Play → tap your profile → <em>Payments &amp; subscriptions → Subscriptions</em>." },
     { q: "I was charged but can't access premium content.", a: "Go to <strong>Settings → Restore Purchases</strong> inside the app. This re-validates your active subscription with the App Store or Google Play. If the issue continues after restoring, <a href=\"mailto:support@drivetest.se\">contact us</a> and include your order number or a screenshot of your receipt." },
     { q: "Can I get a refund?", a: "Refunds are handled by Apple or Google depending on where you purchased. For App Store purchases, visit <a href=\"https://reportaproblem.apple.com\" target=\"_blank\" rel=\"noopener\">reportaproblem.apple.com</a>. For Google Play, open the Play Store → order history → tap the order → <em>Request a refund</em>. We're happy to assist if you have trouble." },
@@ -305,7 +305,7 @@ export const faq = {
   sv: [
     { q: "Kan jag använda mitt konto på flera enheter?", a: "Ja. Logga in med samma Google- eller Apple-konto på vilken enhet som helst och dina framsteg, prenumerationer och inställningar synkroniseras automatiskt." },
     { q: "Jag kan inte logga in — vad ska jag göra?", a: "Kontrollera att du använder samma inloggningsmetod (Google eller Apple) som du använde vid registreringen. Om problemet kvarstår, prova att logga ut från ditt Google/Apple-konto på enheten och logga in igen. Fortfarande problem? <a href=\"mailto:support@drivetest.se\">Maila oss</a> med din registrerade e-postadress." },
-    { q: "Hur raderar jag mitt konto och mina uppgifter?", a: "Du kan begära fullständig radering av konto och data i appen under <strong>Inställningar → Radera konto</strong>, eller besök vår <a href=\"delete-account.html\">sida för kontoborttagning</a> för steg-för-steg-instruktioner." },
+    { q: "Hur raderar jag mitt konto och mina uppgifter?", a: "Du kan begära fullständig radering av konto och data i appen under <strong>Inställningar → Radera konto</strong>, eller besök vår <a href=\"/sv/delete-account/\">sida för kontoborttagning</a> för steg-för-steg-instruktioner." },
     { q: "Hur avslutar jag min prenumeration?", a: "Prenumerationer hanteras via App Store (iOS) eller Google Play (Android). På iPhone: gå till <strong>Inställningar → [ditt namn] → Prenumerationer</strong>, välj Drive Test och tryck på <em>Avsluta prenumeration</em>. På Android: öppna Google Play → tryck på din profil → <em>Betalningar och prenumerationer → Prenumerationer</em>." },
     { q: "Jag har blivit debiterad men kan inte komma åt premiuminnehåll.", a: "Gå till <strong>Inställningar → Återställ köp</strong> i appen. Detta validerar om din aktiva prenumeration med App Store eller Google Play. Om problemet kvarstår, <a href=\"mailto:support@drivetest.se\">kontakta oss</a> och inkludera ditt ordernummer eller en skärmdump på kvittot." },
     { q: "Kan jag få en återbetalning?", a: "Återbetalningar hanteras av Apple eller Google. För App Store-köp, besök <a href=\"https://reportaproblem.apple.com\" target=\"_blank\" rel=\"noopener\">reportaproblem.apple.com</a>. För Google Play: öppna Play Store → orderhistorik → tryck på ordern → <em>Begär återbetalning</em>. Vi hjälper gärna till om du har problem." },
@@ -397,5 +397,145 @@ export const homeExtra = {
     chatQ: "Varför lämnar jag företräde här?",
     chatA: "Fotgängare som visar avsikt att gå över har företräde vid ett övergångsställe.",
     langs: ["Svenska", "Engelska", "Arabiska", "Somaliska"],
+  },
+};
+
+// Copy for the Trafikverket-style home page (plain-language public-service tone).
+export const homeTv = {
+  en: {
+    h1: "Drive Test: Pass Taxi, Company & Transport Exams",
+    heroText:
+      "Here you practise for the theory tests for Taxiförarlegitimation and Yrkeskunnande, for B-körkort and for the Medborgarskapsprov. You get official-style questions, explanations from an AI tutor and an overview of your progress.",
+    heroBtn: "Get the app",
+    heroAlt: "A taxi office on a street in Stockholm",
+    widgets: [
+      {
+        icon: "exam",
+        title: "Exams",
+        href: "/exams/taxi-licence/",
+        text: "Choose the test you want to practise for.",
+        links: [
+          { label: "Taxi licence", href: "/exams/taxi-licence/" },
+          { label: "Taxi company", href: "/exams/taxi-company/" },
+          { label: "Goods & bus", href: "/exams/goods-and-bus/" },
+          { label: "Driving licence", href: "/exams/driving-licence/" },
+          { label: "Citizenship test", href: "/exams/citizenship-test/" },
+        ],
+      },
+      {
+        icon: "licence",
+        title: "Taxi licence",
+        href: "/taxi-licence-guide/",
+        text: "Read how you get a taxi driver licence, what it costs and how you pass the tests.",
+        links: [
+          { label: "Licence guide", href: "/taxi-licence-guide/" },
+          { label: "Costs", href: "/blog/taxi-licence-cost-sweden/" },
+          { label: "Medical certificate", href: "/blog/taxi-licence-medical-requirements/" },
+          { label: "How to pass", href: "/blog/how-to-pass-taxi-licence-test/" },
+        ],
+      },
+      {
+        icon: "company",
+        title: "For drivers & companies",
+        href: "/for/new-taxi-drivers/",
+        text: "Information for you who are new to the profession, drive for a company or train drivers.",
+        links: [
+          { label: "New taxi drivers", href: "/for/new-taxi-drivers/" },
+          { label: "International drivers", href: "/for/international-drivers/" },
+          { label: "Taxi companies", href: "/for/taxi-companies/" },
+          { label: "Driving schools", href: "/for/driving-schools/" },
+        ],
+      },
+    ],
+    popularTitle: "Popular right now",
+    guidesTitle: "Guides & news",
+    allArticles: "All articles",
+    appTitle: "Practise in the app",
+    appText: "Drive Test is available on iOS, Android and as a web app. You can start for free.",
+    appBullets: [
+      "An AI tutor explains the answer when you get stuck.",
+      "Three study modes: Practice, Custom and Review.",
+      "Questions in several languages, with text-to-speech.",
+      "Analytics show your progress for each category.",
+      "More than 1000 official-style questions.",
+    ],
+    appShotAlt: "Drive Test app: practise real exam-style questions",
+    toolsTitle: "Free tools",
+    toolBadge: "Free tool",
+    toolTitle: "OB Calculator",
+    toolText:
+      "Take a photo of your Vilotidsrapport and get your OB1 and OB2 hours and pay. The tool reads the handwriting, you check the figures and the calculation is exact.",
+    toolBtn: "Open OB Calculator",
+    toolImgAlt: "A sample Vilotidsrapport (rest-time slip)",
+    faqTitle: "Frequently asked questions",
+    updatedLabel: "Last updated",
+  },
+  sv: {
+    h1: "Drive Test: Klara Taxi-, Företags- & Transportprov",
+    heroText:
+      "Här övar du inför teoriproven för Taxiförarlegitimation och Yrkeskunnande, för B-körkort och för Medborgarskapsprovet. Du får frågor i officiell stil, förklaringar från en AI-tutor och en överblick över dina framsteg.",
+    heroBtn: "Skaffa appen",
+    heroAlt: "Ett taxikontor vid en gata i Stockholm",
+    widgets: [
+      {
+        icon: "exam",
+        title: "Prov",
+        href: "/exams/taxi-licence/",
+        text: "Välj vilket prov du vill öva inför.",
+        links: [
+          { label: "Taxiförarlegitimation", href: "/exams/taxi-licence/" },
+          { label: "Taxiföretag", href: "/exams/taxi-company/" },
+          { label: "Gods & buss", href: "/exams/goods-and-bus/" },
+          { label: "B-körkort", href: "/exams/driving-licence/" },
+          { label: "Medborgarskapsprov", href: "/exams/citizenship-test/" },
+        ],
+      },
+      {
+        icon: "licence",
+        title: "Taxiförarlegitimation",
+        href: "/taxi-licence-guide/",
+        text: "Läs hur du får taxiförarlegitimation, vad det kostar och hur du klarar proven.",
+        links: [
+          { label: "Guide", href: "/taxi-licence-guide/" },
+          { label: "Kostnader", href: "/blog/taxi-licence-cost-sweden/" },
+          { label: "Läkarintyg", href: "/blog/taxi-licence-medical-requirements/" },
+          { label: "Klara provet", href: "/blog/how-to-pass-taxi-licence-test/" },
+        ],
+      },
+      {
+        icon: "company",
+        title: "För förare och företag",
+        href: "/for/new-taxi-drivers/",
+        text: "Information till dig som är ny i yrket, kör för ett företag eller utbildar förare.",
+        links: [
+          { label: "Nya taxiförare", href: "/for/new-taxi-drivers/" },
+          { label: "Annat modersmål", href: "/for/international-drivers/" },
+          { label: "Taxiföretag", href: "/for/taxi-companies/" },
+          { label: "Trafikskolor", href: "/for/driving-schools/" },
+        ],
+      },
+    ],
+    popularTitle: "Aktuellt just nu",
+    guidesTitle: "Guider och nyheter",
+    allArticles: "Alla artiklar",
+    appTitle: "Öva i appen",
+    appText: "Drive Test finns för iOS, Android och som webbapp. Du kan börja gratis.",
+    appBullets: [
+      "En AI-tutor förklarar svaret när du fastnar.",
+      "Tre studielägen: Övning, Anpassat och Granska.",
+      "Frågor på flera språk, med text-till-tal.",
+      "Analys visar dina framsteg i varje kategori.",
+      "Mer än 1000 frågor i officiell stil.",
+    ],
+    appShotAlt: "Drive Test-appen: öva på frågor i provstil",
+    toolsTitle: "Kostnadsfria verktyg",
+    toolBadge: "Gratis verktyg",
+    toolTitle: "OB-kalkylator",
+    toolText:
+      "Ta ett foto av din vilotidsrapport och få dina OB1- och OB2-timmar och ersättning. Verktyget läser handstilen, du kontrollerar siffrorna och beräkningen är exakt.",
+    toolBtn: "Öppna OB-kalkylatorn",
+    toolImgAlt: "Exempel på en vilotidsrapport",
+    faqTitle: "Vanliga frågor",
+    updatedLabel: "Senast uppdaterad",
   },
 };

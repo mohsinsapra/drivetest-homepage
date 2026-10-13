@@ -10,7 +10,7 @@ const en: LandingPage = {
   title: "Exam preparation for taxi companies",
   titleAccent: "and the drivers you hire",
   lede:
-    "Every new driver needs a taxiförarlegitimation, and every taxi company needs someone with yrkeskunnande. Drive Test gives your drivers and owners an exam-prep app they can use on their own phones, in their own time.",
+    "Every new driver needs a taxiförarlegitimation, and every taxi company needs someone with yrkeskunnande. With Drive Test, your drivers and owners can prepare for the exams on their own phones, when it suits them.",
   stats: [
     { value: "2", label: "Paths covered: driver licence and yrkeskunnande" },
     { value: "3", label: "Platforms: iOS, Android and web" },
@@ -28,7 +28,7 @@ const en: LandingPage = {
   ],
   sections: [
     {
-      heading: "Helping new drivers get licensed",
+      heading: "Help new drivers get their licence",
       html:
         "<p>A <strong>taxiförarlegitimation</strong> is a personal licence issued by Transportstyrelsen, and the exams are held at Trafikverket in Swedish. According to Trafikverket, the theory test has two parts, Säkerhet och beteende and Lagstiftning, to be passed within six months of the first passed part. A recruit who prepares well saves repeat fees and gets on the road sooner.</p><p>Point your new drivers to Drive Test as a practical, low-friction way to study. They get exam-style questions, explanations and an <strong>AI tutor</strong>, and can <strong>bookmark</strong> what they find tricky. The <a href=\"/exams/taxi-licence/\">taxi licence test page</a> explains the exam, and the <a href=\"/taxi-licence-guide/\">licence guide</a> covers the full application route including costs.</p><p>Drive Test is an individual study app, so each driver has their own account and plan. We do not offer company dashboards or group management, and each driver confirms the available categories and prices in the app.</p>",
     },
@@ -38,7 +38,7 @@ const en: LandingPage = {
         "<p>A company holding a taxi traffic permit must name a <strong>trafikansvarig</strong>, who must show professional competence. According to Transportstyrelsen, this is shown by passing the exam in yrkeskunnande, which has four sub-tests: legal rules, company and financial management, technical standards and road safety, and an in-depth knowledge test. All must be passed within six months of the first.</p><p>Owners who are used to running operations, not sitting exams, benefit from structured practice. Drive Test lists Yrkeskunnande among its category areas, with explanations that help make the complex theory behind the taxi company licence clearer. Read more on our <a href=\"/exams/taxi-company/\">yrkeskunnande taxi</a> page, and check the app for the current categories included.</p><p>Companies hiring across borders should also note that exemptions and recognition of foreign qualifications are decided by Transportstyrelsen, so check there for your case.</p>",
     },
     {
-      heading: "A useful tool for your drivers' daily life",
+      heading: "Practice in the driver's daily work",
       html:
         "<p>Beyond exams, Drive Test offers a free <a href=\"/ob-taxi-sweden/\">OB calculator</a> where drivers can photograph their Vilotidsrapport and see their OB1 and OB2 hours. AI reads the handwriting, the driver verifies the numbers, and the maths is exact. It runs in the browser, with no install and no sign-up.</p><p>This helps drivers check their pay and helps your company reduce misunderstandings around OB supplements. It is a tool for the driver's own use and does not replace the payroll rules in your collective agreement.</p><p>If you want to talk about how Drive Test can fit your onboarding of new drivers, you can reach us through the <a href=\"/blog/\">blog</a> and support pages. For the comparison with classroom courses, read <a href=\"/compare/drive-test-vs-taxi-schools/\">Drive Test vs taxi schools</a>.</p>",
     },
@@ -51,8 +51,8 @@ const en: LandingPage = {
     { q: "Is there a tool for checking OB pay?", aHtml: "Yes, the free <a href=\"/ob-taxi-sweden/\">OB calculator</a> reads a Vilotidsrapport photo and calculates OB1 and OB2 hours." },
   ],
   related: ["exams/taxi-company", "exams/taxi-licence", "for/new-taxi-drivers", "compare/drive-test-vs-taxi-schools"],
-  ctaTitle: "Get your drivers exam-ready",
-  ctaText: "Share Drive Test with new recruits and start with the free categories.",
+  ctaTitle: "Help your drivers prepare for the exams",
+  ctaText: "Share Drive Test with new drivers. They can start with the free categories.",
 };
 
 const sv: LandingPage = {
@@ -65,7 +65,7 @@ const sv: LandingPage = {
   title: "Provförberedelse för taxiföretag",
   titleAccent: "och förarna du anställer",
   lede:
-    "Varje ny förare behöver en taxiförarlegitimation, och varje taxiföretag behöver någon med yrkeskunnande. Drive Test ger dina förare och ägare en provapp de kan använda i sin egen mobil, i sin egen takt.",
+    "Varje ny förare behöver en taxiförarlegitimation, och varje taxiföretag behöver någon med yrkeskunnande. Med Drive Test kan dina förare och ägare förbereda sig inför proven i sin egen mobil, när det passar dem.",
   stats: [
     { value: "2", label: "Vägar som täcks: förarlegitimation och yrkeskunnande" },
     { value: "3", label: "Plattformar: iOS, Android och webben" },
@@ -93,7 +93,7 @@ const sv: LandingPage = {
         "<p>Ett företag med trafiktillstånd för taxi måste utse en <strong>trafikansvarig</strong> som ska visa yrkeskunnande. Enligt Transportstyrelsen visas det genom att klara provet i yrkeskunnande, som har fyra delprov: rättsregler, företagsledning och ekonomi, tekniska normer och trafiksäkerhet samt ett fördjupande kunskapsprov. Alla ska vara godkända inom sex månader från det första.</p><p>Ägare som är vana vid att driva verksamhet, inte sitta prov, har nytta av strukturerad övning. Drive Test listar Yrkeskunnande bland sina kategoriområden, med förklaringar som gör den komplexa teorin bakom taxiföretagslegitimationen tydligare. Läs mer på vår sida om <a href=\"/sv/exams/taxi-company/\">yrkeskunnande taxi</a> och se i appen vilka kategorier som ingår just nu.</p><p>Företag som rekryterar över gränserna bör också veta att undantag och erkännande av utländska kvalifikationer beslutas av Transportstyrelsen, så kontrollera där för ditt fall.</p>",
     },
     {
-      heading: "Ett användbart verktyg i förarens vardag",
+      heading: "Övning i förarens vardag",
       html:
         "<p>Utöver proven erbjuder Drive Test en gratis <a href=\"/sv/ob-taxi-sweden/\">OB-kalkylator</a> där förare kan fotografera sin vilotidsrapport och se sina OB1- och OB2-timmar. AI läser handstilen, föraren kontrollerar siffrorna och räkningen blir exakt. Den fungerar i webbläsaren, utan installation och utan registrering.</p><p>Det hjälper förare att kontrollera sin lön och hjälper ditt företag att minska missförstånd kring OB-tillägg. Det är ett verktyg för förarens eget bruk och ersätter inte lönereglerna i ert kollektivavtal.</p><p>Vill du prata om hur Drive Test kan passa i introduktionen av nya förare når du oss via <a href=\"/sv/blog/\">bloggen</a> och supportsidorna. Jämförelsen med klassrumskurser hittar du i <a href=\"/sv/compare/drive-test-vs-taxi-schools/\">Drive Test eller taxiskola</a>.</p><p>Oavsett väg du väljer: kontrollera gällande regler och avgifter hos Trafikverket och Transportstyrelsen, håll studiepassen korta och regelbundna och gå igenom dina misstag samma dag medan de är färska.</p>",
     },
@@ -106,8 +106,8 @@ const sv: LandingPage = {
     { q: "Finns det ett verktyg för att kontrollera OB-lön?", aHtml: "Ja, den gratis <a href=\"/sv/ob-taxi-sweden/\">OB-kalkylatorn</a> läser ett foto av en vilotidsrapport och räknar ut OB1- och OB2-timmar." },
   ],
   related: ["exams/taxi-company", "exams/taxi-licence", "for/new-taxi-drivers", "compare/drive-test-vs-taxi-schools"],
-  ctaTitle: "Gör dina förare provklara",
-  ctaText: "Dela Drive Test med nya rekryter och börja med de gratis kategorierna.",
+  ctaTitle: "Hjälp dina förare att förbereda sig inför proven",
+  ctaText: "Dela Drive Test med nya förare. De kan börja med de gratis kategorierna.",
 };
 
 export const audienceTaxiCompanies = { en, sv };

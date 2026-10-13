@@ -18,9 +18,9 @@ const en: ArticleContent = {
   lastUpdated: "2026-10-13",
   lastUpdatedLabel: "Updated 13 October 2026",
   title: "Taxi Exam for Non-Native Speakers in Sweden",
-  lede: "Taking the <strong>taxi exam as a non-native speaker</strong> in Sweden means preparing for a test that is written in Swedish. Here is what the rules actually say, what support you can ask for, and how to study the terminology in a language you understand.",
+  lede: "Taking the <strong>taxi exam as a non-native speaker</strong> in Sweden means preparing for a test that is written in Swedish. This article explains what the rules say, what support you can ask for, and how to study the terminology in a language you understand.",
   intro:
-    "Many people who want a <strong>taxiförarlegitimation</strong> in Sweden did not grow up speaking Swedish. A very common question is: <em>can I take the taxi exam in English or Arabic?</em> We checked the official sources so you do not have to guess. In short, the regulations say the taxi tests are carried out in Swedish, which makes preparation strategy the thing to get right. This article is honest about what we could and could not confirm.",
+    "Many people who want a <strong>taxiförarlegitimation</strong> in Sweden did not grow up speaking Swedish. A very common question is: <em>can I take the taxi exam in English or Arabic?</em> We have checked the official sources. In short, the regulations say the taxi tests are carried out in Swedish, which makes preparation strategy the thing to get right. The article states what we could and could not confirm.",
   excerpt:
     "Which language the Swedish taxi tests are in, what support exists, and how to prepare if Swedish is not your first language.",
   cover: "/assets/blog/ob-taxi-driving.jpg",
@@ -111,9 +111,9 @@ const sv: ArticleContent = {
   lastUpdated: "2026-10-13",
   lastUpdatedLabel: "Uppdaterad 13 oktober 2026",
   title: "Taxiprov på engelska, arabiska och andra språk",
-  lede: "Kan man göra <strong>taxiprovet på engelska</strong> eller <strong>arabiska</strong>? Här går vi igenom vad reglerna faktiskt säger, vilket stöd du kan ansöka om och hur du kan plugga terminologin på ett språk du förstår.",
+  lede: "Kan man göra <strong>taxiprovet på engelska</strong> eller <strong>arabiska</strong>? Här går vi igenom vad reglerna säger, vilket stöd du kan ansöka om och hur du kan plugga terminologin på ett språk du förstår.",
   intro:
-    "Många som vill ha <strong>taxiförarlegitimation</strong> i Sverige har inte svenska som modersmål. En vanlig fråga är därför: <em>kan jag göra taxiprovet på engelska eller arabiska?</em> Vi har kollat de officiella källorna så att du slipper gissa. Kort sagt anger föreskrifterna att taxiproven genomförs på svenska, vilket gör att det är förberedelsen som avgör. Artikeln är tydlig med vad vi kunde och inte kunde bekräfta.",
+    "Många som vill ha <strong>taxiförarlegitimation</strong> i Sverige har inte svenska som modersmål. En vanlig fråga är därför: <em>kan jag göra taxiprovet på engelska eller arabiska?</em> Vi har kontrollerat de officiella källorna. Kort sagt anger föreskrifterna att taxiproven genomförs på svenska, vilket gör att det är förberedelsen som avgör. Artikeln anger vad vi kunde och inte kunde bekräfta.",
   excerpt:
     "Vilket språk de svenska taxiproven genomförs på, vilket stöd som finns och hur du förbereder dig om svenska inte är ditt första språk.",
   cover: "/assets/blog/ob-taxi-driving.jpg",

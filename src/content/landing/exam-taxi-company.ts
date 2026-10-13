@@ -10,7 +10,7 @@ const en: LandingPage = {
   title: "Yrkeskunnande taxi exam preparation",
   titleAccent: "for your traffic permit",
   lede:
-    "Planning to start or run a taxi company in Sweden? The yrkeskunnande taxi exam proves your professional competence for a taxi traffic permit (trafiktillstånd). Drive Test helps you prepare with exam-style practice, clear explanations and progress tracking.",
+    "Do you want to start or run a taxi company in Sweden? The yrkeskunnande taxi exam shows your professional competence for a taxi traffic permit (trafiktillstånd). In Drive Test you prepare with exam-style questions, explanations and progress tracking.",
   stats: [
     { value: "4", label: "Sub-tests in the official yrkeskunnande exam" },
     { value: "3", label: "Study modes to match how you learn" },
@@ -38,7 +38,7 @@ const en: LandingPage = {
         "<p>People often mix up the two. The <strong>taxiförarlegitimation</strong> is the personal licence a driver needs to drive a taxi, while <strong>yrkeskunnande</strong> is about running the business behind the cars. Many people who start as drivers later want their own company, which is why the two paths often follow each other.</p><p>If you are still on the driver side, start with our <a href=\"/exams/taxi-licence/\">taxi licence test page</a> or the full <a href=\"/taxi-licence-guide/\">taxi licence guide</a>. If you already drive and work with OB pay, our free <a href=\"/ob-taxi-sweden/\">OB calculator</a> may also save you time.</p><p>Drive Test covers both: Taxiförarlegitimation and Yrkeskunnande are listed as category areas in the app, so you can continue in the same place when your goals change. Confirm which categories are included in your plan in the app before purchase.</p>",
     },
     {
-      heading: "How to study for yrkeskunnande with Drive Test",
+      heading: "Study for yrkeskunnande in Drive Test",
       html:
         "<p>Start with <strong>Practice</strong> mode to build understanding, then use <strong>Custom</strong> mode to simulate longer sessions with a timer. <strong>Review</strong> mode brings back the questions you missed, and <strong>bookmarks</strong> keep the tricky ones close.</p><p>Management and finance questions are easier to remember when you understand the logic behind them, so every question has an explanation, and the <strong>AI tutor</strong> can reword it until it makes sense. Text-to-speech and multi-language support help if Swedish is not your first language, although the exam itself is in Swedish.</p><p>Use the analytics to plan your six-month window. If one area stays weak, spend your next sessions there rather than repeating what you already know. For background reading and practical tips, browse the <a href=\"/blog/\">Drive Test blog</a>.</p>",
     },
@@ -51,7 +51,7 @@ const en: LandingPage = {
     { q: "Is the exam in English?", aHtml: "No, the exams are held in Swedish. Drive Test offers multi-language support and text-to-speech to help you prepare." },
   ],
   related: ["exams/taxi-licence", "for/taxi-companies", "exams/goods-and-bus", "compare/drive-test-vs-taxi-schools"],
-  ctaTitle: "Prepare for yrkeskunnande with Drive Test",
+  ctaTitle: "Prepare for yrkeskunnande",
   ctaText: "Try the free categories on iOS, Android or the web app and build a study plan around the six-month window.",
 };
 
@@ -65,7 +65,7 @@ const sv: LandingPage = {
   title: "Yrkeskunnande taxi: plugga inför provet",
   titleAccent: "för ditt trafiktillstånd",
   lede:
-    "Ska du starta eller driva taxiföretag? Provet i yrkeskunnande taxi visar din yrkesmässiga kompetens för ett trafiktillstånd för taxi. Drive Test hjälper dig förbereda dig med provliknande övning, tydliga förklaringar och framstegsuppföljning.",
+    "Ska du starta eller driva taxiföretag? Provet i yrkeskunnande taxi visar din yrkesmässiga kompetens för ett trafiktillstånd för taxi. I Drive Test förbereder du dig med provliknande frågor, förklaringar och uppföljning av framsteg.",
   stats: [
     { value: "4", label: "Delprov i det officiella provet i yrkeskunnande" },
     { value: "3", label: "Studielägen som passar hur du lär dig" },
@@ -93,7 +93,7 @@ const sv: LandingPage = {
         "<p>De två förväxlas ofta. <strong>Taxiförarlegitimationen</strong> är den personliga legitimation en förare behöver för att köra taxi, medan <strong>yrkeskunnande</strong> handlar om att driva verksamheten bakom bilarna. Många som börjar som förare vill senare ha ett eget företag, och därför följer vägarna ofta på varandra.</p><p>Är du fortfarande på förarsidan, börja med vår sida om <a href=\"/sv/exams/taxi-licence/\">taxiförarlegitimation prov</a> eller hela <a href=\"/sv/taxi-licence-guide/\">guiden till taxiförarlegitimation</a>. Kör du redan och jobbar med OB-tillägg kan vår kostnadsfria <a href=\"/sv/ob-taxi-sweden/\">OB-kalkylator</a> spara tid.</p><p>Drive Test täcker båda: Taxiförarlegitimation och Yrkeskunnande finns som kategoriområden i appen, så du kan fortsätta på samma ställe när dina mål ändras. Bekräfta vilka kategorier som ingår i din plan i appen före köp.</p><p>Oavsett väg du väljer: kontrollera gällande regler och avgifter hos Trafikverket och Transportstyrelsen, håll studiepassen korta och regelbundna och gå igenom dina misstag samma dag medan de är färska.</p>",
     },
     {
-      heading: "Så pluggar du yrkeskunnande med Drive Test",
+      heading: "Studera inför yrkeskunnande i Drive Test",
       html:
         "<p>Börja med <strong>Övning</strong> för att bygga förståelse och använd sedan <strong>Anpassat</strong> för att simulera längre pass med timer. <strong>Granska</strong> tar tillbaka de frågor du missade, och <strong>bokmärken</strong> håller de svåra nära till hands.</p><p>Frågor om ledning och ekonomi är lättare att minnas när du förstår logiken bakom dem, därför har varje fråga en förklaring och <strong>AI-tutorn</strong> kan formulera om den tills den blir begriplig. Text-till-tal och flerspråkigt stöd hjälper dig om svenska inte är ditt förstaspråk, även om själva provet är på svenska.</p><p>Använd statistiken för att planera dina sex månader. Om ett område fortsätter vara svagt, lägg nästa pass där i stället för att repetera sådant du redan kan. För bakgrund och praktiska tips, läs <a href=\"/sv/blog/\">Drive Test-bloggen</a>.</p><p>Oavsett väg du väljer: kontrollera gällande regler och avgifter hos Trafikverket och Transportstyrelsen, håll studiepassen korta och regelbundna och gå igenom dina misstag samma dag medan de är färska.</p>",
     },
@@ -106,7 +106,7 @@ const sv: LandingPage = {
     { q: "Går provet att göra på engelska?", aHtml: "Nej, proven hålls på svenska. Drive Test har flerspråkigt stöd och text-till-tal som hjälper dig att förbereda dig." },
   ],
   related: ["exams/taxi-licence", "for/taxi-companies", "exams/goods-and-bus", "compare/drive-test-vs-taxi-schools"],
-  ctaTitle: "Plugga yrkeskunnande med Drive Test",
+  ctaTitle: "Förbered dig inför yrkeskunnande",
   ctaText: "Prova de gratis kategorierna på iOS, Android eller webben och bygg en studieplan runt de sex månaderna.",
 };
 

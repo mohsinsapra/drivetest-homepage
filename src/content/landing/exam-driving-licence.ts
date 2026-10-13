@@ -8,9 +8,9 @@ const en: LandingPage = {
     "Practise for the Swedish B-licence theory test (teoriprov) with exam-style questions, explanations, text-to-speech and progress tracking in the Drive Test app.",
   eyebrow: "Exam · B-körkort teoriprov",
   title: "Swedish driving licence theory test practice",
-  titleAccent: "in your pocket",
+  titleAccent: "on your phone",
   lede:
-    "Preparing for the B-körkort teoriprov? Drive Test gives you exam-style driving licence theory practice, clear explanations and progress tracking, so you can walk into the theory test in Sweden knowing where you stand.",
+    "Preparing for the B-körkort teoriprov? In Drive Test you practise driving licence theory with exam-style questions, explanations and progress tracking, so you know where you stand before the theory test in Sweden.",
   stats: [
     { value: "3", label: "Study modes: Practice, Custom and Review" },
     { value: "3", label: "Platforms: iOS, Android and web" },
@@ -38,7 +38,7 @@ const en: LandingPage = {
         "<p>Drive Test includes B-körkort among its category areas. Use <strong>Practice</strong> mode to learn a topic, <strong>Custom</strong> mode to build a test with your own length and timer, and <strong>Review</strong> mode to go back through what you missed. Bookmark the questions that keep tripping you up.</p><p>Every question has a <strong>deep-dive explanation</strong> that tells you why the right answer is right, and your <strong>AI tutor</strong> can explain it again if the rule still feels abstract. Results are shown in charts, so you can see your readiness grow session by session.</p><p>Drive Test works on iOS, Android and in the browser. Confirm which categories are free and which are included in the paid plan inside the app before you subscribe. Premium access is category-based and managed through the App Store, Google Play or Stripe.</p>",
     },
     {
-      heading: "Tips for a calm test day",
+      heading: "On the day of the test",
       html:
         "<ul><li><strong>Read every question twice.</strong> Look for words like always, never and only.</li><li><strong>Practise under time.</strong> Use Custom mode with a timer so the test pace feels familiar.</li><li><strong>Review mistakes the same day.</strong> A mistake you understand is rarely repeated.</li><li><strong>Use audio.</strong> If you read slowly in Swedish, listening while reading can help.</li></ul><p>Anyone who needs extra support, for example because of dyslexia, can apply to Trafikverket for adapted conditions; check their site for how it works. When your practice results are steady and you understand your mistakes, you are ready to book.</p><p>Looking for more Sweden-specific guides? Browse the <a href=\"/blog/\">Drive Test blog</a>, or read about the <a href=\"/medborgarskapsprov/\">Swedish citizenship test</a> if you are building your life in Sweden.</p><p>Whatever route you choose, check current rules and fees with Trafikverket and Transportstyrelsen, keep your study sessions short and regular, and review your mistakes the same day while they are fresh.</p>",
     },
@@ -51,7 +51,7 @@ const en: LandingPage = {
     { q: "Can I practise offline?", aHtml: "The app gives offline access to your test history. Check the app for what is available without a connection." },
   ],
   related: ["exams/taxi-licence", "for/driving-schools", "for/international-drivers", "compare/drive-test-vs-free-online-tests"],
-  ctaTitle: "Start your driving licence theory practice",
+  ctaTitle: "Practise driving licence theory",
   ctaText: "Download Drive Test free, try the free categories and see how your results develop.",
 };
 
@@ -65,7 +65,7 @@ const sv: LandingPage = {
   title: "Teoriprov körkort: öva i mobilen",
   titleAccent: "när det passar dig",
   lede:
-    "Förbereder du dig för teoriprovet till B-körkort? Drive Test ger dig provliknande körkortsteori, tydliga förklaringar och framstegsuppföljning, så att du vet var du står innan du går in till teoriprovet.",
+    "Förbereder du dig för teoriprovet till B-körkort? I Drive Test övar du körkortsteori med provliknande frågor, förklaringar och uppföljning av framsteg, så att du vet var du står inför teoriprovet.",
   stats: [
     { value: "3", label: "Studielägen: Övning, Anpassat och Granska" },
     { value: "3", label: "Plattformar: iOS, Android och webben" },
@@ -93,7 +93,7 @@ const sv: LandingPage = {
         "<p>Drive Test har B-körkort bland sina kategoriområden. Använd <strong>Övning</strong> för att lära dig ett område, <strong>Anpassat</strong> för att bygga ett prov med egen längd och timer och <strong>Granska</strong> för att gå igenom det du missat. Bokmärk de frågor som ständigt får dig att snubbla.</p><p>Varje fråga har en <strong>djupgående förklaring</strong> som visar varför det rätta svaret är rätt, och din <strong>AI-tutor</strong> kan förklara igen om regeln fortfarande känns abstrakt. Resultaten visas i diagram, så du ser hur beredskapen växer pass för pass.</p><p>Drive Test fungerar på iOS, Android och i webbläsaren. Bekräfta i appen vilka kategorier som är gratis och vilka som ingår i betalplanen innan du prenumererar. Premiumåtkomst är kategoribaserad och hanteras via App Store, Google Play eller Stripe.</p>",
     },
     {
-      heading: "Tips för en lugn provdag",
+      heading: "På provdagen",
       html:
         "<ul><li><strong>Läs varje fråga två gånger.</strong> Se upp för ord som alltid, aldrig och endast.</li><li><strong>Öva med tidspress.</strong> Använd Anpassat läge med timer så att provtempot känns bekant.</li><li><strong>Gå igenom felen samma dag.</strong> Ett misstag du förstår upprepas sällan.</li><li><strong>Använd ljud.</strong> Läser du långsamt på svenska kan det hjälpa att lyssna medan du läser.</li></ul><p>Behöver du extra stöd, till exempel på grund av dyslexi, kan du ansöka hos Trafikverket om anpassade villkor; läs på deras webbplats hur det går till. När dina övningsresultat är stabila och du förstår dina misstag är du redo att boka.</p><p>Vill du ha fler Sverige-guider? Läs <a href=\"/sv/blog/\">Drive Test-bloggen</a>, eller läs om <a href=\"/sv/medborgarskapsprov/\">medborgarskapsprovet</a> om du bygger ditt liv i Sverige.</p><p>Oavsett väg du väljer: kontrollera gällande regler och avgifter hos Trafikverket och Transportstyrelsen, håll studiepassen korta och regelbundna och gå igenom dina misstag samma dag medan de är färska.</p>",
     },
@@ -106,7 +106,7 @@ const sv: LandingPage = {
     { q: "Kan jag öva offline?", aHtml: "Appen ger offlineåtkomst till din provhistorik. Se i appen vad som är tillgängligt utan uppkoppling." },
   ],
   related: ["exams/taxi-licence", "for/driving-schools", "for/international-drivers", "compare/drive-test-vs-free-online-tests"],
-  ctaTitle: "Börja öva körkortsteori",
+  ctaTitle: "Öva körkortsteori",
   ctaText: "Ladda ned Drive Test gratis, prova de gratis kategorierna och se hur dina resultat utvecklas.",
 };
 

@@ -17,9 +17,9 @@ const en: ArticleContent = {
   lastUpdated: "2026-10-13",
   lastUpdatedLabel: "Updated 13 October 2026",
   title: "How to Pass the Taxi Licence Test in Sweden",
-  lede: "Want to know <strong>how to pass the taxi licence test</strong> in Sweden? It comes down to three things: a realistic study plan for the two theory tests, avoiding the mistakes that cost points, and being calm and prepared for the practical driving test.",
+  lede: "Here you can read <strong>how to pass the taxi licence test</strong> in Sweden. It depends on three things: a realistic study plan for the two theory tests, avoiding the mistakes that cost points, and being prepared for the practical driving test.",
   intro:
-    "The Swedish <strong>taxiförarlegitimation</strong> test has three parts, two theory tests and one driving test, and each has its own pass mark. Nothing in it is impossible, but people who treat it like a quick formality often have to book again. This article gives you a practical plan, based on what Trafikverket publishes about the exam, plus the habits that make the difference on the day.",
+    "The Swedish <strong>taxiförarlegitimation</strong> test has three parts, two theory tests and one driving test, and each has its own pass mark. Nothing in it is impossible, but people who treat it like a quick formality often have to book again. This article gives you a study plan, based on what Trafikverket publishes about the exam, plus the habits that make the difference on the day.",
   excerpt:
     "A practical study plan, the usual reasons people fail, exam-day tips and a walk-through of the taxi driving test.",
   cover: "/assets/blog/ob-taxi-night.jpg",
@@ -118,9 +118,9 @@ const sv: ArticleContent = {
   lastUpdated: "2026-10-13",
   lastUpdatedLabel: "Uppdaterad 13 oktober 2026",
   title: "Så klarar du taxiprovet: plan, tips och körprov",
-  lede: "Vill du veta hur du <strong>klarar taxiprovet</strong>? Det handlar om tre saker: en realistisk studieplan för de två teoriproven, att undvika misstagen som kostar poäng och att vara lugn och förberedd inför körprovet.",
+  lede: "Här kan du läsa hur du <strong>klarar taxiprovet</strong>. Det beror på tre saker: en realistisk studieplan för de två teoriproven, att undvika misstagen som kostar poäng och att vara förberedd inför körprovet.",
   intro:
-    "Provet för <strong>taxiförarlegitimation</strong> har tre delar, två teoriprov och ett körprov, och alla har egna godkändgränser. Inget av det är omöjligt, men den som ser provet som en snabb formalitet får ofta boka om. Den här artikeln ger dig en praktisk plan som bygger på det Trafikverket publicerar om provet, och de vanor som gör skillnad på provdagen.",
+    "Provet för <strong>taxiförarlegitimation</strong> har tre delar, två teoriprov och ett körprov, och alla har egna godkändgränser. Inget av det är omöjligt, men den som ser provet som en snabb formalitet får ofta boka om. Den här artikeln ger dig en studieplan som bygger på det Trafikverket publicerar om provet, och de vanor som gör skillnad på provdagen.",
   excerpt:
     "En praktisk studieplan, vanliga orsaker till underkänt, tips inför provdagen och en genomgång av körprovet för taxi.",
   cover: "/assets/blog/ob-taxi-night.jpg",

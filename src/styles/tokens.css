@@ -1,111 +1,80 @@
+/* Design tokens — light only. Public-service style (Trafikverket-like structure):
+   light grey page, white boxed cards, Open Sans, solid brand header block and
+   footer. Brand colour is Drive Test navy + taxi yellow (deliberately NOT
+   Trafikverket red — Drive Test is independent). */
 :root {
-  --font-display: var(--font-bricolage), "Bricolage Grotesque", "Instrument Sans", sans-serif;
-  --font-body: var(--font-geist), "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-display: var(--font-open-sans), "Open Sans", Arial, sans-serif;
+  --font-body: var(--font-open-sans), "Open Sans", Arial, sans-serif;
 
-  --bg: #f6f6f3;
-  --bg-2: #eeeee9;
+  /* brand */
+  --brand: #12355b;          /* navy: logo block, footer, H1, buttons */
+  --brand-dark: #0b2440;     /* hover / pressed */
+  --brand-ink: #0a1f36;      /* dark text-on-light headings in cards (like TV's #370000) */
+  --brand-soft: #e7eef6;     /* tinted backgrounds, active nav */
+  --yellow: #f5b800;         /* taxi yellow accent: underline bars, badges, focus */
+  --yellow-soft: #fff6d6;
+
+  /* surfaces */
+  --bg: #f3f3f3;
+  --bg-2: #e9e9e9;
   --card: #ffffff;
-  --text: #14141a;
-  --muted: #62665f;
-  --accent: #5a51fe;
-  --accent-2: #7b72ff;
-  --accent-soft: rgba(90, 81, 254, 0.1);
-  --ink: #14141a;
+  --header-bg: #ffffff;
+  --footer-bg: var(--brand);
+  --footer-text: #ffffff;
+
+  /* text */
+  --text: #212529;
+  --muted: #555b61;
+  --subtle: #6c757d;
+  --link: var(--brand);
+
+  /* legacy aliases used by existing modules */
+  --accent: var(--brand);
+  --accent-2: var(--brand-dark);
+  --accent-soft: var(--brand-soft);
+  --ink: var(--brand);
   --ink-text: #ffffff;
-  --panel: #14141a;
-  --panel-text: #f4f4f1;
-  --panel-muted: #a3a6b3;
-  --danger: #d6455d;
-  --danger-soft: rgba(214, 69, 93, 0.12);
-  --yellow: #c58a00;
-  --yellow-bright: #ffc400;
-  --success: #3f9a52;
-  --orange: #e9803a;
-  --border: rgba(20, 20, 26, 0.09);
-  --border-strong: rgba(20, 20, 26, 0.16);
-  --shadow: 0 1px 2px rgba(20, 20, 26, 0.04), 0 8px 28px rgba(20, 20, 26, 0.06);
-  --shadow-lg: 0 2px 4px rgba(20, 20, 26, 0.05), 0 24px 60px rgba(40, 30, 120, 0.14);
-  --grad-card: linear-gradient(135deg, #e5e2ff 0%, #f6dfef 55%, #ffe6d3 100%);
-  --grad-hero: linear-gradient(135deg, #3d33e8 0%, #6a4bff 45%, #c25bd6 100%);
+  --panel: var(--brand);
+  --panel-text: #ffffff;
+  --panel-muted: #c9d6e4;
+  --orange: #d9822b;
+  --yellow-bright: #ffcf33;
+  --success: #2e7d32;
+  --danger: #b3261e;
+  --danger-soft: #fbe9e7;
   --hero-grad-a: #ffffff;
-  --hero-grad-b: #ecebff;
-  --horizon: rgba(90, 81, 254, 0.2);
+  --hero-grad-b: #ffffff;
+  --horizon: transparent;
   --grain-opacity: 0;
-  --topbar-bg: rgba(246, 246, 243, 0.85);
-  --dock-bg: rgba(255, 255, 255, 0.92);
+  --topbar-bg: #ffffff;
+  --dock-bg: #ffffff;
+  --grad-card: none;
+  --grad-hero: none;
 
-  --radius-xl: 20px;
-  --radius-lg: 20px;
-  --radius-md: 12px;
-  --radius-sm: 8px;
-  --radius-pill: 999px;
-  --container: 1200px;
-}
+  /* lines & depth — flat, boxy */
+  --border: #d0d4d8;
+  --border-strong: var(--brand);
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 2px 8px rgba(0, 0, 0, 0.15);
 
-[data-theme="dark"] {
-  --bg: #0c0c10;
-  --bg-2: #111116;
-  --card: #15151b;
-  --text: #f1f1ee;
-  --muted: #a0a4a0;
-  --accent: #7b72ff;
-  --accent-2: #9b93ff;
-  --accent-soft: rgba(123, 114, 255, 0.16);
-  --ink: #f1f1ee;
-  --ink-text: #0c0c10;
-  --panel: #1b1b24;
-  --panel-text: #f1f1ee;
-  --panel-muted: #9a9eab;
-  --danger: #ff7b8f;
-  --danger-soft: rgba(255, 123, 143, 0.14);
-  --yellow: #ffd60a;
-  --yellow-bright: #ffd60a;
-  --success: #6fd184;
-  --orange: #ffab6b;
-  --border: rgba(241, 241, 238, 0.09);
-  --border-strong: rgba(241, 241, 238, 0.18);
-  --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 28px rgba(0, 0, 0, 0.35);
-  --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.55);
-  --grad-card: linear-gradient(135deg, #2a2656 0%, #3a2447 55%, #4a3025 100%);
-  --grad-hero: linear-gradient(135deg, #2a238f 0%, #4a34c9 45%, #8a3f9c 100%);
-  --hero-grad-a: #0c0c10;
-  --hero-grad-b: #161233;
-  --horizon: rgba(123, 114, 255, 0.34);
-  --topbar-bg: rgba(12, 12, 16, 0.8);
-  --dock-bg: rgba(21, 21, 27, 0.92);
-}
+  /* shape — near-square corners */
+  --radius-xl: 0px;
+  --radius-lg: 0px;
+  --radius-md: 2px;
+  --radius-sm: 2px;
+  --radius-pill: 2px;
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #0c0c10;
-    --bg-2: #111116;
-    --card: #15151b;
-    --text: #f1f1ee;
-    --muted: #a0a4a0;
-    --accent: #7b72ff;
-    --accent-2: #9b93ff;
-    --accent-soft: rgba(123, 114, 255, 0.16);
-    --ink: #f1f1ee;
-    --ink-text: #0c0c10;
-    --panel: #1b1b24;
-    --panel-text: #f1f1ee;
-    --panel-muted: #9a9eab;
-    --danger: #ff7b8f;
-    --danger-soft: rgba(255, 123, 143, 0.14);
-    --yellow: #ffd60a;
-    --yellow-bright: #ffd60a;
-    --success: #6fd184;
-    --orange: #ffab6b;
-    --border: rgba(241, 241, 238, 0.09);
-    --border-strong: rgba(241, 241, 238, 0.18);
-    --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 28px rgba(0, 0, 0, 0.35);
-    --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.55);
-    --grad-card: linear-gradient(135deg, #2a2656 0%, #3a2447 55%, #4a3025 100%);
-    --grad-hero: linear-gradient(135deg, #2a238f 0%, #4a34c9 45%, #8a3f9c 100%);
-    --hero-grad-a: #0c0c10;
-    --hero-grad-b: #161233;
-    --horizon: rgba(123, 114, 255, 0.34);
-    --topbar-bg: rgba(12, 12, 16, 0.8);
-    --dock-bg: rgba(21, 21, 27, 0.92);
-  }
+  /* layout */
+  --container: 1440px;
+  --gutter: 12px;
+
+  /* type scale (Trafikverket-measured) */
+  --fs-h1: 35px;
+  --fs-h2: 25.6px;
+  --fs-h2-sm: 20px;
+  --fs-h3: 18.4px;
+  --fs-body: 16px;
+  --fs-small: 14px;
+
+  color-scheme: light;
 }

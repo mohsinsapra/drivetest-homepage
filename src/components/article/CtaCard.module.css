@@ -1,47 +1,49 @@
 .card {
-  background: var(--panel);
-  border-radius: var(--radius-xl);
-  padding: 44px 36px;
-  text-align: left;
+  background: var(--brand);
   color: #fff;
-  margin: 36px 0;
-  box-shadow: var(--shadow);
+  padding: 24px;
+  margin: 40px 0 0;
+  scroll-margin-top: 16px;
 }
 
-.title {
-  font-family: var(--font-display);
-  font-size: clamp(22px, 3vw, 28px);
-  margin: 0 0 10px;
+.card .title {
+  font-size: var(--fs-h2-sm);
+  font-weight: 600;
+  letter-spacing: 0;
+  color: #fff;
+  margin: 0 0 8px;
 }
 
-.body {
-  opacity: 0.8;
-  max-width: 480px;
-  margin: 0 0 22px;
-  font-size: 15px;
-  line-height: 1.6;
+.card .body {
+  margin: 0 0 16px;
+  color: #fff;
+  max-width: 62ch;
 }
 
 .actions {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
-  gap: 10px;
+  gap: 12px;
 }
 
 .btn {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  background: var(--accent);
-  color: #fff;
-  padding: 13px 24px;
-  border-radius: var(--radius-sm);
-  font-weight: 600;
-  font-size: 14.5px;
-  transition: transform 0.2s ease;
+  gap: 10px;
+  background: #fff;
+  color: var(--brand-ink);
+  font-weight: 700;
+  font-size: 15px;
+  padding: 10px 16px;
+  border: 1px solid #fff;
+  border-radius: 2px;
+  text-decoration: none;
 }
 
 .btn:hover {
-  filter: brightness(1.1);
+  text-decoration: underline;
+}
+
+.btn:focus-visible {
+  outline-color: var(--yellow);
 }

@@ -1,4 +1,3 @@
-import Link from "next/link";
 import type { Lang } from "@/lib/i18n";
 import { localePath } from "@/lib/i18n";
 import { getLanding, landingPages } from "@/content/landing";
@@ -7,52 +6,27 @@ import { faqJsonLd, breadcrumbJsonLd } from "@/lib/seoJsonLd";
 import JsonLd from "@/components/seo/JsonLd";
 import SiteHeader from "@/components/layout/SiteHeader";
 import SiteFooter from "@/components/layout/SiteFooter";
-import DownloadDock from "@/components/layout/DownloadDock";
-import StoreButtons from "@/components/layout/StoreButtons";
-import Container from "@/components/ui/Container";
-import { Section } from "@/components/ui/Section";
 import Prose from "@/components/ui/Prose";
-import WhySection from "@/components/home/WhySection";
-import Reveal from "@/components/home/Reveal";
-import shared from "@/components/home/shared.module.css";
-import download from "@/components/home/Download.module.css";
+import LinkButton from "@/components/ui/LinkButton";
+import type { Crumb } from "@/components/ui/Breadcrumbs";
+import ArticleHero from "@/components/article/ArticleHero";
+import ArticleLayout from "@/components/article/ArticleLayout";
+import type { TocItem } from "@/components/article/Toc";
 import Faq from "@/components/article/Faq";
 import DataTable from "@/components/article/DataTable";
-import styles from "./Landing.module.css";
+import RelatedLinks from "@/components/article/RelatedLinks";
+import { AppCta, FactBoxes, InfoBoxes, LinkRows } from "@/components/landing/Blocks";
+import { landingImage } from "@/components/landing/heroImages";
+import { L, slugify } from "@/components/landing/labels";
+import styles from "./Article.module.css";
 
-const T = {
-  en: {
-    getApp: "Get the app",
-    secondary: "See how it works",
-    note: "Free to start · iOS, Android & Web",
-    faq: "Frequently asked questions",
-    faqKicker: "FAQ",
-    glance: "At a glance",
-    related: "Keep exploring",
-    compareAll: "Compare the options",
-    readComparison: "Read the comparison",
-    home: "Home",
-    compare: "Compare",
-    kinds: { exam: "Exam", audience: "For", compare: "Compare" },
-  },
-  sv: {
-    getApp: "Skaffa appen",
-    secondary: "Så fungerar det",
-    note: "Gratis att börja · iOS, Android & webb",
-    faq: "Vanliga frågor",
-    faqKicker: "FAQ",
-    glance: "I korthet",
-    related: "Utforska mer",
-    compareAll: "Jämför alternativen",
-    readComparison: "Läs jämförelsen",
-    home: "Hem",
-    compare: "Jämför",
-    kinds: { exam: "Prov", audience: "För", compare: "Jämför" },
-  },
+const GROUP = {
+  en: { exam: "Exams", audience: "For drivers and companies" },
+  sv: { exam: "Prov", audience: "För förare och företag" },
 } as const;
 
 export function landingBreadcrumbs(lang: Lang, slug: string, title: string) {
-  const t = T[lang];
+  const t = L[lang];
   const crumbs: { name: string; path: string }[] = [{ name: t.home, path: "/" }];
   if (slug.startsWith("compare/")) crumbs.push({ name: t.compare, path: "/compare/" });
   crumbs.push({ name: title, path: `/${slug}/` });
@@ -63,9 +37,8 @@ export default function LandingScreen({ lang, slug }: { lang: Lang; slug: string
   const entry = getLanding(slug);
   if (!entry) throw new Error(`Unknown landing page: ${slug}`);
   const p = entry[lang];
-  const t = T[lang];
+  const t = L[lang];
   const x = homeExtra[lang];
-  const home = localePath(lang, "/");
   const isHub = slug === "compare";
 
   const compareCards = isHub ? landingPages.filter((l) => l.kind === "compare" && l.slug !== "compare") : [];
@@ -74,152 +47,89 @@ export default function LandingScreen({ lang, slug }: { lang: Lang; slug: string
     .map((r) => getLanding(r))
     .filter((r): r is NonNullable<typeof r> => !!r);
 
+  const subtitle = p.titleAccent ? p.titleAccent.charAt(0).toUpperCase() + p.titleAccent.slice(1) : undefined;
+
+  const crumbs: Crumb[] = [{ label: t.home, href: localePath(lang, "/") }];
+  if (entry.kind === "compare" && !isHub) crumbs.push({ label: t.compare, href: localePath(lang, "/compare/") });
+  else if (entry.kind !== "compare") crumbs.push({ label: GROUP[lang][entry.kind] });
+  crumbs.push({ label: p.title });
+
+  const toc: TocItem[] = [];
+  if (isHub) toc.push({ id: "compare-all", label: t.compareAll });
+  if (p.comparison) toc.push({ id: "glance", label: t.glance });
+  p.sections.forEach((s, i) => toc.push({ id: `s-${slugify(s.heading) || i}`, label: s.heading }));
+  toc.push({ id: "faq", label: t.faq });
+
   return (
     <>
-      <JsonLd
-        data={[
-          faqJsonLd(lang, p.faq),
-          breadcrumbJsonLd(lang, landingBreadcrumbs(lang, slug, p.title)),
-        ]}
-      />
+      <JsonLd data={[faqJsonLd(lang, p.faq), breadcrumbJsonLd(lang, landingBreadcrumbs(lang, slug, p.title))]} />
       <SiteHeader lang={lang} currentPath={`/${slug}/`} />
-      <main>
-        <header className={styles.hero}>
-          <Container>
-            <div className={styles.top}>
-              <div>
-                <span className={styles.eyebrow}>{p.eyebrow}</span>
-                <h1 className={styles.title}>
-                  {p.title}
-                  {p.titleAccent && (
-                    <>
-                      {" "}
-                      <span className={styles.accent}>{p.titleAccent}</span>
-                    </>
-                  )}
-                </h1>
-              </div>
-              <div className={styles.side}>
-                <p className={styles.lede}>{p.lede}</p>
-                <div className={styles.btns}>
-                  <a href="#download" className={shared.btnPrimary}>
-                    {t.getApp}
-                  </a>
-                  <a href={`${home}#how-it-works`} className={shared.btnGhost}>
-                    {t.secondary}
-                  </a>
-                </div>
-                <p className={styles.note}>{t.note}</p>
-              </div>
-            </div>
+      <main id="main">
+        <ArticleHero
+          lang={lang}
+          crumbs={crumbs}
+          title={p.title}
+          subtitle={subtitle}
+          lead={<p>{p.lede}</p>}
+          actions={
+            <LinkButton href="#download" variant="solid">
+              {t.practise}
+            </LinkButton>
+          }
+          image={landingImage(slug, lang)}
+          toc={toc}
+          tocTitle={t.onThisPage}
+        />
 
-            {p.stats && p.stats.length > 0 && (
-              <div className={styles.stats}>
-                {p.stats.map((s) => (
-                  <div key={s.label} className={styles.stat}>
-                    <span className={styles.statValue}>{s.value}</span>
-                    <span className={styles.statLabel}>{s.label}</span>
-                  </div>
-                ))}
-              </div>
+        <ArticleLayout>
+          <div className={styles.main}>
+            {p.stats && p.stats.length > 0 && <FactBoxes items={p.stats} />}
+
+            {isHub && (
+              <section id="compare-all">
+                <h2>{t.compareAll}</h2>
+                <LinkRows items={compareCards.map((c) => ({ href: localePath(lang, `/${c.slug}/`), label: c[lang].title, text: c[lang].lede }))} />
+              </section>
             )}
-          </Container>
-        </header>
 
-        {compareCards.length > 0 && (
-          <Section>
-            <div className={styles.cards}>
-              {compareCards.map((c) => (
-                <Link key={c.slug} href={localePath(lang, `/${c.slug}/`)} className={styles.linkCard}>
-                  <span className={styles.cardTag}>{c[lang].eyebrow}</span>
-                  <h3 className={styles.cardTitle}>{c[lang].title}</h3>
-                  <p className={styles.cardText}>{c[lang].lede}</p>
-                  <span className={styles.cardMore}>{t.readComparison} →</span>
-                </Link>
-              ))}
-            </div>
-          </Section>
-        )}
+            {(p.problems.length > 0 || p.solutions.length > 0) && (
+              <InfoBoxes
+                boxes={[
+                  { title: x.problemLabel, items: p.problems },
+                  { title: x.solutionLabel, items: p.solutions },
+                ]}
+              />
+            )}
 
-        <WhySection lang={lang} problems={p.problems} solutions={p.solutions} head={false} id="why" />
+            {p.comparison && (
+              <section id="glance">
+                <h2>{t.glance}</h2>
+                <DataTable headers={p.comparison.headers} rows={p.comparison.rows.map((cells) => ({ cells }))} />
+              </section>
+            )}
 
-        {p.comparison && (
-          <Section>
-            <Reveal className={shared.sectionHead}>
-              <span className={shared.kicker}>{t.glance}</span>
-            </Reveal>
-            <DataTable headers={p.comparison.headers} rows={p.comparison.rows.map((cells) => ({ cells }))} />
-          </Section>
-        )}
-
-        {p.sections.map((s, i) => (
-          <Section key={i}>
-            <Reveal className={styles.body}>
-              <h2 className={styles.h2}>{s.heading}</h2>
-              <div className={styles.prose}>
+            {p.sections.map((s, i) => (
+              <section key={i} id={`s-${slugify(s.heading) || i}`}>
+                <h2>{s.heading}</h2>
                 <Prose html={s.html} />
-              </div>
-            </Reveal>
-          </Section>
-        ))}
+              </section>
+            ))}
 
-        <Section>
-          <Reveal className={shared.sectionHead}>
-            <span className={shared.kicker}>{t.faqKicker}</span>
-            <h2 className={shared.sectionTitle}>{t.faq}</h2>
-          </Reveal>
-          <div className={styles.faqWrap}>
-            <Faq items={p.faq} />
+            <section id="faq">
+              <h2>{t.faq}</h2>
+              <Faq items={p.faq} />
+            </section>
+
+            <RelatedLinks
+              title={t.related}
+              items={relatedCards.map((r) => ({ href: localePath(lang, `/${r.slug}/`), label: r[lang].title }))}
+            />
+
+            <AppCta lang={lang} title={p.ctaTitle} body={p.ctaText} />
           </div>
-        </Section>
-
-        {relatedCards.length > 0 && (
-          <Section>
-            <Reveal className={shared.sectionHead}>
-              <span className={shared.kicker}>{t.related}</span>
-            </Reveal>
-            <div className={styles.cards}>
-              {relatedCards.map((r) => (
-                <Link key={r.slug} href={localePath(lang, `/${r.slug}/`)} className={styles.linkCard}>
-                  <span className={styles.cardTag}>{t.kinds[r.kind]}</span>
-                  <h3 className={styles.cardTitle}>{r[lang].title}</h3>
-                  <span className={styles.cardMore}>→</span>
-                </Link>
-              ))}
-            </div>
-          </Section>
-        )}
-
-        <div className={download.wrap} id="download">
-          <Container>
-            <Reveal className={download.band}>
-              <span className={download.glow} aria-hidden="true" />
-              <h2 className={download.title}>{p.ctaTitle}</h2>
-              <p className={download.sub}>{p.ctaText}</p>
-              <ul className={download.bullets}>
-                {x.ctaBullets.map((b) => (
-                  <li key={b}>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                      <path d="M20 6L9 17l-5-5" />
-                    </svg>
-                    {b}
-                  </li>
-                ))}
-              </ul>
-              <div className={download.storeRow}>
-                <StoreButtons
-                  playLabelTop={lang === "en" ? "Get it on" : "Hämta på"}
-                  iosLabelTop={lang === "en" ? "Download on the" : "Ladda ner på"}
-                  webLabelTop={lang === "en" ? "Launch as" : "Starta som"}
-                  webLabelName={lang === "en" ? "Web App" : "Webbapp"}
-                />
-              </div>
-            </Reveal>
-          </Container>
-        </div>
+        </ArticleLayout>
       </main>
       <SiteFooter lang={lang} />
-      <DownloadDock />
     </>
   );
 }

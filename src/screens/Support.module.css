@@ -1,83 +1,69 @@
-.topicsGrid {
+.topics {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
 }
 
-.topicCard {
+.topic {
   background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 26px 24px;
   box-shadow: var(--shadow);
+  border-top: 3px solid var(--brand);
+  padding: 16px 20px;
 }
 
-.topicIcon {
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  background: var(--accent-soft);
-  color: var(--accent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 16px;
-}
-
-.topicCard h3 {
-  font-family: var(--font-display);
-  font-size: 17px;
+.topic h3 {
   margin: 0 0 6px;
 }
 
-.topicCard p {
-  color: var(--muted);
-  font-size: 14px;
+.topic p {
   margin: 0;
+  font-size: 15px;
 }
 
-.stepsRow {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 18px;
+.steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: s;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-.stepCard {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 24px;
+.steps li {
+  counter-increment: s;
   position: relative;
+  background: var(--card);
+  border-left: 4px solid var(--brand);
+  box-shadow: var(--shadow);
+  padding: 14px 20px 14px 64px;
 }
 
-.stepNum {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: var(--accent);
+.steps li::before {
+  content: counter(s);
+  position: absolute;
+  left: 20px;
+  top: 14px;
+  width: 28px;
+  height: 28px;
+  background: var(--brand);
   color: #fff;
   font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 14px;
 }
 
-.stepCard h3 {
-  font-family: var(--font-display);
-  font-size: 16px;
-  margin: 0 0 6px;
+.steps h3 {
+  margin: 0 0 4px;
 }
 
-.stepCard p {
-  color: var(--muted);
-  font-size: 14px;
+.steps p {
   margin: 0;
+  font-size: 15px;
 }
 
-.badgesRow {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
+.steps a {
+  color: var(--brand);
+  text-decoration: underline;
 }

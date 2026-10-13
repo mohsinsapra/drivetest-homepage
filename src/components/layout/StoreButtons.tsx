@@ -73,7 +73,7 @@ export default function StoreButtons({
       </a>
       {!mini && (
         <a
-          href={urls.webApp}
+          href={urls.livePwaIframe}
           className={btnClass}
           target="_blank"
           rel="noopener noreferrer"

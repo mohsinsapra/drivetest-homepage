@@ -1,16 +1,12 @@
-.grid {
-  display: grid;
-  grid-template-columns: 220px minmax(0, 1fr);
-  gap: 56px;
-  align-items: start;
-}
-
 .body {
+  padding: 8px 0 56px;
   min-width: 0;
 }
 
-@media (max-width: 899px) {
-  .grid {
-    display: block;
+@media (min-width: 1100px) {
+  .narrow {
+    /* keep clear of the photo column used in the hero */
+    max-width: calc(100% - 548px);
   }
 }
+

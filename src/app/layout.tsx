@@ -1,21 +1,14 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Bricolage_Grotesque, Geist } from "next/font/google";
+import { Open_Sans } from "next/font/google";
 import { themeInitScript } from "@/lib/theme";
 import "@/styles/tokens.css";
 import "@/styles/globals.css";
 
-const bricolage = Bricolage_Grotesque({
-  variable: "--font-bricolage",
+const openSans = Open_Sans({
+  variable: "--font-open-sans",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
-});
-
-const geist = Geist({
-  variable: "--font-geist",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "600", "700"],
   display: "swap",
 });
 
@@ -30,7 +23,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${bricolage.variable} ${geist.variable}`} suppressHydrationWarning>
+    <html lang="en" className={openSans.variable} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         <Script id="gtm" strategy="afterInteractive">

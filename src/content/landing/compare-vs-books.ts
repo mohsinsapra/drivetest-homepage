@@ -8,9 +8,9 @@ const en: LandingPage = {
     "Is an exam-prep app or a printed book better for the Swedish taxi licence test? Compare practice, feedback, language support and cost, fairly and honestly.",
   eyebrow: "Compare · Books",
   title: "Studying for the taxi exam",
-  titleAccent: "app vs books and PDF compendia",
+  titleAccent: "app or books and PDF compendia",
   lede:
-    "Books and PDF compendia are the traditional way to study for the taxi licence exam in Sweden. An app like Drive Test offers a different approach based on practice and feedback. Here is how they compare, and when each is the better choice.",
+    "Books and PDF compendia are the traditional way to study for the taxi licence exam in Sweden. An app like Drive Test offers a different approach based on practice and feedback. Below you can see how they compare and when each one suits you.",
   problems: [
     { icon: "book", title: "Reading is not testing", text: "You can read a chapter and feel confident, yet struggle with exam-style questions on the same material." },
     { icon: "alert", title: "No feedback loop", text: "A book cannot tell you which answers you got wrong or which topics to repeat." },
@@ -23,17 +23,17 @@ const en: LandingPage = {
   ],
   sections: [
     {
-      heading: "Where books and compendia are strong",
+      heading: "What books and compendia do well",
       html:
         "<p>Printed books and PDF compendia give <strong>depth and structure</strong>. They present a subject from the beginning, they can be annotated, and you can flip between chapters. For topics such as legislation or company management, a well-written reference is hard to beat for understanding the big picture. A book also works without a battery or a connection, and many people simply learn better on paper.</p><p>Books are also stable references. Rules for the <strong>taxiförarlegitimation</strong> and <strong>yrkeskunnande</strong> are set by Transportstyrelsen and tested by Trafikverket, and the official regulations remain the final word. A good book follows them closely, but it can age as rules change, so check the date and confirm current requirements with the authorities.</p><p>If you like to read first and understand deeply, a book can be a very good foundation. Our <a href=\"/taxi-licence-guide/\">taxi licence guide</a> is a free overview of the process that you can read alongside any book.</p>",
     },
     {
-      heading: "Where an app adds something books cannot",
+      heading: "What an app adds",
       html:
         "<p>Reading is passive. The exam, on the other hand, asks you to <strong>apply</strong> what you know to a question, under time pressure and in Swedish. Drive Test is built around that: <strong>Practice</strong>, <strong>Custom</strong> and <strong>Review</strong> modes let you answer exam-style questions, set your own test length and timer, and return to what you missed.</p><p>Each answer comes with a <strong>deep-dive explanation</strong>, and an <strong>AI tutor</strong> can rephrase it when the text is hard. <strong>Text-to-speech</strong> and multi-language support help if Swedish is not your first language. <strong>Bookmarks</strong> save tricky questions, and analytics show your results over time, which no printed book can do.</p><p>What the app does not do: it is not a full textbook and it is not a teacher. It is best seen as the practice half of your preparation. For the full picture of options, see the <a href=\"/compare/\">comparison overview</a>.</p>",
     },
     {
-      heading: "The best of both: how to combine them",
+      heading: "How to combine them",
       html:
         "<p>For most candidates the answer is not either/or. A simple approach: read a chapter or section in your book, then immediately practise questions on that topic in Drive Test. Mark what you miss, read the explanation, and go back to the book for the details that did not stick.</p><ul><li><strong>Book first, app second</strong> if you like structure and want to understand a topic before testing it.</li><li><strong>App first, book second</strong> if you prefer to learn from mistakes and use the book as a reference.</li><li><strong>App only</strong> if your time is short and you mainly need practice and feedback.</li></ul><p>You can try the free categories without paying anything, and see how the app works next to your book. Premium plans are category-based; confirm current prices in the app. For more tips on passing the exams, visit the <a href=\"/blog/\">Drive Test blog</a>.</p>",
     },
@@ -58,8 +58,8 @@ const en: LandingPage = {
     { q: "Is Drive Test free?", aHtml: "There are free categories to try. Premium access is category-based and managed through the App Store, Google Play or Stripe. Check the app for current prices." },
   ],
   related: ["compare", "compare/drive-test-vs-free-online-tests", "exams/taxi-licence", "for/new-taxi-drivers"],
-  ctaTitle: "Add practice to your reading",
-  ctaText: "Try the free categories in Drive Test next to your book and see how your results change.",
+  ctaTitle: "Practise as well as read",
+  ctaText: "Use the free categories in Drive Test alongside your book and follow how your results change.",
 };
 
 const sv: LandingPage = {
@@ -72,7 +72,7 @@ const sv: LandingPage = {
   title: "Plugga taxiprovet",
   titleAccent: "app eller böcker och pdf-kompendier",
   lede:
-    "Böcker och pdf-kompendier är det traditionella sättet att plugga inför taxiprovet i Sverige. En app som Drive Test erbjuder ett annat upplägg, byggt på övning och återkoppling. Så här står de sig mot varandra, och när det ena är bättre än det andra.",
+    "Böcker och pdf-kompendier är det traditionella sättet att plugga inför taxiprovet i Sverige. En app som Drive Test erbjuder ett annat upplägg, byggt på övning och återkoppling. Nedan ser du hur de skiljer sig åt och när det ena passar bättre än det andra.",
   problems: [
     { icon: "book", title: "Läsa är inte att testa", text: "Du kan läsa ett kapitel och känna dig säker, men ändå ha svårt med provliknande frågor på samma material." },
     { icon: "alert", title: "Ingen återkopplingsloop", text: "En bok kan inte säga vilka svar du hade fel eller vilka områden du ska repetera." },
@@ -85,17 +85,17 @@ const sv: LandingPage = {
   ],
   sections: [
     {
-      heading: "Där böcker och kompendier är starka",
+      heading: "Det böcker och kompendier gör bra",
       html:
         "<p>Tryckta böcker och pdf-kompendier ger <strong>djup och struktur</strong>. De presenterar ett ämne från början, du kan göra anteckningar och bläddra mellan kapitel. För områden som lagstiftning eller företagsledning är ett välskrivet uppslagsverk svårslaget när du vill förstå helheten. En bok fungerar också utan batteri eller uppkoppling, och många lär sig helt enkelt bättre på papper.</p><p>Böcker är också stabila referenser. Reglerna för <strong>taxiförarlegitimation</strong> och <strong>yrkeskunnande</strong> beslutas av Transportstyrelsen och prövas av Trafikverket, och de officiella föreskrifterna har sista ordet. En bra bok följer dem noga, men den kan bli inaktuell när regler ändras, så kontrollera datum och bekräfta gällande krav hos myndigheterna.</p><p>Gillar du att läsa först och förstå på djupet kan en bok vara en mycket bra grund. Vår <a href=\"/sv/taxi-licence-guide/\">guide till taxiförarlegitimation</a> är en gratis översikt av processen som du kan läsa vid sidan av vilken bok som helst.</p>",
     },
     {
-      heading: "Vad en app tillför som böcker inte kan",
+      heading: "Vad en app tillför",
       html:
         "<p>Läsning är passiv. Provet ber dig däremot <strong>tillämpa</strong> det du kan på en fråga, under tidspress och på svenska. Drive Test är byggt kring just det: lägena <strong>Övning</strong>, <strong>Anpassat</strong> och <strong>Granska</strong> låter dig svara på provliknande frågor, ställa in egen provlängd och timer och gå tillbaka till det du missat.</p><p>Varje svar har en <strong>djupgående förklaring</strong>, och en <strong>AI-tutor</strong> kan formulera om den när texten är svår. <strong>Text-till-tal</strong> och flerspråkigt stöd hjälper om svenska inte är ditt förstaspråk. <strong>Bokmärken</strong> sparar knepiga frågor, och statistiken visar dina resultat över tid, vilket ingen tryckt bok kan göra.</p><p>Vad appen inte gör: den är ingen komplett lärobok och ingen lärare. Se den som övningsdelen av din förberedelse. För hela bilden av alternativen, se <a href=\"/sv/compare/\">jämförelsesidan</a>.</p>",
     },
     {
-      heading: "Det bästa av båda: så kombinerar du dem",
+      heading: "Så kombinerar du dem",
       html:
         "<p>För de flesta är svaret inte antingen eller. Ett enkelt upplägg: läs ett kapitel eller avsnitt i boken och öva direkt därefter frågor om det området i Drive Test. Markera det du missar, läs förklaringen och gå tillbaka till boken för detaljerna som inte fastnade.</p><ul><li><strong>Bok först, app sedan</strong> om du gillar struktur och vill förstå ett område innan du testar det.</li><li><strong>App först, bok sedan</strong> om du hellre lär dig av misstag och använder boken som uppslagsverk.</li><li><strong>Bara appen</strong> om tiden är knapp och du mest behöver övning och återkoppling.</li></ul><p>Du kan prova de gratis kategorierna utan att betala något och se hur appen fungerar bredvid din bok. Premiumplaner är kategoribaserade; bekräfta aktuella priser i appen. Fler tips för att klara proven hittar du i <a href=\"/sv/blog/\">Drive Test-bloggen</a>.</p>",
     },
@@ -120,8 +120,8 @@ const sv: LandingPage = {
     { q: "Är Drive Test gratis?", aHtml: "Det finns gratis kategorier att prova. Premiumåtkomst är kategoribaserad och hanteras via App Store, Google Play eller Stripe. Se aktuella priser i appen." },
   ],
   related: ["compare", "compare/drive-test-vs-free-online-tests", "exams/taxi-licence", "for/new-taxi-drivers"],
-  ctaTitle: "Lägg till övning till din läsning",
-  ctaText: "Prova de gratis kategorierna i Drive Test vid sidan av din bok och se hur dina resultat förändras.",
+  ctaTitle: "Öva utöver det du läser",
+  ctaText: "Använd de gratis kategorierna i Drive Test vid sidan av din bok och följ hur dina resultat förändras.",
 };
 
 export const compareVsBooks = { en, sv };
