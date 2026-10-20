@@ -10,6 +10,22 @@ export const urls = {
   supportEmail: "support@drivetest.se",
 };
 
+/** Temporary site-wide notice shown above the header. Set to null to hide it. */
+export const notice: Record<Lang, { before: string; linkText: string; href: string; after: string } | null> = {
+  en: {
+    before: "We're having some trouble with our iOS app. Until it's fixed, you can use Drive Test in your browser at ",
+    linkText: "app.drivetest.se",
+    href: "https://app.drivetest.se",
+    after: ".",
+  },
+  sv: {
+    before: "Vi har just nu problem med vår iOS-app. Tills det är löst kan du använda Drive Test i webbläsaren på ",
+    linkText: "app.drivetest.se",
+    href: "https://app.drivetest.se",
+    after: ".",
+  },
+};
+
 export const footer = {
   en: {
     rights: "All rights reserved",

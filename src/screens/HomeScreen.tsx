@@ -1,4 +1,5 @@
 import type { Lang } from "@/lib/i18n";
+import SiteNotice from "@/components/layout/SiteNotice";
 import SiteHeader from "@/components/layout/SiteHeader";
 import SiteFooter from "@/components/layout/SiteFooter";
 import HomeHero from "@/components/home/HomeHero";
@@ -10,6 +11,7 @@ import HomeFaq from "@/components/home/HomeFaq";
 export default function HomeScreen({ lang }: { lang: Lang }) {
   return (
     <>
+      <SiteNotice lang={lang} />
       <SiteHeader lang={lang} currentPath="/" />
       <main id="main">
         <HomeHero lang={lang} />

@@ -1,0 +1,38 @@
+.notice {
+  background: var(--yellow-soft);
+  border-bottom: 3px solid var(--yellow);
+  color: var(--brand-ink);
+}
+
+.text {
+  margin: 0;
+  padding: 12px 0;
+  font-size: var(--fs-body);
+  line-height: 1.5;
+  text-align: center;
+}
+
+.link {
+  color: var(--brand);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.link:hover {
+  color: var(--brand-dark);
+  text-decoration-thickness: 2px;
+}
+
+.link:focus-visible {
+  outline: 3px solid var(--yellow);
+  outline-offset: 2px;
+}
+
+@media (max-width: 640px) {
+  .text {
+    padding: 10px 0;
+    font-size: var(--fs-small);
+    text-align: left;
+  }
+}

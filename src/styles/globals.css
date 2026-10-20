@@ -89,7 +89,7 @@ ol {
 }
 
 .skip-link {
-  position: absolute;
+  position: fixed;
   left: 8px;
   top: -60px;
   z-index: 1000;
