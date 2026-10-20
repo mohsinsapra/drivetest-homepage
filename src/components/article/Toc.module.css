@@ -2,6 +2,7 @@
   background: var(--card);
   box-shadow: var(--shadow-lg);
   padding: 16px 20px 14px;
+  border-radius: var(--radius-md);
 }
 
 .label {
@@ -38,6 +39,6 @@
 }
 
 .linkActive {
-  border-left-color: var(--brand);
+  border-color: var(--border);
   font-weight: 700;
 }

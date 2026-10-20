@@ -3,7 +3,7 @@ import type { Lang } from "@/lib/i18n";
 import { localePath } from "@/lib/i18n";
 import { medborgarskapsprov, medborgarskapsprovJsonLd } from "@/content/medborgarskapsprov";
 import { blog } from "@/content/blog";
-import { urls } from "@/content/site";
+import { iosAvailable, urls } from "@/content/site";
 import SiteHeader from "@/components/layout/SiteHeader";
 import SiteFooter from "@/components/layout/SiteFooter";
 import Prose from "@/components/ui/Prose";
@@ -66,11 +66,17 @@ export default function MedborgarskapsprovScreen({ lang }: { lang: Lang }) {
                 {s.orderedList && <Steps items={s.orderedList} />}
                 {s.ctaBlock && (
                   <CtaCard title={s.ctaBlock.title} html={s.ctaBlock.html}>
-                    {s.ctaBlock.storeLabels.map((label, li) => (
-                      <CtaButton key={label} href={li === 0 ? urls.appStore : urls.playStore}>
-                        {label}
-                      </CtaButton>
-                    ))}
+                    {s.ctaBlock.storeLabels.map((label, li) =>
+                      li === 0 && !iosAvailable ? (
+                        <CtaButton key={label} href={urls.webApp}>
+                          {lang === "sv" ? "🌐 Öva i webbläsaren" : "🌐 Practise in your browser"}
+                        </CtaButton>
+                      ) : (
+                        <CtaButton key={label} href={li === 0 ? urls.appStore : urls.playStore}>
+                          {label}
+                        </CtaButton>
+                      ),
+                    )}
                   </CtaCard>
                 )}
               </div>

@@ -118,7 +118,7 @@ export default function SiteFooter({ lang }: { lang: Lang }) {
             <div className={styles.brandCol}>
               <Link href={localePath(lang, "/")} className={styles.brand}>
                 <img src="/assets/icon.png" alt="" width={36} height={36} />
-                <span>DRIVE TEST</span>
+                <span>Drive Test</span>
               </Link>
               <p className={styles.tagline}>{c.tagline}</p>
               <p className={styles.note}>{c.note}</p>

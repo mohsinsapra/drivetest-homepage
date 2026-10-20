@@ -1,8 +1,7 @@
+/* Contact cards, then a light footer with link columns. */
 .contact {
-  background: #fff;
-  border-top: 2px solid var(--brand);
-  margin-top: 40px;
-  padding: 24px 0 32px;
+  margin-top: 96px;
+  padding: 0 0 56px;
 }
 .contactHead {
   display: flex;
@@ -12,96 +11,116 @@
   margin-bottom: 20px;
 }
 .contactHead h2 {
-  font-size: var(--fs-h2-sm);
+  color: var(--brand);
+  font-size: 24px;
 }
 .allLink {
   font-size: var(--fs-small);
-  font-weight: 600;
+  font-weight: 700;
+  text-decoration: none;
 }
 .contactGrid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 20px;
+  gap: 16px;
 }
 @media (min-width: 768px) {
   .contactGrid {
     grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
   }
 }
+.contactGrid > div {
+  padding: 22px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(16, 42, 86, 0.05);
+}
 .contactGrid h3 {
-  font-size: 16px;
   margin-bottom: 6px;
+  color: var(--brand);
+  font-size: 17px;
 }
 .contactGrid p {
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  color: var(--muted);
 }
 .contactGrid a {
-  font-weight: 600;
+  font-weight: 700;
   font-size: var(--fs-small);
+  text-decoration: none;
 }
 
 .footer {
+  padding: 56px 0 28px;
+  border-top: 1px solid var(--border);
   background: var(--footer-bg);
   color: var(--footer-text);
-  padding: 40px 0 24px;
+  font-size: 15px;
 }
 .footer a {
-  color: #fff;
+  color: var(--muted);
+  text-decoration: none;
+}
+.footer a:hover {
+  color: var(--brand);
 }
 .grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 28px;
 }
-@media (min-width: 768px) {
+.brandCol {
+  grid-column: 1 / -1;
+}
+@media (min-width: 900px) {
   .grid {
     grid-template-columns: 1.3fr repeat(4, 1fr);
     gap: 32px;
   }
+  .brandCol {
+    grid-column: auto;
+  }
 }
-.brand {
+.footer .brand {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  font-size: 18px;
-  text-decoration: none;
-}
-.brand:hover {
-  text-decoration: none;
+  color: var(--brand);
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
 }
 .brand img {
-  border-radius: 7px;
+  border-radius: 8px;
 }
 .tagline {
   margin: 14px 0 6px;
   max-width: 260px;
 }
 .note {
-  font-size: var(--fs-small);
-  color: var(--panel-muted);
   margin: 0;
+  color: var(--subtle);
+  font-size: var(--fs-small);
 }
 .colTitle {
-  color: #fff;
-  font-size: 16px;
   margin-bottom: 12px;
+  color: var(--brand);
+  font-size: 14px;
+  letter-spacing: 0;
 }
 .colLinks {
-  list-style: none;
-  margin: 0;
-  padding: 0;
   display: grid;
   gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
   font-size: var(--fs-small);
-  font-weight: 600;
 }
 .disclaimer {
-  margin: 32px 0 0;
-  padding-top: 18px;
-  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  margin: 40px 0 0;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
   font-size: var(--fs-small);
 }
 .bottom {
@@ -109,8 +128,8 @@
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 8px 24px;
+  color: var(--subtle);
   font-size: 13px;
-  color: var(--panel-muted);
 }
 .legal {
   display: flex;

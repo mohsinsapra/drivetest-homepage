@@ -131,6 +131,7 @@ export default function HeaderClient({ lang, currentPath, index }: { lang: Lang;
         autoComplete="off"
         onChange={(e) => setQ(e.target.value)}
         onFocus={() => setFocused(true)}
+        autoFocus
       />
       <button type="submit" className={styles.searchBtn}>
         {t.search}
@@ -162,104 +163,92 @@ export default function HeaderClient({ lang, currentPath, index }: { lang: Lang;
       <a href="#main" className="skip-link">
         {t.skip}
       </a>
-      <div className={styles.topbar}>
-        <div className={`container ${styles.topbarInner}`}>
-          <span className={styles.disclaimer}>{f.disclaimer}</span>
-          <Link href={altHref} className={styles.lang} hrefLang={lang === "en" ? "sv" : "en"} lang={lang === "en" ? "sv" : "en"}>
-            {t.language}
-          </Link>
-        </div>
-      </div>
-
-      <div className={styles.mainRow}>
-        <div className={styles.mainInner}>
+      <div className={styles.bar}>
+        <div className={styles.barRow}>
           <Link href={home} className={styles.logo} aria-label={`Drive Test – ${t.home}`}>
-            <img src="/assets/icon.png" alt="" width={34} height={34} />
-            <span>DRIVE TEST</span>
+            <img src="/assets/icon.png" alt="" width={30} height={30} />
+            <span>Drive Test</span>
           </Link>
 
-          <div className={styles.searchWrap} data-open={searchOpen}>
-            {searchForm}
-          </div>
+          <nav className={styles.nav} aria-label={t.mainNav}>
+            <ul className={styles.navList}>
+              {mainLinks.map((l) => (
+                <li key={l.href}>
+                  <Link href={l.href} className={`${styles.navLink} ${l.active ? styles.navActive : ""}`} aria-current={l.active ? "page" : undefined}>
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
 
           <div className={styles.tools}>
             <button
               type="button"
-              className={`${styles.tool} ${styles.searchToggle}`}
+              className={styles.iconBtn}
               aria-expanded={searchOpen}
+              aria-label={t.search}
               onClick={() => setSearchOpen((v) => !v)}
             >
-              <Icon name="search" />
-              <span>{t.search}</span>
+              <Icon name={searchOpen ? "close" : "search"} />
             </button>
-            <a href={downloadHref} className={`${styles.tool} ${styles.hideSm}`}>
-              <Icon name="phone" />
-              <span>{t.getTheApp}</span>
+            <Link href={altHref} className={`${styles.lang} ${styles.hideSm}`} hrefLang={lang === "en" ? "sv" : "en"} lang={lang === "en" ? "sv" : "en"}>
+              {t.language}
+            </Link>
+            <a href={downloadHref} className={styles.cta}>
+              {t.getTheApp}
             </a>
             <button
               type="button"
-              className={styles.tool}
+              className={styles.menuBtn}
               aria-expanded={menuOpen}
               aria-controls={MENU_ID}
               onClick={() => setMenuOpen((v) => !v)}
             >
               <Icon name={menuOpen ? "close" : "menu"} />
-              <span>{menuOpen ? t.close : t.menu}</span>
+              <span className={styles.menuLabel}>{menuOpen ? t.close : t.menu}</span>
             </button>
           </div>
         </div>
-      </div>
 
-      <nav className={styles.navRow} aria-label={t.mainNav}>
-        <ul className={`container ${styles.navList}`}>
-          {mainLinks.map((l) => (
-            <li key={l.href}>
-              <Link href={l.href} className={`${styles.navLink} ${l.active ? styles.navActive : ""}`} aria-current={l.active ? "page" : undefined}>
-                {l.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
+        {searchOpen && <div className={styles.searchRow}>{searchForm}</div>}
 
-      {menuOpen && (
-        <div className={styles.menuPanel} id={MENU_ID}>
-          <div className={`container ${styles.menuGrid}`}>
-            {menuGroups.map((g) => (
-              <div key={g.title}>
-                <h2 className={styles.menuTitle}>{g.title}</h2>
+        {menuOpen && (
+          <div className={styles.menuPanel} id={MENU_ID}>
+            <div className={styles.menuGrid}>
+              {menuGroups.map((g) => (
+                <div key={g.title}>
+                  <h2 className={styles.menuTitle}>{g.title}</h2>
+                  <ul className={styles.menuList}>
+                    {g.links.map((l) => (
+                      <li key={l.href}>
+                        <Link href={l.href} onClick={close}>
+                          {l.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+              <div className={styles.menuMobileOnly}>
+                <h2 className={styles.menuTitle}>{t.storeTitle}</h2>
                 <ul className={styles.menuList}>
-                  {g.links.map((l) => (
-                    <li key={l.href}>
-                      <Link href={l.href} onClick={close}>
-                        {l.label}
-                        <span aria-hidden="true"> ›</span>
-                      </Link>
-                    </li>
-                  ))}
+                  <li>
+                    <Link href={altHref} hrefLang={lang === "en" ? "sv" : "en"} lang={lang === "en" ? "sv" : "en"} onClick={close}>
+                      {t.language}
+                    </Link>
+                  </li>
+                  <li>
+                    <a href={downloadHref} onClick={close}>
+                      {t.getTheApp}
+                    </a>
+                  </li>
                 </ul>
               </div>
-            ))}
-            <div className={styles.menuMobileOnly}>
-              <h2 className={styles.menuTitle}>{t.storeTitle}</h2>
-              <ul className={styles.menuList}>
-                <li>
-                  <Link href={altHref} hrefLang={lang === "en" ? "sv" : "en"} lang={lang === "en" ? "sv" : "en"} onClick={close}>
-                    {t.language}
-                    <span aria-hidden="true"> ›</span>
-                  </Link>
-                </li>
-                <li>
-                  <a href={downloadHref} onClick={close}>
-                    {t.getTheApp}
-                    <span aria-hidden="true"> ›</span>
-                  </a>
-                </li>
-              </ul>
             </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </header>
   );
 }

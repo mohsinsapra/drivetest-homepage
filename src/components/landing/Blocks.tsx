@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import type { Lang } from "@/lib/i18n";
-import { urls } from "@/content/site";
+import { iosAvailable, urls } from "@/content/site";
 import CtaCard, { CtaButton } from "@/components/article/CtaCard";
 import Chevron from "./Chevron";
 import { L, formatDate } from "./labels";
@@ -80,7 +80,7 @@ export function AppCta({ lang, title, body, extra, id = "download" }: { lang: La
   return (
     <CtaCard id={id} title={title} body={body}>
       <CtaButton href={urls.playStore}>{t.play}</CtaButton>
-      <CtaButton href={urls.appStore}>{t.ios}</CtaButton>
+      {iosAvailable ? <CtaButton href={urls.appStore}>{t.ios}</CtaButton> : <CtaButton href={urls.webApp}>{t.web}</CtaButton>}
       {extra}
     </CtaCard>
   );

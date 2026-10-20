@@ -15,10 +15,9 @@
 
 .kicker {
   display: block;
-  color: var(--brand);
+  color: var(--blue);
   font-weight: 600;
   font-size: 13px;
-  text-transform: uppercase;
   margin-bottom: 6px;
 }
 
@@ -28,7 +27,7 @@
 }
 
 .sub {
-  color: var(--text);
+  color: var(--muted);
   font-size: var(--fs-body);
   line-height: 1.5;
   margin: 0;

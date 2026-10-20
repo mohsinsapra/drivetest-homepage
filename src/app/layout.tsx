@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Open_Sans } from "next/font/google";
+import { Inter } from "next/font/google";
 import { themeInitScript } from "@/lib/theme";
 import "@/styles/tokens.css";
 import "@/styles/globals.css";
 
-const openSans = Open_Sans({
-  variable: "--font-open-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
-  weight: ["400", "600", "700"],
   display: "swap",
 });
 
@@ -23,7 +22,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={openSans.variable} suppressHydrationWarning>
+    <html lang="en" className={inter.variable} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         <Script id="gtm" strategy="afterInteractive">

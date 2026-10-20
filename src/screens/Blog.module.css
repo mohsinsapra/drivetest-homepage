@@ -5,8 +5,8 @@
 .title {
   font-size: 30px;
   line-height: 1.2;
-  font-weight: 600;
-  letter-spacing: 0;
+  font-weight: 800;
+  letter-spacing: -0.02em;
   color: var(--brand);
   margin: 16px 0 12px;
 }
@@ -26,8 +26,8 @@
 
 .h2 {
   font-size: var(--fs-h2);
-  font-weight: 600;
-  letter-spacing: 0;
+  font-weight: 800;
+  letter-spacing: -0.02em;
   line-height: 1.25;
   margin: 0 0 12px;
 }

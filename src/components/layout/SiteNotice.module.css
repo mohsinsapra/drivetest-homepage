@@ -1,26 +1,49 @@
+/* Full-width strip above the floating header: navy, with a yellow label. */
 .notice {
-  background: var(--yellow-soft);
-  border-bottom: 3px solid var(--yellow);
-  color: var(--brand-ink);
+  background: var(--brand-dark);
+  color: #e6ecf5;
 }
 
 .text {
-  margin: 0;
-  padding: 12px 0;
-  font-size: var(--fs-body);
-  line-height: 1.5;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 6px 12px;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 10px 16px;
+  font-size: var(--fs-small);
+  line-height: 1.45;
   text-align: center;
 }
 
+.label {
+  padding: 2px 10px;
+  border-radius: var(--radius-pill);
+  background: var(--yellow);
+  color: var(--brand-dark);
+  font-size: 12.5px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.links {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px 16px;
+}
+
 .link {
-  color: var(--brand);
+  color: #ffffff;
   font-weight: 700;
   text-decoration: underline;
-  text-underline-offset: 2px;
+  text-underline-offset: 3px;
+  white-space: nowrap;
 }
 
 .link:hover {
-  color: var(--brand-dark);
   text-decoration-thickness: 2px;
 }
 
@@ -31,8 +54,7 @@
 
 @media (max-width: 640px) {
   .text {
-    padding: 10px 0;
-    font-size: var(--fs-small);
+    justify-content: flex-start;
     text-align: left;
   }
 }

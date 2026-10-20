@@ -11,7 +11,7 @@ body {
   padding: 0;
   font-family: var(--font-body);
   font-size: var(--fs-body);
-  line-height: 1.5;
+  line-height: 1.6;
   color: var(--text);
   background: var(--bg);
   overflow-x: hidden;
@@ -23,9 +23,9 @@ h2,
 h3,
 h4 {
   font-family: var(--font-display);
-  font-weight: 600;
-  letter-spacing: 0;
-  line-height: 1.25;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
   margin: 0;
   color: var(--text);
 }
@@ -41,6 +41,7 @@ h2 {
 
 h3 {
   font-size: var(--fs-h3);
+  letter-spacing: -0.015em;
 }
 
 p {
@@ -48,9 +49,9 @@ p {
 }
 
 a {
-  color: var(--brand-ink);
+  color: var(--link);
   text-decoration: underline;
-  text-underline-offset: 2px;
+  text-underline-offset: 3px;
 }
 
 a:hover {
@@ -62,7 +63,7 @@ button:focus-visible,
 input:focus-visible,
 summary:focus-visible,
 [tabindex]:focus-visible {
-  outline: 3px solid var(--yellow);
+  outline: 3px solid rgba(29, 95, 209, 0.45);
   outline-offset: 2px;
 }
 
@@ -97,7 +98,7 @@ ol {
   color: #fff;
   padding: 10px 16px;
   font-weight: 600;
-  border-radius: 2px;
+  border-radius: var(--radius-sm);
 }
 
 .skip-link:focus {

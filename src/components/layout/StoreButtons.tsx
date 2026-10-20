@@ -1,14 +1,18 @@
 import styles from "./StoreButtons.module.css";
-import { urls } from "@/content/site";
+import { iosAvailable, urls } from "@/content/site";
 
 export default function StoreButtons({
   mini = false,
   playLabelTop = "Get it on",
   iosLabelTop = "Download on the",
+  webLabelTop = "Or practise in your",
+  webLabel = "Web browser",
 }: {
   mini?: boolean;
   playLabelTop?: string;
   iosLabelTop?: string;
+  webLabelTop?: string;
+  webLabel?: string;
 }) {
   const btnClass = `${styles.btn} ${mini ? styles.mini : ""}`;
   return (
@@ -40,33 +44,48 @@ export default function StoreButtons({
           </span>
         )}
       </a>
-      <a
-        href={urls.appStore}
-        className={btnClass}
-        target="_blank"
-        rel="noopener noreferrer"
-        title="Download on the App Store"
-      >
-        <span className={styles.icon}>
-          <svg viewBox="0 0 384 512" aria-hidden="true">
-            <path
-              fill="currentColor"
-              d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"
-            />
-          </svg>
-        </span>
-        {!mini && (
-          <span className={styles.text}>
-            <small>{iosLabelTop}</small>
-            <strong>App Store</strong>
+      {iosAvailable ? (
+        <a
+          href={urls.appStore}
+          className={btnClass}
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Download on the App Store"
+        >
+          <span className={styles.icon}>
+            <svg viewBox="0 0 384 512" aria-hidden="true">
+              <path
+                fill="currentColor"
+                d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"
+              />
+            </svg>
           </span>
-        )}
-        {mini && (
-          <span className={styles.text}>
-            <strong>App Store</strong>
+          {!mini && (
+            <span className={styles.text}>
+              <small>{iosLabelTop}</small>
+              <strong>App Store</strong>
+            </span>
+          )}
+          {mini && (
+            <span className={styles.text}>
+              <strong>App Store</strong>
+            </span>
+          )}
+        </a>
+      ) : (
+        <a href={urls.webApp} className={btnClass} target="_blank" rel="noopener noreferrer" title={webLabel}>
+          <span className={styles.icon}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+              <circle cx="12" cy="12" r="9" />
+              <path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z" />
+            </svg>
           </span>
-        )}
-      </a>
+          <span className={styles.text}>
+            {!mini && <small>{webLabelTop}</small>}
+            <strong>{webLabel}</strong>
+          </span>
+        </a>
+      )}
     </div>
   );
 }

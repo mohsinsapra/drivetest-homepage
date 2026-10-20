@@ -7,10 +7,11 @@
 .item {
   background: var(--card);
   border: 1px solid var(--border);
+  border-radius: var(--radius-md);
 }
 
 .itemOpen {
-  border-color: var(--brand);
+  border-color: var(--border-strong);
 }
 
 .heading {

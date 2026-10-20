@@ -11,10 +11,10 @@
 }
 
 .title {
-  font-size: 30px;
-  line-height: 1.2;
-  font-weight: 600;
-  letter-spacing: 0;
+  font-size: clamp(32px, 4.6vw, 46px);
+  line-height: 1.08;
+  font-weight: 800;
+  letter-spacing: -0.035em;
   color: var(--brand);
   margin: 16px 0 12px;
 }
@@ -28,10 +28,10 @@
 }
 
 .lead {
-  font-size: 18px;
-  line-height: 1.5;
-  font-weight: 700;
-  color: var(--text);
+  font-size: 19px;
+  line-height: 1.55;
+  font-weight: 500;
+  color: var(--muted);
   max-width: 62ch;
 }
 

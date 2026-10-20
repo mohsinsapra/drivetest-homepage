@@ -3,26 +3,40 @@ export type Lang = "en" | "sv";
 
 export const siteName = "Drive Test";
 
+/** False while the iOS app is off the App Store: store buttons show the web app instead. */
+export const iosAvailable = false;
+
 export const urls = {
   playStore: "https://play.google.com/store/apps/details?id=com.mohsinsapra.drivetest",
   appStore: "https://apps.apple.com/app/drive-test-pro/id6765940954",
+  webApp: "https://app.drivetest.se",
   github: "https://mohsinsapra.github.io/",
   supportEmail: "support@drivetest.se",
 };
 
-/** Temporary site-wide notice shown above the header. Set to null to hide it. */
-export const notice: Record<Lang, { before: string; linkText: string; href: string; after: string } | null> = {
+/**
+ * Temporary site-wide banner above the header on every page (the iOS app is
+ * unavailable on the App Store). Set a language to null to hide it.
+ */
+export const notice: Record<
+  Lang,
+  { label: string; text: string; links: { label: string; href: string }[] } | null
+> = {
   en: {
-    before: "We're having some trouble with our iOS app. Until it's fixed, you can use Drive Test in your browser at ",
-    linkText: "app.drivetest.se",
-    href: "https://app.drivetest.se",
-    after: ".",
+    label: "iOS app unavailable",
+    text: "Drive Test is not available on the App Store right now. You can keep practising on Android or in your browser:",
+    links: [
+      { label: "Get it on Google Play", href: urls.playStore },
+      { label: "Open app.drivetest.se", href: "https://app.drivetest.se" },
+    ],
   },
   sv: {
-    before: "Vi har just nu problem med vår iOS-app. Tills det är löst kan du använda Drive Test i webbläsaren på ",
-    linkText: "app.drivetest.se",
-    href: "https://app.drivetest.se",
-    after: ".",
+    label: "iOS-appen är inte tillgänglig",
+    text: "Drive Test finns inte i App Store just nu. Du kan fortsätta öva på Android eller i webbläsaren:",
+    links: [
+      { label: "Hämta på Google Play", href: urls.playStore },
+      { label: "Öppna app.drivetest.se", href: "https://app.drivetest.se" },
+    ],
   },
 };
 
@@ -158,7 +172,7 @@ export const footerColumns = {
     resourcesTitle: "About Drive Test",
     tagline: "Practise for taxi, transport and driving licence tests in Sweden.",
     cta: "Get the app",
-    note: "Free to start · iOS & Android",
+    note: "Free to start · Android & web",
   },
   sv: {
     exams: "Prov",
@@ -179,7 +193,7 @@ export const footerColumns = {
     resourcesTitle: "Om Drive Test",
     tagline: "Öva inför taxi-, transport- och körkortsprov i Sverige.",
     cta: "Skaffa appen",
-    note: "Gratis att börja · iOS & Android",
+    note: "Gratis att börja · Android & webb",
   },
 };
 
