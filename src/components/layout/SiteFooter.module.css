@@ -103,6 +103,23 @@
   color: var(--subtle);
   font-size: var(--fs-small);
 }
+.trustpilot {
+  margin-top: 14px;
+  max-width: 260px;
+  min-height: 52px;
+}
+.review {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--fs-small);
+  font-weight: 700;
+  text-decoration: none;
+}
+.stars {
+  color: #00b67a;
+  letter-spacing: 1px;
+}
 .colTitle {
   margin-bottom: 12px;
   color: var(--brand);
