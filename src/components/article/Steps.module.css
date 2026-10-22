@@ -47,6 +47,6 @@
 }
 
 .body a {
-  color: var(--brand);
+  color: var(--brand-ink);
   text-decoration: underline;
 }

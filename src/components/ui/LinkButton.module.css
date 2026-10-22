@@ -14,13 +14,13 @@
 }
 .outline {
   background: #fff;
-  color: var(--brand);
+  color: var(--brand-ink);
 }
 .outline:hover {
-  border-color: var(--brand);
+  border-color: var(--brand-ink);
 }
 .solid {
-  border-color: var(--brand);
+  border-color: var(--brand-ink);
   background: var(--brand);
   color: #fff;
   padding: 10px 14px 10px 16px;

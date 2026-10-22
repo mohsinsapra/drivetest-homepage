@@ -1,6 +1,6 @@
 .card {
-  background: var(--brand-dark);
-  color: #c8d3e6;
+  background: var(--panel);
+  color: var(--panel-muted);
   padding: 36px;
   border-radius: var(--radius-lg);
   margin: 40px 0 0;
@@ -17,7 +17,7 @@
 
 .card .body {
   margin: 0 0 16px;
-  color: #c8d3e6;
+  color: var(--panel-muted);
   max-width: 62ch;
 }
 
@@ -32,7 +32,7 @@
   align-items: center;
   gap: 10px;
   background: #fff;
-  color: var(--brand);
+  color: var(--brand-ink);
   font-weight: 700;
   font-size: 15px;
   padding: 11px 20px;

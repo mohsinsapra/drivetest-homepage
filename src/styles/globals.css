@@ -32,7 +32,7 @@ h4 {
 
 h1 {
   font-size: var(--fs-h1);
-  color: var(--brand);
+  color: var(--brand-ink);
 }
 
 h2 {
@@ -63,7 +63,7 @@ button:focus-visible,
 input:focus-visible,
 summary:focus-visible,
 [tabindex]:focus-visible {
-  outline: 3px solid rgba(29, 95, 209, 0.45);
+  outline: 3px solid rgba(0, 73, 230, 0.45);
   outline-offset: 2px;
 }
 
