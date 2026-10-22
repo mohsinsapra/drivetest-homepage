@@ -3,7 +3,8 @@ import type { Lang } from "@/lib/i18n";
 import { localePath } from "@/lib/i18n";
 import { footer, footerColumns, examLinks, urls } from "@/content/site";
 import Container from "../ui/Container";
-import TrustpilotWidget from "./TrustpilotWidget";
+import LinkButton from "../ui/LinkButton";
+import TrustpilotStar from "./TrustpilotStar";
 import styles from "./SiteFooter.module.css";
 
 type FooterLink = { href: string; label: string; external?: boolean };
@@ -123,7 +124,10 @@ export default function SiteFooter({ lang }: { lang: Lang }) {
               </Link>
               <p className={styles.tagline}>{c.tagline}</p>
               <p className={styles.note}>{c.note}</p>
-              <TrustpilotWidget lang={lang} label={c.review} />
+              <LinkButton href={urls.trustpilotReview} external className={styles.review}>
+                <TrustpilotStar className={styles.star} />
+                {c.review}
+              </LinkButton>
             </div>
             {columns.map((col) => (
               <div key={col.title}>

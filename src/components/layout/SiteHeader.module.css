@@ -32,7 +32,7 @@
   align-items: center;
   gap: 10px;
   flex: none;
-  color: var(--brand);
+  color: var(--brand-ink);
   font-size: 17px;
   font-weight: 800;
   letter-spacing: -0.02em;
@@ -76,11 +76,11 @@
 }
 .navLink:hover {
   background: var(--bg-2);
-  color: var(--brand);
+  color: var(--brand-ink);
   text-decoration: none;
 }
 .navActive {
-  color: var(--brand);
+  color: var(--brand-ink);
   font-weight: 600;
   background: var(--bg-2);
 }
@@ -102,7 +102,7 @@
   border: 0;
   border-radius: var(--radius-sm);
   background: none;
-  color: var(--brand);
+  color: var(--brand-ink);
   font: inherit;
   font-size: 15px;
   font-weight: 600;
@@ -127,7 +127,7 @@
   white-space: nowrap;
 }
 .lang:hover {
-  color: var(--brand);
+  color: var(--brand-ink);
   text-decoration: none;
 }
 
@@ -246,7 +246,7 @@
 }
 .resultTitle {
   display: block;
-  color: var(--brand);
+  color: var(--brand-ink);
   font-weight: 700;
 }
 .resultText {
@@ -305,7 +305,7 @@
   margin: 0 -8px;
   padding: 7px 8px;
   border-radius: var(--radius-sm);
-  color: var(--brand);
+  color: var(--brand-ink);
   font-size: 15px;
   font-weight: 600;
   text-decoration: none;

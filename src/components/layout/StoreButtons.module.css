@@ -19,7 +19,7 @@
 }
 
 .btn:hover {
-  border-color: var(--brand);
+  border-color: var(--brand-ink);
   text-decoration: none;
 }
 
@@ -43,7 +43,7 @@
 .text strong {
   font-size: 14px;
   font-weight: 700;
-  color: var(--brand);
+  color: var(--brand-ink);
 }
 
 .mini {
