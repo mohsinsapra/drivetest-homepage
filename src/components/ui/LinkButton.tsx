@@ -7,7 +7,7 @@ import styles from "./LinkButton.module.css";
  * Props:
  *  - href: string
  *  - children: label
- *  - variant: "outline" (default: white bg, 1px brand border) | "solid" (brand bg, white text)
+ *  - variant: "outline" (default: lavender surface-container-highest bg, brand text) | "solid" (brand bg, white text)
  *  - external?: boolean — opens in a new tab with rel=noopener (plain <a>)
  *  - block?: boolean — full width, label left / chevron right (for 2x2 widget grids and link rows)
  *  - className?: string

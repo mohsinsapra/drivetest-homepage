@@ -19,7 +19,7 @@
 }
 
 .btn:hover {
-  border-color: var(--brand-ink);
+  border-color: var(--brand);
   text-decoration: none;
 }
 
