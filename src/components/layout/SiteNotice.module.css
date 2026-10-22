@@ -1,7 +1,7 @@
-/* Full-width strip above the floating header: navy, with a yellow label. */
+/* Full-width strip above the floating header: midnight, with a yellow label. */
 .notice {
-  background: var(--brand-dark);
-  color: #e6ecf5;
+  background: var(--panel);
+  color: #f8f5ff;
 }
 
 .text {

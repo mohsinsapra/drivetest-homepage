@@ -1,48 +1,49 @@
-/* Design tokens — light only. Calm and clear (inspired by gettakes.app, kept
-   serious): soft off-white page, deep navy text and panels, one blue accent,
-   rounded cards with soft shadows, Inter. Taxi yellow only for small accents.
+/* Design tokens — light only. Colours follow the Drive Test app's light theme
+   ("Nordic Kinetic": taxi_exam_app/lib/main.dart buildLightTheme): Swedish blue
+   primary, Swedish yellow, energetic orange, deep indigo text on a lavender-white
+   page, midnight panels. Rounded cards with soft shadows, Inter.
    Drive Test is independent: deliberately NOT Trafikverket red. */
 :root {
   --font-display: var(--font-inter), "Inter", system-ui, -apple-system, Arial, sans-serif;
   --font-body: var(--font-inter), "Inter", system-ui, -apple-system, Arial, sans-serif;
 
   /* brand */
-  --brand: #102a56;          /* navy: headings, primary buttons */
-  --brand-dark: #0b1a33;     /* hover / dark panels */
-  --brand-ink: #0d1c3a;      /* text on light */
-  --brand-soft: #e8f0fd;     /* tinted backgrounds, labels */
-  --blue: #1d5fd1;           /* accent: links, eyebrows, highlights */
-  --yellow: #f5b800;         /* taxi yellow: tiny accents only */
-  --yellow-soft: #fff6d6;
+  --brand: #0049e6;          /* app primary (Swedish blue): buttons, accents */
+  --brand-dark: #0039b8;     /* hover */
+  --brand-ink: #2a2b51;      /* app onSurface (indigo): headings, text on light */
+  --brand-soft: #ecebff;     /* tinted backgrounds, labels */
+  --blue: #0049e6;           /* accent: links, eyebrows, highlights */
+  --yellow: #ffd709;         /* app secondaryContainer (Swedish yellow): small accents */
+  --yellow-soft: #fff6c2;
 
   /* surfaces */
-  --bg: #f7f9fc;
-  --bg-2: #eef2f8;
+  --bg: #f8f5ff;             /* app surface */
+  --bg-2: #efedff;
   --card: #ffffff;
   --header-bg: #ffffff;
   --footer-bg: #ffffff;
-  --footer-text: #5b6b85;
+  --footer-text: #575881;
 
   /* text */
-  --text: #0d1c3a;
-  --muted: #5b6b85;
-  --subtle: #7a889e;
+  --text: #2a2b51;
+  --muted: #575881;           /* app onSurfaceVariant */
+  --subtle: #73739e;          /* app outline */
   --link: var(--blue);
 
   /* legacy aliases used by existing modules */
   --accent: var(--blue);
-  --accent-2: var(--brand-dark);
+  --accent-2: var(--panel);
   --accent-soft: var(--brand-soft);
   --ink: var(--brand);
   --ink-text: #ffffff;
-  --panel: var(--brand-dark);
-  --panel-text: #ffffff;
-  --panel-muted: #c8d3e6;
-  --orange: #d9822b;
-  --yellow-bright: #ffcf33;
+  --panel: #09082f;           /* app inverseSurface (midnight) */
+  --panel-text: #f8f5ff;
+  --panel-muted: #9999c6;     /* app onInverseSurface */
+  --orange: #ff7f36;          /* app tertiary (energetic orange) */
+  --yellow-bright: #ffd709;
   --success: #1f9d55;
-  --danger: #b3261e;
-  --danger-soft: #fbe9e7;
+  --danger: #b41340;           /* app error */
+  --danger-soft: #ffefef;
   --hero-grad-a: #ffffff;
   --hero-grad-b: #ffffff;
   --horizon: transparent;
@@ -53,10 +54,10 @@
   --grad-hero: none;
 
   /* lines & depth — soft */
-  --border: #e2e8f1;
-  --border-strong: #c9d3e1;
-  --shadow: 0 1px 2px rgba(16, 42, 86, 0.05), 0 8px 24px rgba(16, 42, 86, 0.07);
-  --shadow-lg: 0 2px 4px rgba(16, 42, 86, 0.06), 0 24px 56px rgba(16, 42, 86, 0.14);
+  --border: #e4e2fa;
+  --border-strong: #a9a9d7;   /* app outlineVariant */
+  --shadow: 0 1px 2px rgba(42, 43, 81, 0.05), 0 8px 24px rgba(42, 43, 81, 0.07);
+  --shadow-lg: 0 2px 4px rgba(42, 43, 81, 0.06), 0 24px 56px rgba(42, 43, 81, 0.14);
 
   /* shape — rounded */
   --radius-xl: 28px;

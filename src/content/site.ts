@@ -13,12 +13,7 @@ export const urls = {
   github: "https://mohsinsapra.github.io/",
   supportEmail: "support@drivetest.se",
   trustpilot: "https://www.trustpilot.com/review/drivetest.se",
-};
-
-/** TrustBox "Review Collector" widget shown in the footer. */
-export const trustpilot = {
-  templateId: "56278e9abfbbba0bdcd568bc",
-  businessUnitId: "6ad88454b7d031996836f375",
+  trustpilotReview: "https://www.trustpilot.com/evaluate/drivetest.se",
 };
 
 /**

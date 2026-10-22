@@ -11,7 +11,7 @@
   margin-bottom: 20px;
 }
 .contactHead h2 {
-  color: var(--brand);
+  color: var(--brand-ink);
   font-size: 24px;
 }
 .allLink {
@@ -34,11 +34,11 @@
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   background: #fff;
-  box-shadow: 0 1px 2px rgba(16, 42, 86, 0.05);
+  box-shadow: 0 1px 2px rgba(42, 43, 81, 0.05);
 }
 .contactGrid h3 {
   margin-bottom: 6px;
-  color: var(--brand);
+  color: var(--brand-ink);
   font-size: 17px;
 }
 .contactGrid p {
@@ -63,7 +63,7 @@
   text-decoration: none;
 }
 .footer a:hover {
-  color: var(--brand);
+  color: var(--brand-ink);
 }
 .grid {
   display: grid;
@@ -86,7 +86,7 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  color: var(--brand);
+  color: var(--brand-ink);
   font-size: 17px;
   font-weight: 800;
   letter-spacing: -0.02em;
@@ -103,26 +103,24 @@
   color: var(--subtle);
   font-size: var(--fs-small);
 }
-.trustpilot {
-  margin-top: 14px;
-  max-width: 260px;
-  min-height: 52px;
-}
+/* "Review us on Trustpilot": an outline pill like the other link buttons, with Trustpilot's star. */
 .review {
+  margin-top: 16px;
+}
+.footer a.review {
+  color: var(--brand-ink);
+}
+.review > span {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: var(--fs-small);
-  font-weight: 700;
-  text-decoration: none;
 }
-.stars {
-  color: #00b67a;
-  letter-spacing: 1px;
+.star {
+  flex: none;
 }
 .colTitle {
   margin-bottom: 12px;
-  color: var(--brand);
+  color: var(--brand-ink);
   font-size: 14px;
   letter-spacing: 0;
 }

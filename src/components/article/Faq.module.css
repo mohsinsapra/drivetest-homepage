@@ -46,7 +46,7 @@
 
 .icon {
   flex: none;
-  color: var(--brand);
+  color: var(--brand-ink);
 }
 
 .iconOpen {
@@ -69,6 +69,6 @@
 }
 
 .panelInner a {
-  color: var(--brand);
+  color: var(--brand-ink);
   text-decoration: underline;
 }
