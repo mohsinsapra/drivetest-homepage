@@ -1,12 +1,18 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Inter } from "next/font/google";
+import { Lexend, Plus_Jakarta_Sans } from "next/font/google";
 import { themeInitScript } from "@/lib/theme";
 import "@/styles/tokens.css";
 import "@/styles/globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
+// The app's fonts: Lexend for headings, Plus Jakarta Sans for body text.
+const lexend = Lexend({
+  variable: "--font-lexend",
+  subsets: ["latin"],
+  display: "swap",
+});
+const jakarta = Plus_Jakarta_Sans({
+  variable: "--font-jakarta",
   subsets: ["latin"],
   display: "swap",
 });
@@ -22,7 +28,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={inter.variable} suppressHydrationWarning>
+    <html lang="en" className={`${lexend.variable} ${jakarta.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         <Script id="gtm" strategy="afterInteractive">
