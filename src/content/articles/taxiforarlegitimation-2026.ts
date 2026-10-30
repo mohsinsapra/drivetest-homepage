@@ -22,7 +22,8 @@ const sv: ArticleContent = {
     "Vill du bli taxiförare börjar det med en taxiförarlegitimation. Det är inget svårt system, men det är flera steg hos två olika myndigheter, och det är lätt att tappa bort sig. Den här guiden är skriven med enkla ord och bygger på uppgifter från <strong>Transportstyrelsen</strong> och <strong>Trafikverket</strong>. Regler och avgifter kan ändras, så kontrollera alltid aktuella avgifter hos Transportstyrelsen och Trafikverket innan du betalar.",
   excerpt:
     "Allt om taxiförarlegitimation 2026: krav, steg för steg, kostnad, kunskapsprovet, taxitrafiktillstånd och hur du blir taxiförare.",
-  cover: "/assets/blog/ob-taxi-driving.jpg",
+  cover: "/assets/blog/taxi-snowy-highway.webp",
+  coverAlt: "Snötäckt motorväg i Stockholmsområdet sedd genom bilens vindruta, med bilar, vägräcke och snötyngda träd",
   sections: [
     {
       heading: "Vad är en taxiförarlegitimation?",
@@ -113,6 +114,7 @@ const sv: ArticleContent = {
     },
     {
       heading: "Bli taxiförare: så kommer du igång i Stockholm och andra städer",
+      image: { src: "/assets/blog/taxi-road-to-stockholm.webp", alt: "En snöröjd väg genom tallskog en vinterdag, med en bil framför i dagsljus" },
       html: `<p>Taxiförarlegitimationen gäller i hela Sverige. Det betyder att du tar samma prov och samma legitimation oavsett om du ska köra i Stockholm, Göteborg, Malmö eller en mindre stad. Du bokar proven hos Trafikverket, och körprovet görs på ett förarprovskontor. Är du i Stockholm kan det vara många som vill ha tid, så boka körprovet tidigt.</p><p>Så här kommer du igång:</p><ul><li>Ta legitimationen enligt stegen ovan.</li><li>Sök jobb hos ett taxibolag eller en åkare i din stad. Många anställer förare som har legitimation.</li><li>Fråga om anställningsvillkor och kollektivavtal, och räkna på din lön med vår <a href="/sv/ob-taxi-sweden/">OB-kalkylator</a>.</li><li>Fråga arbetsgivaren om den betalar legitimationen eller delar av kostnaden.</li></ul><p>Hela processen finns också samlad i vår <a href="/sv/taxi-licence-guide/">guide till taxiförarlegitimation</a>. I Stockholm kan du boka läkarintyg via Medicinska Intyg, som vi samarbetar med.</p>`,
     },
   ] as ArticleSection[],
@@ -143,10 +145,12 @@ const en: ArticleContent = {
   intro:
     "The process involves two authorities, Transportstyrelsen and Trafikverket. Fees and rules change, so check current fees with Transportstyrelsen and Trafikverket before you pay.",
   excerpt: "Requirements, steps, 2026 cost and tests for the Swedish taxi driver licence.",
-  cover: "/assets/blog/ob-taxi-driving.jpg",
+  cover: "/assets/blog/taxi-snowy-highway.webp",
+  coverAlt: "A snowy motorway in the Stockholm area seen through a car windscreen, with cars, a guard rail and snow-laden trees",
   sections: [
     {
       heading: "Requirements and steps",
+      image: { src: "/assets/blog/taxi-road-to-stockholm.webp", alt: "A ploughed road through pine forest on a winter day, with a car ahead in daylight" },
       html: `<p>You must be at least 20, have held a category B licence for two years (or hold D), meet the medical requirements, be suitable as a taxi driver, and pass two theory tests and a driving test. Typical total time is about two months. Full details are in our <a href="/taxi-licence-guide/">taxi licence guide</a>.</p>`,
     },
     {

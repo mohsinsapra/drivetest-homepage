@@ -95,7 +95,7 @@ export default function ArticleScreen({ lang, slug }: { lang: Lang; slug: string
               {readingMinutes} {t.minRead}
             </span>
           }
-          image={{ src: a.cover, alt: a.title }}
+          image={{ src: a.cover, alt: a.coverAlt ?? a.title }}
           toc={toc}
           tocTitle={t.onThisPage}
         />

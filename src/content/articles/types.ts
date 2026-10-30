@@ -17,6 +17,8 @@ export interface ArticleContent {
   intro: string;
   excerpt: string;
   cover: string;
+  /** Descriptive alt text for the cover photo; falls back to the title. */
+  coverAlt?: string;
   sections: ArticleSection[];
   faq: ArticleFaqItem[];
   sources: ArticleSource[];
