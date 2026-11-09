@@ -55,26 +55,27 @@ const en: LandingPage = {
   ctaText: "Download Drive Test free, try the free categories and see how your results develop.",
 };
 
+// SV facts checked against Trafikverket (personbil, priser, teoriprovet på annat språk) on 9 November 2026.
 const sv: LandingPage = {
   slug: "exams/driving-licence",
   kind: "exam",
-  metaTitle: "Teoriprov körkort app: öva B-körkort | Drive Test",
+  metaTitle: "Teoriprov körkort 2026: öva körkortsteori inför B | Drive Test",
   metaDescription:
-    "Öva inför teoriprovet för B-körkort med provliknande frågor, förklaringar, text-till-tal och framstegsuppföljning i Drive Test, en teoriprov körkort app.",
+    "Teoriprov för körkort B: 70 frågor, 52 poäng för godkänt, 50 minuter. Så går teoriprovet till, vad det kostar och hur du övar körkortsteori i mobilen.",
   eyebrow: "Prov · B-körkort teoriprov",
-  title: "Teoriprov körkort: öva i mobilen",
-  titleAccent: "när det passar dig",
+  title: "Teoriprov körkort: öva körkortsteori inför teoriprovet",
+  titleAccent: "i mobilen, när det passar dig",
   lede:
-    "Förbereder du dig för teoriprovet till B-körkort? I Drive Test övar du körkortsteori med provliknande frågor, förklaringar och uppföljning av framsteg, så att du vet var du står inför teoriprovet.",
+    "Ska du göra teoriprovet för B-körkort? Här ser du hur teoriprovet går till, vad det kostar och vad det testar. I Drive Test övar du körkortsteori med provliknande frågor, förklaringar och uppföljning, så att du vet var du står innan du bokar.",
   stats: [
-    { value: "3", label: "Studielägen: Övning, Anpassat och Granska" },
-    { value: "2", label: "Plattformar: iOS och Android" },
-    { value: "Gratis", label: "Gratis kategorier att prova först" },
+    { value: "70", label: "Frågor på teoriprovet, varav 65 räknas" },
+    { value: "52", label: "Poäng krävs för godkänt" },
+    { value: "50 min", label: "Provtid enligt Trafikverket" },
   ],
   problems: [
     { icon: "alert", title: "Fel på små detaljer", text: "Väjningsregler, vägmärken och undantag blandas lätt ihop när du bara läst reglerna en gång." },
     { icon: "language", title: "Svensk ordalydelse", text: "Långa frågor med flera villkor är svårare om svenska är ditt andraspråk." },
-    { icon: "money", title: "Omprov kostar", text: "Varje omprov av teorin kostar en avgift och försenar både körlektioner och körkort." },
+    { icon: "money", title: "Omprov kostar", text: "Varje nytt teoriprov kostar 420 kr dagtid (2026) och försenar både körprov och körkort." },
   ],
   solutions: [
     { icon: "target", title: "Övning som speglar provet", text: "Svara på provliknande frågor och se rätt svar med förklaring direkt." },
@@ -83,31 +84,42 @@ const sv: LandingPage = {
   ],
   sections: [
     {
-      heading: "Teoriprovet för B-körkort i Sverige",
+      heading: "Teoriprov för körkort B: så går det till",
       html:
-        "<p>För att få svenskt körkort för bil klarar du ett <strong>teoriprov</strong> och ett praktiskt <em>körprov</em>, båda hos Trafikverket. Enligt Trafikverkets information har teoriprovet för B 65 poänggivande frågor plus några testfrågor som inte räknas, du behöver 52 rätt för att bli godkänd och har 50 minuter på dig. Eftersom detaljerna kan ändras bör du kontrollera aktuella uppgifter, språk och hjälpmedel på <strong>trafikverket.se</strong> innan du bokar.</p><p>Provet testar mer än vägmärken. Det omfattar trafikregler, risker och beteende, fordon, miljö och din egen roll som förare. Många som blir underkända gör det på frågor där två svar ser nästan rätt ut, så vanan att läsa noga och förstå orsaken är lika viktig som att kunna regeln.</p><p>Den här sidan handlar om vanligt personbilskörkort (B). Siktar du på ett yrke som förare kan du också vara intresserad av <a href=\"/sv/exams/taxi-licence/\">taxiförarlegitimation prov</a>, där B-körkort är en förutsättning.</p>",
+        "<p>För att få körkort för personbil klarar du ett <strong>teoriprov</strong> och ett <em>körprov</em>, båda hos Trafikverket. Så här beskriver Trafikverket teoriprovet för B:</p><ul><li><strong>70 flervalsfrågor</strong> med ett rätt svar per fråga. 5 av dem är testfrågor som inte räknas, så du kan få högst <strong>65 poäng</strong>.</li><li>Du behöver <strong>52 poäng</strong> för godkänt.</li><li>Provtiden är <strong>50 minuter</strong>. Den börjar när du själv startar provet efter introduktionen.</li><li>Du ser resultatet direkt på skärmen. Du får veta inom vilka områden du svarat fel, men inte vilka frågor.</li><li>Du kan bara göra ett prov per dag för samma behörighet.</li></ul><p>Innan du får göra provet ska du ha ett <strong>körkortstillstånd</strong> och ha gjort <strong>riskutbildningens båda delar</strong>. Du fotograferas på plats inför ditt första teoriprov, så kom minst 30 minuter innan och ta med en giltig id-handling. Kontrollera alltid aktuella regler på <a href=\"https://www.trafikverket.se/korkort/ta-korkort/personbil-och-latt-lastbil/\" target=\"_blank\" rel=\"noopener noreferrer\">trafikverket.se</a>.</p>",
+    },
+    {
+      heading: "Vad körkortsteorin på provet handlar om",
+      html:
+        "<p>Teoriprovet mäter dina kunskaper inom fem områden:</p><ul><li><strong>Fordonskännedom och manövrering:</strong> hur bilen fungerar och hur väglaget påverkar den.</li><li><strong>Miljö:</strong> hur du kör säkert och miljömedvetet.</li><li><strong>Trafiksäkerhet:</strong> samspel med andra, hastighet och placering i olika miljöer.</li><li><strong>Trafikregler:</strong> vägmärken, vägmarkeringar, hastighet, möte och omkörning, last och passagerare.</li><li><strong>Personliga förutsättningar:</strong> grupptryck, impulsiva handlingar och viljan att följa regler.</li></ul><p>Trafikverket betonar att du behöver bred kunskap i hela ämnet, inte svaren på enskilda frågor. Många som blir underkända gör det på frågor där två svar ser nästan rätt ut, så vanan att läsa noga och förstå orsaken är lika viktig som att kunna regeln.</p>",
+    },
+    {
+      heading: "Vad kostar teoriprovet för körkort?",
+      html:
+        "<p>Enligt Trafikverkets prislista 2026 kostar teoriprovet för B <strong>420 kr dagtid</strong> och <strong>520 kr efter kl. 18 och på helger</strong>. Fotot som tas inför ditt första prov kostar <strong>120 kr</strong>. Avbokar du senare än 24 timmar före provet får du betala ändå, så boka en tid du säkert kan komma på.</p><p>Teoriprovet för B finns på svenska och på <strong>15 översatta språk</strong>, bland annat engelska, arabiska, persiska, somaliska och tigrinja. Du väljer språk när du bokar och kan också ansöka om prov med tolk. Den här sidan handlar om vanligt personbilskörkort (B). Siktar du på ett yrke som förare kan du läsa om <a href=\"/sv/exams/taxi-licence/\">taxiförarlegitimation prov</a>, där B-körkort är en förutsättning.</p>",
     },
     {
       heading: "Plugga körkortsteori med Drive Test",
       html:
-        "<p>Drive Test har B-körkort bland sina kategoriområden. Använd <strong>Övning</strong> för att lära dig ett område, <strong>Anpassat</strong> för att bygga ett prov med egen längd och timer och <strong>Granska</strong> för att gå igenom det du missat. Bokmärk de frågor som ständigt får dig att snubbla.</p><p>Varje fråga har en <strong>djupgående förklaring</strong> som visar varför det rätta svaret är rätt, och din <strong>AI-tutor</strong> kan förklara igen om regeln fortfarande känns abstrakt. Resultaten visas i diagram, så du ser hur beredskapen växer pass för pass.</p><p>Drive Test fungerar på iOS och Android. Bekräfta i appen vilka kategorier som är gratis och vilka som ingår i betalplanen innan du prenumererar. Premiumåtkomst är kategoribaserad och hanteras via App Store, Google Play eller Stripe.</p>",
+        "<p>Drive Test har B-körkort bland sina kategoriområden. Använd <strong>Övning</strong> för att lära dig ett område, <strong>Anpassat</strong> för att bygga ett prov med egen längd och timer och <strong>Granska</strong> för att gå igenom det du missat. Bokmärk de frågor som ständigt får dig att snubbla.</p><p>Varje fråga har en <strong>djupgående förklaring</strong> som visar varför det rätta svaret är rätt, och din <strong>AI-tutor</strong> kan förklara igen om regeln fortfarande känns abstrakt. Resultaten visas per område, på samma sätt som Trafikverket redovisar dina fel, så du ser var du ska lägga tid.</p><p>Det finns gratis kategorier att prova först. Bekräfta i appen vilka kategorier som är gratis och vilka som ingår i betalplanen innan du prenumererar.</p>",
     },
     {
-      heading: "På provdagen",
+      heading: "Teoriprov körkort: tips inför provdagen",
       html:
-        "<ul><li><strong>Läs varje fråga två gånger.</strong> Se upp för ord som alltid, aldrig och endast.</li><li><strong>Öva med tidspress.</strong> Använd Anpassat läge med timer så att provtempot känns bekant.</li><li><strong>Gå igenom felen samma dag.</strong> Ett misstag du förstår upprepas sällan.</li><li><strong>Använd ljud.</strong> Läser du långsamt på svenska kan det hjälpa att lyssna medan du läser.</li></ul><p>Behöver du extra stöd, till exempel på grund av dyslexi, kan du ansöka hos Trafikverket om anpassade villkor; läs på deras webbplats hur det går till. När dina övningsresultat är stabila och du förstår dina misstag är du redo att boka.</p><p>Vill du ha fler Sverige-guider? Läs <a href=\"/sv/blog/\">Drive Test-bloggen</a>, eller läs om <a href=\"/sv/medborgarskapsprov/\">medborgarskapsprovet</a> om du bygger ditt liv i Sverige.</p><p>Oavsett väg du väljer: kontrollera gällande regler och avgifter hos Trafikverket och Transportstyrelsen, håll studiepassen korta och regelbundna och gå igenom dina misstag samma dag medan de är färska.</p>",
+        "<ul><li><strong>Läs varje fråga två gånger.</strong> Se upp för ord som alltid, aldrig och endast.</li><li><strong>Öva med tidspress.</strong> 50 minuter för 70 frågor är under en minut per fråga. Använd Anpassat läge med timer.</li><li><strong>Gå igenom felen samma dag.</strong> Ett misstag du förstår upprepas sällan.</li><li><strong>Använd ljud.</strong> I provet kan du lyssna på frågorna på svenska. Öva på samma sätt om du läser långsamt.</li><li><strong>Boka teoriprov och körprov samtidigt</strong>, med några veckors mellanrum, som Trafikverket rekommenderar. Då hinner du göra om teoriprovet före körprovet om det behövs.</li></ul><p>Har du till exempel dyslexi, ADHD eller lässvårigheter kan du ansöka hos Trafikverket om förlängd provtid, muntligt prov eller prov med tolk. Vill du ha fler guider, läs <a href=\"/sv/blog/\">Drive Test-bloggen</a>.</p>",
     },
   ],
   faq: [
-    { q: "Hur många frågor är det på teoriprovet för B-körkort?", aHtml: "Enligt Trafikverkets information räknas 65 frågor till resultatet (plus några testfrågor), 52 rätt krävs och tiden är 50 minuter. Kontrollera alltid Trafikverket för aktuella regler." },
-    { q: "Kan jag göra teoriprovet på engelska?", aHtml: "Trafikverket erbjuder teoriprovet på flera språk. Se trafikverket.se för aktuell lista och regler om tolk och hjälpmedel." },
-    { q: "Räcker Drive Test för att klara teoriprovet?", aHtml: "Drive Test är ett studiestöd med provliknande övning, förklaringar och statistik. Vi kan inte lova resultat, men regelbunden övning och genomgång av dina misstag är det säkraste sättet att förbereda sig." },
-    { q: "Finns B-körkort i Drive Test?", aHtml: "Ja, B-körkort är ett av kategoriområdena i appen. Se i appen vilka kategorier som är gratis och vilka som ingår i betalplanen." },
-    { q: "Kan jag öva offline?", aHtml: "Appen ger offlineåtkomst till din provhistorik. Se i appen vad som är tillgängligt utan uppkoppling." },
+    { q: "Hur många frågor är det på teoriprovet för körkort B?", aHtml: "70 frågor. 5 är testfrågor som inte räknas, så du kan få högst 65 poäng. Du behöver 52 poäng för godkänt och har 50 minuter på dig." },
+    { q: "Vad kostar teoriprovet för körkort?", aHtml: "420 kr dagtid och 520 kr efter kl. 18 och på helger enligt Trafikverkets prislista 2026. Foto inför första provet kostar 120 kr." },
+    { q: "Vad behöver jag innan jag gör teoriprovet?", aHtml: "Ett giltigt körkortstillstånd, båda delarna av riskutbildningen och en giltig id-handling. Du fotograferas på plats, så kom minst 30 minuter innan." },
+    { q: "Kan jag göra teoriprovet på engelska eller ett annat språk?", aHtml: "Ja. Teoriprovet för B finns på 15 översatta språk, bland annat engelska och arabiska. Du väljer språk när du bokar och kan också ansöka om prov med tolk." },
+    { q: "Hur övar jag körkortsteori bäst?", aHtml: "Öva lite varje dag med provliknande frågor och tidsgräns, läs förklaringen till varje svar och repetera dina fel per område. I Drive Test kan du börja med de gratis kategorierna." },
+    { q: "Räcker Drive Test för att klara teoriprovet?", aHtml: "Drive Test är ett studiestöd med provliknande övning, förklaringar och statistik. Vi kan inte lova resultat, men regelbunden övning och genomgång av dina misstag är det säkraste sättet att förbereda sig. Trafikverkets provfrågor är inte samma som övningsfrågor på nätet." },
   ],
   related: ["exams/taxi-licence", "for/driving-schools", "for/international-drivers", "compare/drive-test-vs-free-online-tests"],
-  ctaTitle: "Öva körkortsteori",
-  ctaText: "Ladda ned Drive Test gratis, prova de gratis kategorierna och se hur dina resultat utvecklas.",
+  ctaTitle: "Öva inför teoriprovet",
+  ctaText: "Ladda ned Drive Test gratis, prova de gratis kategorierna och se hur dina resultat i körkortsteori utvecklas.",
 };
 
 export const examDrivingLicence = { en, sv };
