@@ -7,6 +7,7 @@ import { taxiExamForNonNativeSpeakers } from "./taxi-exam-for-non-native-speaker
 import { taxiforarlegitimation2026 } from "./taxiforarlegitimation-2026";
 import { korkortsfragorGratis } from "./korkortsfragor-gratis";
 import { bokaTeoriprov } from "./boka-teoriprov";
+import { sprakkravMedborgarskap } from "./sprakkrav-medborgarskap";
 import type { ArticleModule } from "./types";
 
 export type { ArticleContent, ArticleModule, ArticleSource } from "./types";
@@ -21,6 +22,7 @@ export const articles: ArticleModule[] = [
   taxiExamForNonNativeSpeakers,
   korkortsfragorGratis,
   bokaTeoriprov,
+  sprakkravMedborgarskap,
 ];
 
 export function getArticle(slug: string): ArticleModule | undefined {
