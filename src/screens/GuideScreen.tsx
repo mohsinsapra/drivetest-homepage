@@ -14,6 +14,9 @@ import { AppCta } from "@/components/landing/Blocks";
 import { landingImage } from "@/components/landing/heroImages";
 import { L } from "@/components/landing/labels";
 import { tocFromHtml } from "@/components/landing/toc";
+import Faq from "@/components/article/Faq";
+import JsonLd from "@/components/seo/JsonLd";
+import { faqJsonLd } from "@/lib/seoJsonLd";
 import styles from "./Article.module.css";
 
 export default function GuideScreen({ lang }: { lang: Lang }) {
@@ -21,6 +24,7 @@ export default function GuideScreen({ lang }: { lang: Lang }) {
   const t = L[lang];
   const readingMinutes = estimateReadingMinutes([g.contentHtml]);
   const { html, items } = tocFromHtml(g.contentHtml);
+  const toc = [...items, { id: "faq", label: t.faq }];
   const ctaTitle = lang === "en" ? "Prepare with Drive Test" : "Förbered dig med Drive Test";
   const ctaBody =
     lang === "en"
@@ -30,6 +34,7 @@ export default function GuideScreen({ lang }: { lang: Lang }) {
   return (
     <>
       <SiteHeader lang={lang} currentPath="/taxi-licence-guide/" />
+      <JsonLd data={faqJsonLd(lang, g.faq)} />
       <main id="main">
         <ArticleHero
           lang={lang}
@@ -38,16 +43,20 @@ export default function GuideScreen({ lang }: { lang: Lang }) {
           lead={g.headerSubtitle}
           meta={
             <span>
-              {readingMinutes} {t.minRead}
+              {g.updatedLabel} · {readingMinutes} {t.minRead}
             </span>
           }
           image={landingImage("exams/taxi-licence", lang)}
-          toc={items}
+          toc={toc}
           tocTitle={t.onThisPage}
         />
         <ArticleLayout>
           <div className={styles.main}>
             <Prose html={html} />
+            <section id="faq">
+              <h2>{t.faq}</h2>
+              <Faq items={g.faq} />
+            </section>
             <AppCta lang={lang} title={ctaTitle} body={ctaBody} />
             <RelatedLinks
               title={t.related}
