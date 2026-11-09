@@ -7,7 +7,7 @@ export const metadata: Metadata = buildMetadata({
   lang: "sv",
   path: "/taxi-licence-guide/",
   title: pageTitles.sv.guide,
-  description: "Komplett guide för att ansöka om din taxiförarlegitimation.",
+  description: "Så får du taxiförarlegitimation 2026: krav, båda delproven och godkändgränser, avgifter på 4 970 kr och hur du övar taxi teori online med provfrågor i appen.",
 });
 
 export default function Page() {

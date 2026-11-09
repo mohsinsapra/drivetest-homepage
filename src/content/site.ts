@@ -206,14 +206,14 @@ export const pageTitles = {
     home: "Drive Test",
     privacy: "Privacy Policy - Drive Test",
     delete: "Delete Account - Drive Test",
-    guide: "How to Get a Taxi License in Sweden - Drive Test",
+    guide: "How to Get a Taxi Licence in Sweden (2026 Guide) | Drive Test",
     support: "Support - Drive Test",
   },
   sv: {
     home: "Drive Test",
     privacy: "Integritetspolicy - Drive Test",
     delete: "Radera konto - Drive Test",
-    guide: "Hur du skaffar taxiförarlegitimation i Sverige - Drive Test",
+    guide: "Taxiförarlegitimation 2026 & taxi teori online | Drive Test",
     support: "Support - Drive Test",
   },
 };
