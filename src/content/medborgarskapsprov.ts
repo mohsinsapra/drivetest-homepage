@@ -77,7 +77,7 @@ export const medborgarskapsprov = {
       {
         heading: "The citizenship test — available from August 2026",
         html:
-          "<p>The <strong>medborgarskapsprov i samhällskunskap</strong> — the citizenship test on Swedish society — becomes available in <strong>August 2026</strong>. It's aimed at applicants who can't otherwise prove they meet the society-knowledge requirement, and Migrationsverket sends an invitation to sit it once your application needs it.</p><p>The separate <strong>Swedish-language test</strong> is expected no earlier than <strong>autumn 2027</strong>. Until it launches, established language tests such as <strong>Tisus</strong> or <strong>Swedex</strong> can still be used to prove your language knowledge. See <a href='/blog/sprakkrav-medborgarskap/'>the Swedish citizenship language test and requirement</a> for the levels and accepted grades.</p>",
+          "<p>The <strong>medborgarskapsprov i samhällskunskap</strong> — the citizenship test on Swedish society — becomes available in <strong>August 2026</strong>. It's aimed at applicants who can't otherwise prove they meet the society-knowledge requirement, and Migrationsverket sends an invitation to sit it once your application needs it.</p><p>The separate <strong>Swedish-language test</strong> has no start date yet. On 30 September 2026 Migrationsverket said it may be postponed, and the Government will decide when it starts. The requirement to know Swedish still applies: for now you show it in other ways, for example with approved school grades, the highest SFI course or <strong>Tisus</strong>. See <a href='/blog/sprakkrav-medborgarskap/'>the Swedish citizenship language test and requirement</a> for the levels and accepted grades.</p>",
       },
       {
         ctaBlock: {
@@ -119,7 +119,7 @@ export const medborgarskapsprov = {
     ] as MSection[],
     faq: [
       { q: "Who has to take the citizenship test?", aHtml: "Applicants aged 16–66 must meet a knowledge requirement in Swedish and Swedish society. If you can't prove this with approved grades, SFI, Tisus or another accepted route, Migrationsverket invites you to sit the test instead." },
-      { q: "When does the citizenship test start?", aHtml: "The society knowledge test becomes available in August 2026. The Swedish-language test is expected no earlier than autumn 2027 — until then, Tisus or Swedex can prove language knowledge." },
+      { q: "When does the citizenship test start?", aHtml: "The society knowledge test becomes available in August 2026. The Swedish-language test has no start date yet: Migrationsverket said on 30 September 2026 that it may be postponed. The Swedish requirement still applies, so you show it with approved grades, SFI or Tisus." },
       { q: "What does the test cover?", aHtml: "It's based on UHR's official book Sverige i fokus, covering 13 chapters on Sweden's democracy, government, law, media, human rights, the labour market and economy, welfare, history, and traditions." },
       { q: "How much does applying cost?", aHtml: "SEK 2,900 for adults. Stateless refugees applying with a travel document or status declaration don't pay a fee." },
       { q: "How long does processing take?", aHtml: "About 75% of recent citizenship cases are decided within 55 months, per Migrationsverket's statistics — though this varies case by case." },
@@ -204,7 +204,7 @@ export const medborgarskapsprov = {
       {
         heading: "Medborgarskapsprovet — tillgängligt från augusti 2026",
         html:
-          "<p><strong>Medborgarskapsprovet i samhällskunskap</strong> blir tillgängligt i <strong>augusti 2026</strong>. Det riktar sig till sökande som inte kan styrka samhällskunskapen på annat sätt, och Migrationsverket skickar en kallelse när din ansökan kräver det.</p><p>Det separata <strong>provet i svenska språket</strong> väntas tidigast <strong>hösten 2027</strong>. Fram till dess kan etablerade språktest som <strong>Tisus</strong> eller <strong>Swedex</strong> fortfarande användas för att styrka dina språkkunskaper. Läs mer om <a href='/sv/blog/sprakkrav-medborgarskap/'>språkkrav och språktest för medborgarskap</a>.</p>",
+          "<p><strong>Medborgarskapsprovet i samhällskunskap</strong> blir tillgängligt i <strong>augusti 2026</strong>. Det riktar sig till sökande som inte kan styrka samhällskunskapen på annat sätt, och Migrationsverket skickar en kallelse när din ansökan kräver det.</p><p>Det separata <strong>provet i svenska språket</strong> har inget startdatum än. Den 30 september 2026 skrev Migrationsverket att provet kan skjutas upp och att regeringen bestämmer när det införs. Kravet på kunskaper i svenska gäller ändå: tills vidare visar du dem på andra sätt, till exempel med godkända betyg, högsta kursen i SFI eller <strong>Tisus</strong>. Läs mer om <a href='/sv/blog/sprakkrav-medborgarskap/'>språkkrav och språktest för medborgarskap</a>.</p>",
       },
       {
         ctaBlock: {
@@ -246,7 +246,7 @@ export const medborgarskapsprov = {
     ] as MSection[],
     faq: [
       { q: "Vem måste göra medborgarskapsprovet?", aHtml: "Sökande i åldern 16–66 år ska visa kunskaper i svenska och om det svenska samhället. Går det inte att styrka med godkända betyg, SFI, Tisus eller annat godkänt sätt kallar Migrationsverket dig till provet." },
-      { q: "När börjar provet gälla?", aHtml: "Samhällskunskapsprovet blir tillgängligt i augusti 2026. Provet i svenska väntas tidigast hösten 2027 — fram tills dess kan Tisus eller Swedex styrka språkkunskaper." },
+      { q: "När börjar provet gälla?", aHtml: "Samhällskunskapsprovet blir tillgängligt i augusti 2026. Provet i svenska har inget startdatum än: Migrationsverket skrev den 30 september 2026 att det kan skjutas upp. Kravet på svenska gäller ändå, och du visar det med godkända betyg, SFI eller Tisus." },
       { q: "Vad innehåller provet?", aHtml: "Det bygger på UHR:s officiella bok Sverige i fokus, med 13 kapitel om Sveriges demokrati, styrelseskick, lag och rätt, medier, mänskliga rättigheter, arbetsmarknad och ekonomi, välfärd, historia och traditioner." },
       { q: "Vad kostar en ansökan?", aHtml: "2 900 kronor för vuxna. Statslösa flyktingar som ansöker med resedokument eller statusförklaring betalar ingen avgift." },
       { q: "Hur lång är handläggningstiden?", aHtml: "Cirka 75 procent av de senaste ärendena avgörs inom 55 månader enligt Migrationsverkets statistik — men det varierar från fall till fall." },
@@ -287,7 +287,7 @@ export const medborgarskapsprovJsonLd = {
       "@type": "FAQPage",
       mainEntity: [
         { "@type": "Question", name: "Who has to take the Swedish citizenship test?", acceptedAnswer: { "@type": "Answer", text: "Anyone aged 16–66 applying for Swedish citizenship must meet a knowledge requirement in Swedish and Swedish society. If you can't prove this another way — for example with approved school grades, SFI, Tisus or a pass in social studies — Migrationsverket invites you to sit the test." } },
-        { "@type": "Question", name: "When does the citizenship test start?", acceptedAnswer: { "@type": "Answer", text: "The society knowledge test (medborgarskapsprov i samhällskunskap) becomes available in August 2026. A separate Swedish-language test is expected autumn 2027 at the earliest; until then, tests such as Tisus or Swedex can be used to prove language knowledge." } },
+        { "@type": "Question", name: "When does the citizenship test start?", acceptedAnswer: { "@type": "Answer", text: "The society knowledge test (medborgarskapsprov i samhällskunskap) becomes available in August 2026. A separate Swedish-language test has no start date yet: Migrationsverket said on 30 September 2026 that it may be postponed. The Swedish requirement still applies and can be shown with approved grades, SFI or Tisus." } },
         { "@type": "Question", name: "What does the citizenship test cover?", acceptedAnswer: { "@type": "Answer", text: "The society test is based on UHR's official study book Sverige i fokus, which covers 13 chapters including Sweden's democratic system, government, elections and parties, law and rights, the labour market and personal finance, the welfare state, modern history, and traditions and holidays." } },
         { "@type": "Question", name: "How much does it cost to apply for Swedish citizenship?", acceptedAnswer: { "@type": "Answer", text: "The application fee is SEK 2,900 for adults. Stateless refugees who apply with a travel document or status declaration do not pay a fee." } },
         { "@type": "Question", name: "How long does Migrationsverket take to process a citizenship application?", acceptedAnswer: { "@type": "Answer", text: "Around 75% of recent citizenship cases are decided within 55 months, according to Migrationsverket's own statistics, though individual cases vary." } },
