@@ -5,6 +5,7 @@ import { taxiLicenceCostSweden } from "./taxi-licence-cost-sweden";
 import { taxiLicenceMedicalRequirements } from "./taxi-licence-medical-requirements";
 import { taxiExamForNonNativeSpeakers } from "./taxi-exam-for-non-native-speakers";
 import { taxiforarlegitimation2026 } from "./taxiforarlegitimation-2026";
+import { korkortsfragorGratis } from "./korkortsfragor-gratis";
 import type { ArticleModule } from "./types";
 
 export type { ArticleContent, ArticleModule, ArticleSource } from "./types";
@@ -17,6 +18,7 @@ export const articles: ArticleModule[] = [
   taxiLicenceCostSweden,
   taxiLicenceMedicalRequirements,
   taxiExamForNonNativeSpeakers,
+  korkortsfragorGratis,
 ];
 
 export function getArticle(slug: string): ArticleModule | undefined {
