@@ -27,7 +27,7 @@ export const homeSimple = {
     whyTitle: "A taxi licence takes time and money. Failing costs you both.",
     why: [
       { big: "3 tests", text: "to pass: two theory tests and a driving test." },
-      { big: "≈ 2 months", text: "for the whole process, from application to licence." },
+      { big: "5–7 weeks", text: "estimated queue time at Transportstyrelsen after you apply." },
       { big: "4 970 kr", text: "or more in fees, before a single retake." },
     ],
     whatEyebrow: "What Drive Test is",
@@ -52,9 +52,9 @@ export const homeSimple = {
     iosNote: "The iOS app is not available on the App Store right now. On iPhone, use the web app.",
   },
   sv: {
-    eyebrow: "Teoriträning för proven i Sverige",
-    title: ["Klara taxi- och transportproven", "på första försöket."],
-    lead: "Öva på frågor i officiell stil för Taxiförarlegitimation, Yrkeskunnande, B-körkort och Medborgarskapsprovet, med en AI-tutor som förklarar varje svar.",
+    eyebrow: "Taxiprov övning · teoriträning för proven i Sverige",
+    title: ["Öva taxi teori och klara taxiprovet", "på första försöket."],
+    lead: "Taxiprov övning online för båda delproven till taxiförarlegitimationen: säkerhet och beteende samt lagstiftning. Öva taxi teori med frågor i officiell stil och en AI-tutor som förklarar varje svar. Appen täcker också Yrkeskunnande, B-körkort och Medborgarskapsprovet.",
     primary: "Skaffa appen",
     secondary: "Öva i webbläsaren",
     facts: ["Gratis att börja", "1000+ frågor i officiell stil", "Android och webb"],
@@ -75,7 +75,7 @@ export const homeSimple = {
     whyTitle: "Taxiförarlegitimationen tar tid och kostar pengar. Att köra bet kostar båda.",
     why: [
       { big: "3 prov", text: "att klara: två teoriprov och ett körprov." },
-      { big: "≈ 2 månader", text: "för hela processen, från ansökan till legitimation." },
+      { big: "5–7 veckor", text: "beräknad kötid hos Transportstyrelsen efter att du har ansökt." },
       { big: "4 970 kr", text: "eller mer i avgifter, innan ett enda omprov." },
     ],
     whatEyebrow: "Det här är Drive Test",

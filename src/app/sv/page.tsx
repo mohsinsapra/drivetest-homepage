@@ -7,9 +7,9 @@ import { homeJsonLd } from "@/lib/homeJsonLd";
 export const metadata: Metadata = buildMetadata({
   lang: "sv",
   path: "/",
-  title: "Drive Test - Drive Test Hem",
+  title: "Taxi teori & taxiprov övning online | Drive Test",
   description:
-    "Drive Test hjälper dig klara Taxi-, Företags- & Transportprov i Sverige. Öva kunskapsprov, läs licensguiden och bli provredo.",
+    "Taxiprov övning online: öva taxi teori inför båda delproven för taxiförarlegitimation med frågor i provformat och AI-tutor. Gratis att börja, Android och webb.",
 });
 
 export default function Page() {
