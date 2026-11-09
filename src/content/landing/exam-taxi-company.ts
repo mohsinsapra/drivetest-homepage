@@ -58,18 +58,18 @@ const en: LandingPage = {
 const sv: LandingPage = {
   slug: "exams/taxi-company",
   kind: "exam",
-  metaTitle: "Yrkeskunnande taxi prov: öva i appen | Drive Test",
+  metaTitle: "Taxitrafiktillstånd prov 2026: öva yrkeskunnande taxi | Drive Test",
   metaDescription:
-    "Förbered dig för provet i yrkeskunnande taxi som krävs för trafiktillstånd för taxi. Öva med provliknande frågor, förklaringar och AI-tutor i Drive Test.",
-  eyebrow: "Prov · Yrkeskunnande taxi",
-  title: "Yrkeskunnande taxi: plugga inför provet",
-  titleAccent: "för ditt trafiktillstånd",
+    "Provet för taxitrafiktillstånd: fyra delprov i yrkeskunnande taxi hos Trafikverket, frågor, godkändgräns, provtid och avgift. Öva med förklaringar i Drive Test.",
+  eyebrow: "Prov · Taxitrafiktillstånd",
+  title: "Taxitrafiktillstånd prov: plugga yrkeskunnande taxi",
+  titleAccent: "inför alla fyra delproven",
   lede:
-    "Ska du starta eller driva taxiföretag? Provet i yrkeskunnande taxi visar din yrkesmässiga kompetens för ett trafiktillstånd för taxi. I Drive Test förbereder du dig med provliknande frågor, förklaringar och uppföljning av framsteg.",
+    "Ska du starta eller driva taxiföretag? Då behöver företaget ett taxitrafiktillstånd, och den trafikansvariga ska klara provet i yrkeskunnande hos Trafikverket. I Drive Test förbereder du dig med provliknande frågor, förklaringar och uppföljning av framsteg.",
   stats: [
-    { value: "4", label: "Delprov i det officiella provet i yrkeskunnande" },
-    { value: "3", label: "Studielägen som passar hur du lär dig" },
-    { value: "2", label: "Plattformar: iOS och Android" },
+    { value: "4", label: "Delprov i provet för taxitrafiktillstånd" },
+    { value: "6 mån", label: "På dig att klara alla delprov från det första godkända" },
+    { value: "420 kr", label: "Provavgift dagtid hos Trafikverket (2026)" },
   ],
   problems: [
     { icon: "book", title: "Tung teori", text: "Lagstiftning, företagsledning och ekonomi ligger långt från förarsätet och är svåra att lära sig av ren text." },
@@ -83,31 +83,32 @@ const sv: LandingPage = {
   ],
   sections: [
     {
-      heading: "Vad är provet i yrkeskunnande för taxi?",
+      heading: "Taxitrafiktillstånd prov: så ser provet ut",
       html:
-        "<p>Ett företag med trafiktillstånd för taxi måste ha en <strong>trafikansvarig</strong> som kan visa <strong>yrkeskunnande</strong>. Enligt Transportstyrelsen visas det genom att klara <em>prov i yrkeskunnande för taxitrafiktillstånd</em>, som genomförs hos Trafikverkets prov- och körkortskontor.</p><p>Provet har fyra delprov:</p><ul><li>Rättsregler</li><li>Företagsledning och ekonomisk styrning av företag</li><li>Tekniska normer, driftsförhållanden och trafiksäkerhet</li><li>Fördjupande kunskapsprov som omfattar de tre första</li></ul><p>Delproven kan tas i valfri ordning, och alla måste vara godkända inom <strong>sex månader</strong> från det första godkända delprovet. Transportstyrelsen kan ge undantag, till exempel för den som har relevant utbildning eller minst fem års erfarenhet som trafikledare eller i företagsledning, men då krävs ändå ett kontrollprov. Regler ändras, så kontrollera uppgifterna på <strong>transportstyrelsen.se</strong> och <strong>trafikverket.se</strong> innan du bokar.</p><p>Oavsett väg du väljer: kontrollera gällande regler och avgifter hos Trafikverket och Transportstyrelsen, håll studiepassen korta och regelbundna och gå igenom dina misstag samma dag medan de är färska.</p>",
+        "<p>Taxitrafik får bara drivas av den som har <strong>taxitrafiktillstånd</strong> från Transportstyrelsen. Företaget ska ha en <strong>trafikansvarig</strong> som visar <strong>yrkeskunnande</strong> genom att klara provet hos Trafikverket. Enligt <a href=\"https://www.trafikverket.se/korkort/yrkesprov/yrkestrafiktillstand/\" target=\"_blank\" rel=\"noopener noreferrer\">Trafikverket</a> ser provet ut så här:</p><ul><li><strong>Delprov 1: Rättsregler.</strong> 23 frågor, varav 3 testfrågor. Minst 12 rätt av 20, 45 minuter.</li><li><strong>Delprov 2: Ekonomisk ledning av ett företag.</strong> 23 frågor, minst 12 rätt av 20, 45 minuter.</li><li><strong>Delprov 3: Tekniska normer, driftsförhållanden och trafiksäkerhet.</strong> 23 frågor, minst 12 rätt av 20, 45 minuter.</li><li><strong>Delprov 4: Fördjupade kunskaper</strong> om de tre första. 20 frågor, varav 5 testfrågor. Minst 9 rätt av 15, 120 minuter.</li></ul><p>Delprov 1–3 gör du i valfri ordning. Alla fyra ska vara godkända inom <strong>sex månader</strong> från det första godkända delprovet. Du ser resultatet direkt på skärmen. Provet kostar 420 kr dagtid och 520 kr efter kl. 18 och på helger enligt Trafikverkets prislista 2026. När du är godkänd ansöker du om tillståndet hos Transportstyrelsen, där prövningen av tillstånd till taxitrafik kostar <strong>12 500 kr</strong> (2026).</p><p>Transportstyrelsen kan ge undantag, till exempel för den som har relevant utbildning eller minst fem års erfarenhet som trafikledare eller i företagsledning, men då krävs ändå ett kontrollprov. Kontrollera aktuella regler på <strong>transportstyrelsen.se</strong> och <strong>trafikverket.se</strong> innan du bokar.</p>",
     },
     {
       heading: "Något annat än förarens taxiförarlegitimation",
       html:
-        "<p>De två förväxlas ofta. <strong>Taxiförarlegitimationen</strong> är den personliga legitimation en förare behöver för att köra taxi, medan <strong>yrkeskunnande</strong> handlar om att driva verksamheten bakom bilarna. Många som börjar som förare vill senare ha ett eget företag, och därför följer vägarna ofta på varandra.</p><p>Är du fortfarande på förarsidan, börja med vår sida om <a href=\"/sv/exams/taxi-licence/\">taxiförarlegitimation prov</a> eller hela <a href=\"/sv/taxi-licence-guide/\">guiden till taxiförarlegitimation</a>. Kör du redan och jobbar med OB-tillägg kan vår kostnadsfria <a href=\"/sv/ob-taxi-sweden/\">OB-kalkylator</a> spara tid.</p><p>Drive Test täcker båda: Taxiförarlegitimation och Yrkeskunnande finns som kategoriområden i appen, så du kan fortsätta på samma ställe när dina mål ändras. Bekräfta vilka kategorier som ingår i din plan i appen före köp.</p><p>Oavsett väg du väljer: kontrollera gällande regler och avgifter hos Trafikverket och Transportstyrelsen, håll studiepassen korta och regelbundna och gå igenom dina misstag samma dag medan de är färska.</p>",
+        "<p>De två förväxlas ofta. <strong>Taxiförarlegitimationen</strong> är den personliga legitimation en förare behöver för att köra taxi, medan <strong>yrkeskunnande</strong> handlar om att driva verksamheten bakom bilarna. Många som börjar som förare vill senare ha ett eget företag, och därför följer vägarna ofta på varandra.</p><p>Är du fortfarande på förarsidan, börja med vår sida om <a href=\"/sv/exams/taxi-licence/\">taxiförarlegitimation prov</a> eller hela <a href=\"/sv/taxi-licence-guide/\">guiden till taxiförarlegitimation</a>. Kör du redan och jobbar med OB-tillägg kan vår kostnadsfria <a href=\"/sv/ob-taxi-sweden/\">OB-kalkylator</a> spara tid.</p><p>Drive Test täcker båda: Taxiförarlegitimation och Yrkeskunnande finns som kategoriområden i appen, så du kan fortsätta på samma ställe när dina mål ändras. Bekräfta vilka kategorier som ingår i din plan i appen före köp.</p>",
     },
     {
-      heading: "Studera inför yrkeskunnande i Drive Test",
+      heading: "Öva inför taxitrafiktillstånd prov i Drive Test",
       html:
-        "<p>Börja med <strong>Övning</strong> för att bygga förståelse och använd sedan <strong>Anpassat</strong> för att simulera längre pass med timer. <strong>Granska</strong> tar tillbaka de frågor du missade, och <strong>bokmärken</strong> håller de svåra nära till hands.</p><p>Frågor om ledning och ekonomi är lättare att minnas när du förstår logiken bakom dem, därför har varje fråga en förklaring och <strong>AI-tutorn</strong> kan formulera om den tills den blir begriplig. Text-till-tal och flerspråkigt stöd hjälper dig om svenska inte är ditt förstaspråk, även om själva provet är på svenska.</p><p>Använd statistiken för att planera dina sex månader. Om ett område fortsätter vara svagt, lägg nästa pass där i stället för att repetera sådant du redan kan. För bakgrund och praktiska tips, läs <a href=\"/sv/blog/\">Drive Test-bloggen</a>.</p><p>Oavsett väg du väljer: kontrollera gällande regler och avgifter hos Trafikverket och Transportstyrelsen, håll studiepassen korta och regelbundna och gå igenom dina misstag samma dag medan de är färska.</p>",
+        "<p>Börja med <strong>Övning</strong> för att bygga förståelse och använd sedan <strong>Anpassat</strong> för att simulera längre pass med timer. <strong>Granska</strong> tar tillbaka de frågor du missade, och <strong>bokmärken</strong> håller de svåra nära till hands.</p><p>Frågor om ledning och ekonomi är lättare att minnas när du förstår logiken bakom dem, därför har varje fråga en förklaring och <strong>AI-tutorn</strong> kan formulera om den tills den blir begriplig. Text-till-tal och flerspråkigt stöd hjälper dig om svenska inte är ditt förstaspråk, även om själva provet är på svenska.</p><p>Använd statistiken för att planera dina sex månader. Om ett område fortsätter vara svagt, lägg nästa pass där i stället för att repetera sådant du redan kan. För bakgrund och praktiska tips, läs <a href=\"/sv/blog/\">Drive Test-bloggen</a>.</p>",
     },
   ],
   faq: [
+    { q: "Hur går provet för taxitrafiktillstånd till?", aHtml: "Det är fyra delprov hos Trafikverket. Delprov 1–3 har 23 frågor var (minst 12 rätt av 20, 45 minuter). Delprov 4 har 20 frågor (minst 9 rätt av 15, 120 minuter). Alla ska vara godkända inom sex månader från det första godkända delprovet." },
+    { q: "Vad kostar taxitrafiktillstånd?", aHtml: "Provet hos Trafikverket kostar 420 kr dagtid och 520 kr kvällar och helger. Transportstyrelsens prövning av tillstånd till taxitrafik kostar 12 500 kr (2026). Kontrollera aktuella avgifter hos myndigheterna." },
     { q: "Vad är yrkeskunnande för taxi?", aHtml: "Yrkeskunnande är den yrkesmässiga kompetens som krävs för trafiktillstånd för taxi. Den visas genom att klara provet i yrkeskunnande hos Trafikverket, som avläggs av den som utsetts till trafikansvarig." },
-    { q: "Hur många delar har provet i yrkeskunnande för taxi?", aHtml: "Transportstyrelsen beskriver fyra delprov: rättsregler, företagsledning och ekonomi, tekniska normer och trafiksäkerhet samt ett fördjupande kunskapsprov. Alla ska vara godkända inom sex månader från det första." },
     { q: "Kan jag få undantag från provet i yrkeskunnande?", aHtml: "I vissa fall. Transportstyrelsen kan undanta dig från enskilda ämnen om du har relevant utbildning, eller från hela provet med minst fem års erfarenhet som trafikledare eller i företagsledning, men ett kontrollprov krävs ändå." },
     { q: "Behöver jag yrkeskunnande för att köra taxi som anställd?", aHtml: "Nej. Som förare behöver du taxiförarlegitimation. Yrkeskunnande krävs för den som ansvarar för företagets trafiktillstånd för taxi. Se <a href=\"/sv/exams/taxi-licence/\">sidan om taxiförarlegitimation prov</a>." },
     { q: "Går provet att göra på engelska?", aHtml: "Nej, proven hålls på svenska. Drive Test har flerspråkigt stöd och text-till-tal som hjälper dig att förbereda dig." },
   ],
   related: ["exams/taxi-licence", "for/taxi-companies", "exams/goods-and-bus", "compare/drive-test-vs-taxi-schools"],
-  ctaTitle: "Förbered dig inför yrkeskunnande",
-  ctaText: "Prova de gratis kategorierna på iOS eller Android och bygg en studieplan runt de sex månaderna.",
+  ctaTitle: "Förbered dig inför provet för taxitrafiktillstånd",
+  ctaText: "Prova de gratis kategorierna och bygg en studieplan runt de sex månaderna.",
 };
 
 export const examTaxiCompany = { en, sv };

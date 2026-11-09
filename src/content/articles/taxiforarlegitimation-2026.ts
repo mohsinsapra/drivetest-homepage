@@ -9,19 +9,19 @@ const sources: ArticleSource[] = [
 ];
 
 const sv: ArticleContent = {
-  metaTitle: "Taxiförarlegitimation 2026: kostnad, prov, steg | Drive Test",
+  metaTitle: "Vad kostar taxiförarlegitimation 2026? Alla avgifter | Drive Test",
   metaDescription:
-    "Taxiförarlegitimation 2026: vad den kostar, krav, läkarintyg, kunskapsprov och körprov steg för steg, plus hur du övar online och blir taxiförare i Stockholm.",
+    "Vad kostar taxiförarlegitimation 2026? 4 970 kr i officiella avgifter på dagtid: teoriprov, körprov, ansökan och utfärdande, plus läkarintyg, omprov och tidsplan.",
   eyebrow: "Sverige · Guide",
   tag: "Guide",
-  lastUpdated: "2026-10-30",
-  lastUpdatedLabel: "Uppdaterad 30 oktober 2026",
-  title: "Taxiförarlegitimation 2026: kostnad, prov och steg för steg",
-  lede: "En <strong>taxiförarlegitimation</strong> är beviset på att du får köra taxi i Sverige. Här får du hela vägen på ett ställe: krav, steg, vad det kostar 2026, hur kunskapsprovet ser ut och hur du övar online.",
+  lastUpdated: "2026-11-09",
+  lastUpdatedLabel: "Uppdaterad 9 november 2026",
+  title: "Vad kostar taxiförarlegitimation 2026? Avgifter, prov och tidsplan",
+  lede: "Taxiförarlegitimation kostar <strong>4 970 kr</strong> i officiella avgifter 2026 om du gör proven på dagtid, utöver läkarintyget. Här är varje avgift, vad som kan göra det dyrare och hur du planerar proven så att inget går ut.",
   intro:
-    "Vill du bli taxiförare börjar det med en taxiförarlegitimation. Det är inget svårt system, men det är flera steg hos två olika myndigheter, och det är lätt att tappa bort sig. Den här guiden är skriven med enkla ord och bygger på uppgifter från <strong>Transportstyrelsen</strong> och <strong>Trafikverket</strong>. Regler och avgifter kan ändras, så kontrollera alltid aktuella avgifter hos Transportstyrelsen och Trafikverket innan du betalar.",
+    "Vill du ha hela vägen steg för steg, läs vår huvudguide <a href=\"/sv/taxi-licence-guide/\">taxiförarlegitimation: så gör du steg för steg</a>. Den här artikeln fokuserar på kostnaden. Det är inget svårt system, men det är flera steg hos två olika myndigheter, och det är lätt att tappa bort sig. Den här guiden är skriven med enkla ord och bygger på uppgifter från <strong>Transportstyrelsen</strong> och <strong>Trafikverket</strong>. Regler och avgifter kan ändras, så kontrollera alltid aktuella avgifter hos Transportstyrelsen och Trafikverket innan du betalar.",
   excerpt:
-    "Allt om taxiförarlegitimation 2026: krav, steg för steg, kostnad, kunskapsprovet, taxitrafiktillstånd och hur du blir taxiförare.",
+    "Vad kostar taxiförarlegitimation 2026? Varje avgift hos Trafikverket och Transportstyrelsen, läkarintyg, omprov och tidsplan.",
   cover: "/assets/blog/taxi-snowy-highway.webp",
   coverAlt: "Snötäckt motorväg i Stockholmsområdet sedd genom bilens vindruta, med bilar, vägräcke och snötyngda träd",
   sections: [
@@ -115,7 +115,7 @@ const sv: ArticleContent = {
     {
       heading: "Bli taxiförare: så kommer du igång i Stockholm och andra städer",
       image: { src: "/assets/blog/taxi-road-to-stockholm.webp", alt: "En snöröjd väg genom tallskog en vinterdag, med en bil framför i dagsljus" },
-      html: `<p>Taxiförarlegitimationen gäller i hela Sverige. Det betyder att du tar samma prov och samma legitimation oavsett om du ska köra i Stockholm, Göteborg, Malmö eller en mindre stad. Du bokar proven hos Trafikverket, och körprovet görs på ett förarprovskontor. Är du i Stockholm kan det vara många som vill ha tid, så boka körprovet tidigt.</p><p>Så här kommer du igång:</p><ul><li>Ta legitimationen enligt stegen ovan.</li><li>Sök jobb hos ett taxibolag eller en åkare i din stad. Många anställer förare som har legitimation.</li><li>Fråga om anställningsvillkor och kollektivavtal, och räkna på din lön med vår <a href="/sv/ob-taxi-sweden/">OB-kalkylator</a>.</li><li>Fråga arbetsgivaren om den betalar legitimationen eller delar av kostnaden.</li></ul><p>Hela processen finns också samlad i vår <a href="/sv/taxi-licence-guide/">guide till taxiförarlegitimation</a>. I Stockholm kan du boka läkarintyg via Medicinska Intyg, som vi samarbetar med.</p>`,
+      html: `<p>Taxiförarlegitimationen gäller i hela Sverige. Det betyder att du tar samma prov och samma legitimation oavsett om du ska köra i Stockholm, Göteborg, Malmö eller en mindre stad. Du bokar proven hos Trafikverket, och körprovet görs på ett förarprovskontor. Är du i Stockholm kan det vara många som vill ha tid, så boka körprovet tidigt.</p><p>Så här kommer du igång:</p><ul><li>Ta legitimationen enligt stegen ovan.</li><li>Sök jobb hos ett taxibolag eller en åkare i din stad. Många anställer förare som har legitimation.</li><li>Fråga om anställningsvillkor och kollektivavtal, och räkna på din lön med vår <a href="/sv/ob-taxi-sweden/">OB-kalkylator</a>.</li><li>Fråga arbetsgivaren om den betalar legitimationen eller delar av kostnaden.</li></ul><p>Hela processen finns samlad i vår huvudguide om <a href="/sv/taxi-licence-guide/">taxiförarlegitimation</a>, med steg för hur du bokar taxi prov. I Stockholm kan du boka läkarintyg via Medicinska Intyg, som vi samarbetar med.</p>`,
     },
   ] as ArticleSection[],
   faq: [
