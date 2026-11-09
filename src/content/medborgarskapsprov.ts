@@ -77,7 +77,7 @@ export const medborgarskapsprov = {
       {
         heading: "The citizenship test — available from August 2026",
         html:
-          "<p>The <strong>medborgarskapsprov i samhällskunskap</strong> — the citizenship test on Swedish society — becomes available in <strong>August 2026</strong>. It's aimed at applicants who can't otherwise prove they meet the society-knowledge requirement, and Migrationsverket sends an invitation to sit it once your application needs it.</p><p>The separate <strong>Swedish-language test</strong> is expected no earlier than <strong>autumn 2027</strong>. Until it launches, established language tests such as <strong>Tisus</strong> or <strong>Swedex</strong> can still be used to prove your language knowledge.</p>",
+          "<p>The <strong>medborgarskapsprov i samhällskunskap</strong> — the citizenship test on Swedish society — becomes available in <strong>August 2026</strong>. It's aimed at applicants who can't otherwise prove they meet the society-knowledge requirement, and Migrationsverket sends an invitation to sit it once your application needs it.</p><p>The separate <strong>Swedish-language test</strong> is expected no earlier than <strong>autumn 2027</strong>. Until it launches, established language tests such as <strong>Tisus</strong> or <strong>Swedex</strong> can still be used to prove your language knowledge. See <a href='/blog/sprakkrav-medborgarskap/'>the Swedish citizenship language test and requirement</a> for the levels and accepted grades.</p>",
       },
       {
         ctaBlock: {
@@ -204,7 +204,7 @@ export const medborgarskapsprov = {
       {
         heading: "Medborgarskapsprovet — tillgängligt från augusti 2026",
         html:
-          "<p><strong>Medborgarskapsprovet i samhällskunskap</strong> blir tillgängligt i <strong>augusti 2026</strong>. Det riktar sig till sökande som inte kan styrka samhällskunskapen på annat sätt, och Migrationsverket skickar en kallelse när din ansökan kräver det.</p><p>Det separata <strong>provet i svenska språket</strong> väntas tidigast <strong>hösten 2027</strong>. Fram till dess kan etablerade språktest som <strong>Tisus</strong> eller <strong>Swedex</strong> fortfarande användas för att styrka dina språkkunskaper.</p>",
+          "<p><strong>Medborgarskapsprovet i samhällskunskap</strong> blir tillgängligt i <strong>augusti 2026</strong>. Det riktar sig till sökande som inte kan styrka samhällskunskapen på annat sätt, och Migrationsverket skickar en kallelse när din ansökan kräver det.</p><p>Det separata <strong>provet i svenska språket</strong> väntas tidigast <strong>hösten 2027</strong>. Fram till dess kan etablerade språktest som <strong>Tisus</strong> eller <strong>Swedex</strong> fortfarande användas för att styrka dina språkkunskaper. Läs mer om <a href='/sv/blog/sprakkrav-medborgarskap/'>språkkrav och språktest för medborgarskap</a>.</p>",
       },
       {
         ctaBlock: {
