@@ -16,11 +16,11 @@ export const medborgarskapsprov = {
     metaDescription:
       "Sweden's new citizenship rules from June 2026 explained: requirements, residence years, the medborgarskapsprov, fees, processing time and how to prepare.",
     eyebrow: "Sweden · Citizenship",
-    lastUpdated: "2026-07-22",
-    lastUpdatedLabel: "Updated 22 July 2026",
+    lastUpdated: "2026-11-16",
+    lastUpdatedLabel: "Updated 16 November 2026",
     title: "Swedish Citizenship & the New Medborgarskapsprov",
     lede:
-      "New Swedish citizenship rules came into force on <strong>6 June 2026</strong>, and a new <strong>citizenship test on Swedish society</strong> opens in <strong>August 2026</strong>. Here's exactly what's required to become a Swedish citizen, who has to sit the test, and how to prepare for it.",
+      "New Swedish citizenship rules came into force on <strong>6 June 2026</strong>, and the first <strong>citizenship test on Swedish society</strong> was held on <strong>15 August 2026</strong>. The next is planned for <strong>April–May 2027</strong>. Here's exactly what's required to become a Swedish citizen, who has to sit the test, and how to prepare for it.",
     intro:
       "Becoming a Swedish citizen now means meeting six clear requirements — legal status, identity, years of residence, knowledge of Swedish and Swedish society, self-support, and an orderly life — and, for many applicants, passing a new knowledge test. On this page each requirement is explained, based on Migrationsverket's own published rules, and explains exactly what the new citizenship test covers and how to get ready for it.",
     sections: [
@@ -75,9 +75,9 @@ export const medborgarskapsprov = {
           "<p>Applicants aged <strong>16–66</strong> must show knowledge of the Swedish language and of Swedish society. For language, the bar is <strong>B1</strong> (reading and listening comprehension) and <strong>A2</strong> (speaking and writing) on the CEFR scale.</p><p>You can meet the requirement in several ways without sitting a test — for example with approved grades from Swedish year 9 or upper-secondary school, the highest level of SFI (Swedish for Immigrants), a Tisus pass, or a pass in a social studies course. If none of those apply to you, Migrationsverket invites you to take the relevant test instead.</p>",
       },
       {
-        heading: "The citizenship test — available from August 2026",
+        heading: "Citizenship test 2026: start date, test dates and pass mark",
         html:
-          "<p>The <strong>medborgarskapsprov i samhällskunskap</strong> — the citizenship test on Swedish society — becomes available in <strong>August 2026</strong>. It's aimed at applicants who can't otherwise prove they meet the society-knowledge requirement, and Migrationsverket sends an invitation to sit it once your application needs it.</p><p>The separate <strong>Swedish-language test</strong> has no start date yet. On 30 September 2026 Migrationsverket said it may be postponed, and the Government will decide when it starts. The requirement to know Swedish still applies: for now you show it in other ways, for example with approved school grades, the highest SFI course or <strong>Tisus</strong>. See <a href='/blog/sprakkrav-medborgarskap/'>the Swedish citizenship language test and requirement</a> for the levels and accepted grades.</p>",
+          "<p><strong>When did the test start?</strong> The first <strong>medborgarskapsprov i samhällskunskap</strong> (citizenship test on Swedish society) was held on <strong>15 August 2026</strong>, and 875 people took it. UHR, which runs the test, is introducing it in stages. It is aimed at applicants who can't otherwise prove they meet the society-knowledge requirement. Migrationsverket decides who may sit it and sends you a letter (anvisningsbrev); you can only register with that letter.</p><p><strong>When is the next test?</strong> UHR plans the next society test for <strong>April–May 2027</strong>. The exact date and places have not been announced, and registration is closed for now. You register again for each new test.</p><p><strong>What is the pass mark?</strong> At the August 2026 test the pass mark was <strong>28 out of 40 points</strong>. UHR set it after the test, on a proposal from the University of Gothenburg. Participants answered 60 questions but only 40 counted, because it was a trial test (utprövningsprov). About 80% of the 875 participants passed. UHR has not said what the pass mark or the number of questions will be at the next test, so we don't state one. Your result page shows the pass mark that applied, and UHR sends your result to Migrationsverket for you.</p><p>The separate <strong>Swedish-language test</strong> has no start date yet. On 30 September 2026 Migrationsverket said it may be postponed, and the Government will decide when it starts. The requirement to know Swedish still applies: for now you show it in other ways, for example with approved school grades, the highest SFI course or <strong>Tisus</strong>. See <a href='/blog/sprakkrav-medborgarskap/'>the Swedish citizenship language test and requirement</a> for the levels and accepted grades.</p>",
       },
       {
         ctaBlock: {
@@ -119,17 +119,21 @@ export const medborgarskapsprov = {
     ] as MSection[],
     faq: [
       { q: "Who has to take the citizenship test?", aHtml: "Applicants aged 16–66 must meet a knowledge requirement in Swedish and Swedish society. If you can't prove this with approved grades, SFI, Tisus or another accepted route, Migrationsverket invites you to sit the test instead." },
-      { q: "When does the citizenship test start?", aHtml: "The society knowledge test becomes available in August 2026. The Swedish-language test has no start date yet: Migrationsverket said on 30 September 2026 that it may be postponed. The Swedish requirement still applies, so you show it with approved grades, SFI or Tisus." },
+      { q: "When does the citizenship test start?", aHtml: "The first society test (medborgarskapsprov i samhällskunskap) was held on 15 August 2026. UHR plans the next one for April–May 2027 and has not announced an exact date. The Swedish-language test has no start date yet: Migrationsverket said on 30 September 2026 that it may be postponed. The Swedish requirement still applies, so you show it with approved grades, SFI or Tisus." },
+      { q: "What is the pass mark for the Swedish citizenship test?", aHtml: "At the first test, on 15 August 2026, the pass mark was 28 out of 40 points, set by UHR. About 80% of the 875 participants passed. UHR has not announced the pass mark or number of questions for the next test." },
+      { q: "What is the test date for the Swedish citizenship test?", aHtml: "The next society test is planned for April–May 2027. UHR will announce the exact date and places later, and you can only register if Migrationsverket has sent you a letter." },
       { q: "What does the test cover?", aHtml: "It's based on UHR's official book Sverige i fokus, covering 13 chapters on Sweden's democracy, government, law, media, human rights, the labour market and economy, welfare, history, and traditions." },
       { q: "How much does applying cost?", aHtml: "SEK 2,900 for adults. Stateless refugees applying with a travel document or status declaration don't pay a fee." },
       { q: "How long does processing take?", aHtml: "About 75% of recent citizenship cases are decided within 55 months, per Migrationsverket's statistics — though this varies case by case." },
       { q: "How can I prepare for the medborgarskapsprov?", aHtml: "Study Sverige i fokus chapter by chapter and practise with sample questions and mock exams — the Drive Test app has a full preparation module built from the book." },
     ] as ArticleFaqItem[],
     disclaimer:
-      "This page summarises Migrationsverket's published rules as of 22 July 2026 for general information — it is not legal advice, and requirements can change. Migrationsverket is the only authoritative source for your own application; always check the current rules and your individual case with them.",
+      "This page summarises Migrationsverket's published rules as of 22 July 2026 for general information (the test dates and pass mark were checked against UHR on 16 November 2026) — it is not legal advice, and requirements can change. Migrationsverket is the only authoritative source for your own application; always check the current rules and your individual case with them.",
     sources: [
       { label: "Migrationsverket — Citizenship for adults", href: "https://www.migrationsverket.se/en/you-want-to-apply/swedish-citizenship/citizenship-for-adults/citizenship-for-adults.html" },
       { label: "Migrationsverket — Swedish citizenship", href: "https://www.migrationsverket.se/en/you-want-to-apply/swedish-citizenship.html" },
+      { label: "UHR — Citizenship test (medborgarskapsprovet): questions and answers", href: "https://www.uhr.se/medborgarskapsprovet/fragor-och-svar/" },
+      { label: "UHR — Results from the first citizenship test (22 October 2026)", href: "https://www.uhr.se/om-uhr/nyheter/2026-nyheter/resultaten-fran-medborgarskapsprovet-i-samhallskunskap-klara/" },
       { label: "UHR — Sverige i fokus study material", href: "https://www.uhr.se" },
     ],
     finalCta: {
@@ -143,11 +147,11 @@ export const medborgarskapsprov = {
     metaDescription:
       "Nya reglerna för svenskt medborgarskap från juni 2026: krav, bosättningsår, medborgarskapsprovet, avgifter, handläggningstid och hur du förbereder dig.",
     eyebrow: "Sverige · Medborgarskap",
-    lastUpdated: "2026-07-22",
-    lastUpdatedLabel: "Uppdaterad 22 juli 2026",
+    lastUpdated: "2026-11-16",
+    lastUpdatedLabel: "Uppdaterad 16 november 2026",
     title: "Svenskt medborgarskap & det nya medborgarskapsprovet",
     lede:
-      "Nya regler för svenskt medborgarskap började gälla <strong>6 juni 2026</strong>, och ett helt nytt <strong>medborgarskapsprov i samhällskunskap</strong> öppnar i <strong>augusti 2026</strong>. Här går vi igenom exakt vad som krävs för att bli svensk medborgare, vem som måste göra provet, och hur du förbereder dig.",
+      "Nya regler för svenskt medborgarskap började gälla <strong>6 juni 2026</strong>, och det första <strong>medborgarskapsprovet i samhällskunskap</strong> skrevs den <strong>15 augusti 2026</strong>. Nästa prov planeras till <strong>april–maj 2027</strong>. Här går vi igenom exakt vad som krävs för att bli svensk medborgare, vem som måste göra provet, och hur du förbereder dig.",
     intro:
       "Att bli svensk medborgare innebär numera sex tydliga krav — rätt uppehållsstatus, styrkt identitet, ett visst antal års bosättning, kunskaper i svenska och om det svenska samhället, egen försörjning och ett skötsamt liv — och för många sökande dessutom ett godkänt kunskapsprov. Den här guiden går igenom varje krav på ett enkelt sätt, baserat på Migrationsverkets egna regler, och förklarar exakt vad det nya medborgarskapsprovet innehåller och hur du bäst förbereder dig.",
     sections: [
@@ -202,9 +206,9 @@ export const medborgarskapsprov = {
           "<p>Sökande i åldern <strong>16–66 år</strong> ska visa kunskaper i svenska språket och om det svenska samhället. För språket gäller nivå <strong>B1</strong> (läs- och hörförståelse) och <strong>A2</strong> (tal och skrift) enligt den europeiska skalan CEFR.</p><p>Du kan uppfylla kravet på flera sätt utan att göra ett prov — till exempel med godkända betyg från grundskolans årskurs 9 eller gymnasiet, högsta nivån inom SFI, godkänt Tisus-prov eller godkänd samhällskunskap. Uppfyller inget av detta din situation kallar Migrationsverket dig i stället till respektive prov.</p>",
       },
       {
-        heading: "Medborgarskapsprovet — tillgängligt från augusti 2026",
+        heading: "Medborgarskapsprovet 2026: startdatum, provdatum och godkäntgräns",
         html:
-          "<p><strong>Medborgarskapsprovet i samhällskunskap</strong> blir tillgängligt i <strong>augusti 2026</strong>. Det riktar sig till sökande som inte kan styrka samhällskunskapen på annat sätt, och Migrationsverket skickar en kallelse när din ansökan kräver det.</p><p>Det separata <strong>provet i svenska språket</strong> har inget startdatum än. Den 30 september 2026 skrev Migrationsverket att provet kan skjutas upp och att regeringen bestämmer när det införs. Kravet på kunskaper i svenska gäller ändå: tills vidare visar du dem på andra sätt, till exempel med godkända betyg, högsta kursen i SFI eller <strong>Tisus</strong>. Läs mer om <a href='/sv/blog/sprakkrav-medborgarskap/'>språkkrav och språktest för medborgarskap</a>.</p>",
+          "<p><strong>När startade provet?</strong> Det första <strong>medborgarskapsprovet i samhällskunskap</strong> skrevs den <strong>15 augusti 2026</strong>, och 875 personer deltog. UHR ansvarar för provet och inför det stegvis. Det riktar sig till sökande som inte kan styrka samhällskunskapen på annat sätt. Migrationsverket avgör vem som får skriva provet och skickar ett anvisningsbrev; du kan bara anmäla dig med det brevet.</p><p><strong>När är nästa prov?</strong> UHR planerar nästa prov i samhällskunskap till <strong>april–maj 2027</strong>. Exakt datum och orter är inte klara, och anmälan är stängd just nu. Du anmäler dig på nytt till varje nytt prov.</p><p><strong>Vad är gränsen för godkänt?</strong> Vid augustiprovet var gränsen <strong>28 av 40 poäng</strong>. UHR fastställde den efter provet, på förslag från Göteborgs universitet. Deltagarna besvarade 60 frågor men bara 40 räknades, eftersom det var ett utprövningsprov. Cirka 80 procent av de 875 deltagarna blev godkända. UHR har inte sagt vilken gräns eller hur många frågor nästa prov får, så vi anger ingen siffra. På ditt resultat ser du vilken gräns som gällde, och UHR skickar resultatet till Migrationsverket åt dig.</p><p>Det separata <strong>provet i svenska språket</strong> har inget startdatum än. Den 30 september 2026 skrev Migrationsverket att provet kan skjutas upp och att regeringen bestämmer när det införs. Kravet på kunskaper i svenska gäller ändå: tills vidare visar du dem på andra sätt, till exempel med godkända betyg, högsta kursen i SFI eller <strong>Tisus</strong>. Läs mer om <a href='/sv/blog/sprakkrav-medborgarskap/'>språkkrav och språktest för medborgarskap</a>.</p>",
       },
       {
         ctaBlock: {
@@ -246,17 +250,21 @@ export const medborgarskapsprov = {
     ] as MSection[],
     faq: [
       { q: "Vem måste göra medborgarskapsprovet?", aHtml: "Sökande i åldern 16–66 år ska visa kunskaper i svenska och om det svenska samhället. Går det inte att styrka med godkända betyg, SFI, Tisus eller annat godkänt sätt kallar Migrationsverket dig till provet." },
-      { q: "När börjar provet gälla?", aHtml: "Samhällskunskapsprovet blir tillgängligt i augusti 2026. Provet i svenska har inget startdatum än: Migrationsverket skrev den 30 september 2026 att det kan skjutas upp. Kravet på svenska gäller ändå, och du visar det med godkända betyg, SFI eller Tisus." },
+      { q: "När börjar provet gälla?", aHtml: "Det första provet i samhällskunskap skrevs den 15 augusti 2026. UHR planerar nästa prov till april–maj 2027 och har inte angett något exakt datum. Provet i svenska har inget startdatum än: Migrationsverket skrev den 30 september 2026 att det kan skjutas upp. Kravet på svenska gäller ändå, och du visar det med godkända betyg, SFI eller Tisus." },
+      { q: "Vad är gränsen för godkänt på medborgarskapsprovet?", aHtml: "Vid det första provet den 15 augusti 2026 var gränsen 28 av 40 poäng, fastställd av UHR. Cirka 80 procent av de 875 deltagarna blev godkända. UHR har inte meddelat gräns eller antal frågor för nästa prov." },
+      { q: "Vilket datum är nästa medborgarskapsprov?", aHtml: "Nästa prov i samhällskunskap planeras till april–maj 2027. UHR meddelar exakt datum och orter senare, och du kan bara anmäla dig om du fått ett brev från Migrationsverket." },
       { q: "Vad innehåller provet?", aHtml: "Det bygger på UHR:s officiella bok Sverige i fokus, med 13 kapitel om Sveriges demokrati, styrelseskick, lag och rätt, medier, mänskliga rättigheter, arbetsmarknad och ekonomi, välfärd, historia och traditioner." },
       { q: "Vad kostar en ansökan?", aHtml: "2 900 kronor för vuxna. Statslösa flyktingar som ansöker med resedokument eller statusförklaring betalar ingen avgift." },
       { q: "Hur lång är handläggningstiden?", aHtml: "Cirka 75 procent av de senaste ärendena avgörs inom 55 månader enligt Migrationsverkets statistik — men det varierar från fall till fall." },
       { q: "Hur förbereder jag mig för medborgarskapsprovet?", aHtml: "Plugga Sverige i fokus kapitel för kapitel och öva med exempelfrågor och provtentor — Drive Test-appen har en komplett förberedelsemodul byggd på boken." },
     ] as ArticleFaqItem[],
     disclaimer:
-      "Den här sidan sammanfattar Migrationsverkets publicerade regler per den 22 juli 2026 i informationssyfte — det är inte juridisk rådgivning, och kraven kan ändras. Migrationsverket är den enda auktoritativa källan för din egen ansökan; kontrollera alltid gällande regler och ditt eget ärende med dem.",
+      "Den här sidan sammanfattar Migrationsverkets publicerade regler per den 22 juli 2026 i informationssyfte (provdatum och godkäntgräns är kontrollerade mot UHR den 16 november 2026) — det är inte juridisk rådgivning, och kraven kan ändras. Migrationsverket är den enda auktoritativa källan för din egen ansökan; kontrollera alltid gällande regler och ditt eget ärende med dem.",
     sources: [
       { label: "Migrationsverket — Citizenship for adults", href: "https://www.migrationsverket.se/en/you-want-to-apply/swedish-citizenship/citizenship-for-adults/citizenship-for-adults.html" },
       { label: "Migrationsverket — Swedish citizenship", href: "https://www.migrationsverket.se/en/you-want-to-apply/swedish-citizenship.html" },
+      { label: "UHR — Medborgarskapsprovet: frågor och svar", href: "https://www.uhr.se/medborgarskapsprovet/fragor-och-svar/" },
+      { label: "UHR — Resultaten från det första medborgarskapsprovet (22 oktober 2026)", href: "https://www.uhr.se/om-uhr/nyheter/2026-nyheter/resultaten-fran-medborgarskapsprovet-i-samhallskunskap-klara/" },
       { label: "UHR — studiematerialet Sverige i fokus", href: "https://www.uhr.se" },
     ],
     finalCta: {
@@ -287,7 +295,9 @@ export const medborgarskapsprovJsonLd = {
       "@type": "FAQPage",
       mainEntity: [
         { "@type": "Question", name: "Who has to take the Swedish citizenship test?", acceptedAnswer: { "@type": "Answer", text: "Anyone aged 16–66 applying for Swedish citizenship must meet a knowledge requirement in Swedish and Swedish society. If you can't prove this another way — for example with approved school grades, SFI, Tisus or a pass in social studies — Migrationsverket invites you to sit the test." } },
-        { "@type": "Question", name: "When does the citizenship test start?", acceptedAnswer: { "@type": "Answer", text: "The society knowledge test (medborgarskapsprov i samhällskunskap) becomes available in August 2026. A separate Swedish-language test has no start date yet: Migrationsverket said on 30 September 2026 that it may be postponed. The Swedish requirement still applies and can be shown with approved grades, SFI or Tisus." } },
+        { "@type": "Question", name: "When does the citizenship test start?", acceptedAnswer: { "@type": "Answer", text: "The first society test (medborgarskapsprov i samhällskunskap) was held on 15 August 2026, and UHR plans the next one for April–May 2027. A separate Swedish-language test has no start date yet: Migrationsverket said on 30 September 2026 that it may be postponed. The Swedish requirement still applies and can be shown with approved grades, SFI or Tisus." } },
+        { "@type": "Question", name: "What is the pass mark for the Swedish citizenship test?", acceptedAnswer: { "@type": "Answer", text: "At the first test, on 15 August 2026, the pass mark was 28 out of 40 points, set by UHR. About 80% of the 875 participants passed. UHR has not announced the pass mark or number of questions for the next test." } },
+        { "@type": "Question", name: "What is the test date for the Swedish citizenship test?", acceptedAnswer: { "@type": "Answer", text: "The next society test is planned for April–May 2027. UHR will announce the exact date and places later, and you can only register if Migrationsverket has sent you a letter." } },
         { "@type": "Question", name: "What does the citizenship test cover?", acceptedAnswer: { "@type": "Answer", text: "The society test is based on UHR's official study book Sverige i fokus, which covers 13 chapters including Sweden's democratic system, government, elections and parties, law and rights, the labour market and personal finance, the welfare state, modern history, and traditions and holidays." } },
         { "@type": "Question", name: "How much does it cost to apply for Swedish citizenship?", acceptedAnswer: { "@type": "Answer", text: "The application fee is SEK 2,900 for adults. Stateless refugees who apply with a travel document or status declaration do not pay a fee." } },
         { "@type": "Question", name: "How long does Migrationsverket take to process a citizenship application?", acceptedAnswer: { "@type": "Answer", text: "Around 75% of recent citizenship cases are decided within 55 months, according to Migrationsverket's own statistics, though individual cases vary." } },
