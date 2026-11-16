@@ -114,6 +114,17 @@ export default function HomeScreen({ lang }: { lang: Lang }) {
           <a className={styles.more} href={localePath(lang, "/exams/taxi-licence/")}>
             {t.howMore}
           </a>
+          <p className={styles.guides}>
+            {t.guidesLabel}{" "}
+            {t.guides.map((g, i) => (
+              <span key={g.href}>
+                {i > 0 && " · "}
+                <a className={styles.more} href={g.href}>
+                  {g.label}
+                </a>
+              </span>
+            ))}
+          </p>
         </section>
 
         <section className={styles.cta} id="download">
