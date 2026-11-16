@@ -36,7 +36,7 @@ export const blog = {
         title: "Swedish Citizenship Test 2026 — requirements & the medborgarskapsprov",
         tag: "Citizenship",
         excerpt:
-          "The new citizenship rules from June 2026, the six requirements to become a Swedish citizen, and how to prepare for the medborgarskapsprov starting August 2026.",
+          "The new citizenship rules from June 2026, the six requirements to become a Swedish citizen, and how to prepare for the medborgarskapsprov (first test 15 August 2026, next planned April–May 2027).",
         href: "/medborgarskapsprov/",
         cover: "/assets/blog/ob-permit-paperwork.jpg",
       },
@@ -63,7 +63,7 @@ export const blog = {
         title: "Medborgarskapsprovet 2026 — krav & hur du förbereder dig",
         tag: "Medborgarskap",
         excerpt:
-          "De nya reglerna för svenskt medborgarskap från juni 2026, de sex kraven för att bli svensk medborgare, och hur du förbereder dig inför medborgarskapsprovet från augusti 2026.",
+          "De nya reglerna för svenskt medborgarskap från juni 2026, de sex kraven för att bli svensk medborgare, och hur du förbereder dig inför medborgarskapsprovet (första provet 15 augusti 2026, nästa planeras april–maj 2027).",
         href: "/sv/medborgarskapsprov/",
         cover: "/assets/blog/ob-permit-paperwork.jpg",
       },
